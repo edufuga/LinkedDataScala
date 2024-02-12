@@ -1,72 +1,12 @@
 package com.edufuga.scala.streaming
 
 import cats.effect.{IO, IOApp}
-import com.edufuga.scala.streaming.Model._
-import com.edufuga.scala.streaming.Data._
 import fs2.io.file.{Files, Path}
-import fs2.{Pipe, Pure, Stream, text}
+import fs2.{Pipe, Stream, text}
 
 import java.net.URL
 
-object Model {
-  case class Actor(id: Int, firstName: String, lastName: String)
-}
-
-object Data {
-  // Justice League
-  val henryCavil: Actor = Actor(0, "Henry", "Cavill")
-  val galGodot: Actor = Actor(1, "Gal", "Godot")
-  val ezraMiller: Actor = Actor(2, "Ezra", "Miller")
-  val benFisher: Actor = Actor(3, "Ben", "Fisher")
-  val rayHardy: Actor = Actor(4, "Ray", "Hardy")
-  val jasonMomoa: Actor = Actor(5, "Jason", "Momoa")
-
-  // Avengers
-  val scarlettJohansson: Actor = Actor(6, "Scarlett", "Johansson")
-  val robertDowneyJr: Actor = Actor(7, "Robert", "Downey Jr.")
-  val chrisEvans: Actor = Actor(8, "Chris", "Evans")
-  val markRuffalo: Actor = Actor(9, "Mark", "Ruffalo")
-  val chrisHemsworth: Actor = Actor(10, "Chris", "Hemsworth")
-  val jeremyRenner: Actor = Actor(11, "Jeremy", "Renner")
-  val tomHolland: Actor = Actor(13, "Tom", "Holland")
-  val tobeyMaguire: Actor = Actor(14, "Tobey", "Maguire")
-  val andrewGarfield: Actor = Actor(15, "Andrew", "Garfield")
-}
-
 object Main extends IOApp.Simple {
-  val jlActors: Stream[Pure, Actor] = Stream(
-    henryCavil,
-    galGodot,
-    ezraMiller,
-    benFisher,
-    rayHardy,
-    jasonMomoa
-  )
-
-  val actors: Stream[IO, Actor] = jlActors.covary
-
-  val unchangedActors: Stream[IO, Actor] = actors.flatMap { actor =>
-    Stream.eval(
-      IO {
-        println(actor)
-        actor
-      }
-    )
-  }
-
-  // evalMap = flatMap + Stream.eval
-  val moreUnchangedActors: Stream[IO, Actor] = actors.evalMap { actor  =>
-    IO {
-      actor
-    }
-  }
-
-  val actorNames: Stream[IO, String] = moreUnchangedActors.map(_.firstName)
-
-  val actorNamesPrinted: Stream[IO, String] = actorNames.evalTap(IO.println)
-
-  val drained: IO[Unit] = actorNamesPrinted.compile.drain
-
   val readFrom: String = "products.csv"
 
   val readFromJavaResource: URL = getClass.getClassLoader.getResource(readFrom)
