@@ -92,5 +92,7 @@ object Patterns {
     println(sp)
     println(sm)
     println(spr)
+
+    // TODO: Create Scala objects for Product and Service (single entity). Create a Parser.
   }
 }
