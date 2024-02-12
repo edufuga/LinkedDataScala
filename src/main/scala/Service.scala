@@ -5,5 +5,5 @@ case class Service(
   serviceName: String, // TODO: Use value types or type aliases
   products: String, // TODO: Use value types or type aliases
   productManager: String,  // TODO: Use value types or type aliases
-  price: Option[Money]
+  price: Money
 )

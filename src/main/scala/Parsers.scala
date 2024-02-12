@@ -7,48 +7,62 @@ import scala.util.{Failure, Success, Try}
 
 object Parsers {
   private val quotedPriceAndCurrency: Regex = s"\"($decimalNumber)\\s($word)\"".r
-
   def money(price: String): Option[Money] = {
     val quotedPriceAndCurrency(value, currency) = price
     Money.mkMoney(value, currency)
   }
 
+  val first: Option[Int] = Some(2)
+  val second: Option[Int] = Some(3)
+  val result: Option[String] =  for {
+    f <- first
+    s <- second
+  } yield {
+    s"Inputs are $f and $s "
+  }
+
   def product(line: String): Option[Product] = {
     Try {
       val Patterns.Products.line(id, name, height, width, depth, weight, manager, price) = line
-      Product(
-        productId = id,
-        productName = name,
-        height = height.toInt,
-        width = width.toInt,
-        depth = depth.toInt,
-        weight = weight.toInt,
-        productManager = manager,
-        price = money(price)
-      )
+      for {
+        money <- money(price).toList // This is just here to avoid a weird overload 'error' (bug?) with Option.
+        product = Product(
+          productId = id,
+          productName = name,
+          height = height.toInt,
+          width = width.toInt,
+          depth = depth.toInt,
+          weight = weight.toInt,
+          productManager = manager,
+          price = money
+        )
+      } yield product
     } match {
       case Failure(_) =>
         println(s"This product line contains an error: '$line'.")
         None
-      case Success(value) => Some(value)
+      case Success(value) => value.headOption
     }
   }
 
   def service(line: String): Option[Service] = {
     Try {
       val Patterns.Services.line(id, name, products, productManager, price) = line
-      Service(
-        serviceId = id,
-        serviceName = name,
-        products = products,
-        productManager = productManager,
-        price = money(price)
-      )
+      for {
+        money <- money(price).toList // This is just here to avoid a weird overload 'error' (bug?) with Option.
+        service = Service(
+          serviceId = id,
+          serviceName = name,
+          products = products,
+          productManager = productManager,
+          price = money
+        )
+      } yield service
     } match {
       case Failure(_) =>
         println(s"This service line contains an error: '$line'.")
         None
-      case Success(value) => Some(value)
+      case Success(value) => value.headOption
     }
   }
 

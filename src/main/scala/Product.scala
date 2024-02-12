@@ -8,5 +8,5 @@ case class Product(
   depth: Int,
   weight: Int,
   productManager: String, // TODO: Use value types or type aliases
-  price: Option[Money]
+  price: Money
 )
