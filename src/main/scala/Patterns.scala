@@ -6,7 +6,6 @@ object Patterns {
   val start: Regex = "^".r
   val end: Regex = "$".r
 
-  // TODO: Separate it further into auxiliary subcategories (for the IDs, etc.).
   val digit: Regex = "[0-9]".r
   val character: Regex = "[A-Za-z]".r
   val characterOrHyphen: Regex = "[A-Z\\-a-z]".r
@@ -14,12 +13,9 @@ object Patterns {
   val number: Regex = s"$digit+".r
   val word: Regex = s"$characterOrHyphen+".r
   val numericalWord: Regex = s"$characterOrDigit+".r
-  //val flexibleCharacters: Regex = s"(?:\\w|\\W)+".r // Any character, at least once.
 
-  // TODO: Include uppercase letter at the beginning of each word?
-  val words: Regex = s"(?:$word+)(?:\\s(?:$word))*".r           // possibly several words, separated by whitespaces
+  val words: Regex = s"(?:$word+)(?:\\s(?:$word))*".r
   val numericalWords: Regex = s"(?:$numericalWord+)(?:\\s(?:$numericalWord))*".r
-  //val flexibleWords: Regex = s"(?:$flexibleCharacters+)(?:\\s(?:$flexibleCharacters))*".r
 
   def digits(cardinality: Int): Regex = s"$digit{$cardinality}".r
 
@@ -62,40 +58,5 @@ object Patterns {
   object Services {
     import Patterns.{Service => S}
     val line: Regex = s"$start(${S.serviceId}),(${S.serviceName}),(${S.products}),(${S.productManager}),(${S.price})$end".r
-  }
-
-  def main(args: Array[String]): Unit = {
-    val productsLine = "I241-8776317,Strain Compensator,12,68,15,8,Baldwin.Dirksen@company.org,\"0,50 EUR\""
-    val servicesLine = "Y704-9764759,Product Analysis,\"O491-3823912, I965-1821441, Z655-3173353, U733-5722614, K411-1729714\",Lambert.Faust@company.org,\"748,40 EUR\""
-
-    println(s"Products line: '$productsLine'")
-    println(s"Services line: '$servicesLine'")
-
-    println()
-
-    val Patterns.Products.line(i,n,h,w,d,wg,m,p) = productsLine
-    println("Product line from CSV")
-    println("---------------------")
-    println(i)
-    println(n)
-    println(h)
-    println(w)
-    println(d)
-    println(wg)
-    println(m)
-    println(p)
-
-    println()
-
-    val Patterns.Services.line(si, sn, sp, sm, spr) = servicesLine
-    println("Service line from CSV")
-    println("---------------------")
-    println(si)
-    println(sn)
-    println(sp)
-    println(sm)
-    println(spr)
-
-    // TODO: Handle errors in the Regex match.
   }
 }
