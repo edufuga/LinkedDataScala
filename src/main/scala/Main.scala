@@ -13,17 +13,26 @@ object Main extends IOApp.Simple {
     Path.fromNioPath(readFromJavaPath)
   }
 
-  val source: Stream[IO, Byte] = Files[IO].readAll(pathOf("products.csv"))
-
-  def productsParser[F[_]]: Pipe[F, Byte, Product] =
+  def entitiesParser[F[_], E](toMaybeEntity: String => Option[E]): Pipe[F, Byte, Option[E]] =
     _.through(text.utf8.decode)
       .through(text.lines)
       .drop(1)
-      .map(Parsers.product)
+      .map(toMaybeEntity)
 
-  val sourceThroughProductParser: Stream[IO, Product] = source.through(productsParser)
+  val productsSource: Stream[IO, Byte] = Files[IO].readAll(pathOf("products.csv"))
+  def productsParser[F[_]]: Pipe[F, Byte, Option[Product]] = entitiesParser(Parsers.product)
+  val productsSourceThroughParser: Stream[IO, Option[Product]] = productsSource.through(productsParser)
+  val productsProcessedStream: Stream[IO, Option[Product]] = productsSourceThroughParser.evalTap(IO.println)
 
-  val processedProductsStream: Stream[IO, Product] = sourceThroughProductParser.evalTap(IO.println)
+  val servicesSource: Stream[IO, Byte] = Files[IO].readAll(pathOf("services.csv"))
+  def servicesParser[F[_]]: Pipe[F, Byte, Option[Service]] = entitiesParser(Parsers.service)
+  val servicesSourceThroughParser: Stream[IO, Option[Service]] = servicesSource.through(servicesParser)
+  val servicesprocessedStream: Stream[IO, Option[Service]] = servicesSourceThroughParser.evalTap(IO.println)
 
-  override def run: IO[Unit] = processedProductsStream.compile.drain
+  override def run: IO[Unit] = for {
+    _ <- IO.println("Processing stream of products")
+    _ <- productsProcessedStream.compile.drain
+    _ <- IO.println("Processing stream of services")
+    _ <- servicesprocessedStream.compile.drain
+  } yield ()
 }
