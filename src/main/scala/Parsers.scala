@@ -1,6 +1,6 @@
 package com.edufuga.scala.streaming
 
-import com.edufuga.scala.streaming.Patterns.{decimalNumber, word}
+import Patterns.{decimalNumber, word}
 
 import scala.util.matching.Regex
 import scala.util.{Failure, Success, Try}
