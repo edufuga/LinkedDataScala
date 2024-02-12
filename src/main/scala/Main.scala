@@ -19,20 +19,20 @@ object Main extends IOApp.Simple {
       .drop(1)
       .map(toMaybeEntity)
 
-  val productsStream: Stream[IO, Option[Product]] =
-    Files[IO].readAll(pathOf("products.csv"))
+  def productsStream(file: String): Stream[IO, Option[Product]] =
+    Files[IO].readAll(pathOf(file))
     .through(entitiesParser(Parsers.product))
     .evalTap(IO.println)
 
-  val servicesStream: Stream[IO, Option[Service]] =
-    Files[IO].readAll(pathOf("services.csv"))
+  def servicesStream(file: String): Stream[IO, Option[Service]] =
+    Files[IO].readAll(pathOf(file))
     .through(entitiesParser(Parsers.service))
     .evalTap(IO.println)
 
   override def run: IO[Unit] = for {
     _ <- IO.println("Processing stream of products")
-    _ <- productsStream.compile.drain
+    _ <- productsStream("products.csv").compile.drain
     _ <- IO.println("Processing stream of services")
-    _ <- servicesStream.compile.drain
+    _ <- servicesStream("services.csv").compile.drain
   } yield ()
 }
