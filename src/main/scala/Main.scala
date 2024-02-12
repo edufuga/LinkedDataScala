@@ -19,20 +19,20 @@ object Main extends IOApp.Simple {
       .drop(1)
       .map(toMaybeEntity)
 
-  val productsSource: Stream[IO, Byte] = Files[IO].readAll(pathOf("products.csv"))
-  def productsParser[F[_]]: Pipe[F, Byte, Option[Product]] = entitiesParser(Parsers.product)
-  val productsSourceThroughParser: Stream[IO, Option[Product]] = productsSource.through(productsParser)
-  val productsProcessedStream: Stream[IO, Option[Product]] = productsSourceThroughParser.evalTap(IO.println)
+  val productsStream: Stream[IO, Option[Product]] =
+    Files[IO].readAll(pathOf("products.csv"))
+    .through(entitiesParser(Parsers.product))
+    .evalTap(IO.println)
 
-  val servicesSource: Stream[IO, Byte] = Files[IO].readAll(pathOf("services.csv"))
-  def servicesParser[F[_]]: Pipe[F, Byte, Option[Service]] = entitiesParser(Parsers.service)
-  val servicesSourceThroughParser: Stream[IO, Option[Service]] = servicesSource.through(servicesParser)
-  val servicesprocessedStream: Stream[IO, Option[Service]] = servicesSourceThroughParser.evalTap(IO.println)
+  val servicesStream: Stream[IO, Option[Service]] =
+    Files[IO].readAll(pathOf("services.csv"))
+    .through(entitiesParser(Parsers.service))
+    .evalTap(IO.println)
 
   override def run: IO[Unit] = for {
     _ <- IO.println("Processing stream of products")
-    _ <- productsProcessedStream.compile.drain
+    _ <- productsStream.compile.drain
     _ <- IO.println("Processing stream of services")
-    _ <- servicesprocessedStream.compile.drain
+    _ <- servicesStream.compile.drain
   } yield ()
 }
