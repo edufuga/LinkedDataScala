@@ -29,3 +29,18 @@ For more context and details on this and other technologies and the Scala ecosys
 [Scala Survey Results](https://scalasurvey2023.virtuslab.com/).
 
 ![typelevel.png](typelevel.png)
+
+### Technical assistance
+
+For an introduction to fs2, read https://blog.rockthejvm.com/fs2/ and/or watch the two videos from
+[RockTheJVM](https://rockthejvm.com/) under https://www.youtube.com/watch?v=XCpGtaJjkVY and
+https://www.youtube.com/watch?v=W0jh2sO-TZ8. These videos are highly recommended for a first introduction to fs2.
+
+A similar example of processing a CSV file via streaming can be found at
+https://gist.github.com/gvolpe/40b1f38ebbcbb76266dc40cad587c469 from Gabriel Volpe.
+
+The RegEx "magic" can be better understood with
+https://jenisys.github.io/behave.example/step_matcher/regular_expressions.html,
+https://docs.scala-lang.org/tour/regular-expression-patterns.html and
+https://alvinalexander.com/scala/how-to-extract-parts-strings-match-regular-expression-regex-scala/.
+
