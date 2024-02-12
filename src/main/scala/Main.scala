@@ -15,17 +15,15 @@ object Main extends IOApp.Simple {
 
   val source: Stream[IO, Byte] = Files[IO].readAll(pathOf("products.csv"))
 
-  def lineParser[F[_]]: Pipe[F, Byte, String] =
+  def productsParser[F[_]]: Pipe[F, Byte, Product] =
     _.through(text.utf8.decode)
       .through(text.lines)
       .drop(1)
-      //.map(_.split(',').toList) // Too simplistic. It doesn't work with our "ugly data".
+      .map(Parsers.product)
 
-  val sourceThroughParser: Stream[IO, String] = source.through(lineParser)
+  val sourceThroughProductParser: Stream[IO, Product] = source.through(productsParser)
 
-  val processedSourceStream: Stream[IO, String] = sourceThroughParser.evalTap(IO.println)
+  val processedProductsStream: Stream[IO, Product] = sourceThroughProductParser.evalTap(IO.println)
 
-  // TODO: Create Scala objects for Product and Service (lists of entities).
-
-  override def run: IO[Unit] = processedSourceStream.compile.drain
+  override def run: IO[Unit] = processedProductsStream.compile.drain
 }

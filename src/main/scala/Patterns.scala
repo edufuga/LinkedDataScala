@@ -9,14 +9,17 @@ object Patterns {
   // TODO: Separate it further into auxiliary subcategories (for the IDs, etc.).
   val digit: Regex = "[0-9]".r
   val character: Regex = "[A-Za-z]".r
+  val characterOrHyphen: Regex = "[A-Z\\-a-z]".r
   val characterOrDigit: Regex = "[A-Za-z0-9]".r
   val number: Regex = s"$digit+".r
-  val word: Regex = s"$character+".r
+  val word: Regex = s"$characterOrHyphen+".r
   val numericalWord: Regex = s"$characterOrDigit+".r
+  val flexibleCharacters: Regex = s"(?:\\w|\\W)+".r // Any character, at least once.
 
   // TODO: Include uppercase letter at the beginning of each word?
   val words: Regex = s"(?:$word+)(?:\\s(?:$word))*".r           // possibly several words, separated by whitespaces
   val numericalWords: Regex = s"(?:$numericalWord+)(?:\\s(?:$numericalWord))*".r
+  val flexibleWords: Regex = s"(?:$flexibleCharacters+)(?:\\s(?:$flexibleCharacters))*".r
 
   def digits(cardinality: Int): Regex = s"$digit{$cardinality}".r
 
