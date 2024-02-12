@@ -15,7 +15,7 @@ object Patterns {
   val numericalWord: Regex = s"$characterOrDigit+".r
 
   // TODO: Include uppercase letter at the beginning of each word?
-  val words: Regex = s"(?:$word+)(?:\\s(?:$word))*".r           // possibly several words, separated by whitespaces.
+  val words: Regex = s"(?:$word+)(?:\\s(?:$word))*".r           // possibly several words, separated by whitespaces
   val numericalWords: Regex = s"(?:$numericalWord+)(?:\\s(?:$numericalWord))*".r
 
   def digits(cardinality: Int): Regex = s"$digit{$cardinality}".r
@@ -29,8 +29,8 @@ object Patterns {
   private val idPrefix: Regex = s"$character${digits(3)}".r
   private val idSuffix: Regex = s"${digits(7)}".r
   val id: Regex = s"$idPrefix-$idSuffix".r
-  val ids: Regex = s"(?:$id+)(?:,\\s(?:$id))*".r // list of comma separated IDs
-  val quotedIds: Regex = s"\"$ids\"".r         // list of comma separated IDs within a pair of quotes
+  val ids: Regex = s"(?:$id+)(?:,\\s(?:$id))*".r                // list of comma separated IDs
+  val quotedIds: Regex = s"\"$ids\"".r                          // list of comma separated IDs within a pair of quotes
 
   object Product {
     val productId: Regex = id
@@ -52,11 +52,13 @@ object Patterns {
   }
 
   object Products {
-    val line: Regex = s"$start(${Product.productId}),(${Product.productName}),(${Product.height}),(${Product.width}),(${Product.depth}),(${Product.weight}),(${Product.productManager}),(${Product.price})$end".r
+    import Patterns.{Product => P}
+    val line: Regex = s"$start(${P.productId}),(${P.productName}),(${P.height}),(${P.width}),(${P.depth}),(${P.weight}),(${P.productManager}),(${P.price})$end".r
   }
 
   object Services {
-    val line: Regex = s"$start(${Service.serviceId}),(${Service.serviceName}),(${Service.products}),(${Service.productManager}),(${Service.price})$end".r
+    import Patterns.{Service => S}
+    val line: Regex = s"$start(${S.serviceId}),(${S.serviceName}),(${S.products}),(${S.productManager}),(${S.price})$end".r
   }
 
   def main(args: Array[String]): Unit = {
