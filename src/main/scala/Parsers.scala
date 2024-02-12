@@ -8,17 +8,10 @@ import scala.util.{Failure, Success, Try}
 object Parsers {
   private val quotedPriceAndCurrency: Regex = s"\"($decimalNumber)\\s($word)\"".r
   def money(price: String): Option[Money] = {
-    val quotedPriceAndCurrency(value, currency) = price
-    Money.mkMoney(value, currency)
-  }
-
-  val first: Option[Int] = Some(2)
-  val second: Option[Int] = Some(3)
-  val result: Option[String] =  for {
-    f <- first
-    s <- second
-  } yield {
-    s"Inputs are $f and $s "
+    Try {
+      val quotedPriceAndCurrency(value, currency) = price
+      Money.mkMoney(value, currency)
+    }.toOption.flatten
   }
 
   def product(line: String): Option[Product] = {
