@@ -86,64 +86,11 @@ object Main extends IOApp.Simple {
 
   val stuff: Stream[IO, String] = sourceThroughParser.evalTap(IO.println)
 
-  val digit = "[0-9]"
-  val character = "[A-Za-z]"
-  val number = s"$digit+"
-  val word = s"$character+"
-
-  val pattern = s"($number) ($word)".r
-  val pattern(count, fruit) = "100 Bananas"
-
-  println(count)
-  println(fruit)
-
-  val examplePrice = "\"0,50 EUR\""
-
-  val pricePattern = s"\"($number),($number)\\s($word)\"".r
-  val pricePattern(whole, part, currency) = examplePrice
-
-  println(whole)
-  println(part)
-  println(currency)
+  /* Now comes the good stuff. */
 
   val productsLine = "I241-8776317,Strain Compensator,12,68,15,8,Baldwin.Dirksen@company.org,\"0,50 EUR\""
 
   val servicesLine = "Y704-9764759,Product Analysis,\"O491-3823912, I965-1821441, Z655-3173353, U733-5722614, K411-1729714\",Lambert.Faust@company.org,\"748,40 EUR\""
-
-  /*
-  // Product ID.
-  // FIXME: Same for the service ID. Just name it "id".
-  val idPrefix = s"$character${digits(3)}"
-  val idSuffix = s"${digits(7)}"
-  val id = s"$idPrefix-$idSuffix".r
-
-  val ids = s"\"($id+)(,\\s($id))*\"".r // list of comma separated IDs within a pair of quotes
-
-  id.findFirstMatchIn(productsLine) match {
-    case Some(serviceId) => println(serviceId)
-    case None => println("No product ID found!")
-  }
-
-  pricePattern.findFirstMatchIn(productsLine) match {
-    case Some(price) => println(price)
-    case None => println("No price found!")
-  }
-
-  id.findFirstMatchIn(servicesLine) match {
-    case Some(serviceId) => println(serviceId)
-    case None => println("No service ID found!")
-  }
-
-  ids.findFirstMatchIn(servicesLine) match {
-    case Some(products) => println(products)
-    case None => println("No list of comma separated product IDs found!")
-  }
-
-  pricePattern.findFirstMatchIn(servicesLine) match {
-    case Some(price) => println(price)
-    case None => println("No price found!")
-  }
-   */
 
   object Patterns {
     val start = "^".r
@@ -207,37 +154,7 @@ object Main extends IOApp.Simple {
     }
   }
 
-
-  /*
-  Product.productManager.findFirstMatchIn(productsLine) match {
-    case Some(productManager) => println(productManager)
-    case None => println("No productManager found!")
-  }
-   */
-
   println(s"Products line: '$productsLine'")
-
-  // Try the RegExes by hand
-  /*
-  val productLine = s"""$start(${Product.productId}),(${Product.productName}),(${Product.height}),(${Product.width}),(${Product.depth}),(${Product.weight}),(${Product.productManager}),(${Product.price})$end""".r
-  val productLine(id, name, height, width, depth, weight, productManager, price) = productsLine
-  println(s"Product ID: $id")
-  println(s"Product Name: $name")
-  println(s"Product Height: $height")
-  println(s"Product Width: $width")
-  println(s"Product Depth: $depth")
-  println(s"Product Weight: $weight")
-  println(s"Product Manager: $productManager")
-  println(s"Product Price: $price")
-
-  val serviceLine = s"""$start(${Service.serviceId}),(${Service.serviceName}),(${Service.products}),(${Service.productManager}),(${Service.price})$end""".r
-  val serviceLine(serviceId, serviceName, products, serviceProductManager, servicePrice) = servicesLine
-  println(s"Service ID: $serviceId")
-  println(s"Service name: $serviceName")
-  println(s"Service products: $products")
-  println(s"Service product manager: $serviceProductManager")
-  println(s"Service price: $servicePrice")
-   */
 
   println()
 
