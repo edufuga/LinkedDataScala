@@ -1,12 +1,13 @@
 package com.edufuga.scala.streaming
 
-import cats.effect.{IO, IOApp}
+import cats.effect.{ExitCode, IO, IOApp}
 import fs2.io.file.{Files, Path}
 import fs2.{Pipe, Stream, text}
 
 import java.net.URL
+import scala.util.Try
 
-object Main extends IOApp.Simple {
+object Main extends IOApp {
   private def pathOf(file: String): Path = {
     val readFromJavaResource: URL = getClass.getClassLoader.getResource(file)
     val readFromJavaPath: java.nio.file.Path = java.nio.file.Paths.get(readFromJavaResource.toURI).toAbsolutePath
@@ -29,10 +30,18 @@ object Main extends IOApp.Simple {
     .through(entitiesParser(Parsers.service))
     .evalTap(IO.println)
 
-  override def run: IO[Unit] = for {
-    _ <- IO.println("Processing stream of products")
-    _ <- productsStream("products.csv").compile.drain
-    _ <- IO.println("Processing stream of services")
-    _ <- servicesStream("services.csv").compile.drain
-  } yield ()
+  override def run(args: List[String]): IO[ExitCode] = {
+    /*
+    val maybeProductsAndServices: Option[(String, String)] = Try {
+      (args(0), args(1))
+    }.toOption
+     */
+    for {
+      _ <- IO.println("Processing products.csv and services.csv")
+      _ <- IO.println("Processing stream of products")
+      _ <- productsStream("products.csv").compile.drain
+      _ <- IO.println("Processing stream of services")
+      _ <- servicesStream("services.csv").compile.drain
+    } yield ExitCode.Success
+  }
 }
