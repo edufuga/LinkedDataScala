@@ -1,20 +1,30 @@
 package com.edufuga.scala.streaming
 
+import com.edufuga.scala.streaming.Patterns.{decimalNumber, word}
+
+import scala.util.matching.Regex
 import scala.util.{Failure, Success, Try}
 
 object Parsers {
+  private val quotedPriceAndCurrency: Regex = s"\"($decimalNumber)\\s($word)\"".r
+
+  def money(price: String): Option[Money] = {
+    val quotedPriceAndCurrency(value, currency) = price
+    Money.mkMoney(value, currency)
+  }
+
   def product(line: String): Option[Product] = {
     Try {
       val Patterns.Products.line(id, name, height, width, depth, weight, manager, price) = line
       Product(
         productId = id,
         productName = name,
-        height = height,
-        width = width,
-        depth = depth,
-        weight = weight,
+        height = height.toInt,
+        width = width.toInt,
+        depth = depth.toInt,
+        weight = weight.toInt,
         productManager = manager,
-        price = price
+        price = money(price)
       )
     } match {
       case Failure(_) =>
@@ -32,7 +42,7 @@ object Parsers {
         serviceName = name,
         products = products,
         productManager = productManager,
-        price = price
+        price = money(price)
       )
     } match {
       case Failure(_) =>

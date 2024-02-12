@@ -1,12 +1,12 @@
 package com.edufuga.scala.streaming
 
 case class Product(
-  productId: String,
-  productName: String,
-  height: String,
-  width: String,
-  depth: String,
-  weight: String,
-  productManager: String,
-  price: String
+  productId: String, // TODO: Use value types or type aliases
+  productName: String, // TODO: Use value types or type aliases
+  height: Int,
+  width: Int,
+  depth: Int,
+  weight: Int,
+  productManager: String, // TODO: Use value types or type aliases
+  price: Option[Money]
 )

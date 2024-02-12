@@ -1,9 +1,9 @@
 package com.edufuga.scala.streaming
 
 case class Service(
-  serviceId: String,
-  serviceName: String,
-  products: String,
-  productManager: String,
-  price: String
+  serviceId: String, // TODO: Use value types or type aliases
+  serviceName: String, // TODO: Use value types or type aliases
+  products: String, // TODO: Use value types or type aliases
+  productManager: String,  // TODO: Use value types or type aliases
+  price: Option[Money]
 )
