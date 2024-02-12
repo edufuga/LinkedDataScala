@@ -22,7 +22,7 @@ Our focus will be on the following technologies:
 
 * [Cats](https://typelevel.org/cats/): Functional Programming in Scala
 * [Cats Effect](https://typelevel.org/cats-effect/): A pure asynchronous runtime for Scala
-* [fs2](https://fs2.io/): Functional Strems for Scala
+* [fs2](https://fs2.io/): Functional Streams for Scala
 * [fs2-data](https://fs2-data.gnieh.org/): Parsing and transforming data in a streaming manner (CSV, XML, JSON)
 
 For more context and details on this and other technologies and the Scala ecosystem, see the (as of this writing) last
