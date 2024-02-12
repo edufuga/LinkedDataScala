@@ -14,12 +14,12 @@ object Patterns {
   val number: Regex = s"$digit+".r
   val word: Regex = s"$characterOrHyphen+".r
   val numericalWord: Regex = s"$characterOrDigit+".r
-  val flexibleCharacters: Regex = s"(?:\\w|\\W)+".r // Any character, at least once.
+  //val flexibleCharacters: Regex = s"(?:\\w|\\W)+".r // Any character, at least once.
 
   // TODO: Include uppercase letter at the beginning of each word?
   val words: Regex = s"(?:$word+)(?:\\s(?:$word))*".r           // possibly several words, separated by whitespaces
   val numericalWords: Regex = s"(?:$numericalWord+)(?:\\s(?:$numericalWord))*".r
-  val flexibleWords: Regex = s"(?:$flexibleCharacters+)(?:\\s(?:$flexibleCharacters))*".r
+  //val flexibleWords: Regex = s"(?:$flexibleCharacters+)(?:\\s(?:$flexibleCharacters))*".r
 
   def digits(cardinality: Int): Regex = s"$digit{$cardinality}".r
 
@@ -96,6 +96,6 @@ object Patterns {
     println(sm)
     println(spr)
 
-    // TODO: Create Scala objects for Product and Service (single entity). Create a Parser.
+    // TODO: Handle errors in the Regex match.
   }
 }
