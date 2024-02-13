@@ -3,20 +3,34 @@ package com.edufuga.scala.streaming
 import ServiceTypes.ServiceId
 import ProductTypes.ProductId
 
-import scala.util.Try
-import scala.xml.{Elem, Group, SpecialNode}
+import scala.util.{Failure, Success, Try}
+import scala.xml.{Elem, Group, Node, NodeSeq, SpecialNode}
 
 object XMLPlayground {
-  def parseServiceId(serviceIdNode: scala.xml.Node): Option[ServiceId] = {
+  def parseServiceId(serviceIdNode: Node): Option[ServiceId] =
     Try {
       (serviceIdNode \ "@id").text
     }.map(ServiceId.apply).toOption
-  }
 
-  def parseProductId(productIdNode: scala.xml.Node): Option[ProductId] = {
+  def parseProductId(productIdNode: Node): Option[ProductId] =
     Try {
       (productIdNode \ "@id").text
     }.map(ProductId.apply).toOption
+
+  def parseProductIds(productsNode: Node): List[ProductId] = {
+    val productList: NodeSeq = productsNode \ "product"
+    productList.map(product => product \@ "id")
+
+    val maybeProductIds: Try[List[ProductId]] = Try {
+      (productsNode \ "product")
+        .map(product => product \@ "id")
+        .map(ProductId.apply)
+        .toList
+    }
+
+    maybeProductIds match
+      case Failure(_) => List.empty
+      case Success(ids) => ids
   }
 
   def main(args: Array[String]): Unit = {
@@ -94,5 +108,8 @@ object XMLPlayground {
     val productNode: Elem = <product id="Z249-1364492" />
     val maybeProductId: Option[ProductId] = parseProductId(productNode)
     println(maybeProductId)
+
+    val productIds = parseProductIds(products)
+    println(productIds)
   }
 }
