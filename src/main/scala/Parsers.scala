@@ -7,14 +7,21 @@ import scala.util.{Failure, Success, Try}
 
 object Parsers {
   private val quotedPriceAndCurrency: Regex = s"\"($decimalNumber)\\s($word)\"".r
-  def money(price: String): Option[Money] = {
+
+  private def money(price: String): Option[Money] =
     Try {
       val quotedPriceAndCurrency(value, currency) = price
       Money.mkMoney(value, currency)
     }.toOption.flatten
-  }
 
-  def product(line: String): Option[Product] = {
+  private def productList(productLine: String): List[String] =
+    productLine
+      .replaceAll("\"", "")
+      .split(",")
+      .map(_.trim)
+      .toList
+
+  def product(line: String): Option[Product] =
     Try {
       val Patterns.Products.line(id, name, height, width, depth, weight, manager, price) = line
       for {
@@ -36,9 +43,8 @@ object Parsers {
         None
       case Success(value) => value.headOption
     }
-  }
 
-  def service(line: String): Option[Service] = {
+  def service(line: String): Option[Service] =
     Try {
       val Patterns.Services.line(id, name, products, productManager, price) = line
       for {
@@ -46,7 +52,7 @@ object Parsers {
         service = Service(
           serviceId = id,
           serviceName = name,
-          products = products,
+          products = productList(products),
           productManager = productManager,
           price = money
         )
@@ -57,7 +63,6 @@ object Parsers {
         None
       case Success(value) => value.headOption
     }
-  }
 
   def main(args: Array[String]): Unit = {
     val productLine = "I241-8776317,Strain Compensator,12,68,15,8,Baldwin.Dirksen@company.org,\"0,50 EUR\""
