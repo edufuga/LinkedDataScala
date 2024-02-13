@@ -111,5 +111,22 @@ object XMLPlayground {
 
     val productIds = parseProductIds(products)
     println(productIds)
+
+    val employee: Elem =
+      <employee>
+        <email>Anamchara.Foerstner@company.org</email>
+        <name>Anamchara Foerstner</name>
+        <address>Jüdenstraße 79, 61467 Leonberg</address>
+        <phone>+49-360-5655698</phone>
+        <productExpert>Inductor, Transistor, Sensor, Gauge, Resonator</productExpert>
+      </employee>
+
+    // TODO: Parse single employee (email, name, address, phone, productExpert)
+
+    // TODO: Parse list of employees
+
+    // TODO: Parse manager (email, name, address, phone) (common with employee fields, except the productExpert).
+
+    // TODO: Parse department (id and name)
   }
 }
