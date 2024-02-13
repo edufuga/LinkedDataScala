@@ -1,6 +1,7 @@
 package com.edufuga.scala.streaming
 
 import ServiceTypes._
+import ProductTypes._
 import Patterns.{decimalNumber, word}
 import scala.util.matching.Regex
 import scala.util.{Failure, Success, Try}
@@ -28,13 +29,13 @@ object Parsers {
       for {
         money <- money(price).toList // This is just here to avoid a weird overload 'error' (bug?) with Option.
         product = Product(
-          productId = id,
-          productName = name,
-          height = height.toInt,
-          width = width.toInt,
-          depth = depth.toInt,
-          weight = weight.toInt,
-          productManager = manager,
+          productId = ProductId(id),
+          productName = ProductName(name),
+          height = Height(height.toInt),
+          width = Width(width.toInt),
+          depth = Depth(depth.toInt),
+          weight = Weight(weight.toInt),
+          productManager = ProductManager(manager),
           price = money
         )
       } yield product
