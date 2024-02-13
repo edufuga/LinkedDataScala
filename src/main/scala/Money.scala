@@ -5,7 +5,7 @@ import scala.util.Try
 
 case class Money(
   value: Float,
-  currency: Currency = Currency.getInstance("EUR")
+  currency: Currency
 )
 
 object Money {
