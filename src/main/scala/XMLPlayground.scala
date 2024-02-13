@@ -32,7 +32,7 @@ object XMLPlayground {
   }
 
   def parseEmployee(employeeNode: Node): Option[Employee] = {
-    val ops: Option[(Email, Name, Address, Phone, List[ProductExpert])] = Try {
+    Try {
       (
         (employeeNode \ "email").text,
         (employeeNode \ "name").text,
@@ -49,14 +49,9 @@ object XMLPlayground {
           Phone.apply(p),
           exp.split(",").map(_.trim).map(ProductExpert.apply).toList
         )
+    }.map {
+      (e, n, a, p, exp) => Employee.apply(e, n, a, p, exp)
     }.toOption
-
-    val maybeEmployee: Option[Employee] = ops.map {
-      (e, n, a, p, exp) =>
-        Employee.apply(e, n, a, p, exp)
-    }
-
-    maybeEmployee
   }
 
   def main(args: Array[String]): Unit = {
