@@ -7,15 +7,15 @@ import scala.util.Try
 import scala.xml.{Elem, Group, SpecialNode}
 
 object XMLPlayground {
-  def parseServiceReference(serviceReferenceNode: scala.xml.Node): Option[ServiceId] = {
+  def parseServiceId(serviceIdNode: scala.xml.Node): Option[ServiceId] = {
     Try {
-      (serviceReferenceNode \ "@id").text
+      (serviceIdNode \ "@id").text
     }.map(ServiceId.apply).toOption
   }
 
-  def parseProductReference(productReferenceNode: scala.xml.Node): Option[ProductId] = {
+  def parseProductId(productIdNode: scala.xml.Node): Option[ProductId] = {
     Try {
-      (productReferenceNode \ "@id").text
+      (productIdNode \ "@id").text
     }.map(ProductId.apply).toOption
   }
 
@@ -88,11 +88,11 @@ object XMLPlayground {
     productList.map(product => product \@ "id").foreach(println)
 
     val serviceNode: Elem = <service id="I241-8776317" />
-    val maybeService: Option[ServiceId] = parseServiceReference(serviceNode)
-    println(maybeService)
+    val maybeServiceId: Option[ServiceId] = parseServiceId(serviceNode)
+    println(maybeServiceId)
 
     val productNode: Elem = <product id="Z249-1364492" />
-    val maybeProduct: Option[ProductId] = parseProductReference(productNode)
-    println(maybeProduct)
+    val maybeProductId: Option[ProductId] = parseProductId(productNode)
+    println(maybeProductId)
   }
 }

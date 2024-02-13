@@ -5,7 +5,7 @@
             <name>Thomas Mueller</name>
             <address>Karl-Liebknecht-Straße 885, 82003 Tettnang</address>
             <phone>+49-8200-38218301</phone>
-        </manager>
+        </manager>+
         <employees>
             <employee>
                 <email>Corinna.Ludwig@company.org</email>
