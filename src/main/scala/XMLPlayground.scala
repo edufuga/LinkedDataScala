@@ -49,9 +49,7 @@ object XMLPlayground {
           Phone.apply(p),
           exp.split(",").map(_.trim).map(ProductExpert.apply).toList
         )
-    }.map {
-      (e, n, a, p, exp) => Employee.apply(e, n, a, p, exp)
-    }.toOption
+    }.map(Employee.apply).toOption
   }
 
   def main(args: Array[String]): Unit = {
