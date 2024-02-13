@@ -51,6 +51,18 @@ object XMLPlayground {
     }.map(Employee.apply).toOption
   }
 
+  def parseEmployees(employeesNode: Node): List[Employee] = {
+    val maybeEmployees: Try[List[Employee]] = Try {
+      (employeesNode \ "employee")
+        .flatMap(parseEmployee)
+        .toList
+    }
+
+    maybeEmployees match
+      case Failure(_) => List.empty
+      case Success(ids) => ids
+  }
+
   def main(args: Array[String]): Unit = {
     import scala.xml._
 
@@ -115,18 +127,22 @@ object XMLPlayground {
         <product id="N733-1946687"/>
       </products>
 
+    println("Parsing a list of products, by hand")
     val productList: NodeSeq = products \ "product"
     productList.foreach(println)
     productList.map(product => product \@ "id").foreach(println)
 
+    println("Parsing a service ID")
     val serviceNode: Elem = <service id="I241-8776317" />
     val maybeServiceId: Option[ServiceId] = parseServiceId(serviceNode)
     println(maybeServiceId)
 
+    println("Parsing a single product ID")
     val productNode: Elem = <product id="Z249-1364492" />
     val maybeProductId: Option[ProductId] = parseProductId(productNode)
     println(maybeProductId)
 
+    println("Parsing product IDs")
     val productIds = parseProductIds(products)
     println(productIds)
 
@@ -139,13 +155,13 @@ object XMLPlayground {
         <productExpert>Inductor, Transistor, Sensor, Gauge, Resonator</productExpert>
       </employee>
 
-    // TODO: Parse single employee (email, name, address, phone, productExpert)
+    println("Parsing single employee (email, name, address, phone, productExpert)")
     val maybeEmployee = parseEmployee(employee)
-    //println(maybeEmployee)
-    // for employee <- maybeEmployee do println(employee)
     for employee <- maybeEmployee yield println(employee)
 
-    // TODO: Parse list of employees
+    println("Parsing list of employees")
+    val maybeEmployees: List[Employee] = parseEmployees(employees)
+    println(maybeEmployees)
 
     // TODO: Parse manager (email, name, address, phone) (common with employee fields, except the productExpert).
 
