@@ -5,7 +5,6 @@ import fs2.io.file.{Files, Path}
 import fs2.{Pipe, Stream, text}
 
 import java.net.URL
-import scala.util.Try
 
 object Main extends IOApp {
   private def pathOf(file: String): Path = {
@@ -31,11 +30,6 @@ object Main extends IOApp {
     .evalTap(IO.println)
 
   override def run(args: List[String]): IO[ExitCode] = {
-    /*
-    val maybeProductsAndServices: Option[(String, String)] = Try {
-      (args(0), args(1))
-    }.toOption
-     */
     for {
       _ <- IO.println("Processing products.csv and services.csv")
       _ <- IO.println("Processing stream of products")

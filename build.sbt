@@ -14,5 +14,6 @@ lazy val root = (project in file("."))
     libraryDependencies ++= Seq(
       "co.fs2" %% "fs2-core" % fs2Version,
       "co.fs2" %% "fs2-io" % fs2Version,
+      "org.scala-lang.modules" %% "scala-xml" % "2.1.0"
     )
   )
