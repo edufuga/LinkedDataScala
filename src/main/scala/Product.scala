@@ -18,7 +18,6 @@ object ProductTypes {
     def apply(value: String): ProductManager = value
   }
 
-
   opaque type Height = Int
   object Height {
     def apply(value: Int): Height = value
