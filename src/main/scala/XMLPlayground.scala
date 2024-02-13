@@ -187,7 +187,83 @@ object XMLPlayground {
     val maybeManager = parseManager(manager)
     println(maybeManager)
 
+    val department: Elem = <dept id="73191" name="Engineering">
+      <manager>
+        <email>Thomas.Mueller@company.org</email>
+        <name>Thomas Mueller</name>
+        <address>Karl-Liebknecht-Straße 885, 82003 Tettnang</address>
+        <phone>+49-8200-38218301</phone>
+      </manager>
+      <employees>
+        <employee>
+          <email>Corinna.Ludwig@company.org</email>
+          <name>Corinna Ludwig</name>
+          <address>Ringstraße 276</address>
+          <phone>+49-1743-24836762</phone>
+          <productExpert>Memristor, Gauge, Encoder</productExpert>
+        </employee>
+        <employee>
+          <email>Karen.Brant@company.org</email>
+          <name>Karen Brant</name>
+          <address>Friedrichstraße 664, 30805 Willich</address>
+          <phone>(00530) 5040048</phone>
+          <productExpert>Inductor</productExpert>
+        </employee>
+        <employee>
+          <email>Manfred.Foth@company.org</email>
+          <name>Manfred Foth</name>
+          <address />
+          <phone />
+          <productExpert>Coil, Transistor, Warp</productExpert>
+        </employee>
+        <employee>
+          <email>Lukas.Gerver@company.org</email>
+          <name>Lukas Gerver</name>
+          <address />
+          <phone />
+          <productExpert>Memristor, Strain</productExpert>
+        </employee>
+        <employee>
+          <email>Herr.Haan.Bader@company.org</email>
+          <name>Herr Haan Bader</name>
+          <address>Cologne Ring 674, 99978 Aach</address>
+          <phone>(05126) 3204437</phone>
+          <productExpert>Oscillator</productExpert>
+        </employee>
+        <employee>
+          <email>Karch.Moeller@company.org</email>
+          <name>Karch Moeller</name>
+          <address />
+          <phone />
+          <productExpert>Breaker, Crystal, Encoder, Capacitor</productExpert>
+        </employee>
+        <employee>
+          <email>Ida.Halle@company.org</email>
+          <name>Ida Halle</name>
+          <address>Lintgasse 557, 40300 Gummersbach</address>
+          <phone>+49-0300-21370617</phone>
+          <productExpert>Transistor, Breaker, Oscillator, Switch, Potentiometer</productExpert>
+        </employee>
+      </employees>
+      <products>
+        <product id="Z249-1364492" />
+        <product id="O184-6903943" />
+        <product id="V404-9975399" />
+        <product id="F344-7012314" />
+        <product id="N463-8050264" />
+        <product id="M605-5951566" />
+        <product id="N733-1946687" />
+      </products>
+      <services>
+        <service id="I241-8776317" />
+        <service id="D215-3449390" />
+      </services>
+    </dept>
+
+    println(department)
+
     // TODO: Parse department
     //  (id and name as attributes, and FOUR instances within (manager, employees, products, services))
+
   }
 }
