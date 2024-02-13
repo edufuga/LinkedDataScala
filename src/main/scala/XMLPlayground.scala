@@ -21,8 +21,7 @@ object XMLPlayground {
   def parseProductIds(productsNode: Node): List[ProductId] = {
     val maybeProductIds: Try[List[ProductId]] = Try {
       (productsNode \ "product")
-        .map(product => product \@ "id")
-        .map(ProductId.apply)
+        .flatMap(parseProductId)
         .toList
     }
 
