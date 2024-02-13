@@ -2,6 +2,7 @@ package com.edufuga.scala.streaming
 
 import ServiceTypes.ServiceId
 import ProductTypes.ProductId
+import PersonTypes._
 import EmployeeTypes._
 
 import scala.util.{Failure, Success, Try}
@@ -61,6 +62,25 @@ object XMLPlayground {
     maybeEmployees match
       case Failure(_) => List.empty
       case Success(ids) => ids
+  }
+
+  def parseManager(managerNode: Node): Option[Manager] = {
+    Try {
+      (
+        (managerNode \ "email").text,
+        (managerNode \ "name").text,
+        (managerNode \ "address").text,
+        (managerNode \ "phone").text,
+      )
+    }.map {
+      (e, n, a, p) =>
+        (
+          Email.apply(e),
+          Name.apply(n),
+          Address.apply(a),
+          Phone.apply(p)
+        )
+    }.map(Manager.apply).toOption
   }
 
   def main(args: Array[String]): Unit = {
@@ -163,7 +183,9 @@ object XMLPlayground {
     val maybeEmployees: List[Employee] = parseEmployees(employees)
     println(maybeEmployees)
 
-    // TODO: Parse manager (email, name, address, phone) (common with employee fields, except the productExpert).
+    println("Parsing manager (email, name, address, phone)")
+    val maybeManager = parseManager(manager)
+    println(maybeManager)
 
     // TODO: Parse department (id and name)
   }
