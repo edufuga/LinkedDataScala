@@ -2,6 +2,7 @@ package com.edufuga.scala.streaming
 
 import ServiceTypes.ServiceId
 import ProductTypes.ProductId
+import EmployeeTypes._
 
 import scala.util.{Failure, Success, Try}
 import scala.xml.{Elem, Group, Node, NodeSeq, SpecialNode}
@@ -18,9 +19,6 @@ object XMLPlayground {
     }.map(ProductId.apply).toOption
 
   def parseProductIds(productsNode: Node): List[ProductId] = {
-    val productList: NodeSeq = productsNode \ "product"
-    productList.map(product => product \@ "id")
-
     val maybeProductIds: Try[List[ProductId]] = Try {
       (productsNode \ "product")
         .map(product => product \@ "id")
@@ -31,6 +29,34 @@ object XMLPlayground {
     maybeProductIds match
       case Failure(_) => List.empty
       case Success(ids) => ids
+  }
+
+  def parseEmployee(employeeNode: Node): Option[Employee] = {
+    val ops: Option[(Email, Name, Address, Phone, List[ProductExpert])] = Try {
+      (
+        (employeeNode \ "email").text,
+        (employeeNode \ "name").text,
+        (employeeNode \ "address").text,
+        (employeeNode \ "phone").text,
+        (employeeNode \ "productExpert").text
+      )
+    }.map {
+      (e, n, a, p, exp) =>
+        (
+          Email.apply(e),
+          Name.apply(n),
+          Address.apply(a),
+          Phone.apply(p),
+          exp.split(",").map(_.trim).map(ProductExpert.apply).toList
+        )
+    }.toOption
+
+    val maybeEmployee: Option[Employee] = ops.map {
+      (e, n, a, p, exp) =>
+        Employee.apply(e, n, a, p, exp)
+    }
+
+    maybeEmployee
   }
 
   def main(args: Array[String]): Unit = {
@@ -122,6 +148,10 @@ object XMLPlayground {
       </employee>
 
     // TODO: Parse single employee (email, name, address, phone, productExpert)
+    val maybeEmployee = parseEmployee(employee)
+    //println(maybeEmployee)
+    // for employee <- maybeEmployee do println(employee)
+    for employee <- maybeEmployee yield println(employee)
 
     // TODO: Parse list of employees
 

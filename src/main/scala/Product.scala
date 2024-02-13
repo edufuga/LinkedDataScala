@@ -1,7 +1,5 @@
 package com.edufuga.scala.streaming
 
-import ProductTypes._
-
 object ProductTypes {
   opaque type ProductId = String
   object ProductId {
@@ -38,6 +36,8 @@ object ProductTypes {
     def apply(value: Int): Depth = value
   }
 }
+
+import ProductTypes._
 
 case class Product(
   productId: ProductId,

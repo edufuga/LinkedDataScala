@@ -1,8 +1,5 @@
 package com.edufuga.scala.streaming
 
-import ServiceTypes._
-import ProductTypes.{ProductId, ProductManager}
-
 object ServiceTypes {
   opaque type ServiceId = String
   object ServiceId {
@@ -14,6 +11,9 @@ object ServiceTypes {
     def apply(value: String): ServiceName = value
   }
 }
+
+import ServiceTypes._
+import ProductTypes.{ProductId, ProductManager}
 
 case class Service(
   serviceId: ServiceId,
