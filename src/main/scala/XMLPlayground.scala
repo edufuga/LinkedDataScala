@@ -1,6 +1,24 @@
 package com.edufuga.scala.streaming
 
+import ServiceTypes.ServiceId
+import ProductTypes.ProductId
+
+import scala.util.Try
+import scala.xml.{Elem, Group, SpecialNode}
+
 object XMLPlayground {
+  def parseServiceReference(serviceReferenceNode: scala.xml.Node): Option[ServiceId] = {
+    Try {
+      (serviceReferenceNode \ "@id").text
+    }.map(ServiceId.apply).toOption
+  }
+
+  def parseProductReference(productReferenceNode: scala.xml.Node): Option[ProductId] = {
+    Try {
+      (productReferenceNode \ "@id").text
+    }.map(ProductId.apply).toOption
+  }
+
   def main(args: Array[String]): Unit = {
     import scala.xml._
 
@@ -68,5 +86,13 @@ object XMLPlayground {
     val productList: NodeSeq = products \ "product"
     productList.foreach(println)
     productList.map(product => product \@ "id").foreach(println)
+
+    val serviceNode: Elem = <service id="I241-8776317" />
+    val maybeService: Option[ServiceId] = parseServiceReference(serviceNode)
+    println(maybeService)
+
+    val productNode: Elem = <product id="Z249-1364492" />
+    val maybeProduct: Option[ProductId] = parseProductReference(productNode)
+    println(maybeProduct)
   }
 }
