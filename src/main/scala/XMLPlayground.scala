@@ -187,6 +187,7 @@ object XMLPlayground {
     val maybeManager = parseManager(manager)
     println(maybeManager)
 
-    // TODO: Parse department (id and name)
+    // TODO: Parse department
+    //  (id and name as attributes, and FOUR instances within (manager, employees, products, services)
   }
 }
