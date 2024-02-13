@@ -188,6 +188,6 @@ object XMLPlayground {
     println(maybeManager)
 
     // TODO: Parse department
-    //  (id and name as attributes, and FOUR instances within (manager, employees, products, services)
+    //  (id and name as attributes, and FOUR instances within (manager, employees, products, services))
   }
 }
