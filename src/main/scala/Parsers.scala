@@ -1,7 +1,7 @@
 package com.edufuga.scala.streaming
 
+import ServiceTypes._
 import Patterns.{decimalNumber, word}
-
 import scala.util.matching.Regex
 import scala.util.{Failure, Success, Try}
 
@@ -14,11 +14,12 @@ object Parsers {
       Money.mkMoney(value, currency)
     }.toOption.flatten
 
-  private def productList(productLine: String): List[String] =
+  private def productList(productLine: String): List[ProductId] =
     productLine
       .replaceAll("\"", "")
       .split(",")
       .map(_.trim)
+      .map(ProductId.apply)
       .toList
 
   def product(line: String): Option[Product] =
@@ -50,10 +51,10 @@ object Parsers {
       for {
         money <- money(price).toList // This is just here to avoid a weird overload 'error' (bug?) with Option.
         service = Service(
-          serviceId = id,
-          serviceName = name,
+          serviceId = ServiceId(id),
+          serviceName = ServiceName(name),
           products = productList(products),
-          productManager = productManager,
+          productManager = ProductManager(productManager),
           price = money
         )
       } yield service

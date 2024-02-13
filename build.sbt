@@ -7,6 +7,7 @@ val fs2Version = "3.9.4"
 lazy val root = (project in file("."))
   .enablePlugins(JavaAppPackaging)
   .settings(
+    Compile / run / fork := true,
     name := "Streaming",
     idePackagePrefix := Some("com.edufuga.scala.streaming"),
     mainClass := Some("com.edufuga.scala.streaming.Main"),
