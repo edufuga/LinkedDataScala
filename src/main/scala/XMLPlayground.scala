@@ -100,6 +100,14 @@ object XMLPlayground {
       Department.apply(departmentId, departmentName, manager, employees, productIds, serviceIds)
     }.toOption
 
+  def parseOrganisation(organisationNode: Node): Option[Organisation] = {
+    Try {
+      (organisationNode \ "dept")
+        .flatMap(parseDepartment)
+        .toList
+    }.map(Organisation.apply).toOption
+  }
+
   def main(args: Array[String]): Unit = {
     import scala.xml.*
 
@@ -795,5 +803,9 @@ object XMLPlayground {
     val organizationDepartments: List[Department] = orgDepartments.flatMap(parseDepartment).toList
 
     organizationDepartments.foreach(println)
+
+    println("Parsing Organisation entity")
+    val maybeOrganisation: Option[Organisation] = parseOrganisation(organisation)
+    println(maybeOrganisation)
   }
 }
