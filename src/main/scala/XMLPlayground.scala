@@ -293,7 +293,5 @@ object XMLPlayground {
     maybeDepartment.map(_.employees).foreach(println)
     maybeDepartment.map(_.productIds).foreach(println)
     maybeDepartment.map(_.serviceIds).foreach(println)
-
-    // TODO: Use PATTERN MATCHING for parsing the department XML.
   }
 }
