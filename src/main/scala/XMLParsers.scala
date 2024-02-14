@@ -10,20 +10,20 @@ import scala.util.{Failure, Success, Try}
 import scala.xml.Node
 
 object XMLParsers {
-  def parseServiceId(serviceIdNode: Node): Option[ServiceId] =
+  def serviceId(serviceIdNode: Node): Option[ServiceId] =
     Try {
       (serviceIdNode \ "@id").text
     }.map(ServiceId.apply).toOption
 
-  def parseProductId(productIdNode: Node): Option[ProductId] =
+  def productId(productIdNode: Node): Option[ProductId] =
     Try {
       (productIdNode \ "@id").text
     }.map(ProductId.apply).toOption
 
-  def parseProductIds(productsNode: Node): List[ProductId] = {
+  def productIds(productsNode: Node): List[ProductId] = {
     val maybeProductIds: Try[List[ProductId]] = Try {
       (productsNode \ "product")
-        .flatMap(parseProductId)
+        .flatMap(productId)
         .toList
     }
 
@@ -32,7 +32,7 @@ object XMLParsers {
       case Success(ids) => ids
   }
 
-  def parseEmployee(employeeNode: Node): Option[Employee] = {
+  def employee(employeeNode: Node): Option[Employee] = {
     Try {
       (
         (employeeNode \ "email").text,
@@ -53,10 +53,10 @@ object XMLParsers {
     }.map(Employee.apply).toOption
   }
 
-  def parseEmployees(employeesNode: Node): List[Employee] = {
+  def employees(employeesNode: Node): List[Employee] = {
     val maybeEmployees: Try[List[Employee]] = Try {
       (employeesNode \ "employee")
-        .flatMap(parseEmployee)
+        .flatMap(employee)
         .toList
     }
 
@@ -65,7 +65,7 @@ object XMLParsers {
       case Success(ids) => ids
   }
 
-  def parseManager(managerNode: Node): Option[Manager] = {
+  def manager(managerNode: Node): Option[Manager] = {
     Try {
       (
         (managerNode \ "email").text,
@@ -78,32 +78,32 @@ object XMLParsers {
     }.map(Manager.apply).toOption
   }
 
-  def parseDepartment(departmentNode: Node): Option[Department] =
+  def department(departmentNode: Node): Option[Department] =
     Try {
       (
         DepartmentId(departmentNode \@ "id"),
         DepartmentName(departmentNode \@ "name"),
         (departmentNode \ "manager")
-          .flatMap(parseManager)
+          .flatMap(manager)
           .head, // Only one "manager", but "\" always returns a NodeSeq
         (departmentNode \ "employees" \ "employee")
-          .flatMap(parseEmployee)
+          .flatMap(employee)
           .toList,
         (departmentNode \ "products" \ "product")
-          .flatMap(parseProductId)
+          .flatMap(productId)
           .toList,
         (departmentNode \ "services" \ "service")
-          .flatMap(parseServiceId)
+          .flatMap(serviceId)
           .toList,
       )
     }.map { (departmentId, departmentName, manager, employees, productIds, serviceIds) =>
       Department.apply(departmentId, departmentName, manager, employees, productIds, serviceIds)
     }.toOption
 
-  def parseOrganisation(organisationNode: Node): Option[Organisation] = {
+  def organisation(organisationNode: Node): Option[Organisation] = {
     Try {
       (organisationNode \ "dept")
-        .flatMap(parseDepartment)
+        .flatMap(department)
         .toList
     }.map(Organisation.apply).toOption
   }
@@ -119,7 +119,7 @@ object XMLParsers {
     </a>
     println(moreStuff)
 
-    val manager: Elem =
+    val managerNode: Elem =
       <manager>
         <email>Thomas.Mueller@company.org</email>
         <name>Thomas Mueller</name>
@@ -127,11 +127,11 @@ object XMLParsers {
         <phone>+49-8200-38218301</phone>
       </manager>
 
-    println(manager)
-    println(manager \ "email")
-    println((manager \ "email").text)
+    println(managerNode)
+    println(managerNode \ "email")
+    println((managerNode \ "email").text)
 
-    val employees: Elem =
+    val employeesNode: Elem =
       <employees>
         <employee>
           <email>Corinna.Ludwig@company.org</email>
@@ -149,10 +149,10 @@ object XMLParsers {
         </employee>
       </employees>
 
-    val twoEmployees: NodeSeq = employees \\ "employee"
+    val twoEmployees: NodeSeq = employeesNode \\ "employee"
     twoEmployees.foreach(println)
 
-    val emails = employees \ "employee" \ "email"
+    val emails = employeesNode \ "employee" \ "email"
     println(emails)
 
     val dep: Elem = <dept id="73191" name="Engineering"/>
@@ -179,19 +179,19 @@ object XMLParsers {
 
     println("Parsing a service ID")
     val serviceNode: Elem = <service id="I241-8776317" />
-    val maybeServiceId: Option[ServiceId] = parseServiceId(serviceNode)
+    val maybeServiceId: Option[ServiceId] = serviceId(serviceNode)
     println(maybeServiceId)
 
     println("Parsing a single product ID")
     val productNode: Elem = <product id="Z249-1364492" />
-    val maybeProductId: Option[ProductId] = parseProductId(productNode)
+    val maybeProductId: Option[ProductId] = productId(productNode)
     println(maybeProductId)
 
     println("Parsing product IDs")
-    val productIds = parseProductIds(products)
-    println(productIds)
+    val listOfProductIds = productIds(products)
+    println(listOfProductIds)
 
-    val employee: Elem =
+    val employeeNode: Elem =
       <employee>
         <email>Anamchara.Foerstner@company.org</email>
         <name>Anamchara Foerstner</name>
@@ -201,18 +201,18 @@ object XMLParsers {
       </employee>
 
     println("Parsing single employee (email, name, address, phone, productExpert)")
-    val maybeEmployee = parseEmployee(employee)
+    val maybeEmployee = employee(employeeNode)
     for employee <- maybeEmployee yield println(employee)
 
     println("Parsing list of employees")
-    val maybeEmployees: List[Employee] = parseEmployees(employees)
+    val maybeEmployees: List[Employee] = employees(employeesNode)
     println(maybeEmployees)
 
     println("Parsing manager (email, name, address, phone)")
-    val maybeManager = parseManager(manager)
+    val maybeManager = manager(managerNode)
     println(maybeManager)
 
-    val department: Elem = <dept id="73191" name="Engineering">
+    val departmentNode: Elem = <dept id="73191" name="Engineering">
       <manager>
         <email>Thomas.Mueller@company.org</email>
         <name>Thomas Mueller</name>
@@ -285,16 +285,16 @@ object XMLParsers {
       </services>
     </dept>
 
-    println(department)
-    println(department \@ "id")
-    println(department \@ "name")
-    println(department \ "manager")
-    println((department \ "employees" \ "employee").size)
-    println((department \ "products" \ "product").size)
-    println((department \ "services" \ "service").size)
+    println(departmentNode)
+    println(departmentNode \@ "id")
+    println(departmentNode \@ "name")
+    println(departmentNode \ "manager")
+    println((departmentNode \ "employees" \ "employee").size)
+    println((departmentNode \ "products" \ "product").size)
+    println((departmentNode \ "services" \ "service").size)
 
     println("Parsing Department entity")
-    val maybeDepartment: Option[Department] = parseDepartment(department)
+    val maybeDepartment: Option[Department] = department(departmentNode)
     println(maybeDepartment)
 
     maybeDepartment.map(_.manager).foreach(println)
@@ -303,7 +303,7 @@ object XMLParsers {
     maybeDepartment.map(_.serviceIds).foreach(println)
 
     /* Full organisation XML */
-    val organisation: Elem = <orgmap>
+    val organisationNode: Elem = <orgmap>
       <dept id="73191" name="Engineering">
         <manager>
           <email>Thomas.Mueller@company.org</email>
@@ -796,16 +796,16 @@ object XMLParsers {
       </dept>
     </orgmap>
 
-    println(organisation.size)
-    println((organisation \ "dept").size)
+    println(organisationNode.size)
+    println((organisationNode \ "dept").size)
 
-    val orgDepartments: NodeSeq = (organisation \ "dept")
-    val organizationDepartments: List[Department] = orgDepartments.flatMap(parseDepartment).toList
+    val orgDepartments: NodeSeq = (organisationNode \ "dept")
+    val organizationDepartments: List[Department] = orgDepartments.flatMap(department).toList
 
     organizationDepartments.foreach(println)
 
     println("Parsing Organisation entity")
-    val maybeOrganisation: Option[Organisation] = parseOrganisation(organisation)
+    val maybeOrganisation: Option[Organisation] = organisation(organisationNode)
     println(maybeOrganisation)
   }
 }
