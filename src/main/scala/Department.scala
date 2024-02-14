@@ -13,11 +13,15 @@ object DepartmentTypes {
   }
 }
 
-import DepartmentTypes._
+import DepartmentTypes.*
+import ProductTypes.ProductId
+import ServiceTypes.ServiceId
+
 case class Department(
   id: DepartmentId,
   name: DepartmentName,
-  // TODO: Manager, Employees, products, services
   manager: Manager,
-  employees: List[Employee]
+  employees: List[Employee],
+  productIds: List[ProductId],
+  serviceIds: List[ServiceId]
 )

@@ -46,8 +46,8 @@ object XMLPlayground {
         (
           Email(e),
           Name(n),
-          Option(a).filter(_.nonEmpty).map(Address.apply),
-          Option(p).filter(_.nonEmpty).map(Phone.apply),
+          Option(a).filter(_.nonEmpty).map(Address.apply), // address is optional
+          Option(p).filter(_.nonEmpty).map(Phone.apply),   // phone is optional
           exp.split(",").map(_.trim).map(ProductExpert.apply).toList
         )
     }.map(Employee.apply).toOption
@@ -83,13 +83,21 @@ object XMLPlayground {
       (
         DepartmentId(departmentNode \@ "id"),
         DepartmentName(departmentNode \@ "name"),
-        (departmentNode \ "manager").flatMap(parseManager).head, // Only one "manager", but "\" always returns a NodeSeq
+        (departmentNode \ "manager")
+          .flatMap(parseManager)
+          .head, // Only one "manager", but "\" always returns a NodeSeq
         (departmentNode \ "employees" \ "employee")
           .flatMap(parseEmployee)
-          .toList
+          .toList,
+        (departmentNode \ "products" \ "product")
+          .flatMap(parseProductId)
+          .toList,
+        (departmentNode \ "services" \ "service")
+          .flatMap(parseServiceId)
+          .toList,
       )
-    }.map { (departmentId, departmentName, manager, employees) =>
-      Department.apply(departmentId, departmentName, manager, employees)
+    }.map { (departmentId, departmentName, manager, employees, productIds, serviceIds) =>
+      Department.apply(departmentId, departmentName, manager, employees, productIds, serviceIds)
     }.toOption
 
   def main(args: Array[String]): Unit = {
@@ -277,15 +285,15 @@ object XMLPlayground {
     println((department \ "products" \ "product").size)
     println((department \ "services" \ "service").size)
 
-    // TODO: Parse department
-    //  (id and name as attributes, and FOUR instances within (manager, employees, products, services))
+    println("Parsing Department entity")
     val maybeDepartment: Option[Department] = parseDepartment(department)
     println(maybeDepartment)
 
     maybeDepartment.map(_.manager).foreach(println)
     maybeDepartment.map(_.employees).foreach(println)
+    maybeDepartment.map(_.productIds).foreach(println)
+    maybeDepartment.map(_.serviceIds).foreach(println)
 
     // TODO: Use PATTERN MATCHING for parsing the department XML.
-
   }
 }
