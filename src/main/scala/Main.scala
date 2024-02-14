@@ -5,6 +5,7 @@ import fs2.io.file.{Files, Path}
 import fs2.{Pipe, Stream, text}
 
 import java.net.URL
+import scala.xml.XML.loadFile
 
 object Main extends IOApp {
   private def pathOf(file: String): Path = {
@@ -19,6 +20,9 @@ object Main extends IOApp {
       .drop(1)
       .map(toMaybeEntity)
 
+  def xmlParser[F[_], E](toMaybeEntity: String => Option[E]): Pipe[F, Byte, Option[E]] =
+    _.through(text.utf8.decode).map(toMaybeEntity)
+
   def productsStream(file: String): Stream[IO, Option[Product]] =
     Files[IO].readAll(pathOf(file))
     .through(entitiesParser(CSVParsers.product))
@@ -29,13 +33,21 @@ object Main extends IOApp {
     .through(entitiesParser(CSVParsers.service))
     .evalTap(IO.println)
 
+  def organisation(file: String): Option[Organisation] = {
+    val organisationNode: xml.Elem = loadFile(pathOf(file).toString)
+    val maybeOrganisation: Option[Organisation] = XMLParsers.organisation(organisationNode)
+    maybeOrganisation
+  }
+
   override def run(args: List[String]): IO[ExitCode] = {
     for {
-      _ <- IO.println("Processing products.csv and services.csv")
+      _ <- IO.println("Processing 'products.csv' and 'services.csv'")
       _ <- IO.println("Processing stream of products")
       _ <- productsStream("products.csv").compile.drain
       _ <- IO.println("Processing stream of services")
       _ <- servicesStream("services.csv").compile.drain
+      _ <- IO.println("Processing the organisation file 'orgmap.xml'")
+      _ = organisation("orgmap.xml").foreach(println)
     } yield ExitCode.Success
   }
 }
