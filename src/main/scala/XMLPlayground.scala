@@ -265,5 +265,7 @@ object XMLPlayground {
     // TODO: Parse department
     //  (id and name as attributes, and FOUR instances within (manager, employees, products, services))
 
+    // TODO: Use PATTERN MATCHING for parsing the department XML.
+
   }
 }
