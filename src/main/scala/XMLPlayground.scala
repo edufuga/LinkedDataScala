@@ -4,6 +4,7 @@ import ServiceTypes.ServiceId
 import ProductTypes.ProductId
 import PersonTypes._
 import EmployeeTypes._
+import DepartmentTypes._
 
 import scala.util.{Failure, Success, Try}
 import scala.xml.{Elem, Group, Node, NodeSeq, SpecialNode}
@@ -43,10 +44,10 @@ object XMLPlayground {
     }.map {
       (e, n, a, p, exp) =>
         (
-          Email.apply(e),
-          Name.apply(n),
-          Address.apply(a),
-          Phone.apply(p),
+          Email(e),
+          Name(n),
+          Address(a),
+          Phone(p),
           exp.split(",").map(_.trim).map(ProductExpert.apply).toList
         )
     }.map(Employee.apply).toOption
@@ -72,15 +73,17 @@ object XMLPlayground {
         (managerNode \ "address").text,
         (managerNode \ "phone").text,
       )
-    }.map {
-      (e, n, a, p) =>
-        (
-          Email.apply(e),
-          Name.apply(n),
-          Address.apply(a),
-          Phone.apply(p)
-        )
+    }.map { (e, n, a, p) =>
+      (Email(e), Name(n), Address(a), Phone(p))
     }.map(Manager.apply).toOption
+  }
+
+  def parseDepartment(departmentNode: Node): Option[Department] = {
+    Try {
+      (departmentNode \@ "id", departmentNode \@ "name")
+    }.map { (i, n) =>
+      (DepartmentId(i), DepartmentName(n))
+    }.map(Department.apply).toOption
   }
 
   def main(args: Array[String]): Unit = {
@@ -261,9 +264,17 @@ object XMLPlayground {
     </dept>
 
     println(department)
+    println(department \@ "id")
+    println(department \@ "name")
+    println(department \ "manager")
+    println((department \ "employees" \ "employee").size)
+    println((department \ "products" \ "product").size)
+    println((department \ "services" \ "service").size)
 
     // TODO: Parse department
     //  (id and name as attributes, and FOUR instances within (manager, employees, products, services))
+    val maybeDepartment: Option[Department] = parseDepartment(department)
+    println(maybeDepartment)
 
     // TODO: Use PATTERN MATCHING for parsing the department XML.
 
