@@ -33,11 +33,8 @@ object Main extends IOApp {
     .through(entitiesParser(CSVParsers.service))
     .evalTap(IO.println)
 
-  def organisation(file: String): Option[Organisation] = {
-    val organisationNode: xml.Elem = loadFile(pathOf(file).toString)
-    val maybeOrganisation: Option[Organisation] = XMLParsers.organisation(organisationNode)
-    maybeOrganisation
-  }
+  def organisation(file: String): Option[Organisation] =
+    XMLParsers.organisation(loadFile(pathOf(file).toString))
 
   override def run(args: List[String]): IO[ExitCode] = {
     for {
