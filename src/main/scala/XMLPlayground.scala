@@ -79,11 +79,17 @@ object XMLPlayground {
   }
 
   def parseDepartment(departmentNode: Node): Option[Department] = {
-    Try {
-      (departmentNode \@ "id", departmentNode \@ "name")
-    }.map { (i, n) =>
-      (DepartmentId(i), DepartmentName(n))
-    }.map(Department.apply).toOption
+    val maybeManager = (departmentNode \ "manager").flatMap(parseManager).toList.headOption
+    val maybeDepartment: Option[Department] = maybeManager.map { manager =>
+      val departmentId: DepartmentId = DepartmentId(departmentNode \@ "id")
+      val departmentName: DepartmentName = DepartmentName(departmentNode \@ "name")
+      val employees: List[Employee] = (departmentNode \ "employees" \ "employee")
+        .flatMap(parseEmployee)
+        .toList
+      val department = Department.apply(departmentId, departmentName, manager, employees)
+      department
+    }
+    maybeDepartment
   }
 
   def main(args: Array[String]): Unit = {
@@ -275,7 +281,7 @@ object XMLPlayground {
     //  (id and name as attributes, and FOUR instances within (manager, employees, products, services))
     val maybeDepartment: Option[Department] = parseDepartment(department)
     println(maybeDepartment)
-
+    
     // TODO: Use PATTERN MATCHING for parsing the department XML.
 
   }

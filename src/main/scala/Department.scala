@@ -15,6 +15,9 @@ object DepartmentTypes {
 
 import DepartmentTypes._
 case class Department(
-  departmentId: DepartmentId,
-  name: DepartmentName
+  id: DepartmentId,
+  name: DepartmentName,
+  // TODO: Manager, Employees, products, services
+  manager: Manager,
+  employees: List[Employee]
 )
