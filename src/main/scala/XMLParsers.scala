@@ -9,7 +9,7 @@ import ServiceTypes.ServiceId
 import scala.util.{Failure, Success, Try}
 import scala.xml.Node
 
-object XMLPlayground {
+object XMLParsers {
   def parseServiceId(serviceIdNode: Node): Option[ServiceId] =
     Try {
       (serviceIdNode \ "@id").text
