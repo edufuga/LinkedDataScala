@@ -1,13 +1,13 @@
 package com.edufuga.scala.streaming
 
-import ServiceTypes.ServiceId
+import DepartmentTypes.*
+import EmployeeTypes.*
+import PersonTypes.*
 import ProductTypes.ProductId
-import PersonTypes._
-import EmployeeTypes._
-import DepartmentTypes._
+import ServiceTypes.ServiceId
 
 import scala.util.{Failure, Success, Try}
-import scala.xml.{Elem, Group, Node, NodeSeq, SpecialNode}
+import scala.xml.Node
 
 object XMLPlayground {
   def parseServiceId(serviceIdNode: Node): Option[ServiceId] =
@@ -101,7 +101,7 @@ object XMLPlayground {
     }.toOption
 
   def main(args: Array[String]): Unit = {
-    import scala.xml._
+    import scala.xml.*
 
     val stuff: Elem = <a>stuff</a>
     println(stuff)
