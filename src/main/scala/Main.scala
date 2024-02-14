@@ -21,12 +21,12 @@ object Main extends IOApp {
 
   def productsStream(file: String): Stream[IO, Option[Product]] =
     Files[IO].readAll(pathOf(file))
-    .through(entitiesParser(Parsers.product))
+    .through(entitiesParser(CSVParsers.product))
     .evalTap(IO.println)
 
   def servicesStream(file: String): Stream[IO, Option[Service]] =
     Files[IO].readAll(pathOf(file))
-    .through(entitiesParser(Parsers.service))
+    .through(entitiesParser(CSVParsers.service))
     .evalTap(IO.println)
 
   override def run(args: List[String]): IO[ExitCode] = {
