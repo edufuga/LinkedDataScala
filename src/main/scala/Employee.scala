@@ -13,7 +13,7 @@ import EmployeeTypes._
 case class Employee(
   email: Email,
   name: Name,
-  address: Address,
-  phone: Phone,
+  address: Option[Address],
+  phone: Option[Phone],
   productExpert: List[ProductExpert]
 )

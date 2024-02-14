@@ -46,8 +46,8 @@ object XMLPlayground {
         (
           Email(e),
           Name(n),
-          Address(a),
-          Phone(p),
+          Option(a).filter(_.nonEmpty).map(Address.apply),
+          Option(p).filter(_.nonEmpty).map(Phone.apply),
           exp.split(",").map(_.trim).map(ProductExpert.apply).toList
         )
     }.map(Employee.apply).toOption
