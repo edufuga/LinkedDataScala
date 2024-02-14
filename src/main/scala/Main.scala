@@ -44,7 +44,7 @@ object Main extends IOApp {
       _ <- IO.println("Processing stream of services")
       _ <- servicesStream("services.csv").compile.drain
       _ <- IO.println("Processing the organisation file 'orgmap.xml'")
-      _ = organisation("orgmap.xml").foreach(println)
+      _ <- IO.println { organisation("orgmap.xml") }
     } yield ExitCode.Success
   }
 }
