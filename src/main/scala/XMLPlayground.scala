@@ -78,19 +78,19 @@ object XMLPlayground {
     }.map(Manager.apply).toOption
   }
 
-  def parseDepartment(departmentNode: Node): Option[Department] = {
-    val maybeManager = (departmentNode \ "manager").flatMap(parseManager).toList.headOption
-    val maybeDepartment: Option[Department] = maybeManager.map { manager =>
-      val departmentId: DepartmentId = DepartmentId(departmentNode \@ "id")
-      val departmentName: DepartmentName = DepartmentName(departmentNode \@ "name")
-      val employees: List[Employee] = (departmentNode \ "employees" \ "employee")
-        .flatMap(parseEmployee)
-        .toList
-      val department = Department.apply(departmentId, departmentName, manager, employees)
-      department
-    }
-    maybeDepartment
-  }
+  def parseDepartment(departmentNode: Node): Option[Department] =
+    Try {
+      (
+        DepartmentId(departmentNode \@ "id"),
+        DepartmentName(departmentNode \@ "name"),
+        (departmentNode \ "manager").flatMap(parseManager).head, // Only one "manager", but "\" always returns a NodeSeq
+        (departmentNode \ "employees" \ "employee")
+          .flatMap(parseEmployee)
+          .toList
+      )
+    }.map { (departmentId, departmentName, manager, employees) =>
+      Department.apply(departmentId, departmentName, manager, employees)
+    }.toOption
 
   def main(args: Array[String]): Unit = {
     import scala.xml._
@@ -281,7 +281,10 @@ object XMLPlayground {
     //  (id and name as attributes, and FOUR instances within (manager, employees, products, services))
     val maybeDepartment: Option[Department] = parseDepartment(department)
     println(maybeDepartment)
-    
+
+    maybeDepartment.map(_.manager).foreach(println)
+    maybeDepartment.map(_.employees).foreach(println)
+
     // TODO: Use PATTERN MATCHING for parsing the department XML.
 
   }
