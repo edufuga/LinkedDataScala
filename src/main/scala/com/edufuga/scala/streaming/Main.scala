@@ -3,8 +3,8 @@ package com.edufuga.scala.streaming
 import com.edufuga.scala.core.{Organisation, Service}
 
 import cats.effect.{ExitCode, IO, IOApp}
-import com.edufuga.scala.data.csv.CSVParsers
-import com.edufuga.scala.data.xml.XMLParsers
+import com.edufuga.scala.data.parsers.csv.CSVParsers
+import com.edufuga.scala.data.parsers.xml.XMLParsers
 import fs2.io.file.{Files, Path}
 import fs2.{Pipe, Stream, text}
 
