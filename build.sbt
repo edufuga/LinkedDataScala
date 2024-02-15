@@ -14,11 +14,7 @@ lazy val root = (project in file("."))
   .settings(
     name := "Streaming",
     mainClass := Some("com.edufuga.scala.streaming.Main"),
-    maintainer := " efugarolas@brox.de",
-    libraryDependencies ++= Seq(
-      "co.fs2" %% "fs2-core" % fs2Version,
-      "co.fs2" %% "fs2-io" % fs2Version
-    )
+    maintainer := " efugarolas@brox.de"
   )
   .aggregate(core, data)
   .dependsOn(core, data)
