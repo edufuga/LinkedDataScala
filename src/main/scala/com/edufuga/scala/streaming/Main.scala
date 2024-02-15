@@ -37,9 +37,9 @@ object Main extends IOApp {
   override def run(args: List[String]): IO[ExitCode] = {
     for {
       _ <- IO.println("Processing 'products.csv' and 'services.csv'")
-      products = args.head
-      services = args.tail.head
-      orga = args.tail.tail.head
+      products = args(0)
+      services = args(1)
+      orga = args(2)
       _ <- IO.println(s"Processing stream of products '$products'.")
       _ <- productsStream(products).compile.drain
       _ <- IO.println(s"Processing stream of services '$services'.")

@@ -3,6 +3,12 @@
 This is an **example project** showcasing the use of Scala as a statically typed programming language for implementing a
 Linked Data project.
 
+## Running the project
+To run the main program, execute the following command directly from the root directory of the project:
+```sh
+sbt "run src\main\resources\products.csv src\main\resources\services.csv src\main\resources\orgmap.xml"
+```
+
 ## Knowledge Graph: Importing and Persisting
 The main goal of the Linked Data project is to **import** three different files (two CSV files and one XML file) and to
 **transform** this data into a **knowledge graph**. The basis for such a knowledge graph is an **ontology** for
