@@ -8,7 +8,7 @@ import com.edufuga.scala.data.access.streamed.file.{FileStreamedProductsDAO, Fil
 object Main extends IOApp {
   override def run(args: List[String]): IO[ExitCode] = {
     for {
-      _ <- IO.println("Processing 'products.csv' and 'services.csv'")
+      _ <- IO.println("Processing 'products.csv', 'services.csv' and 'orgmap.xml'.")
       products = args(0)
       services = args(1)
       orga = args(2)
