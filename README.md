@@ -13,6 +13,7 @@ Under Unix, run:
 ```shell
 sbt "run src/main/resources/products.csv src/main/resources/services.csv src/main/resources/orgmap.xml"
 ```
+Alternatively, run the `run` scripts in the root directory.
 
 ## Knowledge Graph: Importing and Persisting
 The main goal of the Linked Data project is to **import** three different files (two CSV files and one XML file) and to
