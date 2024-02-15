@@ -20,9 +20,6 @@ object Main extends IOApp {
       .drop(1)
       .map(toMaybeEntity)
 
-  def xmlParser[F[_], E](toMaybeEntity: String => Option[E]): Pipe[F, Byte, Option[E]] =
-    _.through(text.utf8.decode).map(toMaybeEntity)
-
   def productsStream(file: String): Stream[IO, Option[Product]] =
     Files[IO].readAll(pathOf(file))
     .through(entitiesParser(CSVParsers.product))
