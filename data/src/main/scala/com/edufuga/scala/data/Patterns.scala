@@ -1,4 +1,4 @@
-package com.edufuga.scala.streaming
+package com.edufuga.scala.data
 
 import scala.util.matching.Regex
 
@@ -51,12 +51,12 @@ object Patterns {
   }
 
   object Products {
-    import Patterns.{Product => P}
+    import Patterns.Product as P
     val line: Regex = s"$start(${P.productId}),(${P.productName}),(${P.height}),(${P.width}),(${P.depth}),(${P.weight}),(${P.productManager}),(${P.price})$end".r
   }
 
   object Services {
-    import Patterns.{Service => S}
+    import Patterns.Service as S
     val line: Regex = s"$start(${S.serviceId}),(${S.serviceName}),(${S.products}),(${S.productManager}),(${S.price})$end".r
   }
 }

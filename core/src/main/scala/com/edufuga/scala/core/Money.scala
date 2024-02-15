@@ -1,4 +1,4 @@
-package com.edufuga.scala.streaming
+package com.edufuga.scala.core
 
 import java.util.Currency
 import scala.util.Try

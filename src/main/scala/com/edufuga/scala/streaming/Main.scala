@@ -1,5 +1,8 @@
 package com.edufuga.scala.streaming
 
+import com.edufuga.scala.core.{Organisation, Service}
+import com.edufuga.scala.data.{CSVParsers, XMLParsers}
+
 import cats.effect.{ExitCode, IO, IOApp}
 import fs2.io.file.{Files, Path}
 import fs2.{Pipe, Stream, text}

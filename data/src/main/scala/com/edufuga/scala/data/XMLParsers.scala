@@ -1,10 +1,11 @@
-package com.edufuga.scala.streaming
+package com.edufuga.scala.data
 
-import DepartmentTypes.*
-import EmployeeTypes.*
-import PersonTypes.*
-import ProductTypes.ProductId
-import ServiceTypes.ServiceId
+import com.edufuga.scala.core.*
+import com.edufuga.scala.core.DepartmentTypes.*
+import com.edufuga.scala.core.EmployeeTypes.*
+import com.edufuga.scala.core.PersonTypes.*
+import com.edufuga.scala.core.ProductTypes.*
+import com.edufuga.scala.core.ServiceTypes.*
 
 import scala.util.{Failure, Success, Try}
 import scala.xml.Node
