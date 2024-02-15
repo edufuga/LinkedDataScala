@@ -13,7 +13,6 @@ case class FileStreamingServicesDAO(file: String) extends StreamingServicesDAO {
   override def readAll: Stream[IO, Option[Service]] =
     Files[IO].readAll(FileOps.pathOf(file))
       .through(StreamOps.entitiesParser(CSVParsers.service))
-      .evalTap(IO.println)
 
   override def readById(id: ServiceId): Stream[IO, Option[Service]] = readAll.filter(_.exists(_.serviceId.equals(id)))
 }
