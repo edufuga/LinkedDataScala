@@ -2,8 +2,7 @@ package com.edufuga.scala.streaming
 
 import com.edufuga.scala.core.{Organisation, Service}
 import cats.effect.{ExitCode, IO, IOApp}
-import com.edufuga.scala.data.access.streamed.file.FileStreamedProductsDAO
-import com.edufuga.scala.data.parsers.csv.CSVParsers
+import com.edufuga.scala.data.access.streamed.file.{FileStreamedProductsDAO, FileStreamedServicesDAO}
 import com.edufuga.scala.data.parsers.xml.XMLParsers
 import fs2.io.file.{Files, Path}
 import fs2.{Pipe, Stream, text}
@@ -22,12 +21,9 @@ object Main extends IOApp {
       .drop(1)
       .map(toMaybeEntity)
 
-  def productsStream(productsFile: String): Stream[IO, Option[Product]] = FileStreamedProductsDAO(productsFile).readAll
+  def productsStream(file: String): Stream[IO, Option[Product]] = FileStreamedProductsDAO(file).readAll
 
-  def servicesStream(file: String): Stream[IO, Option[Service]] =
-    Files[IO].readAll(pathOf(file))
-    .through(entitiesParser(CSVParsers.service))
-    .evalTap(IO.println)
+  def servicesStream(file: String): Stream[IO, Option[Service]] = FileStreamedServicesDAO(file).readAll
 
   def organisation(file: String): Option[Organisation] =
     XMLParsers.organisation(loadFile(pathOf(file).toString))
