@@ -14,4 +14,4 @@ package com.edufuga.scala.data.access
  * @tparam O Type of the outputted data, independent on the form in which it is returned (optional, IO, Streaming, etc.)
  * @tparam C Type of the 'channel', which wraps the returned objects of type O, themselves wrapped by the effect type F.
  */
-trait EffectfulDAO[I, +F[_], +O, C[+_[_], +_]] extends DAO[I, C[F, O]]
+trait EffectfulDAO[I, C[+_[_], +_], +F[_], +O] extends DAO[I, C[F, O]]
