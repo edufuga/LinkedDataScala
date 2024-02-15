@@ -8,9 +8,9 @@ import com.edufuga.scala.data.parsers.csv.CSVParsers
 import fs2.Stream
 import fs2.io.file.Files
 
-case class FileStreamedProductsDAO(productsFile: String) extends StreamedProductsDAO {
+case class FileStreamedProductsDAO(file: String) extends StreamedProductsDAO {
   override def readAll: Stream[IO, Option[Product]] =
-    Files[IO].readAll(FileOps.pathOf(productsFile))
+    Files[IO].readAll(FileOps.pathOf(file))
       .through(StreamOps.entitiesParser(CSVParsers.product))
       .evalTap(IO.println)
 }
