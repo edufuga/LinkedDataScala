@@ -1,4 +1,4 @@
-package com.edufuga.scala.data
+package com.edufuga.scala.data.xml
 
 import com.edufuga.scala.core.*
 import com.edufuga.scala.core.DepartmentTypes.*

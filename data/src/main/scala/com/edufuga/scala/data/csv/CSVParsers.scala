@@ -1,10 +1,10 @@
-package com.edufuga.scala.data
+package com.edufuga.scala.data.csv
 
 import com.edufuga.scala.core.*
 import com.edufuga.scala.core.ProductTypes.*
 import com.edufuga.scala.core.ServiceTypes.*
-
-import Patterns.{decimalNumber, word}
+import com.edufuga.scala.data.regex.RegexPatterns.{decimalNumber, word}
+import com.edufuga.scala.data.regex.RegexPatterns
 
 import scala.util.matching.Regex
 import scala.util.{Failure, Success, Try}
@@ -28,7 +28,7 @@ object CSVParsers {
 
   def product(line: String): Option[Product] =
     Try {
-      val Patterns.Products.line(id, name, height, width, depth, weight, manager, price) = line
+      val RegexPatterns.Products.line(id, name, height, width, depth, weight, manager, price) = line
       for {
         money <- money(price).toList // This is just here to avoid a weird overload 'error' (bug?) with Option.
         product = Product(
@@ -51,7 +51,7 @@ object CSVParsers {
 
   def service(line: String): Option[Service] =
     Try {
-      val Patterns.Services.line(id, name, products, productManager, price) = line
+      val RegexPatterns.Services.line(id, name, products, productManager, price) = line
       for {
         money <- money(price).toList // This is just here to avoid a weird overload 'error' (bug?) with Option.
         service = Service(

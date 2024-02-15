@@ -1,8 +1,8 @@
-package com.edufuga.scala.data
+package com.edufuga.scala.data.regex
 
 import scala.util.matching.Regex
 
-object Patterns {
+object RegexPatterns {
   val start: Regex = "^".r
   val end: Regex = "$".r
 
@@ -51,12 +51,12 @@ object Patterns {
   }
 
   object Products {
-    import Patterns.Product as P
+    import RegexPatterns.Product as P
     val line: Regex = s"$start(${P.productId}),(${P.productName}),(${P.height}),(${P.width}),(${P.depth}),(${P.weight}),(${P.productManager}),(${P.price})$end".r
   }
 
   object Services {
-    import Patterns.Service as S
+    import RegexPatterns.Service as S
     val line: Regex = s"$start(${S.serviceId}),(${S.serviceName}),(${S.products}),(${S.productManager}),(${S.price})$end".r
   }
 }
