@@ -1,7 +1,7 @@
 package com.edufuga.scala.core
 
-import com.edufuga.scala.core.ProductTypes.{ProductId, ProductManager}
-import com.edufuga.scala.core.ServiceTypes.{ServiceId, ServiceName}
+import ProductTypes.{ProductId, ProductManager}
+import ServiceTypes.{ServiceId, ServiceName}
 
 case class Service(
   serviceId: ServiceId,
