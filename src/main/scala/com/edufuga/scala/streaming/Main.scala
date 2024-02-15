@@ -7,13 +7,11 @@ import cats.effect.{ExitCode, IO, IOApp}
 import fs2.io.file.{Files, Path}
 import fs2.{Pipe, Stream, text}
 
-import java.net.URL
 import scala.xml.XML.loadFile
 
 object Main extends IOApp {
   private def pathOf(file: String): Path = {
-    val readFromJavaResource: URL = getClass.getClassLoader.getResource(file)
-    val readFromJavaPath: java.nio.file.Path = java.nio.file.Paths.get(readFromJavaResource.toURI).toAbsolutePath
+    val readFromJavaPath: java.nio.file.Path = java.nio.file.Paths.get(file).toAbsolutePath
     Path.fromNioPath(readFromJavaPath)
   }
 
@@ -39,12 +37,15 @@ object Main extends IOApp {
   override def run(args: List[String]): IO[ExitCode] = {
     for {
       _ <- IO.println("Processing 'products.csv' and 'services.csv'")
-      _ <- IO.println("Processing stream of products")
-      _ <- productsStream("products.csv").compile.drain
-      _ <- IO.println("Processing stream of services")
-      _ <- servicesStream("services.csv").compile.drain
+      products = args.head
+      services = args.tail.head
+      orga = args.tail.tail.head
+      _ <- IO.println(s"Processing stream of products '$products'.")
+      _ <- productsStream(products).compile.drain
+      _ <- IO.println(s"Processing stream of services '$services'.")
+      _ <- servicesStream(services).compile.drain
       _ <- IO.println("Processing the organisation file 'orgmap.xml'")
-      _ <- IO.println { organisation("orgmap.xml") }
+      _ <- IO.println { organisation(orga) }
     } yield ExitCode.Success
   }
 }
