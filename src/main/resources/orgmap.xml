@@ -71,7 +71,7 @@
             <service id="D215-3449390" />
         </services>
     </dept>
-    <dept id="22183" name="com.edufuga.scala.core.Product Management">
+    <dept id="22183" name="Product Management">
         <manager>
             <email>Franz.Kornhaeusel@company.org</email>
             <name>Franz Kornhaeusel</name>
