@@ -1,3 +1,3 @@
 package com.edufuga.scala.data.access
 
-trait DAO[Id, +Object] extends ReadAll[Object], ReadById[Id, Object]
+trait DAO[Id, +O] extends ReadAll[O], ReadById[Id, O]
