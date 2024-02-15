@@ -3,6 +3,7 @@ package com.edufuga.scala.streaming
 import com.edufuga.scala.core.Organisation
 import cats.effect.{ExitCode, IO, IOApp}
 import com.edufuga.scala.core.ProductTypes.ProductId
+import com.edufuga.scala.core.ServiceTypes.ServiceId
 import com.edufuga.scala.data.access.materialized.file.FileMaterializingOrganisationDAO
 import com.edufuga.scala.data.access.streamed.file.{FileStreamingProductsDAO, FileStreamingServicesDAO}
 
@@ -27,6 +28,10 @@ object Main extends IOApp {
       _ <- IO.println(s"Finding a product by ID within the stream of products '$products'.")
       bingoProduct <- FileStreamingProductsDAO(products).readById(ProductId("X716-6172862")).compile.last
       _ <- IO.println("Bingo product: " + bingoProduct.flatten)
+
+      _ <- IO.println(s"Finding a service by ID within the stream of services '$services'.")
+      bingoService <- FileStreamingServicesDAO(services).readById(ServiceId("Y274-1029755")).compile.last
+      _ <- IO.println("Bingo service: " + bingoService.flatten)
 
     } yield ExitCode.Success
   }
