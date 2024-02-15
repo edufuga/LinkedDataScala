@@ -68,17 +68,4 @@ object CSVParsers {
         None
       case Success(value) => value.headOption
     }
-
-  def main(args: Array[String]): Unit = {
-    val productLine = "I241-8776317,Strain Compensator,12,68,15,8,Baldwin.Dirksen@company.org,\"0,50 EUR\""
-    val product: Option[Product] = CSVParsers.product(productLine)
-    println(product)
-
-    val serviceLine = "Y704-9764759,com.edufuga.scala.core.Product Analysis,\"O491-3823912, I965-1821441, Z655-3173353, U733-5722614, K411-1729714\",Lambert.Faust@company.org,\"748,40 EUR\""
-    val service: Option[Service] = CSVParsers.service(serviceLine)
-    println(service)
-
-    val errorProductLine = "E267-7496794,Crystal Rheostat,34,47,11,6,Frau.Irmalinda‚Äò.Becker@company.org,\"1,11 EUR\""
-    println(CSVParsers.product(errorProductLine))
-  }
 }
