@@ -4,8 +4,8 @@ import com.edufuga.scala.core.{Organisation, Service}
 import cats.effect.{ExitCode, IO, IOApp}
 import com.edufuga.scala.data.access.streamed.file.{FileStreamedProductsDAO, FileStreamedServicesDAO}
 import com.edufuga.scala.data.parsers.xml.XMLParsers
-import fs2.io.file.{Files, Path}
-import fs2.{Pipe, Stream, text}
+import fs2.io.file.Path
+import fs2.Stream
 
 import scala.xml.XML.loadFile
 
@@ -14,12 +14,6 @@ object Main extends IOApp {
     val readFromJavaPath: java.nio.file.Path = java.nio.file.Paths.get(file).toAbsolutePath
     Path.fromNioPath(readFromJavaPath)
   }
-
-  def entitiesParser[F[_], E](toMaybeEntity: String => Option[E]): Pipe[F, Byte, Option[E]] =
-    _.through(text.utf8.decode)
-      .through(text.lines)
-      .drop(1)
-      .map(toMaybeEntity)
 
   def productsStream(file: String): Stream[IO, Option[Product]] = FileStreamedProductsDAO(file).readAll
 
