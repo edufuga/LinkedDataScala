@@ -17,7 +17,7 @@ import fs2.Stream
  * for Scala). Under the hood, it has the two type parameters F and O, corresponding to the effect type (F) and the
  * object type (O).
  *
- * The plus sign '+' in '+F[+_]' only indicates the covariance of the type parameter 'F'.
+ * The plus sign '+' in '+O' and '+F[+_]' only indicates the covariance of those type parameters 'O', 'F' and '_'.
  * This is in accordance to (and limited/dictated by) the trait 'ChannelingEffectfulDAO[I, C[+_[_], +_], +F[+_], O]'.
  * The output type has to be covariant, which is a general rule of the type system (i.e. parameters are contravariant,
  * return types are covariant). We don't need to fully understand this, it only needs to be consistent with the
@@ -26,4 +26,4 @@ import fs2.Stream
  * @tparam F Effectful type (e.g. IO from Cats Effect). Essentially, this is just a wrapper around the object of type O.
  * @tparam O Type of the outputted data, independent on the form in which it is returned (optional, IO, Streaming, etc.)
  */
-trait StreamingDAO[Id, +F[+_], O] extends ChannelingEffectfulDAO[Id, Stream, F, O]
+trait StreamingDAO[Id, +F[+_], +O] extends ChannelingEffectfulDAO[Id, Stream, F, O]

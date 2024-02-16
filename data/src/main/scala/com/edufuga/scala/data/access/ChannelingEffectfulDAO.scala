@@ -18,7 +18,7 @@ package com.edufuga.scala.data.access
  * indicate that there is only one type parameter within the effect type F. We also find the underscores in the
  * 'C[+_[_], +_]'.
  *
- * The plus sign '+' in '+O' and '+F[+_]' only indicates the covariance of those type parameters 'O' and 'F'.
+ * The plus sign '+' in '+O' and '+F[+_]' only indicates the covariance of those type parameters 'O', 'F' and '_'.
  * This is in accordance to (and limited/dictated by) the trait 'DAO[I, +O]'. The output type has to be covariant, which
  * is a general rule of the type system (i.e. parameters are contravariant, return types are covariant). We don't need
  * to  fully understand this, it only needs to be consistent with the interface declaration (= the type system tells how
@@ -29,4 +29,4 @@ package com.edufuga.scala.data.access
  * @tparam O Type of the outputted data, independent on the form in which it is returned (optional, IO, Streaming, etc.)
  * @tparam C Type of the 'channel', which wraps the returned objects of type O, themselves wrapped by the effect type F.
  */
-trait ChannelingEffectfulDAO[I, C[+_[_], +_], +F[+_], O] extends DAO[I, C[F,O]]
+trait ChannelingEffectfulDAO[I, C[+_[_], +_], +F[+_], +O] extends DAO[I, C[F,O]]
