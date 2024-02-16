@@ -24,6 +24,9 @@ package com.edufuga.scala.data.access
  * to  fully understand this, it only needs to be consistent with the interface declaration (= the type system tells how
  * to do it).
  *
+ * The plus signs in 'C[+_[_], +_]' indicate the covariance of the two type parameters of the higher-kinded type 'C'.
+ * This is in accordance to 'C[F,O]', since both 'F' and 'O' have the same covariance, as seen in '+F[+_]' and '+O'.
+ *
  * @tparam I Type of the ID.
  * @tparam F Effectful type (e.g. IO from Cats Effect). Essentially, this is just a wrapper around the object of type O.
  * @tparam O Type of the outputted data, independent on the form in which it is returned (optional, IO, Streaming, etc.)
