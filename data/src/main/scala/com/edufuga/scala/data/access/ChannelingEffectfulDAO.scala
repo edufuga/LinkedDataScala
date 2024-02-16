@@ -27,6 +27,10 @@ package com.edufuga.scala.data.access
  * The plus signs in 'C[+_[_], +_]' indicate the covariance of the two type parameters of the higher-kinded type 'C'.
  * This is in accordance to 'C[F,O]', since both 'F' and 'O' have the same covariance, as seen in '+F[+_]' and '+O'.
  *
+ * Notice that the channel type itself 'C' is not covariant. That's not necessary, because we usually only have one type
+ * of channel. We don't need covariant overriding for 'C' (i.e. '+C'), since the API provided by the channel 'C' should
+ * be enough to consume it.
+ *
  * @tparam I Type of the ID.
  * @tparam F Effectful type (e.g. IO from Cats Effect). Essentially, this is just a wrapper around the object of type O.
  * @tparam O Type of the outputted data, independent on the form in which it is returned (optional, IO, Streaming, etc.)
