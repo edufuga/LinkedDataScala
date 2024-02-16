@@ -13,5 +13,11 @@ import com.edufuga.scala.data.access.DAO
  * as a specific type and the rest being generic and thus flexible). This is NOT possible, because the wrapper is only
  * going to work with ONE type parameter. We can't specify a flexible or varying or unknown number of type parameters in
  * the higher-kinded type 'W'. At least it's not possible to the best of my (current) knowledge.
+ *
+ * The typical error that occurs, when trying to reuse this interface, is this:
+ *
+ *   Type argument fs2.Stream[?[_$1], ?] does not have the same kind as its bound [+_$1]
+ *
+ * This error clearly shows that a higher-kinded type with two type parameters is of a different kind than one with two.
  */
 trait ProductDAO[+W[+_]] extends DAO[ProductId, W[Product]]
