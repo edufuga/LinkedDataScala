@@ -1,8 +1,6 @@
 package com.edufuga.scala.data.access.streamed
 
 import cats.effect.IO
-import com.edufuga.scala.data.access.ChannelingEffectfulDAO
-import fs2.Stream
 
 /**
  *
