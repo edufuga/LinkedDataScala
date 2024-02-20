@@ -7,4 +7,4 @@ import com.edufuga.scala.core.ProductTypes.ProductId
  * Data access to Products.
  * 
  */
-trait StreamingProductDAO extends StreamingDAO[ProductId, Option[Product]]
+trait StreamingProductDAO extends StreamingDAO[ProductId, Product]

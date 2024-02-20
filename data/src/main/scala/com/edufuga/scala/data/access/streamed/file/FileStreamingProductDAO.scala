@@ -10,12 +10,9 @@ import fs2.Stream
 import fs2.io.file.Files
 
 case class FileStreamingProductDAO(file: String) extends StreamingProductDAO {
-  override def readAll: Stream[IO, Option[Product]] =
+  override def readAll: Stream[IO, Product] =
     Files[IO].readAll(FileOps.pathOf(file))
       .through(StreamOps.entitiesParser(CSVParsers.product))
 
-  override def readById(id: ProductId): Stream[IO, Option[Product]] = readAll.filter(_.exists(_.id.equals(id)))
-  
-  // TODO: Clarify whether this code is "OK" (using "get" directly! this is normally tabu...). Simplify output type??
-  def readAllWithoutOptional: Stream[IO, Product] = readAll.filter(_.nonEmpty).map(_.get)
+  override def readById(id: ProductId): Stream[IO, Product] = readAll.filter(_.id.equals(id))
 }

@@ -10,9 +10,9 @@ import fs2.Stream
 import fs2.io.file.Files
 
 case class FileStreamingServiceDAO(file: String) extends StreamingServiceDAO {
-  override def readAll: Stream[IO, Option[Service]] =
+  override def readAll: Stream[IO, Service] =
     Files[IO].readAll(FileOps.pathOf(file))
       .through(StreamOps.entitiesParser(CSVParsers.service))
 
-  override def readById(id: ServiceId): Stream[IO, Option[Service]] = readAll.filter(_.exists(_.id.equals(id)))
+  override def readById(id: ServiceId): Stream[IO, Service] = readAll.filter(_.id.equals(id))
 }

@@ -7,4 +7,4 @@ import com.edufuga.scala.core.ServiceTypes.ServiceId
  * Data access to Services.
  * 
  */
-trait StreamingServiceDAO extends StreamingDAO[ServiceId, Option[Service]]
+trait StreamingServiceDAO extends StreamingDAO[ServiceId, Service]

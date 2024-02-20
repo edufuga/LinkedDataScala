@@ -1,7 +1,6 @@
 package com.edufuga.scala.data.access.streamed
 
 import cats.effect.IO
-import fs2.Stream
 
 /**
  *

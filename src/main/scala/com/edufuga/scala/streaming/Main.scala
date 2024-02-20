@@ -27,11 +27,11 @@ object Main extends IOApp {
 
       _ <- IO.println(s"Finding a product by ID within the stream of products '$products'.")
       bingoProduct <- FileStreamingProductDAO(products).readById(ProductId("X716-6172862")).compile.last
-      _ <- IO.println("Bingo product: " + bingoProduct.flatten)
+      _ <- IO.println("Bingo product: " + bingoProduct)
 
       _ <- IO.println(s"Finding a service by ID within the stream of services '$services'.")
       bingoService <- FileStreamingServiceDAO(services).readById(ServiceId("Y274-1029755")).compile.last
-      _ <- IO.println("Bingo service: " + bingoService.flatten)
+      _ <- IO.println("Bingo service: " + bingoService)
 
     } yield ExitCode.Success
   }
