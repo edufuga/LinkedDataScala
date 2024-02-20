@@ -1,6 +1,7 @@
 package com.edufuga.scala.data.access.streamed
 
 import cats.effect.IO
+import com.edufuga.scala.core.Identifiable
 
 /**
  *
@@ -19,4 +20,4 @@ import cats.effect.IO
  *
  * @tparam O Type of the outputted data, independent on the form in which it is returned (optional, IO, Streaming, etc.)
  */
-trait StreamingDAO[Id, +O] extends StreamingEffectfulDAO[Id, IO, O]
+trait StreamingDAO[Id, +O <: Identifiable[Id]] extends StreamingEffectfulDAO[Id, IO, O]

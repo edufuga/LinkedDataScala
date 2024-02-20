@@ -1,5 +1,6 @@
 package com.edufuga.scala.data.access.streamed
 
+import com.edufuga.scala.core.Identifiable
 import com.edufuga.scala.data.access.ChannelingEffectfulDAO
 import fs2.Stream
 
@@ -26,6 +27,7 @@ import fs2.Stream
  * @tparam F Effectful type (e.g. IO from Cats Effect). Essentially, this is just a wrapper around the object of type O.
  * @tparam O Type of the outputted data, independent on the form in which it is returned (optional, IO, Streaming, etc.)
  */
-trait StreamingEffectfulDAO[Id, +F[+_], +O] extends ChannelingEffectfulDAO[Id, Stream, F, O] {
+trait StreamingEffectfulDAO[Id, +F[+_], +O <: Identifiable[Id]] extends ChannelingEffectfulDAO[Id, Stream, F, O] {
+  override def readById(id: Id): Stream[F, O] = readAll.filter(_.id.equals(id))
   override def readByIds(ids: Seq[Id]): Stream[F, O] = readAll.filter(ids.contains(_))
 }

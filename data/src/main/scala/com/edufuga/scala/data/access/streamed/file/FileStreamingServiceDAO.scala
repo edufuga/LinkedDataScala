@@ -2,7 +2,6 @@ package com.edufuga.scala.data.access.streamed.file
 
 import cats.effect.IO
 import com.edufuga.scala.core.Service
-import com.edufuga.scala.core.ServiceTypes.ServiceId
 import com.edufuga.scala.data.access.ops.{FileOps, StreamOps}
 import com.edufuga.scala.data.access.streamed.StreamingServiceDAO
 import com.edufuga.scala.data.parsers.csv.CSVParsers
@@ -12,7 +11,9 @@ import fs2.io.file.Files
 case class FileStreamingServiceDAO(file: String) extends StreamingServiceDAO {
   override def readAll: Stream[IO, Service] =
     Files[IO].readAll(FileOps.pathOf(file))
-      .through(StreamOps.entitiesParser(CSVParsers.service))
-
-  override def readById(id: ServiceId): Stream[IO, Service] = readAll.filter(_.id.equals(id))
+      .through(
+        StreamOps.entitiesParser(
+          CSVParsers.service // TODO: Inject this to get more generic code (only this Service CSV parser is specific).
+        )
+      )
 }
