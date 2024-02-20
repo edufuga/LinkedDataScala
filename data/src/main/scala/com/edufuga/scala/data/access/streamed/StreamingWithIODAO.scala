@@ -20,4 +20,4 @@ import com.edufuga.scala.core.Identifiable
  *
  * @tparam O Type of the outputted data, independent on the form in which it is returned (optional, IO, Streaming, etc.)
  */
-trait StreamingDAO[Id, +O <: Identifiable[Id]] extends StreamingEffectfulDAO[Id, IO, O]
+trait StreamingWithIODAO[Id, +O <: Identifiable[Id]] extends StreamingEffectfulDAO[Id, IO, O]

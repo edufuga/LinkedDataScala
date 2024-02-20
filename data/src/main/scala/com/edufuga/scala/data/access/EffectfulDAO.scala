@@ -23,4 +23,4 @@ package com.edufuga.scala.data.access
  * @tparam F Effectful type (e.g. IO from Cats Effect). Essentially, this is just a wrapper around the object of type O.
  * @tparam O Type of the outputted data, independent on the form in which it is returned (optional, IO, Streaming, etc.)
  */
-trait EffectfulDAO[I, +F[+_], O] extends DAO[I, F[O]]
+trait EffectfulDAO[I, +F[+_], O] extends DAO[I,5]
