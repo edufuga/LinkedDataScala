@@ -32,7 +32,7 @@ object CSVParsers {
       for {
         money <- money(price).toList // This is just here to avoid a weird overload 'error' (bug?) with Option.
         product = Product(
-          productId = ProductId(id),
+          id = ProductId(id),
           productName = ProductName(name),
           height = Height(height.toInt),
           width = Width(width.toInt),
@@ -55,7 +55,7 @@ object CSVParsers {
       for {
         money <- money(price).toList // This is just here to avoid a weird overload 'error' (bug?) with Option.
         service = Service(
-          serviceId = ServiceId(id),
+          id = ServiceId(id),
           serviceName = ServiceName(name),
           products = productList(products),
           productManager = ProductManager(productManager),

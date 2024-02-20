@@ -11,4 +11,4 @@ case class Department(
   employees: List[Employee],
   productIds: List[ProductId],
   serviceIds: List[ServiceId]
-)
+) extends Identifiable[DepartmentId]

@@ -14,7 +14,7 @@ case class FileStreamingProductDAO(file: String) extends StreamingProductDAO {
     Files[IO].readAll(FileOps.pathOf(file))
       .through(StreamOps.entitiesParser(CSVParsers.product))
 
-  override def readById(id: ProductId): Stream[IO, Option[Product]] = readAll.filter(_.exists(_.productId.equals(id)))
+  override def readById(id: ProductId): Stream[IO, Option[Product]] = readAll.filter(_.exists(_.id.equals(id)))
 
   override def readByIds(ids: Seq[ProductId]): Stream[IO, Option[Product]] = readAll.filter(ids.contains(_))
 

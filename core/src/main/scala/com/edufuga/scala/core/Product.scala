@@ -3,7 +3,7 @@ package com.edufuga.scala.core
 import com.edufuga.scala.core.ProductTypes.*
 
 case class Product(
-  productId: ProductId,
+  id: ProductId,
   productName: ProductName,
   height: Height,
   width: Width,
@@ -11,4 +11,4 @@ case class Product(
   weight: Weight,
   productManager: ProductManager,
   price: Money
-)
+) extends Identifiable[ProductId]

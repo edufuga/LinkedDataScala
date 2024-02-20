@@ -4,9 +4,9 @@ import ProductTypes.{ProductId, ProductManager}
 import ServiceTypes.{ServiceId, ServiceName}
 
 case class Service(
-  serviceId: ServiceId,
+  id: ServiceId,
   serviceName: ServiceName,
   products: List[ProductId],
   productManager: ProductManager,
   price: Money
-)
+) extends Identifiable[ServiceId]
