@@ -15,4 +15,9 @@ case class FileStreamingProductDAO(file: String) extends StreamingProductDAO {
       .through(StreamOps.entitiesParser(CSVParsers.product))
 
   override def readById(id: ProductId): Stream[IO, Option[Product]] = readAll.filter(_.exists(_.productId.equals(id)))
+
+  override def readByIds(ids: Seq[ProductId]): Stream[IO, Option[Product]] = readAll.filter(ids.contains(_))
+
+  // TODO: Clarify whether this code is "OK" (using "get" directly! this is normally tabu...). Simplify output type??
+  def readAllWithoutOptional: Stream[IO, Product] = readAll.filter(_.nonEmpty).map(_.get)
 }
