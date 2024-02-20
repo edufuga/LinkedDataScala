@@ -24,6 +24,7 @@ import fs2.Stream
  * return types are covariant). We don't need to fully understand this, it only needs to be consistent with the
  * interface declaration (= the type system tells how to do it).
  *
+ * @tparam Id Type of the ID of the outputted entity.
  * @tparam F Effectful type (e.g. IO from Cats Effect). Essentially, this is just a wrapper around the object of type O.
  * @tparam O Type of the outputted data, independent on the form in which it is returned (optional, IO, Streaming, etc.)
  */

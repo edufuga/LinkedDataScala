@@ -8,7 +8,7 @@ import fs2.Stream
 import fs2.io.file.Files
 
 /**
- * 
+ *
  * File-based streaming DAO interface using fs2 Streams and the IO monad from Cats Effect. Both are parts of the
  * TypeLevel stack.
  *
@@ -23,6 +23,7 @@ import fs2.io.file.Files
  * return types are covariant). We don't need to fully understand this, it only needs to be consistent with the
  * interface declaration (= the type system tells how to do it).
  *
+ * @tparam Id Type of the ID of the outputted entity.
  * @tparam O Type of the outputted data, independent on the form in which it is returned (optional, IO, Streaming, etc.)
  */
 class FileStreamingWithIODAO[Id, +O <: Identifiable[Id]](file: String, entityParser: String => Option[O])

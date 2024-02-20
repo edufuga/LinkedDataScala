@@ -18,6 +18,7 @@ import com.edufuga.scala.core.Identifiable
  * return types are covariant). We don't need to fully understand this, it only needs to be consistent with the
  * interface declaration (= the type system tells how to do it).
  *
+ * @tparam Id Type of the ID of the outputted entity.
  * @tparam O Type of the outputted data, independent on the form in which it is returned (optional, IO, Streaming, etc.)
  */
 trait StreamingWithIODAO[Id, +O <: Identifiable[Id]] extends StreamingEffectfulDAO[Id, IO, O]
