@@ -20,6 +20,4 @@ import fs2.Stream
  *
  * @tparam O Type of the outputted data, independent on the form in which it is returned (optional, IO, Streaming, etc.)
  */
-trait StreamingDAO[Id, +O] extends StreamingEffectfulDAO[Id, IO, O] {
-  override def readByIds(ids: Seq[Id]): Stream[IO, O] = readAll.filter(ids.contains(_))
-}
+trait StreamingDAO[Id, +O] extends StreamingEffectfulDAO[Id, IO, O]
