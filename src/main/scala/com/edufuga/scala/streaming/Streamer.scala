@@ -2,6 +2,7 @@ package com.edufuga.scala.streaming
 
 import cats.effect.{ExitCode, IO, IOApp}
 import cats.implicits._
+import cats.effect.unsafe.implicits.global
 import com.edufuga.scala.core.{Department, FullDepartment, FullOrganisation, Organisation, Product, Service}
 import com.edufuga.scala.core.ProductTypes.ProductId
 import com.edufuga.scala.core.ServiceTypes.ServiceId
@@ -20,6 +21,12 @@ class Streamer(
   def toEvalFullDepartment(department: Department): IO[FullDepartment] = {
     val productsEval: IO[List[Product]] = productDAO.readByIds(department.productIds).compile.toList
     val servicesEval: IO[List[Service]] = serviceDAO.readByIds(department.serviceIds).compile.toList
+
+    val ps: List[Product] = productsEval.unsafeRunSync()
+    val ss: List[Service] = servicesEval.unsafeRunSync()
+
+    println(s"Unsafe Products: $ps")
+    println(s"Unsafe Services: $ss")
 
     val productsAndServicesEval: IO[(List[Product], List[Service])] = IO.both(productsEval, servicesEval)
 
