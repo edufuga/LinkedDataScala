@@ -24,6 +24,8 @@ class Streamer(
     val productsAndServicesEval: IO[(List[Product], List[Service])] = IO.both(productsEval, servicesEval)
 
     val fullDepartmentEval: IO[FullDepartment] = productsAndServicesEval.map { (products, services) =>
+      println(s"Products: $products")
+      println(s"Services: $services")
       FullDepartment(
         department.id,
         department.name,
@@ -42,9 +44,7 @@ class Streamer(
     // Convert the List[IO[...]] to IO[List[...]]
     val evalFullDepartments: IO[List[FullDepartment]] = fullDepartmentEvalList.sequence
 
-    val evalFullOrganisation: IO[FullOrganisation] = evalFullDepartments.map { fullDepartments =>
-      FullOrganisation(fullDepartments)
-    }
+    val evalFullOrganisation: IO[FullOrganisation] = evalFullDepartments.map(FullOrganisation.apply)
 
     evalFullOrganisation
   }

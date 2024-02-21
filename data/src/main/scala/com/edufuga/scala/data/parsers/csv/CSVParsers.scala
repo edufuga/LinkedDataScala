@@ -44,7 +44,7 @@ object CSVParsers {
       } yield product
     } match {
       case Failure(_) =>
-        println(s"This product line contains an error: '$line'.")
+        //println(s"This product line contains an error: '$line'.")
         None
       case Success(value) => value.headOption
     }
