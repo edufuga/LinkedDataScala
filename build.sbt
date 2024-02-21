@@ -13,7 +13,7 @@ lazy val root = (project in file("."))
   .settings(commonSettings)
   .settings(
     name := "Streaming",
-    mainClass := Some("com.edufuga.scala.streaming.Main"),
+    mainClass := Some("com.edufuga.scala.streaming.Streamer"),
     maintainer := " efugarolas@brox.de"
   )
   .aggregate(core, data)
