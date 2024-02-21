@@ -18,6 +18,40 @@ class Streamer(
   serviceDAO: ServiceStreamingEffectfulDAO,
   organisationDAO: MaterializingOrganisationDAO
 ) {
+  def stream: IO[ExitCode] = {
+    for {
+      //_ <- IO.println("Processing 'products.csv', 'services.csv' and 'orgmap.xml'.")
+
+      //_ <- IO.println(s"Processing stream of products.")
+      products <- productDAO.readAll.compile.toList
+      //_ <- IO.println(products)
+
+      //_ <- IO.println(s"Processing stream of services.")
+      services <- serviceDAO.readAll.compile.toList
+      //_ <- IO.println(services)
+
+      _ <- IO.println("Processing the organisation file 'orgmap.xml'")
+      maybeOrganisation = organisationDAO.readAll
+      _ <- IO.println(maybeOrganisation)
+
+      _ <- IO.println("Processing the full organisation...")
+      fullOrganisation <- maybeOrganisation.map { organisation =>
+        Streamer.toFullOrganisation(organisation, productDAO, serviceDAO)
+      }.sequence
+      _ <- IO.println(fullOrganisation)
+
+      // _ <- IO.println(s"Finding a product by ID within the stream of products.")
+      bingoProduct <- productDAO.readById(ProductId("X716-6172862")).compile.last
+      //_ <- IO.println("Bingo product: " + bingoProduct)
+
+      //_ <- IO.println(s"Finding a service by ID within the stream of services.")
+      bingoService <- serviceDAO.readById(ServiceId("Y274-1029755")).compile.last
+      // _ <- IO.println("Bingo service: " + bingoService)
+    } yield ExitCode.Success
+  }
+}
+
+object Streamer extends IOApp {
   def toEvalFullDepartment(department: Department,
                            productDAO: ProductStreamingEffectfulDAO,
                            serviceDAO: ServiceStreamingEffectfulDAO): IO[FullDepartment] = {
@@ -49,6 +83,7 @@ class Streamer(
 
     fullDepartmentEval
   }
+
   def toFullOrganisation(organisation: Organisation,
                          productDAO: ProductStreamingEffectfulDAO,
                          serviceDAO: ServiceStreamingEffectfulDAO): IO[FullOrganisation] = {
@@ -63,41 +98,7 @@ class Streamer(
 
     evalFullOrganisation
   }
-
-  def stream: IO[ExitCode] = {
-    for {
-      //_ <- IO.println("Processing 'products.csv', 'services.csv' and 'orgmap.xml'.")
-
-      //_ <- IO.println(s"Processing stream of products.")
-      products <- productDAO.readAll.compile.toList
-      //_ <- IO.println(products)
-
-      //_ <- IO.println(s"Processing stream of services.")
-      services <- serviceDAO.readAll.compile.toList
-      //_ <- IO.println(services)
-
-      _ <- IO.println("Processing the organisation file 'orgmap.xml'")
-      maybeOrganisation = organisationDAO.readAll
-      _ <- IO.println(maybeOrganisation)
-
-      _ <- IO.println("Processing the full organisation...")
-      fullOrganisation <- maybeOrganisation.map { organisation =>
-        toFullOrganisation(organisation, productDAO, serviceDAO)
-      }.sequence
-      _ <- IO.println(fullOrganisation)
-
-      // _ <- IO.println(s"Finding a product by ID within the stream of products.")
-      bingoProduct <- productDAO.readById(ProductId("X716-6172862")).compile.last
-      //_ <- IO.println("Bingo product: " + bingoProduct)
-
-      //_ <- IO.println(s"Finding a service by ID within the stream of services.")
-      bingoService <- serviceDAO.readById(ServiceId("Y274-1029755")).compile.last
-      // _ <- IO.println("Bingo service: " + bingoService)
-    } yield ExitCode.Success
-  }
-}
-
-object Streamer extends IOApp {
+  
   override def run(args: List[String]): IO[ExitCode] = {
     Try {
       val products: String = args(0)
