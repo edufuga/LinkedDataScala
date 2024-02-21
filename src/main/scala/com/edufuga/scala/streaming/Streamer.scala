@@ -21,13 +21,16 @@ class Streamer(
       _ <- IO.println("Processing 'products.csv', 'services.csv' and 'orgmap.xml'.")
 
       _ <- IO.println(s"Processing stream of products.")
-      _ <- productDAO.readAll.evalTap(IO.println).compile.drain
+      products <- productDAO.readAll.compile.toList
+      _ <- IO.println(products)
 
       _ <- IO.println(s"Processing stream of services.")
-      _ <- serviceDAO.readAll.evalTap(IO.println).compile.drain
+      services <- serviceDAO.readAll.compile.toList
+      _ <- IO.println(services)
 
       _ <- IO.println("Processing the organisation file 'orgmap.xml'")
-      _ <- IO.println { organisationDAO.readAll }
+      organisation = organisationDAO.readAll
+      _ <- IO.println(organisation)
 
       _ <- IO.println(s"Finding a product by ID within the stream of products.")
       bingoProduct <- productDAO.readById(ProductId("X716-6172862")).compile.last
