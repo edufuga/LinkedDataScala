@@ -18,7 +18,11 @@ class Streamer(
   serviceDAO: ServiceStreamingEffectfulDAO,
   organisationDAO: MaterializingOrganisationDAO
 ) {
-  def toEvalFullDepartment(department: Department): IO[FullDepartment] = {
+  def toEvalFullDepartment(department: Department,
+                           productDAO: ProductStreamingEffectfulDAO,
+                           serviceDAO: ServiceStreamingEffectfulDAO): IO[FullDepartment] = {
+    println(s"Department Product IDs: ${department.productIds}")
+    println(s"Department Service IDs: ${department.serviceIds}")
     val productsEval: IO[List[Product]] = productDAO.readByIds(department.productIds).compile.toList
     val servicesEval: IO[List[Service]] = serviceDAO.readByIds(department.serviceIds).compile.toList
 
@@ -45,8 +49,12 @@ class Streamer(
 
     fullDepartmentEval
   }
-  def toFullOrganisation(organisation: Organisation): IO[FullOrganisation] = {
-    val fullDepartmentEvalList: List[IO[FullDepartment]] = organisation.departments.map(toEvalFullDepartment)
+  def toFullOrganisation(organisation: Organisation,
+                         productDAO: ProductStreamingEffectfulDAO,
+                         serviceDAO: ServiceStreamingEffectfulDAO): IO[FullOrganisation] = {
+    val fullDepartmentEvalList: List[IO[FullDepartment]] = organisation.departments.map { department =>
+      toEvalFullDepartment(department, productDAO, serviceDAO)
+    }
 
     // Convert the List[IO[...]] to IO[List[...]]
     val evalFullDepartments: IO[List[FullDepartment]] = fullDepartmentEvalList.sequence
@@ -69,11 +77,13 @@ class Streamer(
       //_ <- IO.println(services)
 
       _ <- IO.println("Processing the organisation file 'orgmap.xml'")
-      organisation = organisationDAO.readAll
-      _ <- IO.println(organisation)
+      maybeOrganisation = organisationDAO.readAll
+      _ <- IO.println(maybeOrganisation)
 
       _ <- IO.println("Processing the full organisation...")
-      fullOrganisation <- organisation.map(toFullOrganisation).sequence
+      fullOrganisation <- maybeOrganisation.map { organisation =>
+        toFullOrganisation(organisation, productDAO, serviceDAO)
+      }.sequence
       _ <- IO.println(fullOrganisation)
 
       // _ <- IO.println(s"Finding a product by ID within the stream of products.")
