@@ -3,15 +3,13 @@ package com.edufuga.scala.data.access.effectful
 import cats.effect.IO
 import cats.implicits.*
 import com.edufuga.scala.core.*
-import com.edufuga.scala.data.access.ReadAll
-import com.edufuga.scala.data.access.entities.{ProductStreamingEffectfulDAO, ServiceStreamingEffectfulDAO}
-import com.edufuga.scala.data.access.materialized.MaterializingOrganisationDAO
+import com.edufuga.scala.data.access.entities.{FullOrganisationDAO, OrganisationDAO, ProductStreamingEffectfulDAO, ServiceStreamingEffectfulDAO}
 
-sealed class FullOrganisationDAO(
+sealed class EffectfulFullOrganisationDAO(
   productDAO: ProductStreamingEffectfulDAO,
   serviceDAO: ServiceStreamingEffectfulDAO,
-  organisationDAO: MaterializingOrganisationDAO
-) extends ReadAll[IO[Option[FullOrganisation]]] {
+  organisationDAO: OrganisationDAO
+) extends FullOrganisationDAO {
   override def readAll: IO[Option[FullOrganisation]] = {
     def toEvalFullDepartment(department: Department): IO[FullDepartment] = {
       val productsEval: IO[List[Product]] = productDAO.readByIds(department.productIds).compile.toList
