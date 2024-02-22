@@ -30,7 +30,7 @@ type EffectfulOptional[+EF[+_], +O] = EF[Option[O]] // This is just a simple typ
 
 // Higher-kinded type for adapting from two type parameters (of Stream) to only one type parameter (of our entity DAOs).
 type TypeLevelEffectfulStream[+O] = EffectfulStream[Stream, IO, O] // = Stream[IO, O]
-type TypeLevelEffectType[+O] = IO[O] // This is just a simple type alias (synonym), to make it clear which 'IO' it is.
+// type TypeLevelEffectType[+O] = IO[O] // This is just a simple type alias (synonym), to make it clear which 'IO' it is.
 type TypeLevelEffectfulOptionalType[+O] = EffectfulOptional[IO, O] // = IO[Option[O]]
 
 // Entity and technology specific DAOs. The TypeLevelEffectfulStream higher-kinded type has only one type parameter.
