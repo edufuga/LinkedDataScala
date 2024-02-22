@@ -3,7 +3,7 @@ package com.edufuga.scala.data.access.effectful
 import cats.effect.IO
 import cats.implicits.*
 import com.edufuga.scala.core.*
-import com.edufuga.scala.data.access.entities.{EffectfulFullOrganisationDAO, OrganisationDAO, ProductTypeLevelStreamingEffectfulDAO, ServiceTypeLevelStreamingEffectfulDAO}
+import com.edufuga.scala.data.access.entities.{FullOrganisationEffectfulDAO, FullOrganisationTypeLevelEffectfulDAO, OrganisationMaterializedDAO, ProductTypeLevelEffectfulStreamingDAO, ServiceTypeLevelEffectfulStreamingDAO}
 
 /**
  * This is an implementation of the DAO for the FullOrganisation entity.
@@ -18,16 +18,18 @@ import com.edufuga.scala.data.access.entities.{EffectfulFullOrganisationDAO, Org
  * @param serviceDAO Service DAO
  * @param organisationDAO Organisation DAO (with references to Product and Service IDs, which need to be resolved)
  */
-sealed class CompositeEffectfulFullOrganisationDAO(
-  productDAO: ProductTypeLevelStreamingEffectfulDAO,
-  serviceDAO: ServiceTypeLevelStreamingEffectfulDAO,
-  organisationDAO: OrganisationDAO
-) extends EffectfulFullOrganisationDAO[IO] {
+sealed class FullOrganisationTypeLevelEffectfulCombinationDAO(
+  productDAO: ProductTypeLevelEffectfulStreamingDAO,
+  serviceDAO: ServiceTypeLevelEffectfulStreamingDAO,
+  organisationDAO: OrganisationMaterializedDAO
+) extends FullOrganisationTypeLevelEffectfulDAO {
   override def readAll: IO[Option[FullOrganisation]] = {
     def toEvalFullDepartment(department: Department): IO[FullDepartment] = {
+      // TODO: I guess this could be made MORE GENERAL by injecting a FUNCTION that produces/provides the IO[List[...]].
       val productsEval: IO[List[Product]] = productDAO.readByIds(department.productIds).compile.toList
       val servicesEval: IO[List[Service]] = serviceDAO.readByIds(department.serviceIds).compile.toList
 
+      // FIXME: Can this be done using a normal tuple??
       val evalProductsAndServices: IO[(List[Product], List[Service])] = IO.both(productsEval, servicesEval)
 
       val evalFullDepartment: IO[FullDepartment] = evalProductsAndServices.map { (products, services) =>
