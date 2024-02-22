@@ -15,7 +15,8 @@ import scala.util.{Failure, Success, Try}
 class Streamer(
   productDAO: ProductStreamingEffectfulDAO,
   serviceDAO: ServiceStreamingEffectfulDAO,
-  organisationDAO: MaterializingOrganisationDAO
+  organisationDAO: MaterializingOrganisationDAO,
+  fullOrganisationDAO: OrganisationStreamer
 ) {
   def stream: IO[ExitCode] = {
     for {
@@ -44,6 +45,10 @@ class Streamer(
       _ <- IO.println(s"Finding several products by their IDs within the stream of products.")
       severalProducts <- productDAO.readByIds(List(ProductId("O184-6903943"), ProductId("N180-3300253"))).compile.last
       _ <- IO.println("Several products: " + severalProducts)
+
+      _ <- IO.println("Processing the full organisation. This includes resolving the linked products and services.")
+      organisation <- fullOrganisationDAO.read
+      _ <- IO.println(organisation)
     } yield ExitCode.Success
   }
 }
@@ -63,8 +68,10 @@ object Streamer extends IOApp {
         val productsDAO: ProductStreamingEffectfulDAO = ProductFileStreamingWithIODAO(p)
         val servicesDAO: ServiceStreamingEffectfulDAO = ServiceFileStreamingWithIODAO(s)
         val organisationDAO: MaterializingOrganisationDAO = FileMaterializingOrganisationDAO(o)
+        val fullOrganisationDAO: OrganisationStreamer =
+          new OrganisationStreamer(productsDAO, servicesDAO, organisationDAO)
 
-        val streamer: Streamer = new Streamer(productsDAO, servicesDAO, organisationDAO)
+        val streamer: Streamer = new Streamer(productsDAO, servicesDAO, organisationDAO, fullOrganisationDAO)
         streamer.stream
   }
 }
