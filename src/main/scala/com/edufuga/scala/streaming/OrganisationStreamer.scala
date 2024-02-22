@@ -17,14 +17,48 @@ class OrganisationStreamer(
   organisationDAO: MaterializingOrganisationDAO
 ) {
   def stream: IO[ExitCode] = {
-    for {
-      _ <- IO.println("Processing the organisation file 'orgmap.xml'")
-      maybeOrganisation = organisationDAO.readAll
-      _ <- IO.println(maybeOrganisation)
+    def toEvalFullDepartment(department: Department,
+                             productDAO: ProductStreamingEffectfulDAO,
+                             serviceDAO: ServiceStreamingEffectfulDAO): IO[FullDepartment] = {
+      val productsEval: IO[List[Product]] = productDAO.readByIds(department.productIds).compile.toList
+      val servicesEval: IO[List[Service]] = serviceDAO.readByIds(department.serviceIds).compile.toList
 
-      _ <- IO.println("Processing the full organisation...")
-      maybeFullOrganisation <- maybeOrganisation.map { organisation =>
-        OrganisationStreamer.toFullOrganisation(organisation, productDAO, serviceDAO)
+      val productsAndServicesEval: IO[(List[Product], List[Service])] = IO.both(productsEval, servicesEval)
+
+      val fullDepartmentEval: IO[FullDepartment] = productsAndServicesEval.map { (products, services) =>
+        FullDepartment(
+          department.id,
+          department.name,
+          department.manager,
+          department.employees,
+          products,
+          services
+        )
+      }
+
+      fullDepartmentEval
+    }
+
+    def toFullOrganisation(organisation: Organisation,
+                           productDAO: ProductStreamingEffectfulDAO,
+                           serviceDAO: ServiceStreamingEffectfulDAO): IO[FullOrganisation] = {
+      val fullDepartmentEvalList: List[IO[FullDepartment]] = organisation.departments.map { department =>
+        toEvalFullDepartment(department, productDAO, serviceDAO)
+      }
+
+      // Convert the List[IO[...]] to IO[List[...]]
+      val evalFullDepartments: IO[List[FullDepartment]] = fullDepartmentEvalList.sequence
+
+      val evalFullOrganisation: IO[FullOrganisation] = evalFullDepartments.map(FullOrganisation.apply)
+
+      evalFullOrganisation
+    }
+
+    for {
+      _ <- IO.println("Processing the full organisation. This includes resolving the linked products and services.")
+      // Notice the '.sequence' to convert from Option[IO[FullOrganisation]] to IO[Option[FullOrganisation]].
+      maybeFullOrganisation <- organisationDAO.readAll.map { organisation =>
+        toFullOrganisation(organisation, productDAO, serviceDAO)
       }.sequence
       _ <- IO.println(maybeFullOrganisation)
     } yield ExitCode.Success
@@ -32,47 +66,6 @@ class OrganisationStreamer(
 }
 
 object OrganisationStreamer extends IOApp {
-  private def toEvalFullDepartment(department: Department,
-                           productDAO: ProductStreamingEffectfulDAO,
-                           serviceDAO: ServiceStreamingEffectfulDAO): IO[FullDepartment] = {
-    println("********************* toEvalFullDepartment *********************")
-    println(department)
-    val productsEval: IO[List[Product]] = productDAO.readByIds(department.productIds).evalTap(IO.println).compile.toList
-    val servicesEval: IO[List[Service]] = serviceDAO.readByIds(department.serviceIds).evalTap(IO.println).compile.toList
-
-    val productsAndServicesEval: IO[(List[Product], List[Service])] = IO.both(productsEval, servicesEval)
-
-    val fullDepartmentEval: IO[FullDepartment] = productsAndServicesEval.map { (products, services) =>
-      println(s"Products: $products")
-      println(s"Services: $services")
-      FullDepartment(
-        department.id,
-        department.name,
-        department.manager,
-        department.employees,
-        products,
-        services
-      )
-    }
-
-    fullDepartmentEval
-  }
-
-  private def toFullOrganisation(organisation: Organisation,
-                         productDAO: ProductStreamingEffectfulDAO,
-                         serviceDAO: ServiceStreamingEffectfulDAO): IO[FullOrganisation] = {
-    val fullDepartmentEvalList: List[IO[FullDepartment]] = organisation.departments.map { department =>
-      OrganisationStreamer.toEvalFullDepartment(department, productDAO, serviceDAO)
-    }
-
-    // Convert the List[IO[...]] to IO[List[...]]
-    val evalFullDepartments: IO[List[FullDepartment]] = fullDepartmentEvalList.sequence
-
-    val evalFullOrganisation: IO[FullOrganisation] = evalFullDepartments.map(FullOrganisation.apply)
-
-    evalFullOrganisation
-  }
-
   override def run(args: List[String]): IO[ExitCode] = {
     Try {
       val products: String = args(0)
@@ -87,14 +80,6 @@ object OrganisationStreamer extends IOApp {
         val productsDAO: ProductStreamingEffectfulDAO = ProductFileStreamingWithIODAO(p)
         val servicesDAO: ServiceStreamingEffectfulDAO = ServiceFileStreamingWithIODAO(s)
         val organisationDAO: MaterializingOrganisationDAO = FileMaterializingOrganisationDAO(o)
-
-        // THIS IS JUST TESTING STUFF....
-        val evalMaybeFullOrganisation: IO[Option[FullOrganisation]] = organisationDAO.readAll.map { organisation =>
-          OrganisationStreamer.toFullOrganisation(organisation, productsDAO, servicesDAO)
-        }.sequence
-
-        val maybeFullOrganisation: Option[FullOrganisation] = evalMaybeFullOrganisation.unsafeRunSync()
-        println(s"Maybe full organisation: $maybeFullOrganisation")
 
         val organisationStreamer: OrganisationStreamer =
           new OrganisationStreamer(productsDAO, servicesDAO, organisationDAO)
