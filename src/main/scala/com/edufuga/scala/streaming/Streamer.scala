@@ -35,10 +35,10 @@ class Streamer(
       _ <- IO.println(maybeOrganisation)
 
       _ <- IO.println("Processing the full organisation...")
-      fullOrganisation <- maybeOrganisation.map { organisation =>
+      maybeFullOrganisation <- maybeOrganisation.map { organisation =>
         Streamer.toFullOrganisation(organisation, productDAO, serviceDAO)
       }.sequence
-      _ <- IO.println(fullOrganisation)
+      _ <- IO.println(maybeFullOrganisation)
 
       // _ <- IO.println(s"Finding a product by ID within the stream of products.")
       bingoProduct <- productDAO.readById(ProductId("X716-6172862")).compile.last
@@ -55,22 +55,16 @@ object Streamer extends IOApp {
   def toEvalFullDepartment(department: Department,
                            productDAO: ProductStreamingEffectfulDAO,
                            serviceDAO: ServiceStreamingEffectfulDAO): IO[FullDepartment] = {
-    println(s"Department Product IDs: ${department.productIds}")
-    println(s"Department Service IDs: ${department.serviceIds}")
-    val productsEval: IO[List[Product]] = productDAO.readByIds(department.productIds).compile.toList
-    val servicesEval: IO[List[Service]] = serviceDAO.readByIds(department.serviceIds).compile.toList
-
-    val ps: List[Product] = productsEval.unsafeRunSync()
-    val ss: List[Service] = servicesEval.unsafeRunSync()
-
-    println(s"Unsafe Products: $ps")
-    println(s"Unsafe Services: $ss")
+    println("********************* toEvalFullDepartment *********************")
+    println(department)
+    val productsEval: IO[List[Product]] = productDAO.readByIds(department.productIds).evalTap(IO.println).compile.toList
+    val servicesEval: IO[List[Service]] = serviceDAO.readByIds(department.serviceIds).evalTap(IO.println).compile.toList
 
     val productsAndServicesEval: IO[(List[Product], List[Service])] = IO.both(productsEval, servicesEval)
 
     val fullDepartmentEval: IO[FullDepartment] = productsAndServicesEval.map { (products, services) =>
-      println(s"Products: $products")
-      println(s"Services: $services")
+      //println(s"Products: $products")
+      //println(s"Services: $services")
       FullDepartment(
         department.id,
         department.name,
@@ -98,7 +92,7 @@ object Streamer extends IOApp {
 
     evalFullOrganisation
   }
-  
+
   override def run(args: List[String]): IO[ExitCode] = {
     Try {
       val products: String = args(0)
@@ -113,6 +107,14 @@ object Streamer extends IOApp {
         val productsDAO: ProductStreamingEffectfulDAO = ProductFileStreamingWithIODAO(p)
         val servicesDAO: ServiceStreamingEffectfulDAO = ServiceFileStreamingWithIODAO(s)
         val organisationDAO: MaterializingOrganisationDAO = FileMaterializingOrganisationDAO(o)
+
+        // THIS IS JUST TESTING STUFF....
+        val evalMaybeFullOrganisation: IO[Option[FullOrganisation]] = organisationDAO.readAll.map { organisation =>
+          Streamer.toFullOrganisation(organisation, productsDAO, servicesDAO)
+        }.sequence
+
+        val maybeFullOrganisation: Option[FullOrganisation] = evalMaybeFullOrganisation.unsafeRunSync()
+        println(s"Maybe full organisation: $maybeFullOrganisation")
 
         val streamer: Streamer = new Streamer(productsDAO, servicesDAO, organisationDAO)
         streamer.stream
