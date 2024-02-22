@@ -67,9 +67,15 @@ object Streamer extends IOApp {
       case Success(p, s, o) =>
         val productsDAO: ProductTypeLevelEffectfulStreamingDAO = ProductFileStreamingWithIODAO(p)
         val servicesDAO: ServiceTypeLevelEffectfulStreamingDAO = ServiceFileStreamingWithIODAO(s)
+
+        val productsFromIds: List[ProductId] => IO[List[Product]] =
+          productIds => productsDAO.readByIds(productIds).compile.toList
+        val servicesFromIds: List[ServiceId] => IO[List[Service]] =
+          serviceIds => servicesDAO.readByIds(serviceIds).compile.toList
+
         val organisationDAO: OrganisationMaterializedDAO = FileMaterializingOrganisationDAO(o)
         val fullOrganisationDAO: FullOrganisationTypeLevelEffectfulDAO =
-          new FullOrganisationTypeLevelEffectfulCombinationDAO(productsDAO, servicesDAO, organisationDAO)
+          new FullOrganisationTypeLevelEffectfulCombinationDAO(productsFromIds, servicesFromIds, organisationDAO)
 
         val streamer: Streamer = new Streamer(productsDAO, servicesDAO, organisationDAO, fullOrganisationDAO)
         streamer.stream

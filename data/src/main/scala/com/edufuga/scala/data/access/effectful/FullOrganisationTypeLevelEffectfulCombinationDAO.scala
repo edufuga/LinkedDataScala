@@ -3,6 +3,8 @@ package com.edufuga.scala.data.access.effectful
 import cats.effect.IO
 import cats.implicits.*
 import com.edufuga.scala.core.*
+import com.edufuga.scala.core.ProductTypes.ProductId
+import com.edufuga.scala.core.ServiceTypes.ServiceId
 import com.edufuga.scala.data.access.entities.{FullOrganisationTypeLevelEffectfulDAO, OrganisationMaterializedDAO, ProductTypeLevelEffectfulStreamingDAO, ServiceTypeLevelEffectfulStreamingDAO}
 
 /**
@@ -14,21 +16,19 @@ import com.edufuga.scala.data.access.entities.{FullOrganisationTypeLevelEffectfu
  * Additionally, the DAO is effectful. This means that it uses an effect type such as the IO monad from Cats Effect as a
  * wrapper around the returned (optional) FullOrganisation entity.
  *
- * @param productDAO Product DAO
- * @param serviceDAO Service DAO
+ * @param productsFromIds Function that returns a list of products from the list of their IDs.
+ * @param servicesFromIds Function that returns a list of services from the list of their IDs.
  * @param organisationDAO Organisation DAO (with references to Product and Service IDs, which need to be resolved)
  */
 sealed class FullOrganisationTypeLevelEffectfulCombinationDAO(
-  productDAO: ProductTypeLevelEffectfulStreamingDAO,
-  serviceDAO: ServiceTypeLevelEffectfulStreamingDAO,
+  productsFromIds: List[ProductId] => IO[List[Product]],
+  servicesFromIds: List[ServiceId] => IO[List[Service]],
   organisationDAO: OrganisationMaterializedDAO
 ) extends FullOrganisationTypeLevelEffectfulDAO {
   override def readAll: IO[Option[FullOrganisation]] = {
     def toEvalFullDepartment(department: Department): IO[FullDepartment] = {
-      // TODO: I guess this could be made MORE GENERAL by injecting a FUNCTION that produces/provides the IO[List[...]].
-      // Function for List[ProductId] => IO[List[Product]] or even more generic (abstract over IO?).
-      val productsEval: IO[List[Product]] = productDAO.readByIds(department.productIds).compile.toList
-      val servicesEval: IO[List[Service]] = serviceDAO.readByIds(department.serviceIds).compile.toList
+      val productsEval: IO[List[Product]] = productsFromIds(department.productIds)
+      val servicesEval: IO[List[Service]] = servicesFromIds(department.serviceIds)
 
       // FIXME: Can this be done using a normal tuple??
       val evalProductsAndServices: IO[(List[Product], List[Service])] = IO.both(productsEval, servicesEval)
