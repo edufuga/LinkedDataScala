@@ -30,5 +30,5 @@ type TypeLevelEffectfulOptionalType[+O] = EffectfulOptional[IO, O] // = IO[Optio
 // Entity and technology specific DAOs. The TypeLevelEffectfulStream higher-kinded type has only one type parameter.
 type ProductTypeLevelEffectfulStreamingDAO = ProductDAO[TypeLevelEffectfulStream] // DAO[ProductId, Stream[IO, Product]]
 type ServiceTypeLevelEffectfulStreamingDAO = ServiceDAO[TypeLevelEffectfulStream] // DAO[ServiceId, Stream[IO, Service]]
-type FullOrganisationTypeLevelEffectfulDAO = FullOrganisationReader[TypeLevelEffectfulOptionalType] // ReadAll[IO[Option[FullOrganisation]]]
 type OrganisationMaterializedDAO = OrganisationReader[Option] // = ReadAll[Option[Organisation]]
+type FullOrganisationTypeLevelEffectfulDAO = FullOrganisationReader[TypeLevelEffectfulOptionalType] // ReadAll[IO[Option[FullOrganisation]]]
