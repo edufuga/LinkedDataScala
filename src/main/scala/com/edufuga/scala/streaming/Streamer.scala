@@ -13,10 +13,10 @@ import com.edufuga.scala.data.access.streamed.file.{ProductFileStreamingWithIODA
 import scala.util.{Failure, Success, Try}
 
 class Streamer(
-                productDAO: ProductTypeLevelEffectfulStreamingDAO,
-                serviceDAO: ServiceTypeLevelEffectfulStreamingDAO,
-                organisationDAO: OrganisationMaterializedDAO,
-                fullOrganisationDAO: FullOrganisationTypeLevelEffectfulDAO
+  productDAO: ProductTypeLevelEffectfulStreamingDAO,
+  serviceDAO: ServiceTypeLevelEffectfulStreamingDAO,
+  organisationDAO: OrganisationMaterializedDAO,
+  fullOrganisationDAO: FullOrganisationTypeLevelEffectfulDAO
 ) {
   def stream: IO[ExitCode] = {
     for {
