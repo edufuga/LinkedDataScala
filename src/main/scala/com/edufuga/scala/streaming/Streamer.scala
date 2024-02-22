@@ -1,10 +1,11 @@
 package com.edufuga.scala.streaming
 
 import cats.effect.{ExitCode, IO, IOApp}
-import cats.implicits._
+import cats.implicits.*
 import com.edufuga.scala.core.*
 import com.edufuga.scala.core.ProductTypes.ProductId
 import com.edufuga.scala.core.ServiceTypes.ServiceId
+import com.edufuga.scala.data.access.effectful.FullOrganisationDAO
 import com.edufuga.scala.data.access.entities.{ProductStreamingEffectfulDAO, ServiceStreamingEffectfulDAO}
 import com.edufuga.scala.data.access.materialized.MaterializingOrganisationDAO
 import com.edufuga.scala.data.access.materialized.file.FileMaterializingOrganisationDAO
@@ -16,7 +17,7 @@ class Streamer(
   productDAO: ProductStreamingEffectfulDAO,
   serviceDAO: ServiceStreamingEffectfulDAO,
   organisationDAO: MaterializingOrganisationDAO,
-  fullOrganisationDAO: OrganisationStreamer
+  fullOrganisationDAO: FullOrganisationDAO
 ) {
   def stream: IO[ExitCode] = {
     for {
@@ -47,7 +48,7 @@ class Streamer(
       _ <- IO.println("Several products: " + severalProducts)
 
       _ <- IO.println("Processing the full organisation. This includes resolving the linked products and services.")
-      organisation <- fullOrganisationDAO.read
+      organisation <- fullOrganisationDAO.readAll
       _ <- IO.println(organisation)
     } yield ExitCode.Success
   }
@@ -68,8 +69,8 @@ object Streamer extends IOApp {
         val productsDAO: ProductStreamingEffectfulDAO = ProductFileStreamingWithIODAO(p)
         val servicesDAO: ServiceStreamingEffectfulDAO = ServiceFileStreamingWithIODAO(s)
         val organisationDAO: MaterializingOrganisationDAO = FileMaterializingOrganisationDAO(o)
-        val fullOrganisationDAO: OrganisationStreamer =
-          new OrganisationStreamer(productsDAO, servicesDAO, organisationDAO)
+        val fullOrganisationDAO: FullOrganisationDAO =
+          new FullOrganisationDAO(productsDAO, servicesDAO, organisationDAO)
 
         val streamer: Streamer = new Streamer(productsDAO, servicesDAO, organisationDAO, fullOrganisationDAO)
         streamer.stream

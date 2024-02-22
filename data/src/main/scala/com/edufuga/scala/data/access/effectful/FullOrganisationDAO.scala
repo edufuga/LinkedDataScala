@@ -1,17 +1,18 @@
-package com.edufuga.scala.streaming
+package com.edufuga.scala.data.access.effectful
 
 import cats.effect.IO
 import cats.implicits.*
 import com.edufuga.scala.core.*
+import com.edufuga.scala.data.access.ReadAll
 import com.edufuga.scala.data.access.entities.{ProductStreamingEffectfulDAO, ServiceStreamingEffectfulDAO}
 import com.edufuga.scala.data.access.materialized.MaterializingOrganisationDAO
 
-class OrganisationStreamer(
+sealed class FullOrganisationDAO(
   productDAO: ProductStreamingEffectfulDAO,
   serviceDAO: ServiceStreamingEffectfulDAO,
   organisationDAO: MaterializingOrganisationDAO
-) {
-  def read: IO[Option[FullOrganisation]] = {
+) extends ReadAll[IO[Option[FullOrganisation]]] {
+  override def readAll: IO[Option[FullOrganisation]] = {
     def toEvalFullDepartment(department: Department): IO[FullDepartment] = {
       val productsEval: IO[List[Product]] = productDAO.readByIds(department.productIds).compile.toList
       val servicesEval: IO[List[Service]] = serviceDAO.readByIds(department.serviceIds).compile.toList
