@@ -5,8 +5,8 @@ import cats.implicits.*
 import com.edufuga.scala.core.*
 import com.edufuga.scala.core.ProductTypes.ProductId
 import com.edufuga.scala.core.ServiceTypes.ServiceId
-import com.edufuga.scala.data.access.effectful.EffectfulFullOrganisationDAO
-import com.edufuga.scala.data.access.entities.{FullOrganisationDAO, OrganisationDAO, ProductStreamingEffectfulDAO, ServiceStreamingEffectfulDAO}
+import com.edufuga.scala.data.access.effectful.CompositeEffectfulFullOrganisationDAO
+import com.edufuga.scala.data.access.entities.{EffectfulFullOrganisationDAO, OrganisationDAO, ProductStreamingEffectfulDAO, ServiceStreamingEffectfulDAO}
 import com.edufuga.scala.data.access.materialized.file.FileMaterializingOrganisationDAO
 import com.edufuga.scala.data.access.streamed.file.{ProductFileStreamingWithIODAO, ServiceFileStreamingWithIODAO}
 
@@ -16,7 +16,7 @@ class Streamer(
   productDAO: ProductStreamingEffectfulDAO,
   serviceDAO: ServiceStreamingEffectfulDAO,
   organisationDAO: OrganisationDAO,
-  fullOrganisationDAO: FullOrganisationDAO
+  fullOrganisationDAO: EffectfulFullOrganisationDAO[IO]
 ) {
   def stream: IO[ExitCode] = {
     for {
@@ -68,8 +68,8 @@ object Streamer extends IOApp {
         val productsDAO: ProductStreamingEffectfulDAO = ProductFileStreamingWithIODAO(p)
         val servicesDAO: ServiceStreamingEffectfulDAO = ServiceFileStreamingWithIODAO(s)
         val organisationDAO: OrganisationDAO = FileMaterializingOrganisationDAO(o)
-        val fullOrganisationDAO: FullOrganisationDAO =
-          new EffectfulFullOrganisationDAO(productsDAO, servicesDAO, organisationDAO)
+        val fullOrganisationDAO: EffectfulFullOrganisationDAO[IO] =
+          new CompositeEffectfulFullOrganisationDAO(productsDAO, servicesDAO, organisationDAO)
 
         val streamer: Streamer = new Streamer(productsDAO, servicesDAO, organisationDAO, fullOrganisationDAO)
         streamer.stream

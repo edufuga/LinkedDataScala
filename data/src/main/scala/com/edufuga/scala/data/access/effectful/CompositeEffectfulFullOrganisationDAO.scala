@@ -3,13 +3,26 @@ package com.edufuga.scala.data.access.effectful
 import cats.effect.IO
 import cats.implicits.*
 import com.edufuga.scala.core.*
-import com.edufuga.scala.data.access.entities.{FullOrganisationDAO, OrganisationDAO, ProductStreamingEffectfulDAO, ServiceStreamingEffectfulDAO}
+import com.edufuga.scala.data.access.entities.{EffectfulFullOrganisationDAO, OrganisationDAO, ProductStreamingEffectfulDAO, ServiceStreamingEffectfulDAO}
 
-sealed class EffectfulFullOrganisationDAO(
+/**
+ * This is an implementation of the DAO for the FullOrganisation entity.
+ *
+ * The implementation is a composite, i.e. it uses the Product DAO and the Service DAO in order to retrieve those
+ * entities via their IDs.
+ *
+ * Additionally, the DAO is effectful. This means that it uses an effect type such as the IO monad from Cats Effect as a
+ * wrapper around the returned (optional) FullOrganisation entity.
+ *
+ * @param productDAO Product DAO
+ * @param serviceDAO Service DAO
+ * @param organisationDAO Organisation DAO (with references to Product and Service IDs, which need to be resolved)
+ */
+sealed class CompositeEffectfulFullOrganisationDAO(
   productDAO: ProductStreamingEffectfulDAO,
   serviceDAO: ServiceStreamingEffectfulDAO,
   organisationDAO: OrganisationDAO
-) extends FullOrganisationDAO {
+) extends EffectfulFullOrganisationDAO[IO] {
   override def readAll: IO[Option[FullOrganisation]] = {
     def toEvalFullDepartment(department: Department): IO[FullDepartment] = {
       val productsEval: IO[List[Product]] = productDAO.readByIds(department.productIds).compile.toList

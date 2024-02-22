@@ -22,4 +22,4 @@ type ServiceStreamingEffectfulDAO = ServiceDAO[StreamingEffectfulWrapper]
 type OrganisationDAO = ReadAll[Option[Organisation]]
 
 // Effectful DAO.
-type FullOrganisationDAO = ReadAll[IO[Option[FullOrganisation]]]
+type EffectfulFullOrganisationDAO[+EF[+_]] = ReadAll[EF[Option[FullOrganisation]]]
