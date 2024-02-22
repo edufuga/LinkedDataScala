@@ -40,6 +40,10 @@ class Streamer(
       _ <- IO.println(s"Finding a service by ID within the stream of services.")
       bingoService <- serviceDAO.readById(ServiceId("Y274-1029755")).compile.last
       _ <- IO.println("Bingo service: " + bingoService)
+
+      _ <- IO.println(s"Finding several products by their IDs within the stream of products.")
+      severalProducts <- productDAO.readByIds(List(ProductId("O184-6903943"), ProductId("N180-3300253"))).compile.last
+      _ <- IO.println("Several products: " + severalProducts)
     } yield ExitCode.Success
   }
 }

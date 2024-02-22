@@ -43,8 +43,8 @@ object OrganisationStreamer extends IOApp {
     val productsAndServicesEval: IO[(List[Product], List[Service])] = IO.both(productsEval, servicesEval)
 
     val fullDepartmentEval: IO[FullDepartment] = productsAndServicesEval.map { (products, services) =>
-      //println(s"Products: $products")
-      //println(s"Services: $services")
+      println(s"Products: $products")
+      println(s"Services: $services")
       FullDepartment(
         department.id,
         department.name,
