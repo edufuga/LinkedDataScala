@@ -3,7 +3,7 @@ package com.edufuga.scala.data.access.effectful
 import cats.effect.IO
 import cats.implicits.*
 import com.edufuga.scala.core.*
-import com.edufuga.scala.data.access.entities.{FullOrganisationEffectfulDAO, FullOrganisationTypeLevelEffectfulDAO, OrganisationMaterializedDAO, ProductTypeLevelEffectfulStreamingDAO, ServiceTypeLevelEffectfulStreamingDAO}
+import com.edufuga.scala.data.access.entities.{FullOrganisationTypeLevelEffectfulDAO, OrganisationMaterializedDAO, ProductTypeLevelEffectfulStreamingDAO, ServiceTypeLevelEffectfulStreamingDAO}
 
 /**
  * This is an implementation of the DAO for the FullOrganisation entity.

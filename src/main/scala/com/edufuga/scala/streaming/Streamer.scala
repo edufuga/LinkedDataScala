@@ -6,7 +6,7 @@ import com.edufuga.scala.core.*
 import com.edufuga.scala.core.ProductTypes.ProductId
 import com.edufuga.scala.core.ServiceTypes.ServiceId
 import com.edufuga.scala.data.access.effectful.FullOrganisationTypeLevelEffectfulCombinationDAO
-import com.edufuga.scala.data.access.entities.{FullOrganisationEffectfulDAO, FullOrganisationTypeLevelEffectfulDAO, OrganisationMaterializedDAO, ProductTypeLevelEffectfulStreamingDAO, ServiceTypeLevelEffectfulStreamingDAO}
+import com.edufuga.scala.data.access.entities.{FullOrganisationTypeLevelEffectfulDAO, OrganisationMaterializedDAO, ProductTypeLevelEffectfulStreamingDAO, ServiceTypeLevelEffectfulStreamingDAO}
 import com.edufuga.scala.data.access.materialized.file.FileMaterializingOrganisationDAO
 import com.edufuga.scala.data.access.streamed.file.{ProductFileStreamingWithIODAO, ServiceFileStreamingWithIODAO}
 
@@ -16,7 +16,7 @@ class Streamer(
                 productDAO: ProductTypeLevelEffectfulStreamingDAO,
                 serviceDAO: ServiceTypeLevelEffectfulStreamingDAO,
                 organisationDAO: OrganisationMaterializedDAO,
-                fullOrganisationDAO: FullOrganisationEffectfulDAO[IO]
+                fullOrganisationDAO: FullOrganisationTypeLevelEffectfulDAO
 ) {
   def stream: IO[ExitCode] = {
     for {
