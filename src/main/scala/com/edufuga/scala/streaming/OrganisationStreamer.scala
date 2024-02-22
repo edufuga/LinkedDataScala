@@ -20,9 +20,9 @@ class OrganisationStreamer(
       val productsEval: IO[List[Product]] = productDAO.readByIds(department.productIds).compile.toList
       val servicesEval: IO[List[Service]] = serviceDAO.readByIds(department.serviceIds).compile.toList
 
-      val productsAndServicesEval: IO[(List[Product], List[Service])] = IO.both(productsEval, servicesEval)
+      val evalProductsAndServices: IO[(List[Product], List[Service])] = IO.both(productsEval, servicesEval)
 
-      val fullDepartmentEval: IO[FullDepartment] = productsAndServicesEval.map { (products, services) =>
+      val evalFullDepartment: IO[FullDepartment] = evalProductsAndServices.map { (products, services) =>
         FullDepartment(
           department.id,
           department.name,
@@ -33,13 +33,11 @@ class OrganisationStreamer(
         )
       }
 
-      fullDepartmentEval
+      evalFullDepartment
     }
 
     def toFullOrganisation(organisation: Organisation): IO[FullOrganisation] = {
-      val fullDepartmentEvalList: List[IO[FullDepartment]] = organisation.departments.map { department =>
-        toEvalFullDepartment(department)
-      }
+      val fullDepartmentEvalList: List[IO[FullDepartment]] = organisation.departments.map(toEvalFullDepartment)
 
       // Convert the List[IO[...]] to IO[List[...]]
       val evalFullDepartments: IO[List[FullDepartment]] = fullDepartmentEvalList.sequence
@@ -52,9 +50,7 @@ class OrganisationStreamer(
     for {
       _ <- IO.println("Processing the full organisation. This includes resolving the linked products and services.")
       // Notice the '.sequence' to convert from Option[IO[FullOrganisation]] to IO[Option[FullOrganisation]].
-      maybeFullOrganisation <- organisationDAO.readAll.map { organisation =>
-        toFullOrganisation(organisation)
-      }.sequence
+      maybeFullOrganisation <- organisationDAO.readAll.map(toFullOrganisation).sequence
       _ <- IO.println(maybeFullOrganisation)
     } yield ExitCode.Success
   }
