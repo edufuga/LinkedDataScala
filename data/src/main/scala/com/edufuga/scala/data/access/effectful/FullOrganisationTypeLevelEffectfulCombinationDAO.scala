@@ -26,6 +26,7 @@ sealed class FullOrganisationTypeLevelEffectfulCombinationDAO(
   override def readAll: IO[Option[FullOrganisation]] = {
     def toEvalFullDepartment(department: Department): IO[FullDepartment] = {
       // TODO: I guess this could be made MORE GENERAL by injecting a FUNCTION that produces/provides the IO[List[...]].
+      // Function for List[ProductId] => IO[List[Product]] or even more generic (abstract over IO?).
       val productsEval: IO[List[Product]] = productDAO.readByIds(department.productIds).compile.toList
       val servicesEval: IO[List[Service]] = serviceDAO.readByIds(department.serviceIds).compile.toList
 
