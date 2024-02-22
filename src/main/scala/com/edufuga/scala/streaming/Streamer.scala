@@ -6,15 +6,15 @@ import com.edufuga.scala.core.*
 import com.edufuga.scala.core.ProductTypes.ProductId
 import com.edufuga.scala.core.ServiceTypes.ServiceId
 import com.edufuga.scala.data.access.effectful.CompositeEffectfulFullOrganisationDAO
-import com.edufuga.scala.data.access.entities.{EffectfulFullOrganisationDAO, OrganisationDAO, ProductStreamingEffectfulDAO, ServiceStreamingEffectfulDAO}
+import com.edufuga.scala.data.access.entities.{EffectfulFullOrganisationDAO, OrganisationDAO, ProductTypeLevelStreamingEffectfulDAO, ServiceTypeLevelStreamingEffectfulDAO}
 import com.edufuga.scala.data.access.materialized.file.FileMaterializingOrganisationDAO
 import com.edufuga.scala.data.access.streamed.file.{ProductFileStreamingWithIODAO, ServiceFileStreamingWithIODAO}
 
 import scala.util.{Failure, Success, Try}
 
 class Streamer(
-  productDAO: ProductStreamingEffectfulDAO,
-  serviceDAO: ServiceStreamingEffectfulDAO,
+  productDAO: ProductTypeLevelStreamingEffectfulDAO,
+  serviceDAO: ServiceTypeLevelStreamingEffectfulDAO,
   organisationDAO: OrganisationDAO,
   fullOrganisationDAO: EffectfulFullOrganisationDAO[IO]
 ) {
@@ -65,8 +65,8 @@ object Streamer extends IOApp {
         ExitCode.Error
       }
       case Success(p, s, o) =>
-        val productsDAO: ProductStreamingEffectfulDAO = ProductFileStreamingWithIODAO(p)
-        val servicesDAO: ServiceStreamingEffectfulDAO = ServiceFileStreamingWithIODAO(s)
+        val productsDAO: ProductTypeLevelStreamingEffectfulDAO = ProductFileStreamingWithIODAO(p)
+        val servicesDAO: ServiceTypeLevelStreamingEffectfulDAO = ServiceFileStreamingWithIODAO(s)
         val organisationDAO: OrganisationDAO = FileMaterializingOrganisationDAO(o)
         val fullOrganisationDAO: EffectfulFullOrganisationDAO[IO] =
           new CompositeEffectfulFullOrganisationDAO(productsDAO, servicesDAO, organisationDAO)

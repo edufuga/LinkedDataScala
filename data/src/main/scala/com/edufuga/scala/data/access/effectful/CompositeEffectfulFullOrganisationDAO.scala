@@ -3,7 +3,7 @@ package com.edufuga.scala.data.access.effectful
 import cats.effect.IO
 import cats.implicits.*
 import com.edufuga.scala.core.*
-import com.edufuga.scala.data.access.entities.{EffectfulFullOrganisationDAO, OrganisationDAO, ProductStreamingEffectfulDAO, ServiceStreamingEffectfulDAO}
+import com.edufuga.scala.data.access.entities.{EffectfulFullOrganisationDAO, OrganisationDAO, ProductTypeLevelStreamingEffectfulDAO, ServiceTypeLevelStreamingEffectfulDAO}
 
 /**
  * This is an implementation of the DAO for the FullOrganisation entity.
@@ -19,8 +19,8 @@ import com.edufuga.scala.data.access.entities.{EffectfulFullOrganisationDAO, Org
  * @param organisationDAO Organisation DAO (with references to Product and Service IDs, which need to be resolved)
  */
 sealed class CompositeEffectfulFullOrganisationDAO(
-  productDAO: ProductStreamingEffectfulDAO,
-  serviceDAO: ServiceStreamingEffectfulDAO,
+  productDAO: ProductTypeLevelStreamingEffectfulDAO,
+  serviceDAO: ServiceTypeLevelStreamingEffectfulDAO,
   organisationDAO: OrganisationDAO
 ) extends EffectfulFullOrganisationDAO[IO] {
   override def readAll: IO[Option[FullOrganisation]] = {
