@@ -15,7 +15,7 @@ class OrganisationStreamer(
   serviceDAO: ServiceStreamingEffectfulDAO,
   organisationDAO: MaterializingOrganisationDAO
 ) {
-  def stream: IO[ExitCode] = {
+  def read: IO[Option[FullOrganisation]] = {
     def toEvalFullDepartment(department: Department): IO[FullDepartment] = {
       val productsEval: IO[List[Product]] = productDAO.readByIds(department.productIds).compile.toList
       val servicesEval: IO[List[Service]] = serviceDAO.readByIds(department.serviceIds).compile.toList
@@ -52,7 +52,7 @@ class OrganisationStreamer(
       // Notice the '.sequence' to convert from Option[IO[FullOrganisation]] to IO[Option[FullOrganisation]].
       maybeFullOrganisation <- organisationDAO.readAll.map(toFullOrganisation).sequence
       _ <- IO.println(maybeFullOrganisation)
-    } yield ExitCode.Success
+    } yield maybeFullOrganisation
   }
 }
 
@@ -74,6 +74,9 @@ object OrganisationStreamer extends IOApp {
 
         val organisationStreamer: OrganisationStreamer =
           new OrganisationStreamer(productsDAO, servicesDAO, organisationDAO)
-        organisationStreamer.stream
+        for {
+          organisation <- organisationStreamer.read
+          _ <- IO.println(organisation)
+        } yield ExitCode.Success
   }
 }
