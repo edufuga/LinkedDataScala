@@ -7,5 +7,5 @@ package com.edufuga.scala.data.access
  * @tparam O Type of the outputted data, independent on the form in which it is returned (optional, IO, Streaming, etc.)
  */
 trait ReadByIds[I, +O] {
-  def readByIds(ids: Seq[I]): O
+  def readByIds(ids: => Seq[I]): O
 }
