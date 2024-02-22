@@ -30,5 +30,5 @@ import fs2.Stream
  */
 trait StreamingEffectfulDAO[Id, +F[+_], +O <: Identifiable[Id]] extends ChannelingEffectfulDAO[Id, Stream, F, O] {
   override def readById(id: Id): Stream[F, O] = readAll.filter(_.id.equals(id))
-  override def readByIds(ids: Seq[Id]): Stream[F, O] = readAll.filter(ids.contains(_))
+  override def readByIds(ids: Seq[Id]): Stream[F, O] = readAll.filter { found => ids.contains(found.id) }
 }
