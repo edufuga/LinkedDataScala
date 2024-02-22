@@ -30,7 +30,6 @@ sealed class FullOrganisationTypeLevelEffectfulCombinationDAO(
       val productsEval: IO[List[Product]] = productsFromIds(department.productIds)
       val servicesEval: IO[List[Service]] = servicesFromIds(department.serviceIds)
 
-      // FIXME: Can this be done using a normal tuple??
       val evalProductsAndServices: IO[(List[Product], List[Service])] = IO.both(productsEval, servicesEval)
 
       val evalFullDepartment: IO[FullDepartment] = evalProductsAndServices.map { (products, services) =>
