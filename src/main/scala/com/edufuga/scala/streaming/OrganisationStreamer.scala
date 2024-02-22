@@ -1,6 +1,5 @@
 package com.edufuga.scala.streaming
 
-import cats.effect.unsafe.implicits.global
 import cats.effect.{ExitCode, IO, IOApp}
 import cats.implicits.*
 import com.edufuga.scala.core.*
@@ -17,9 +16,7 @@ class OrganisationStreamer(
   organisationDAO: MaterializingOrganisationDAO
 ) {
   def stream: IO[ExitCode] = {
-    def toEvalFullDepartment(department: Department,
-                             productDAO: ProductStreamingEffectfulDAO,
-                             serviceDAO: ServiceStreamingEffectfulDAO): IO[FullDepartment] = {
+    def toEvalFullDepartment(department: Department): IO[FullDepartment] = {
       val productsEval: IO[List[Product]] = productDAO.readByIds(department.productIds).compile.toList
       val servicesEval: IO[List[Service]] = serviceDAO.readByIds(department.serviceIds).compile.toList
 
@@ -39,11 +36,9 @@ class OrganisationStreamer(
       fullDepartmentEval
     }
 
-    def toFullOrganisation(organisation: Organisation,
-                           productDAO: ProductStreamingEffectfulDAO,
-                           serviceDAO: ServiceStreamingEffectfulDAO): IO[FullOrganisation] = {
+    def toFullOrganisation(organisation: Organisation): IO[FullOrganisation] = {
       val fullDepartmentEvalList: List[IO[FullDepartment]] = organisation.departments.map { department =>
-        toEvalFullDepartment(department, productDAO, serviceDAO)
+        toEvalFullDepartment(department)
       }
 
       // Convert the List[IO[...]] to IO[List[...]]
@@ -58,7 +53,7 @@ class OrganisationStreamer(
       _ <- IO.println("Processing the full organisation. This includes resolving the linked products and services.")
       // Notice the '.sequence' to convert from Option[IO[FullOrganisation]] to IO[Option[FullOrganisation]].
       maybeFullOrganisation <- organisationDAO.readAll.map { organisation =>
-        toFullOrganisation(organisation, productDAO, serviceDAO)
+        toFullOrganisation(organisation)
       }.sequence
       _ <- IO.println(maybeFullOrganisation)
     } yield ExitCode.Success
