@@ -1,4 +1,4 @@
-package com.edufuga.scala.entity.operations
+package com.edufuga.scala.operations.entity
 
 import com.edufuga.scala.entities.*
 import com.edufuga.scala.entities.ProductTypes.ProductId

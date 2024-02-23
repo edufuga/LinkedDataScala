@@ -1,7 +1,7 @@
 package com.edufuga.scala.data.access.entities
 
 import cats.effect.IO
-import com.edufuga.scala.entity.operations.*
+import com.edufuga.scala.operations.entity.*
 import fs2.Stream
 
 /** Notice the clearly separated parts of "what", "how" and "what + technology-specific how" */
