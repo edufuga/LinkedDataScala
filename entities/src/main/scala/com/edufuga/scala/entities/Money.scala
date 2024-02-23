@@ -1,4 +1,4 @@
-package com.edufuga.scala.core
+package com.edufuga.scala.entities
 
 import java.util.Currency
 import scala.util.Try

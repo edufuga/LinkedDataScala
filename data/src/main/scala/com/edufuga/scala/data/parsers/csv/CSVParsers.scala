@@ -1,8 +1,8 @@
 package com.edufuga.scala.data.parsers.csv
 
-import com.edufuga.scala.core.*
-import com.edufuga.scala.core.ProductTypes.*
-import com.edufuga.scala.core.ServiceTypes.*
+import com.edufuga.scala.entities.*
+import com.edufuga.scala.entities.ProductTypes.*
+import com.edufuga.scala.entities.ServiceTypes.*
 import com.edufuga.scala.data.patterns.regex.RegexPatterns
 import com.edufuga.scala.data.patterns.regex.RegexPatterns.{decimalNumber, word}
 

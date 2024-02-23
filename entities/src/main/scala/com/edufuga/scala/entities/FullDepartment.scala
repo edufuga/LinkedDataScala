@@ -1,6 +1,6 @@
-package com.edufuga.scala.core
+package com.edufuga.scala.entities
 
-import com.edufuga.scala.core.DepartmentTypes.{DepartmentId, DepartmentName}
+import com.edufuga.scala.entities.DepartmentTypes.{DepartmentId, DepartmentName}
 
 case class FullDepartment(
   id: DepartmentId,

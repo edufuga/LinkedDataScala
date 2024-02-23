@@ -1,6 +1,6 @@
-package com.edufuga.scala.core
+package com.edufuga.scala.entities
 
-import com.edufuga.scala.core.PersonTypes.{Address, Email, Name, Phone}
+import com.edufuga.scala.entities.PersonTypes.{Address, Email, Name, Phone}
 
 case class Manager(
                     email: Email,

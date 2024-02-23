@@ -2,7 +2,7 @@ package com.edufuga.scala.data.access.streamed.file
 
 import cats.effect.IO
 import com.edufuga.scala.data.access.ops.{FileOps, StreamOps}
-import com.edufuga.scala.core.Identifiable
+import com.edufuga.scala.entities.Identifiable
 import com.edufuga.scala.data.access.streamed.StreamingWithIODAO
 import fs2.Stream
 import fs2.io.file.Files

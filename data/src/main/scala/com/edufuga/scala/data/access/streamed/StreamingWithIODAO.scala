@@ -1,7 +1,7 @@
 package com.edufuga.scala.data.access.streamed
 
 import cats.effect.IO
-import com.edufuga.scala.core.Identifiable
+import com.edufuga.scala.entities.Identifiable
 import com.edufuga.scala.data.access.DAO
 import com.edufuga.scala.data.access.entities.{TypeLevelEffectfulOptional, TypeLevelEffectfulStream}
 import fs2.Stream

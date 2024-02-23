@@ -1,4 +1,4 @@
-package com.edufuga.scala.core
+package com.edufuga.scala.entities
 
 object DepartmentTypes {
   opaque type DepartmentId = String

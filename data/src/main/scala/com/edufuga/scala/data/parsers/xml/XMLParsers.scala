@@ -1,11 +1,11 @@
 package com.edufuga.scala.data.parsers.xml
 
-import com.edufuga.scala.core.*
-import com.edufuga.scala.core.DepartmentTypes.*
-import com.edufuga.scala.core.EmployeeTypes.*
-import com.edufuga.scala.core.PersonTypes.*
-import com.edufuga.scala.core.ProductTypes.*
-import com.edufuga.scala.core.ServiceTypes.*
+import com.edufuga.scala.entities.*
+import com.edufuga.scala.entities.DepartmentTypes.*
+import com.edufuga.scala.entities.EmployeeTypes.*
+import com.edufuga.scala.entities.PersonTypes.*
+import com.edufuga.scala.entities.ProductTypes.*
+import com.edufuga.scala.entities.ServiceTypes.*
 
 import scala.util.{Failure, Success, Try}
 import scala.xml.Node

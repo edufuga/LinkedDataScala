@@ -1,4 +1,4 @@
-package com.edufuga.scala.core
+package com.edufuga.scala.entities
 
 /**
  * This trait represents the ID of an entity.

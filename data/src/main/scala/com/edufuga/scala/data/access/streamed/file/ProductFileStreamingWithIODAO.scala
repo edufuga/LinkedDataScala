@@ -1,7 +1,7 @@
 package com.edufuga.scala.data.access.streamed.file
 
-import com.edufuga.scala.core.Product
-import com.edufuga.scala.core.ProductTypes.ProductId
+import com.edufuga.scala.entities.Product
+import com.edufuga.scala.entities.ProductTypes.ProductId
 import com.edufuga.scala.data.access.entities.ProductTypeLevelEffectfulStreamingDAO
 import com.edufuga.scala.data.parsers.csv.CSVParsers
 

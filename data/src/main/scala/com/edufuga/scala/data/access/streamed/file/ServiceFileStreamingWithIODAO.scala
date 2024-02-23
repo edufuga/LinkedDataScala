@@ -1,7 +1,7 @@
 package com.edufuga.scala.data.access.streamed.file
 
-import com.edufuga.scala.core.Service
-import com.edufuga.scala.core.ServiceTypes.ServiceId
+import com.edufuga.scala.entities.Service
+import com.edufuga.scala.entities.ServiceTypes.ServiceId
 import com.edufuga.scala.data.access.entities.ServiceTypeLevelEffectfulStreamingDAO
 import com.edufuga.scala.data.parsers.csv.CSVParsers
 

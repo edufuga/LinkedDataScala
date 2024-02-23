@@ -1,4 +1,4 @@
-package com.edufuga.scala.core
+package com.edufuga.scala.entities
 
 import ProductTypes.{ProductId, ProductManager}
 import ServiceTypes.{ServiceId, ServiceName}

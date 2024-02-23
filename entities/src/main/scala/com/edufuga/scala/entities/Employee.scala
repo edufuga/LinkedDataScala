@@ -1,4 +1,4 @@
-package com.edufuga.scala.core
+package com.edufuga.scala.entities
 
 import EmployeeTypes.ProductExpert
 import PersonTypes.{Address, Email, Name, Phone}

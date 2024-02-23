@@ -2,9 +2,9 @@ package com.edufuga.scala.data.access.effectful
 
 import cats.effect.IO
 import cats.implicits.*
-import com.edufuga.scala.core.*
-import com.edufuga.scala.core.ProductTypes.ProductId
-import com.edufuga.scala.core.ServiceTypes.ServiceId
+import com.edufuga.scala.entities.*
+import com.edufuga.scala.entities.ProductTypes.ProductId
+import com.edufuga.scala.entities.ServiceTypes.ServiceId
 import com.edufuga.scala.data.access.entities.{FullOrganisationTypeLevelEffectfulDAO, OrganisationMaterializedDAO, ProductTypeLevelEffectfulStreamingDAO, ServiceTypeLevelEffectfulStreamingDAO}
 
 /**

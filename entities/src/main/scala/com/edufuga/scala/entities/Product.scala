@@ -1,6 +1,6 @@
-package com.edufuga.scala.core
+package com.edufuga.scala.entities
 
-import com.edufuga.scala.core.ProductTypes.*
+import com.edufuga.scala.entities.ProductTypes.*
 
 case class Product(
   id: ProductId,
