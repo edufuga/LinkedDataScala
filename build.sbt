@@ -16,8 +16,8 @@ lazy val root = (project in file("."))
     mainClass := Some("com.edufuga.scala.streaming.Streamer"),
     maintainer := " efugarolas@brox.de"
   )
-  .aggregate(entities, data)
-  .dependsOn(entities, data)
+  .aggregate(entities, data, entity_operations_implementation)
+  .dependsOn(entities, data, entity_operations_implementation)
 
 lazy val data = (project in file("data"))
   .settings(commonSettings)
@@ -29,8 +29,8 @@ lazy val data = (project in file("data"))
       "co.fs2" %% "fs2-io" % fs2Version
     )
   )
-  .aggregate(entities, operations, entity_operations)
-  .dependsOn(entities, operations, entity_operations)
+  .aggregate(entities, operations, entity_operations) // TODO: Remove entity_operations from here.
+  .dependsOn(entities, operations, entity_operations) // TODO: Remove entity_operations from here.
 
 lazy val entities = (project in file("entities"))
   .settings(commonSettings)
@@ -61,6 +61,6 @@ lazy val entity_operations_implementation = (project in file("entity_operations_
       "co.fs2" %% "fs2-io" % fs2Version
     )
   )
-  .aggregate(entities, operations, entity_operations)
-  .dependsOn(entities, operations, entity_operations)
+  .aggregate(entities, operations, entity_operations, data)
+  .dependsOn(entities, operations, entity_operations, data)
 
