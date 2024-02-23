@@ -1,4 +1,4 @@
-package com.edufuga.scala.data.access
+package com.edufuga.scala.operations
 
 /**
  * Interface for reading (finding) entries by their IDs.

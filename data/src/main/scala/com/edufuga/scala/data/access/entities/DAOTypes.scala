@@ -4,7 +4,7 @@ import cats.effect.IO
 import com.edufuga.scala.entities.*
 import com.edufuga.scala.entities.ProductTypes.ProductId
 import com.edufuga.scala.entities.ServiceTypes.ServiceId
-import com.edufuga.scala.data.access.{DAO, ReadAll}
+import com.edufuga.scala.operations.{DAO, ReadAll}
 import fs2.Stream
 
 /** Notice the clearly separated parts of "what", "how" and "what + technology-specific how" */

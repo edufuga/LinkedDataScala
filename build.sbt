@@ -12,7 +12,7 @@ lazy val root = (project in file("."))
   .enablePlugins(JavaAppPackaging)
   .settings(commonSettings)
   .settings(
-    name := "LinkedData",
+    name := "Streamer",
     mainClass := Some("com.edufuga.scala.streaming.Streamer"),
     maintainer := " efugarolas@brox.de"
   )
@@ -29,11 +29,17 @@ lazy val data = (project in file("data"))
       "co.fs2" %% "fs2-io" % fs2Version
     )
   )
-  .aggregate(entities)
-  .dependsOn(entities)
+  .aggregate(entities, operations)
+  .dependsOn(entities, operations)
 
 lazy val entities = (project in file("entities"))
   .settings(commonSettings)
   .settings(
     name := "Entities"
+  )
+
+lazy val operations = (project in file("operations"))
+  .settings(commonSettings)
+  .settings(
+    name := "Operations"
   )
