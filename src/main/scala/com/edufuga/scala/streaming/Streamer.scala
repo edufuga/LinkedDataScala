@@ -35,11 +35,11 @@ class Streamer(
       _ <- IO.println(maybeOrganisation)
 
       _ <- IO.println(s"Finding a product by ID within the stream of products.")
-      bingoProduct <- productDAO.readById(ProductId("X716-6172862")).compile.last
+      bingoProduct <- productDAO.readById(ProductId("X716-6172862"))
       _ <- IO.println("Bingo product: " + bingoProduct)
 
       _ <- IO.println(s"Finding a service by ID within the stream of services.")
-      bingoService <- serviceDAO.readById(ServiceId("Y274-1029755")).compile.last
+      bingoService <- serviceDAO.readById(ServiceId("Y274-1029755"))
       _ <- IO.println("Bingo service: " + bingoService)
 
       _ <- IO.println(s"Finding several products by their IDs within the stream of products.")

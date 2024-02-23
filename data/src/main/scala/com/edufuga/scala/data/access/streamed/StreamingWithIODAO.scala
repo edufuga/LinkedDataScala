@@ -2,6 +2,9 @@ package com.edufuga.scala.data.access.streamed
 
 import cats.effect.IO
 import com.edufuga.scala.core.Identifiable
+import com.edufuga.scala.data.access.DAO
+import com.edufuga.scala.data.access.entities.{TypeLevelEffectfulOptional, TypeLevelEffectfulStream}
+import fs2.Stream
 
 /**
  *
@@ -21,4 +24,7 @@ import com.edufuga.scala.core.Identifiable
  * @tparam Id Type of the ID of the outputted entity.
  * @tparam O Type of the outputted data, independent on the form in which it is returned (optional, IO, Streaming, etc.)
  */
-trait StreamingWithIODAO[Id, +O <: Identifiable[Id]] extends StreamingEffectfulDAO[Id, IO, O]
+trait StreamingWithIODAO[Id, +O <: Identifiable[Id]] extends DAO[Id, O, TypeLevelEffectfulOptional, TypeLevelEffectfulStream] {
+  override def readById(id: => Id): IO[Option[O]] = readAll.find(_.id.equals(id)).compile.last
+  override def readByIds(ids: => Seq[Id]): Stream[IO, O] = readAll.filter { found => ids.contains(found.id) }
+}
