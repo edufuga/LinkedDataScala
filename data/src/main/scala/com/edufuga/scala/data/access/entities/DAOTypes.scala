@@ -1,20 +1,10 @@
 package com.edufuga.scala.data.access.entities
 
 import cats.effect.IO
-import com.edufuga.scala.entities.*
-import com.edufuga.scala.entities.ProductTypes.ProductId
-import com.edufuga.scala.entities.ServiceTypes.ServiceId
-import com.edufuga.scala.operations.{DAO, ReadAll}
+import com.edufuga.scala.entity.operations.*
 import fs2.Stream
 
 /** Notice the clearly separated parts of "what", "how" and "what + technology-specific how" */
-
-/* WHAT (what entities can be retrieved, etc.) */
-type ProductDAO[+W[+_], +S[+_]] = DAO[ProductId, Product, W, S] // This wrapper can be anything: Option, IO, Stream, etc.
-type ServiceDAO[+W[+_], +S[+_]] = DAO[ServiceId, Service, W, S] // This wrapper can be anything: Option, IO, Stream, etc.
-type OrganisationReader[+W[+_]] = ReadAll[Organisation, W] // This wrapper can be anything: Option, IO, etc.
-type FullOrganisationReader[+W[+_]] = ReadAll[FullOrganisation, W] // This wrapper can be anything: Option, IO, etc.
-
 
 /* HOW (how the information is transported or contained, independent of the specific entity and the technology) */
 type EffectfulStream[+S[+_[_], +_], EF[+_], +O] = S[EF, O] // This is a higher-kinded type alias, meant for streaming.

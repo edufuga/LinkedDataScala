@@ -29,8 +29,8 @@ lazy val data = (project in file("data"))
       "co.fs2" %% "fs2-io" % fs2Version
     )
   )
-  .aggregate(entities, operations)
-  .dependsOn(entities, operations)
+  .aggregate(entities, operations, entity_operations)
+  .dependsOn(entities, operations, entity_operations)
 
 lazy val entities = (project in file("entities"))
   .settings(commonSettings)
@@ -43,3 +43,12 @@ lazy val operations = (project in file("operations"))
   .settings(
     name := "Operations"
   )
+
+lazy val entity_operations = (project in file("entity_operations"))
+  .settings(commonSettings)
+  .settings(
+    name := "Entity Operations"
+  )
+  .aggregate(entities, operations)
+  .dependsOn(entities, operations)
+
