@@ -16,13 +16,13 @@ lazy val root = (project in file("."))
     mainClass := Some("com.edufuga.scala.streaming.Streamer"),
     maintainer := " efugarolas@brox.de"
   )
-  .aggregate(entities, data)
-  .dependsOn(entities, data)
+  .aggregate(entities, entity_operations_implementation)
+  .dependsOn(entities, entity_operations_implementation)
 
-lazy val data = (project in file("data"))
+lazy val entity_operations_implementation = (project in file("entity_operations_implementation"))
   .settings(commonSettings)
   .settings(
-    name := "Data",
+    name := "Entity Operations Implementation",
     libraryDependencies ++= Seq(
       "org.scala-lang.modules" %% "scala-xml" % "2.1.0",
       "co.fs2" %% "fs2-core" % fs2Version,
