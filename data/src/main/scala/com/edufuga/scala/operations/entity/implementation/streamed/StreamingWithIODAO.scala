@@ -2,7 +2,7 @@ package com.edufuga.scala.operations.entity.implementation.streamed
 
 import cats.effect.IO
 import com.edufuga.scala.entities.Identifiable
-import com.edufuga.scala.operations.entity.implementation.{TypeLevelEffectfulOptional, TypeLevelEffectfulStream}
+import com.edufuga.scala.operations.entity.implementation.TechnologicalDetails.{TypeLevelEffectfulOptional, TypeLevelEffectfulStream}
 import com.edufuga.scala.operations.DAO
 import fs2.Stream
 
