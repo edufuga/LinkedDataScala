@@ -6,7 +6,7 @@ import fs2.Stream
 
 /** Notice the clearly separated parts of "what", "how" and "what + technology-specific how" */
 
-object TechnologicalDetails {
+object TechnologicalDetailTypes {
   /* HOW (how the information is transported or contained, independent of the specific entity and the technology) */
   private type EffectfulStream[+S[+_[_], +_], EF[+_], +O] = S[EF, O] // This is a higher-kinded type alias, meant for streaming.
   private type EffectfulOptional[EF[+_], +O] = EF[Option[O]] // This is just a simple type alias for effects around optionals.
@@ -18,7 +18,7 @@ object TechnologicalDetails {
 }
 
 object EntityOperationImplementationTypes {
-  import TechnologicalDetails._
+  import TechnologicalDetailTypes.*
 
   /* WHAT + HOW + _technology specific_ (e.g. TypeLevel stack types for Stream, IO, etc.) */
   // Entity and technology specific DAOs. The TypeLevelEffectfulStream higher-kinded type has only one type parameter.
