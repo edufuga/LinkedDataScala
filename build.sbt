@@ -29,8 +29,8 @@ lazy val data = (project in file("data"))
       "co.fs2" %% "fs2-io" % fs2Version
     )
   )
-  .aggregate(entities, operations, entity_operations) // TODO: Remove entity_operations from here.
-  .dependsOn(entities, operations, entity_operations) // TODO: Remove entity_operations from here.
+  .aggregate(entities, operations, entity_operations)
+  .dependsOn(entities, operations, entity_operations)
 
 lazy val entities = (project in file("entities"))
   .settings(commonSettings)
@@ -51,3 +51,14 @@ lazy val entity_operations = (project in file("entity_operations"))
   )
   .aggregate(entities, operations)
   .dependsOn(entities, operations)
+
+lazy val entity_parsers = (project in file("entity_parsers"))
+  .settings(commonSettings)
+  .settings(
+    name := "Entity Parsers",
+    libraryDependencies ++= Seq(
+      "org.scala-lang.modules" %% "scala-xml" % "2.1.0"
+    )
+  )
+  .aggregate(entities)
+  .dependsOn(entities)
