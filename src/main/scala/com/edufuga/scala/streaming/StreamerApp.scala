@@ -1,7 +1,6 @@
 package com.edufuga.scala.streaming
 
 import cats.effect.{ExitCode, IO, IOApp}
-import cats.implicits.*
 import com.edufuga.scala.entities.*
 import com.edufuga.scala.entities.ProductTypes.ProductId
 import com.edufuga.scala.entities.ServiceTypes.ServiceId
