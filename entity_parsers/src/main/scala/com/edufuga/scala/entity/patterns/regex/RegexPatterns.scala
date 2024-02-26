@@ -1,4 +1,4 @@
-package com.edufuga.scala.data.patterns.regex
+package com.edufuga.scala.entity.patterns.regex
 
 import scala.util.matching.Regex
 

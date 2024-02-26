@@ -1,4 +1,4 @@
-package com.edufuga.scala.data.parsers.xml
+package com.edufuga.scala.entity.parsers.xml
 
 import com.edufuga.scala.entities.*
 import com.edufuga.scala.entities.DepartmentTypes.*

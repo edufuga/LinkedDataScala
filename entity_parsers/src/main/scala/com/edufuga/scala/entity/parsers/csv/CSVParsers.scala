@@ -1,10 +1,10 @@
-package com.edufuga.scala.data.parsers.csv
+package com.edufuga.scala.entity.parsers.csv
 
+import com.edufuga.scala.entity.patterns.regex.RegexPatterns
+import com.edufuga.scala.entity.patterns.regex.RegexPatterns.{decimalNumber, word}
 import com.edufuga.scala.entities.*
 import com.edufuga.scala.entities.ProductTypes.*
 import com.edufuga.scala.entities.ServiceTypes.*
-import com.edufuga.scala.data.patterns.regex.RegexPatterns
-import com.edufuga.scala.data.patterns.regex.RegexPatterns.{decimalNumber, word}
 
 import scala.util.matching.Regex
 import scala.util.{Failure, Success, Try}

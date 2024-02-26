@@ -1,8 +1,8 @@
 package com.edufuga.scala.operations.entity.implementation.materialized.file
 
 import com.edufuga.scala.entities.Organisation
+import com.edufuga.scala.entity.parsers.xml.XMLParsers
 import com.edufuga.scala.operations.entity.implementation.EntityOperationImplementationTypes.OrganisationMaterializedDAO
-import com.edufuga.scala.data.parsers.xml.XMLParsers
 import com.edufuga.scala.operations.entity.implementation.ops.FileOps
 
 import scala.xml.XML.loadFile
