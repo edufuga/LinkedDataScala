@@ -11,13 +11,6 @@ import com.edufuga.scala.operations.entity.implementation.streamed.file.*
 
 import scala.util.{Failure, Success, Try}
 
-// Notice that this Streamer is still quite implementation (TypeLevel) specific.
-// Both the interface (parameters) and the implementation are full of IO and Streams and stuff.
-//
-// TODO: Inject the FUNCTIONS that will create the (specific) DAOs in the Streamer!
-// The Streamer should NOT CREATE stuff by itself IN THIS HARD-CODED WAY!
-// WE DON'T WANT TO KNOW THE SUBTYPES SUCH AS FullOrganisationTypeLevelEffectfulCombinationDAO
-// This is similar to the _previous_ Streamer, but it should be the "StreamerApp" _class_.
 object StreamerApp extends IOApp {
   override def run(args: List[String]): IO[ExitCode] = {
     Try {
@@ -42,6 +35,8 @@ object StreamerApp extends IOApp {
         val fullOrganisationDAO: FullOrganisationTypeLevelEffectfulDAO =
           new FullOrganisationTypeLevelEffectfulCombinationDAO(productsFromIds, servicesFromIds, organisationDAO)
 
+        // Notice that this Streamer is still quite implementation (TypeLevel) specific.
+        // Both the interface (parameters) and the implementation are full of IO and Streams and stuff.
         val streamer: Streamer = new Streamer(productsDAO, servicesDAO, organisationDAO, fullOrganisationDAO)
         streamer.stream
   }

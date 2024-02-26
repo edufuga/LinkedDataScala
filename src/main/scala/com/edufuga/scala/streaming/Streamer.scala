@@ -7,6 +7,10 @@ import com.edufuga.scala.operations.entity.implementation.EntityOperationImpleme
 
 // Notice that this Streamer is still quite implementation (TypeLevel) specific.
 // Both the interface (parameters) and the implementation are full of IO and Streams and stuff.
+//
+// The Streamer should NOT CREATE stuff by itself IN THIS HARD-CODED WAY!
+// WE DON'T WANT TO KNOW THE SUBTYPES SUCH AS FullOrganisationTypeLevelEffectfulCombinationDAO
+// This is similar to the _previous_ Streamer, but it should be the "StreamerApp" _class_.
 class Streamer(
   productDAO: ProductTypeLevelEffectfulStreamingDAO,
   serviceDAO: ServiceTypeLevelEffectfulStreamingDAO,
