@@ -53,6 +53,10 @@ class Streamer(
   }
 }
 
+// TODO: Inject the FUNCTIONS that will create the (specific) DAOs in the Streamer!
+// The Streamer should NOT CREATE stuff by itself IN THIS HARD-CODED WAY!
+// WE DON'T WANT TO KNOW THE SUBTYPES SUCH AS FullOrganisationTypeLevelEffectfulCombinationDAO
+// This is similar to the _previous_ Streamer, but it should be the "StreamerApp" _class_.
 object Streamer extends IOApp {
   override def run(args: List[String]): IO[ExitCode] = {
     Try {
