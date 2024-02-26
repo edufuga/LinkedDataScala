@@ -1,4 +1,4 @@
-package com.edufuga.scala.data.access.ops
+package com.edufuga.scala.operations.entity.implementation.ops
 
 import fs2.io.file.Path
 

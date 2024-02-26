@@ -51,5 +51,3 @@ lazy val entity_operations = (project in file("entity_operations"))
   )
   .aggregate(entities, operations)
   .dependsOn(entities, operations)
-
-

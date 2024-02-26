@@ -1,11 +1,11 @@
-package com.edufuga.scala.data.access.effectful
+package com.edufuga.scala.operations.entity.implementation.effectful
 
 import cats.effect.IO
 import cats.implicits.*
 import com.edufuga.scala.entities.*
 import com.edufuga.scala.entities.ProductTypes.ProductId
 import com.edufuga.scala.entities.ServiceTypes.ServiceId
-import com.edufuga.scala.data.access.entities.{FullOrganisationTypeLevelEffectfulDAO, OrganisationMaterializedDAO, ProductTypeLevelEffectfulStreamingDAO, ServiceTypeLevelEffectfulStreamingDAO}
+import com.edufuga.scala.operations.entity.implementation.{FullOrganisationTypeLevelEffectfulDAO, OrganisationMaterializedDAO, ProductTypeLevelEffectfulStreamingDAO, ServiceTypeLevelEffectfulStreamingDAO}
 
 /**
  * This is an implementation of the DAO for the FullOrganisation entity.

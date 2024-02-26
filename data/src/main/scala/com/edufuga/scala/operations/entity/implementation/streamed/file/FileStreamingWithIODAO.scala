@@ -1,9 +1,9 @@
-package com.edufuga.scala.data.access.streamed.file
+package com.edufuga.scala.operations.entity.implementation.streamed.file
 
 import cats.effect.IO
-import com.edufuga.scala.data.access.ops.{FileOps, StreamOps}
 import com.edufuga.scala.entities.Identifiable
-import com.edufuga.scala.data.access.streamed.StreamingWithIODAO
+import com.edufuga.scala.operations.entity.implementation.ops.{FileOps, StreamOps}
+import com.edufuga.scala.operations.entity.implementation.streamed.StreamingWithIODAO
 import fs2.Stream
 import fs2.io.file.Files
 

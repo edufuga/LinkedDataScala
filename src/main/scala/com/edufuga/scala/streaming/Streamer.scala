@@ -5,10 +5,10 @@ import cats.implicits.*
 import com.edufuga.scala.entities.*
 import com.edufuga.scala.entities.ProductTypes.ProductId
 import com.edufuga.scala.entities.ServiceTypes.ServiceId
-import com.edufuga.scala.data.access.effectful.FullOrganisationTypeLevelEffectfulCombinationDAO
-import com.edufuga.scala.data.access.entities.{FullOrganisationTypeLevelEffectfulDAO, OrganisationMaterializedDAO, ProductTypeLevelEffectfulStreamingDAO, ServiceTypeLevelEffectfulStreamingDAO}
-import com.edufuga.scala.data.access.materialized.file.FileMaterializingOrganisationDAO
-import com.edufuga.scala.data.access.streamed.file.{ProductFileStreamingWithIODAO, ServiceFileStreamingWithIODAO}
+import com.edufuga.scala.operations.entity.implementation.{FullOrganisationTypeLevelEffectfulDAO, OrganisationMaterializedDAO, ProductTypeLevelEffectfulStreamingDAO, ServiceTypeLevelEffectfulStreamingDAO}
+import com.edufuga.scala.operations.entity.implementation.effectful.FullOrganisationTypeLevelEffectfulCombinationDAO
+import com.edufuga.scala.operations.entity.implementation.materialized.file.FileMaterializingOrganisationDAO
+import com.edufuga.scala.operations.entity.implementation.streamed.file.{ProductFileStreamingWithIODAO, ServiceFileStreamingWithIODAO}
 
 import scala.util.{Failure, Success, Try}
 

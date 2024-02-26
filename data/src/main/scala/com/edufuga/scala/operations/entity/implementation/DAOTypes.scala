@@ -1,4 +1,4 @@
-package com.edufuga.scala.data.access.entities
+package com.edufuga.scala.operations.entity.implementation
 
 import cats.effect.IO
 import com.edufuga.scala.operations.entity.*
