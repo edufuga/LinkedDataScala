@@ -39,5 +39,8 @@ object MainApp extends IOApp {
         // Both the interface (parameters) and the implementation are full of IO and Streams and stuff.
         val streamer: Streamer = new Streamer(productsDAO, servicesDAO, organisationDAO, fullOrganisationDAO)
         streamer.stream
+
+        val businessQuestions: BusinessQuestions = new BusinessQuestions(fullOrganisationDAO)
+        businessQuestions.stream
   }
 }
