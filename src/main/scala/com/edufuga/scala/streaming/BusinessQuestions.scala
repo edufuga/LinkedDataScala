@@ -1,7 +1,6 @@
 package com.edufuga.scala.streaming
 
 import cats.effect.{ExitCode, IO}
-import com.edufuga.scala.entities.Manager
 import com.edufuga.scala.operations.entity.implementation.EntityOperationImplementationTypes.*
 
 class BusinessQuestions(
