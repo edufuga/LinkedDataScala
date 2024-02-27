@@ -40,7 +40,7 @@ object MainApp extends IOApp {
         val streamer: Streamer = new Streamer(productsDAO, servicesDAO, organisationDAO, fullOrganisationDAO)
         streamer.stream
 
-        val businessQuestions: BusinessQuestions = new BusinessQuestions(fullOrganisationDAO)
+        val businessQuestions: BusinessQuestions = new BusinessQuestions(productsDAO, servicesDAO, fullOrganisationDAO)
         businessQuestions.stream
   }
 }
