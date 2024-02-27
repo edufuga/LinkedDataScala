@@ -83,6 +83,11 @@ class BusinessQuestions(
       _ <- IO.println(productNotOfferedByTheOrganisation.map(p => (p.productName, p.id)))
       _ <- IO.println(productNotOfferedByTheOrganisation.size)
       // Answer: 934 products NOT offered by the organisation! (983 - 49 = 934).
+
+      // TODO: Find related products (e.g. cluster by packaging size or weight)
+
+      // TODO: Identify alternative experts that can take over responsibility
+      // FIXME: What does this even mean?
     } yield ExitCode.Success
   }
 }
