@@ -41,7 +41,8 @@ class BusinessQuestions(
       // map + flatMap: Option[Organisation] -> Option[List[Service]] (instead of Option[List[List[Service]]])
       // sequence: Option[List[Service]] -> List[Option[Service]]
       // filter nonEmpty + (safe) get: List[Option[Service]] -> List[Service]
-      organisationServices = organisation.map(_.departments.flatMap(_.services))
+      organisationServices = organisation
+        .map(_.departments.flatMap(_.services))
         .sequence[List, Service]
         .filter(_.nonEmpty)
         .map(_.get)
