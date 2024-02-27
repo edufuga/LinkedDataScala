@@ -36,12 +36,12 @@ class BusinessQuestions(
       // 1. Obtain all services, irrespective of the organisation mapping
       // 2. Obtain the services within the organisation mapping.
       // 3. Return the difference (i.e. the services NOT found in the list of all entities).
-      _ <- IO.println(s"Obtain all services, irrespective of the organisation mapping")
+      _ <- IO.println("Obtain all services, irrespective of the organisation mapping")
       services <- serviceDAO.readAll.compile.toList
       _ <- IO.println(services)
       _ <- IO.println(services.size)
 
-      _ <- IO.println(s"Obtain the services within the organisation mapping.")
+      _ <- IO.println("Obtain the services within the organisation mapping.")
       // map + flatMap: Option[Organisation] -> Option[List[Service]] (instead of Option[List[List[Service]]])
       // sequence: Option[List[Service]] -> List[Option[Service]]
       // filter nonEmpty + (safe) get: List[Option[Service]] -> List[Service]
@@ -53,7 +53,7 @@ class BusinessQuestions(
       _ <- IO.println(organisationServices)
       _ <- IO.println(organisationServices.size)
 
-      _ <- IO.println(s"Return the difference (i.e. the services NOT provided by the organisation in any department).")
+      _ <- IO.println("Return the difference (i.e. the services NOT provided by the organisation in any department).")
       serviceNotOfferedByTheOrganisation = services.diff(organisationServices)
       _ <- IO.println(serviceNotOfferedByTheOrganisation.map(s => (s.serviceName, s.id)))
       _ <- IO.println(serviceNotOfferedByTheOrganisation.size)
@@ -64,12 +64,12 @@ class BusinessQuestions(
       // 1. Obtain all products, irrespective of the organisation mapping
       // 2. Obtain the products within the organisation mapping.
       // 3. Return the difference (i.e. the products NOT found in the list of all entities).
-      _ <- IO.println(s"Obtain all products, irrespective of the organisation mapping")
+      _ <- IO.println("Obtain all products, irrespective of the organisation mapping")
       products <- productDAO.readAll.compile.toList
       _ <- IO.println(products)
       _ <- IO.println(products.size) // 983
 
-      _ <- IO.println(s"Obtain the products within the organisation mapping.")
+      _ <- IO.println("Obtain the products within the organisation mapping.")
       // map + flatMap: Option[Organisation] -> Option[List[Product]] (instead of Option[List[List[Product]]])
       // sequence: Option[List[Product]] -> List[Option[Product]]
       // filter nonEmpty + (safe) get: List[Option[Product]] -> List[Product]
@@ -81,7 +81,7 @@ class BusinessQuestions(
       _ <- IO.println(organisationProducts)
       _ <- IO.println(organisationProducts.size) // 49
 
-      _ <- IO.println(s"Return the difference (i.e. the products NOT provided by the organisation in any department).")
+      _ <- IO.println("Return the difference (i.e. the products NOT provided by the organisation in any department).")
       productNotOfferedByTheOrganisation = products.diff(organisationProducts)
       _ <- IO.println(productNotOfferedByTheOrganisation.map(p => (p.productName, p.id)))
       _ <- IO.println(productNotOfferedByTheOrganisation.size)
@@ -99,7 +99,7 @@ class BusinessQuestions(
       // So, essentially we need to GROUP the employees (of a department) BY their Product Expertise ("ProductExpert").
       // "Who is a product expert for X?" -> List[Employee].
       // FIXME: Actually, a ProductManager is always an Email, which is contained in the Employee type. (DONE)
-      _ <- IO.println(s"Obtain the product experts within a department of the organisation.")
+      _ <- IO.println("Obtain the product experts within a department of the organisation.")
       maybeDepartments = organisation.map(_.departments)
       maybeDepartmentMappings = maybeDepartments.map { departments =>
         departments.map { department =>
@@ -114,11 +114,13 @@ class BusinessQuestions(
         departmentMapping.reduce((a, b) => combineMapsOfListValues(a, b))
       }
       _ <- IO.println(maybeDepartmentMappings)
+      _ <- IO.println("")
+      _ <- IO.println("Show all the product experts within the organisation, for each product experience category.")
       _ <- IO.println {
-        maybeMergedMappings.map { mergedMapping =>
+        maybeMergedMappings.fold("") { mergedMapping =>
           mergedMapping.map { case (k, v) =>
             (k, v.map(_.email))
-          }
+          }.mkString("\n")
         }
       }
     } yield ExitCode.Success
