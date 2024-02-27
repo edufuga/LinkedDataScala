@@ -87,7 +87,14 @@ class BusinessQuestions(
       // TODO: Find related products (e.g. cluster by packaging size or weight)
 
       // TODO: Identify alternative experts that can take over responsibility
-      // FIXME: What does this even mean?
+      // FIXME: What does this even mean? Responsibility for what?
+      // Each Department has a list of employees.
+      // An Employee is a product expert for something. This is the list of "ProductExpert" (or product EXPERIENCE).
+      //   In other words: An Employee is "expert for several products".
+      // Each Product and service has a "ProductManager". This is necessarily implies being a "ProductExpert".
+      //
+      // So, essentially we need to GROUP the employees (of a department) BY their Product Expertise ("ProductExpert").
+      // "Who is a product expert for X?" -> List[Employee].
     } yield ExitCode.Success
   }
 }
