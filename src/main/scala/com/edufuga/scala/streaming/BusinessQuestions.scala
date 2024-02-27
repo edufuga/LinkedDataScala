@@ -38,14 +38,11 @@ class BusinessQuestions(
       _ <- IO.println(services)
 
       _ <- IO.println(s"Obtain the services within the organisation mapping.")
-      // flatten: Option[List[List[Service]]] -> Option[List[Service]]
+      // map + flatMap: Option[Organisation] -> Option[List[Service]] (instead of Option[List[List[Service]]])
       // sequence: Option[List[Service]] -> List[Option[Service]]
       // filter nonEmpty + (safe) get: List[Option[Service]] -> List[Service]
-      organisationServices = organisation.map { orga =>
-        val unflattenedServices: List[List[Service]] = orga.departments.map(_.services)
-        val flattenedServices: List[Service] = unflattenedServices.flatten
-        flattenedServices
-      }.sequence[List, Service]
+      organisationServices = organisation.map(_.departments.flatMap(_.services))
+        .sequence[List, Service]
         .filter(_.nonEmpty)
         .map(_.get)
       _ <- IO.println(organisationServices)
