@@ -53,7 +53,7 @@ class BusinessQuestions(
       _ <- IO.println(s"Return the difference (i.e. the services NOT provided by the organisation in any department).")
       serviceNotOfferedByTheOrganisation = services.diff(organisationServices)
       _ <- IO.println(serviceNotOfferedByTheOrganisation.map(s => (s.serviceName, s.id)))
-      _ <- IO.println(organisationServices.size)
+      _ <- IO.println(serviceNotOfferedByTheOrganisation.size)
       // Answer: Only the product "(Product Analysis,Y704-9764759)" is not offered.
 
 
