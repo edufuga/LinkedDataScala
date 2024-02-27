@@ -29,10 +29,10 @@ class BusinessQuestions(
       // As of right now, using Option as the wrapper type is not enough to contain information about errors (which
       // include invalid data; i.e. products and services without a ProductManager). It's a design issue/decision.
 
-      // Business question: Find services / products without responsible department
-      // 1. Obtain all services / products, irrespective of the organisation mapping
-      // 2. Obtain the services / products within the organisation mapping.
-      // 3. Return the difference (i.e. the services / products NOT found in the list of all entities).
+      // Business question: Find services without responsible department
+      // 1. Obtain all services, irrespective of the organisation mapping
+      // 2. Obtain the services within the organisation mapping.
+      // 3. Return the difference (i.e. the services NOT found in the list of all entities).
       _ <- IO.println(s"Obtain all services, irrespective of the organisation mapping")
       services <- serviceDAO.readAll.compile.toList
       _ <- IO.println(services)
@@ -52,6 +52,31 @@ class BusinessQuestions(
       serviceNotOfferedByTheOrganisation = services.diff(organisationServices)
       _ <- IO.println(serviceNotOfferedByTheOrganisation.map(s => (s.serviceName, s.id)))
       // Answer: "(Product Analysis,Y704-9764759)" is not offered.
+
+
+      // Business question: Find products without responsible department
+      // 1. Obtain all products, irrespective of the organisation mapping
+      // 2. Obtain the products within the organisation mapping.
+      // 3. Return the difference (i.e. the products NOT found in the list of all entities).
+      _ <- IO.println(s"Obtain all products, irrespective of the organisation mapping")
+      products <- productDAO.readAll.compile.toList
+      _ <- IO.println(products)
+
+      _ <- IO.println(s"Obtain the products within the organisation mapping.")
+      // map + flatMap: Option[Organisation] -> Option[List[Product]] (instead of Option[List[List[Product]]])
+      // sequence: Option[List[Product]] -> List[Option[Product]]
+      // filter nonEmpty + (safe) get: List[Option[Product]] -> List[Product]
+      organisationProducts = organisation
+        .map(_.departments.flatMap(_.products))
+        .sequence[List, Product]
+        .filter(_.nonEmpty)
+        .map(_.get)
+      _ <- IO.println(organisationProducts)
+
+      _ <- IO.println(s"Return the difference (i.e. the products NOT provided by the organisation in any department).")
+      productNotOfferedByTheOrganisation = products.diff(organisationProducts)
+      _ <- IO.println(productNotOfferedByTheOrganisation.map(p => (p.productName, p.id)))
+      // Answer: "(???, ???)" is not offered.
     } yield ExitCode.Success
   }
 }
