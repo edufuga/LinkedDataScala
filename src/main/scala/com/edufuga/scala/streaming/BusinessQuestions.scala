@@ -89,23 +89,20 @@ class BusinessQuestions(
 
       // TODO: Find related products (e.g. cluster by packaging size or weight)
 
-      // TODO: Identify alternative experts that can take over responsibility
-      // FIXME: What does this even mean? Responsibility for what?
+      // Business question: Identify alternative experts that can take over responsibility
+      //
       // Each Department has a list of employees.
       // An Employee is a product expert for something. This is the list of "ProductExpert" (or product EXPERIENCE).
-      //   In other words: An Employee is "expert for several products".
-      // Each Product and service has a "ProductManager". This is necessarily implies being a "ProductExpert".
+      //   In other words: An Employee is "expert for several product categories".
+      // (Each Product and Service has a "ProductManager". This is necessarily implies being a "ProductExpert".)
       //
       // So, essentially we need to GROUP the employees (of a department) BY their Product Expertise ("ProductExpert").
       // "Who is a product expert for X?" -> List[Employee].
-      // FIXME: Actually, a ProductManager is always an Email, which is contained in the Employee type. (DONE)
       _ <- IO.println("Obtain the product experts within a department of the organisation.")
       maybeDepartments = organisation.map(_.departments)
       maybeDepartmentMappings = maybeDepartments.map { departments =>
         departments.map { department =>
           val employees = department.employees
-          //val products = department.products
-          // val services = department.services
           val departmentMapping: Map[ProductExpert, List[Employee]] = groupEmployeesByProductExpertise(employees)
           departmentMapping
         }
@@ -119,10 +116,14 @@ class BusinessQuestions(
       _ <- IO.println {
         maybeMergedMappings.fold("") { mergedMapping =>
           mergedMapping.map { case (k, v) =>
-            (k, v.map(_.email))
+            (k, v.map(_.email).mkString(", "))
           }.mkString("\n")
         }
       }
+
+      // TODO:
+
+      _ <- IO.println("Bye.")
     } yield ExitCode.Success
   }
 
