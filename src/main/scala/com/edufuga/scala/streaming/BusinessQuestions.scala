@@ -24,6 +24,11 @@ class BusinessQuestions(
       // On the other hand, we could add this information in the 'error channel' of the IO, or using an "Either".
       // As of right now, using Option as the wrapper type is not enough to contain information about errors (which
       // include invalid data; i.e. products and services without a ProductManager). It's a design issue/decision.
+
+      // Business question: Find services / products without responsible department
+      // 1. Obtain all services / products, irrespective of the organisation mapping
+      // 2. Obtain the services / products within the organisation mapping.
+      // 3. Return the difference (i.e. the services / products NOT found in the list of all entities).
     } yield ExitCode.Success
   }
 }
