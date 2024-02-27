@@ -12,8 +12,8 @@ lazy val root = (project in file("."))
   .enablePlugins(JavaAppPackaging)
   .settings(commonSettings)
   .settings(
-    name := "Streamer",
-    mainClass := Some("com.edufuga.scala.streaming.Streamer"),
+    name := "Main",
+    mainClass := Some("com.edufuga.scala.streaming.MainApp"),
     maintainer := " efugarolas@brox.de"
   )
   .aggregate(entities, entity_operations_implementation)

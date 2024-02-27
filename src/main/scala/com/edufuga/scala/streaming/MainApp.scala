@@ -11,7 +11,7 @@ import com.edufuga.scala.operations.entity.implementation.streamed.file.*
 
 import scala.util.{Failure, Success, Try}
 
-object StreamerApp extends IOApp {
+object MainApp extends IOApp {
   override def run(args: List[String]): IO[ExitCode] = {
     Try {
       val products: String = args(0)
