@@ -95,6 +95,9 @@ class BusinessQuestions(
       //
       // So, essentially we need to GROUP the employees (of a department) BY their Product Expertise ("ProductExpert").
       // "Who is a product expert for X?" -> List[Employee].
+      // FIXME: Actually, a ProductManager is always an Email, which is contained in the Employee type.
+      _ <- IO.println(s"Obtain the product experts within a department of the organisation.")
+
     } yield ExitCode.Success
   }
 }

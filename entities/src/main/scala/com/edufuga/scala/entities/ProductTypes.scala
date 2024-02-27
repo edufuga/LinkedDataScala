@@ -1,5 +1,7 @@
 package com.edufuga.scala.entities
 
+import com.edufuga.scala.entities.PersonTypes.Email
+
 object ProductTypes {
   opaque type ProductId = String
 
@@ -13,10 +15,11 @@ object ProductTypes {
     def apply(value: String): ProductName = value
   }
 
-  opaque type ProductManager = String
+  // This is a normal type alias. A "ProductManager" IS an email address.
+  type ProductManager = Email
 
   object ProductManager {
-    def apply(value: String): ProductManager = value
+    def apply(value: String): ProductManager = Email(value)
   }
 
   opaque type Height = Int
