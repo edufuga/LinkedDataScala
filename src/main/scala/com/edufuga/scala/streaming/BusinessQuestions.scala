@@ -13,9 +13,18 @@ class BusinessQuestions(
       organisation <- fullOrganisationDAO.readAll
       _ <- IO.println(organisation)
 
-      // Find services without a product manager
-      // Wait a second, the "Product" and "Service" have a MANDATORY ProductManager.
+      // Business question: Find services without a product manager
+      // WARNING: The "Service" entity has a MANDATORY ProductManager.
       // As of now, this question makes no sense. It's not a valid question. The type system excludes it!
+
+      // Business question: Find products without a product manager
+      // WARNING: The "Product" entity has a MANDATORY ProductManager.
+      // As of now, this question makes no sense. It's not a valid question. The type system excludes it!
+
+      // FIXME/TODO: Perhaps we should allow at least the Products to contain potentially invalid (optional) Managers?
+      // On the other hand, we could add this information in the 'error channel' of the IO, or using an "Either".
+      // As of right now, using Option as the wrapper type is not enough to contain information about errors (which
+      // include invalid data; i.e. products and services without a ProductManager). It's a design issue/decision.
     } yield ExitCode.Success
   }
 }
