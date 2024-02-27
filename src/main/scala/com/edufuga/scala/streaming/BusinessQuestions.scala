@@ -121,7 +121,8 @@ class BusinessQuestions(
         }
       }
 
-      // TODO:
+      // TODO: Clarify whether the "ProductName" in the products.csv needs to be COMPATIBLE with the single product
+      // expertise categories in the list of the field "productExpert" in the orgmap.xml.
 
       _ <- IO.println("Bye.")
     } yield ExitCode.Success
