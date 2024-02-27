@@ -7,6 +7,6 @@ case class Service(
   id: ServiceId,
   serviceName: ServiceName,
   products: List[ProductId],
-  productManager: ProductManager,
+  productManager: ProductManager, // Same as Email
   price: Money
 ) extends Identifiable[ServiceId]

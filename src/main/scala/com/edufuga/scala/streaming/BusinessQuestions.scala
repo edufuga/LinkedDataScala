@@ -1,9 +1,12 @@
 package com.edufuga.scala.streaming
 
-import cats.implicits.* // .sequence
+import cats.implicits.*
 import cats.effect.{ExitCode, IO}
-import com.edufuga.scala.entities.Service
+import com.edufuga.scala.entities.EmployeeTypes.ProductExpert
+import com.edufuga.scala.entities.{Employee, Service}
 import com.edufuga.scala.operations.entity.implementation.EntityOperationImplementationTypes.*
+
+import scala.collection.mutable
 
 class BusinessQuestions(
   productDAO: ProductTypeLevelEffectfulStreamingDAO,
@@ -95,9 +98,50 @@ class BusinessQuestions(
       //
       // So, essentially we need to GROUP the employees (of a department) BY their Product Expertise ("ProductExpert").
       // "Who is a product expert for X?" -> List[Employee].
-      // FIXME: Actually, a ProductManager is always an Email, which is contained in the Employee type.
+      // FIXME: Actually, a ProductManager is always an Email, which is contained in the Employee type. (DONE)
       _ <- IO.println(s"Obtain the product experts within a department of the organisation.")
-
+      maybeDepartments = organisation.map(_.departments)
+      maybeDepartmentMappings = maybeDepartments.map { departments =>
+        departments.map { department =>
+          val employees = department.employees
+          //val products = department.products
+          // val services = department.services
+          val departmentMapping: Map[ProductExpert, List[Employee]] = groupEmployeesByProductExpertise(employees)
+          departmentMapping
+        }
+      }
+      maybeMergedMappings = maybeDepartmentMappings.map { departmentMapping =>
+        departmentMapping.reduce((a, b) => combineMapsOfListValues(a, b))
+      }
+      _ <- IO.println(maybeDepartmentMappings)
+      _ <- IO.println {
+        maybeMergedMappings.map { mergedMapping =>
+          mergedMapping.map { case (k, v) =>
+            (k, v.map(_.email))
+          }
+        }
+      }
     } yield ExitCode.Success
+  }
+
+  private def groupEmployeesByProductExpertise(employees: List[Employee]): Map[ProductExpert, List[Employee]] = {
+    // (Encapsulated) Imperative code FTW...
+    val mutableEmployeesByProductExperience: mutable.Map[ProductExpert, List[Employee]] = mutable.Map()
+    employees.foreach { employee =>
+      employee.productExpert.foreach { productExpertise =>
+        val maybePreviousExperts: Option[List[Employee]] = mutableEmployeesByProductExperience.get(productExpertise)
+        maybePreviousExperts match
+          case Some(previousExperts) =>
+            mutableEmployeesByProductExperience.put(productExpertise, employee :: previousExperts)
+          case None => mutableEmployeesByProductExperience.put(productExpertise, List(employee))
+      }
+    }
+
+    mutableEmployeesByProductExperience.toMap
+  }
+
+  // Taken from https://www.baeldung.com/scala/merge-two-maps (for reference)
+  private def combineMapsOfListValues[K, V](a: Map[K, List[V]], b: Map[K, List[V]]): Map[K, List[V]] = {
+    a ++ b.map { case (k, v) => k -> (v ++ a.getOrElse(k, List.empty)) }
   }
 }
