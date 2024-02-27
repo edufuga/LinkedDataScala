@@ -36,6 +36,7 @@ class BusinessQuestions(
       _ <- IO.println(s"Obtain all services, irrespective of the organisation mapping")
       services <- serviceDAO.readAll.compile.toList
       _ <- IO.println(services)
+      _ <- IO.println(services.size)
 
       _ <- IO.println(s"Obtain the services within the organisation mapping.")
       // map + flatMap: Option[Organisation] -> Option[List[Service]] (instead of Option[List[List[Service]]])
@@ -47,11 +48,13 @@ class BusinessQuestions(
         .filter(_.nonEmpty)
         .map(_.get)
       _ <- IO.println(organisationServices)
+      _ <- IO.println(organisationServices.size)
 
       _ <- IO.println(s"Return the difference (i.e. the services NOT provided by the organisation in any department).")
       serviceNotOfferedByTheOrganisation = services.diff(organisationServices)
       _ <- IO.println(serviceNotOfferedByTheOrganisation.map(s => (s.serviceName, s.id)))
-      // Answer: "(Product Analysis,Y704-9764759)" is not offered.
+      _ <- IO.println(organisationServices.size)
+      // Answer: Only the product "(Product Analysis,Y704-9764759)" is not offered.
 
 
       // Business question: Find products without responsible department
@@ -61,6 +64,7 @@ class BusinessQuestions(
       _ <- IO.println(s"Obtain all products, irrespective of the organisation mapping")
       products <- productDAO.readAll.compile.toList
       _ <- IO.println(products)
+      _ <- IO.println(products.size) // 983
 
       _ <- IO.println(s"Obtain the products within the organisation mapping.")
       // map + flatMap: Option[Organisation] -> Option[List[Product]] (instead of Option[List[List[Product]]])
@@ -72,11 +76,13 @@ class BusinessQuestions(
         .filter(_.nonEmpty)
         .map(_.get)
       _ <- IO.println(organisationProducts)
+      _ <- IO.println(organisationProducts.size) // 49
 
       _ <- IO.println(s"Return the difference (i.e. the products NOT provided by the organisation in any department).")
       productNotOfferedByTheOrganisation = products.diff(organisationProducts)
       _ <- IO.println(productNotOfferedByTheOrganisation.map(p => (p.productName, p.id)))
-      // Answer: "(???, ???)" is not offered.
+      _ <- IO.println(productNotOfferedByTheOrganisation.size)
+      // Answer: 934 products NOT offered by the organisation! (983 - 49 = 934).
     } yield ExitCode.Success
   }
 }
