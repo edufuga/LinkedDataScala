@@ -38,12 +38,6 @@
         <Class IRI="#Service"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasDepth"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="#hasHeight"/>
-    </Declaration>
-    <Declaration>
         <ObjectProperty IRI="#hasManager"/>
     </Declaration>
     <Declaration>
@@ -53,16 +47,43 @@
         <ObjectProperty IRI="#hasPrice"/>
     </Declaration>
     <Declaration>
-        <ObjectProperty IRI="#hasWidth"/>
+        <DataProperty IRI="#hasDepth"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasHeigth"/>
     </Declaration>
     <Declaration>
         <DataProperty IRI="#hasId"/>
     </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasWidth"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#Product"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasDepth"/>
+            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Product"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasHeigth"/>
+            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+        </DataExactCardinality>
+    </SubClassOf>
     <SubClassOf>
         <Class IRI="#Product"/>
         <DataExactCardinality cardinality="1">
             <DataProperty IRI="#hasId"/>
             <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Product"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty IRI="#hasWidth"/>
+            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
         </DataExactCardinality>
     </SubClassOf>
     <DisjointClasses>
@@ -76,14 +97,6 @@
         <Class IRI="#Service"/>
     </DisjointClasses>
     <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasDepth"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasHeight"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
         <ObjectProperty IRI="#hasManager"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
@@ -95,18 +108,6 @@
         <ObjectProperty IRI="#hasPrice"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="#hasWidth"/>
-        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-    </SubObjectPropertyOf>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasDepth"/>
-        <Class abbreviatedIRI="owl:Thing"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasHeight"/>
-        <Class abbreviatedIRI="owl:Thing"/>
-    </ObjectPropertyDomain>
     <ObjectPropertyDomain>
         <ObjectProperty IRI="#hasManager"/>
         <Class abbreviatedIRI="owl:Thing"/>
@@ -119,24 +120,6 @@
         <ObjectProperty IRI="#hasPrice"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="#hasWidth"/>
-        <Class abbreviatedIRI="owl:Thing"/>
-    </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasDepth"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-        </DataExactCardinality>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasHeight"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-        </DataExactCardinality>
-    </ObjectPropertyRange>
     <ObjectPropertyRange>
         <ObjectProperty IRI="#hasManager"/>
         <DataExactCardinality cardinality="1">
@@ -155,19 +138,36 @@
         <ObjectProperty IRI="#hasPrice"/>
         <Class IRI="#Money"/>
     </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="#hasWidth"/>
-        <DataExactCardinality cardinality="1">
-            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
-            <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
-        </DataExactCardinality>
-    </ObjectPropertyRange>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasDepth"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasHeigth"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
     <SubDataPropertyOf>
         <DataProperty IRI="#hasId"/>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
     </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#hasWidth"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDepth"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasHeigth"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </DataPropertyDomain>
     <DataPropertyDomain>
         <DataProperty IRI="#hasId"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasWidth"/>
         <Class abbreviatedIRI="owl:Thing"/>
     </DataPropertyDomain>
     <DataPropertyDomain>
@@ -175,8 +175,20 @@
         <Class abbreviatedIRI="owl:Thing"/>
     </DataPropertyDomain>
     <DataPropertyRange>
+        <DataProperty IRI="#hasDepth"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasHeigth"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
         <DataProperty IRI="#hasId"/>
         <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasWidth"/>
+        <Datatype abbreviatedIRI="xsd:nonNegativeInteger"/>
     </DataPropertyRange>
     <DataPropertyRange>
         <DataProperty abbreviatedIRI="owl:topDataProperty"/>
