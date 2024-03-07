@@ -27,12 +27,12 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasManager">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:range>
     </owl:ObjectProperty>
@@ -43,12 +43,12 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasName">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:range>
     </owl:ObjectProperty>
@@ -59,6 +59,7 @@
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasPrice">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#Money"/>
     </owl:ObjectProperty>
@@ -179,6 +180,12 @@
     <!-- http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#Product -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#Product">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasPrice"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#Money"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasDepth"/>
