@@ -283,9 +283,9 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
                                 owl:onProperty :hasDepartment ;
                                 owl:allValuesFrom :Department
                               ] ;
-              rdfs:label "Organisació"@ca ,
-                         "Organisation"@de ,
-                         "Organisation"@en .
+              rdfs:label "Organisation"@de ,
+                         "Organisation"@en ,
+                         "Organització"@ca .
 
 
 ###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product
