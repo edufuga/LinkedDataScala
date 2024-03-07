@@ -45,6 +45,26 @@
     
 
 
+    <!-- http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasAddress">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasCurrency -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasCurrency">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasDepth -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasDepth">
@@ -52,6 +72,17 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasEmail -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasEmail">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -89,12 +120,33 @@
     
 
 
+    <!-- http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasMonetaryValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasMonetaryValue">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasName -->
 
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasPhone -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasPhone">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
     </owl:DatatypeProperty>
     
 
@@ -119,6 +171,16 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#isProductExpertFor -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#isProductExpertFor">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
     </owl:DatatypeProperty>
     
 
@@ -157,7 +219,40 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
 
     <!-- http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#Employee -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#Employee"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#Employee">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasEmail"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#isProductExpertFor"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasAddress"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasPhone"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
@@ -169,7 +264,20 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
 
     <!-- http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#Money -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#Money"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#Money">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasCurrency"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasMonetaryValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
