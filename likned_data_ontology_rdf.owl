@@ -258,7 +258,32 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
 
     <!-- http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#Manager -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#Manager"/>
+    <owl:Class rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#Manager">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasAddress"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasEmail"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#hasPhone"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
     
 
 
