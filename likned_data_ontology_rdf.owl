@@ -205,12 +205,6 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
     
 
 
-    <!-- http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#Currency -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#Currency"/>
-    
-
-
     <!-- http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#Department -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/efugarolas/ontologies/2024/3/linkeddata#Department"/>
