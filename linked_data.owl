@@ -37,6 +37,27 @@
     <Declaration>
         <Class IRI="#Service"/>
     </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDepth"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasHeight"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasId"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasManager"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasName"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPrice"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasWidth"/>
+    </Declaration>
     <DisjointClasses>
         <Class IRI="#Currency"/>
         <Class IRI="#Department"/>
@@ -47,6 +68,34 @@
         <Class IRI="#Product"/>
         <Class IRI="#Service"/>
     </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasDepth"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasHeight"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasId"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasManager"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasName"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasPrice"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#hasWidth"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
 </Ontology>
 
 
