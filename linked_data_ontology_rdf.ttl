@@ -1,0 +1,369 @@
+@prefix : <https://github.com/edufuga/LinkedDataScala/2024/3/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <https://github.com/edufuga/LinkedDataScala/2024/3/> .
+
+<https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata> rdf:type owl:Ontology ;
+                                                                owl:versionIRI <https://github.com/edufuga/LinkedDataScala/2024/3/1.0.0> .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepartment
+:hasDepartment rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain owl:Thing ;
+               rdfs:range :Department ;
+               rdfs:comment """This property is meant for relating a given entity to a list of several departments.
+
+Notice that OWL has no construct for a list of entities. Instead, we use a non-functional property for it. The \"list\" is an outcome of the graph structure, i.e. it isn't explicitly represented by a data structure in OWL nor in the resulting graph.""" .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmployee
+:hasEmployee rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain owl:Thing ;
+             rdfs:range :Employee ;
+             rdfs:comment """This property is meant for relating a given entity to a list of several employees.
+
+Notice that OWL has no construct for a list of entities. Instead, we use a non-functional property for it. The \"list\" is an outcome of the graph structure, i.e. it isn't explicitly represented by a data structure in OWL nor in the resulting graph.""" .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager
+:hasManager rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain owl:Thing ;
+            rdfs:range :Manager .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice
+:hasPrice rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain owl:Thing ;
+          rdfs:range :Money .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.w3.org/2002/07/owl#topDataProperty
+owl:topDataProperty rdfs:domain owl:Thing ;
+                    rdfs:range xsd:string .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress
+:hasAddress rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:domain owl:Thing ;
+            rdfs:range xsd:string .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency
+:hasCurrency rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdf:type owl:FunctionalProperty ;
+             rdfs:domain owl:Thing ;
+             rdfs:range xsd:string .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth
+:hasDepth rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain owl:Thing ;
+          rdfs:range xsd:nonNegativeInteger .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail
+:hasEmail rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain owl:Thing ;
+          rdfs:range xsd:string .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeigth
+:hasHeigth rdf:type owl:DatatypeProperty ;
+           rdfs:subPropertyOf owl:topDataProperty ;
+           rdf:type owl:FunctionalProperty ;
+           rdfs:domain owl:Thing ;
+           rdfs:range xsd:nonNegativeInteger .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId
+:hasId rdf:type owl:DatatypeProperty ;
+       rdfs:subPropertyOf owl:topDataProperty ;
+       rdf:type owl:FunctionalProperty ;
+       rdfs:domain owl:Thing ;
+       rdfs:range xsd:string .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue
+:hasMonetaryValue rdf:type owl:DatatypeProperty ;
+                  rdfs:subPropertyOf owl:topDataProperty ;
+                  rdf:type owl:FunctionalProperty ;
+                  rdfs:domain owl:Thing ;
+                  rdfs:range xsd:float .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdf:type owl:FunctionalProperty ;
+         rdfs:domain owl:Thing ;
+         rdfs:range xsd:string .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone
+:hasPhone rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain owl:Thing ;
+          rdfs:range xsd:string .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductId
+:hasProductId rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain owl:Thing ;
+              rdfs:range xsd:string ;
+              rdfs:comment """This property is meant for relating a given entity to a list of several products. Instead of having the full Product in the range of the function (property), we have only their identifiers. This weak linking is enough, but an alternative could be having an _object_ property with Product in the range.
+
+Notice that OWL has no construct for a list of entities. Instead, we use a non-functional property for it. The \"list\" is an outcome of the graph structure, i.e. it isn't explicitly represented by a data structure in OWL nor in the resulting graph.""" .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager
+:hasProductManager rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdf:type owl:FunctionalProperty ;
+                   rdfs:domain owl:Thing ;
+                   rdfs:range xsd:string ;
+                   rdfs:comment "This is just an email address." .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasServiceId
+:hasServiceId rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain owl:Thing ;
+              rdfs:range xsd:string ;
+              rdfs:comment """This property is meant for relating a given entity to a list of several services. Instead of having the full Service in the range of the function (property), we have only their identifiers. This weak linking is enough, but an alternative could be having an _object_ property with Service  in the range.
+
+Notice that OWL has no construct for a list of entities. Instead, we use a non-functional property for it. The \"list\" is an outcome of the graph structure, i.e. it isn't explicitly represented by a data structure in OWL nor in the resulting graph.""" .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth
+:hasWidth rdf:type owl:DatatypeProperty ;
+          rdfs:subPropertyOf owl:topDataProperty ;
+          rdf:type owl:FunctionalProperty ;
+          rdfs:domain owl:Thing ;
+          rdfs:range xsd:nonNegativeInteger .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor
+:isProductExpertFor rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf owl:topDataProperty ;
+                    rdfs:domain owl:Thing ;
+                    rdfs:range xsd:string .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Department
+:Department rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasManager ;
+                              owl:someValuesFrom :Manager
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasEmployee ;
+                              owl:allValuesFrom :Employee
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasId ;
+                              owl:someValuesFrom xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasName ;
+                              owl:someValuesFrom xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasProductId ;
+                              owl:allValuesFrom xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :hasServiceId ;
+                              owl:allValuesFrom xsd:string
+                            ] ;
+            rdfs:label "Abteilung"@de ,
+                       "Departament"@ca ,
+                       "Department"@en .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee
+:Employee rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasEmail ;
+                            owl:someValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasName ;
+                            owl:someValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :isProductExpertFor ;
+                            owl:allValuesFrom xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasAddress ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasPhone ;
+                            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] ;
+          rdfs:label "Empleat"@ca ,
+                     "Employee"@en ,
+                     "Mitarbeiter"@de ,
+                     "Treballador"@ca .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Manager
+:Manager rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasAddress ;
+                           owl:someValuesFrom xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasEmail ;
+                           owl:someValuesFrom xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasName ;
+                           owl:someValuesFrom xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasPhone ;
+                           owl:someValuesFrom xsd:string
+                         ] ;
+         rdfs:label "Gerent"@ca ,
+                    "Manager"@de ,
+                    "Manager"@en .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money
+:Money rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasCurrency ;
+                         owl:someValuesFrom xsd:string
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasMonetaryValue ;
+                         owl:someValuesFrom xsd:float
+                       ] ;
+       rdfs:label "Diners"@ca ,
+                  "Geld"@de ,
+                  "Money"@en .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Organisation
+:Organisation rdf:type owl:Class ;
+              rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                owl:onProperty :hasDepartment ;
+                                owl:allValuesFrom :Department
+                              ] ;
+              rdfs:label "Organisació"@ca ,
+                         "Organisation"@de ,
+                         "Organisation"@en .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product
+:Product rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasPrice ;
+                           owl:someValuesFrom :Money
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasDepth ;
+                           owl:someValuesFrom xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasHeigth ;
+                           owl:someValuesFrom xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasId ;
+                           owl:someValuesFrom xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasName ;
+                           owl:someValuesFrom xsd:nonNegativeInteger
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasProductManager ;
+                           owl:someValuesFrom xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasWidth ;
+                           owl:someValuesFrom xsd:nonNegativeInteger
+                         ] ;
+         rdfs:label "Product"@en ,
+                    "Producte"@ca ,
+                    "Produkt"@de .
+
+
+###  https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Service
+:Service rdf:type owl:Class ;
+         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasPrice ;
+                           owl:someValuesFrom :Money
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasId ;
+                           owl:someValuesFrom xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasName ;
+                           owl:someValuesFrom xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasProductManager ;
+                           owl:someValuesFrom xsd:string
+                         ] ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :hasProductId ;
+                           owl:allValuesFrom xsd:string
+                         ] ;
+         rdfs:label "Servei"@ca ,
+                    "Service"@de ,
+                    "Service"@en .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( :Department
+                :Employee
+                :Manager
+                :Money
+                :Organisation
+                :Product
+                :Service
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
