@@ -96,6 +96,17 @@
         <ObjectProperty IRI="#hasWidth"/>
         <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
     </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasId"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasId"/>
+        <DataExactCardinality cardinality="1">
+            <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+            <Datatype abbreviatedIRI="xsd:string"/>
+        </DataExactCardinality>
+    </ObjectPropertyRange>
 </Ontology>
 
 
