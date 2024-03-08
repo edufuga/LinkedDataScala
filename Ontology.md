@@ -78,7 +78,7 @@ Strangely enough, the alphabetically first language (Catalan) is not shown in th
 # References
 
 ## Rationale
-This section contains a compact selections of some of the resources and references which were useful in developing the
+This section contains a compact selection of some of the resources and references which were useful in developing the
 ontology and gaining (more) knowledge about ontologies. Furthermore, the techniques and methodologies for ontology
 engineering also needed to be considered.
 
