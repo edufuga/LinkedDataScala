@@ -32,6 +32,8 @@ readable and understandable. A (arguably less understandable) visual representat
 
 ![LinkedDataUML.svg](LinkedDataUML.svg)
 
+(Hint: https://raw.githubusercontent.com/edufuga/LinkedDataScala/main/LinkedDataUML.svg looks nicer when viewing)
+
 This UML diagram was generated with [`scala-uml`](https://github.com/tizuck/scala-uml). Other alternative tools exist.
 The UML diagram is mentioned here only as a possible visualization of the model. I still think the code is nicer, but
 I'm obviously biased.
