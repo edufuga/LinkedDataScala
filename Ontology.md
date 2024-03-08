@@ -72,7 +72,6 @@ Notice the German names due to the localization with `rdfs:label` annotation. Th
 
 Strangely enough, the alphabetically first language (Catalan) is not shown in the GUI of Protégé.
 
-https://github.com/edmondchuc/ontogram
 
 # References
 
