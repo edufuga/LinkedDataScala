@@ -74,6 +74,49 @@ Notice the German names due to the localization with `rdfs:label` annotation. Th
 
 Strangely enough, the alphabetically first language (Catalan) is not shown in the GUI of Protégé.
 
+### Object properties: Emulating lists with non-functional properties
+
+Object properties such as `hasDepartment` and `hasEmployee` are **not** functional-properties. This is done in order to
+represent a (conceptual) _list of entities_. Specifically, the `Organisation` entity contains a list of `Department`s.
+This is one of the instances of the clear difference between the semantic world and the world of programming languages.
+More concretely, while there are **containers** and **collections** in RDF (such as a list), there aren't any in OWL.
+
+Independently of _whether_ we want to use lists in our OWL model, this is still a limitation in the modelling strength
+of OWL. Arguably, a list is more a syntactic than a semantic detail or concept, but this should be a _decision_ taken by
+the modeller. There _are_ concepts and abstractions that do benefit from the explicit grouping and/or ordering, as well
+as whether the contents are homogeneous or not.
+
+This was documented in a much shorter fashion in comments such as the following:
+
+![object_properties_for_lists.png](object_properties_for_lists.png)
+
+The _usage_ of this non-functional (i.e. not limited to a single value in the range, thus enabling an indirect list
+representation) property is shown in the Manchester syntax used by Protégé in
+
+![property_restriction_in_usage.png](property_restriction_in_usage.png)
+
+In the previous screenshot, under `Organisation`, the `only` is the Manchester syntax for the `allValuesFrom` property
+restriction. Compare this with
+[Organisation.scala](entities%2Fsrc%2Fmain%2Fscala%2Fcom%2Fedufuga%2Fscala%2Fentities%2FOrganisation.scala), where the
+list is declared explicitly using the corresponding type.
+
+### Data Properties: Closer to the raw data than the model in code
+
+Most properties (i.e. functions, field access) are represented as _data_ properties. In other words: The _range_ of the
+property is essentially either a `xsd:string` or a `xsd:nonNegativeInteger`. This is conceptually closer to the raw data
+than the representation in code (which uses, as previously stated, the tiny types idea of wrapping primitive types in
+explicitly declared and semantically meaningful types).
+
+![data_properties.png](data_properties.png)
+
+The pattern of _declaring_ (data or object) properties as standalone functions on one side, and "using" them in the form
+of property restrictions inside an anonymous subclass definition, is a recurring one. This is in contrast to the
+much simpler (but tighter, more coupled) modelling of data structures in programming languages. Conceptually, the result
+is the same: Representing a field, property (in programming language parlance), or member of a class/type.
+
+The fact that there is an explicit distinction in the (naming) of "object" and "data properties" seems also strange from
+a programming perspective. Why is there an explicit distinction, while the _range_ already tells exactly what a property
+is meant (to be used) for? That seems either redundant, or perhaps I'm still missing an important fact or idea.
 
 # References
 
