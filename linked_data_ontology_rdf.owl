@@ -265,14 +265,15 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
     <owl:Class rdf:about="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Department">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager"/>
-                <owl:someValuesFrom rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Manager"/>
+                <owl:onProperty rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmployee"/>
+                <owl:allValuesFrom rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmployee"/>
-                <owl:allValuesFrom rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee"/>
+                <owl:onProperty rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Manager"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>

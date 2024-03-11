@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
-* Class Abteilung 
+* Class Department 
 */
 @SuppressWarnings("serial")
 public class Department implements IDepartment{
@@ -25,28 +25,6 @@ public class Department implements IDepartment{
 		return newInstance;
 	}
 
-	/** 
-    * This property is meant for relating a given entity to a list of several services. Instead of having the full Service in the range of the function (property), we have only their identifiers. This weak linking is enough, but an alternative could be having an _object_ property with Service  in the range.
-    * 
-    * Notice that OWL has no construct for a list of entities. Instead, we use a non-functional property for it. The "list" is an outcome of the graph structure, i.e. it isn't explicitly represented by a data structure in OWL nor in the resulting graph.
-	*/	
-	public void setServiceId(String param)
-	{
-	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasServiceId"), GLOBAL.factory.createLiteral(param));
-	}
-	
-	public String getServiceId(){
-		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasServiceId"), null).objects().iterator().next()).stringValue();	
-	}
-	
-	public void setName(String param)
-	{
-	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), GLOBAL.factory.createLiteral(param));
-	}
-	
-	public String getName(){
-		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), null).objects().iterator().next()).stringValue();	
-	}
 	
 	public void setId(String param)
 	{
@@ -69,20 +47,42 @@ public class Department implements IDepartment{
 	public String getProductId(){
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductId"), null).objects().iterator().next()).stringValue();	
 	}
+	/** 
+    * This property is meant for relating a given entity to a list of several services. Instead of having the full Service in the range of the function (property), we have only their identifiers. This weak linking is enough, but an alternative could be having an _object_ property with Service  in the range.
+    * 
+    * Notice that OWL has no construct for a list of entities. Instead, we use a non-functional property for it. The "list" is an outcome of the graph structure, i.e. it isn't explicitly represented by a data structure in OWL nor in the resulting graph.
+	*/	
+	public void setServiceId(String param)
+	{
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasServiceId"), GLOBAL.factory.createLiteral(param));
+	}
+	
+	public String getServiceId(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasServiceId"), null).objects().iterator().next()).stringValue();	
+	}
+	
+	public void setName(String param)
+	{
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), GLOBAL.factory.createLiteral(param));
+	}
+	
+	public String getName(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), null).objects().iterator().next()).stringValue();	
+	}
 
-    public void addManagers (IManager parameter)
+    public void addManager (IManager parameter)
 	{
 		GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager"), parameter);
 	}
 	
-	public Set<IManager> getManagers (){
-		Set<IManager> Managers = new HashSet<IManager>();
+	public Set<IManager> getManager (){
+		Set<IManager> Manager = new HashSet<IManager>();
 		GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager"), null).objects().forEach(action->{
 			if(action instanceof Manager) {
-				Managers.add((Manager)action);			
+				Manager.add((Manager)action);			
 			}
 		});
-		return Managers;	
+		return Manager;	
 	}
 	
     /**

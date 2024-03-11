@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
-* Class Service 
+* Class Servei 
 */
 @SuppressWarnings("serial")
 public class Service implements IService{
@@ -25,15 +25,6 @@ public class Service implements IService{
 		return newInstance;
 	}
 
-	
-	public void setId(String param)
-	{
-	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId"), GLOBAL.factory.createLiteral(param));
-	}
-	
-	public String getId(){
-		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId"), null).objects().iterator().next()).stringValue();	
-	}
 	/** 
     * This is just an email address.
 	*/	
@@ -66,6 +57,15 @@ public class Service implements IService{
 	
 	public String getProductId(){
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductId"), null).objects().iterator().next()).stringValue();	
+	}
+	
+	public void setId(String param)
+	{
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId"), GLOBAL.factory.createLiteral(param));
+	}
+	
+	public String getId(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId"), null).objects().iterator().next()).stringValue();	
 	}
 
     public void addPrices (IMoney parameter)

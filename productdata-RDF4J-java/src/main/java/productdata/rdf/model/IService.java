@@ -3,7 +3,7 @@ package productdata.rdf.model;
 import org.eclipse.rdf4j.model.IRI;
 import java.util.Set;
 /**
-* Class Service 
+* Class Servei 
 */
 public interface IService extends IRI{
 
@@ -13,10 +13,6 @@ public interface IService extends IRI{
 	
 	public Set<IMoney> getPrices();
     
-
-	public void setId (String parameter);
-	
-	public String getId ();
     /** 
     * This is just an email address.
 	*/
@@ -35,4 +31,8 @@ public interface IService extends IRI{
 	public void setProductId (String parameter);
 	
 	public String getProductId ();
+
+	public void setId (String parameter);
+	
+	public String getId ();
 }
