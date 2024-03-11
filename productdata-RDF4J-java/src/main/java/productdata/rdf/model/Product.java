@@ -13,7 +13,7 @@ import java.math.BigDecimal;
 import java.math.BigDecimal;
 
 /**
-* Class Producte 
+* Class Produkt 
 */
 @SuppressWarnings("serial")
 public class Product implements IProduct{
@@ -59,6 +59,15 @@ public class Product implements IProduct{
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager"), null).objects().iterator().next()).stringValue();	
 	}
 	
+	public void setDepth(BigDecimal param)
+	{
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth"), GLOBAL.factory.createLiteral(param));
+	}
+	
+	public String getDepth(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth"), null).objects().iterator().next()).stringValue();	
+	}
+	
 	public void setName(BigDecimal param)
 	{
 	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), GLOBAL.factory.createLiteral(param));
@@ -75,15 +84,6 @@ public class Product implements IProduct{
 	
 	public String getHeigth(){
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeigth"), null).objects().iterator().next()).stringValue();	
-	}
-	
-	public void setDepth(BigDecimal param)
-	{
-	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth"), GLOBAL.factory.createLiteral(param));
-	}
-	
-	public String getDepth(){
-		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth"), null).objects().iterator().next()).stringValue();	
 	}
 
     public void addPrices (IMoney parameter)

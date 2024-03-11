@@ -9,20 +9,10 @@ public interface IService extends IRI{
 
 	public IRI iri();		
      	
-    public void addPrices (IMoney parameter);
+    public void addPrice (IMoney parameter);
 	
-	public Set<IMoney> getPrices();
+	public Set<IMoney> getPrice();
     
-    /** 
-    * This is just an email address.
-	*/
-	public void setProductManager (String parameter);
-	
-	public String getProductManager ();
-
-	public void setName (String parameter);
-	
-	public String getName ();
     /** 
     * This property is meant for relating a given entity to a list of several products. Instead of having the full Product in the range of the function (property), we have only their identifiers. This weak linking is enough, but an alternative could be having an _object_ property with Product in the range.
     * 
@@ -31,6 +21,16 @@ public interface IService extends IRI{
 	public void setProductId (String parameter);
 	
 	public String getProductId ();
+
+	public void setName (String parameter);
+	
+	public String getName ();
+    /** 
+    * This is just an email address.
+	*/
+	public void setProductManager (String parameter);
+	
+	public String getProductManager ();
 
 	public void setId (String parameter);
 	

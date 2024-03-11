@@ -3,7 +3,7 @@ package productdata.rdf.model;
 import org.eclipse.rdf4j.model.IRI;
 import java.util.Set;
 /**
-* Class Organització 
+* Class Organisation 
 */
 public interface IOrganisation extends IRI{
 

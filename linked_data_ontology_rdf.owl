@@ -480,7 +480,8 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice"/>
-                <owl:someValuesFrom rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>

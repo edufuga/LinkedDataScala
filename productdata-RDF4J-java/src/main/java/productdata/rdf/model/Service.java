@@ -26,26 +26,6 @@ public class Service implements IService{
 	}
 
 	/** 
-    * This is just an email address.
-	*/	
-	public void setProductManager(String param)
-	{
-	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager"), GLOBAL.factory.createLiteral(param));
-	}
-	
-	public String getProductManager(){
-		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager"), null).objects().iterator().next()).stringValue();	
-	}
-	
-	public void setName(String param)
-	{
-	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), GLOBAL.factory.createLiteral(param));
-	}
-	
-	public String getName(){
-		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), null).objects().iterator().next()).stringValue();	
-	}
-	/** 
     * This property is meant for relating a given entity to a list of several products. Instead of having the full Product in the range of the function (property), we have only their identifiers. This weak linking is enough, but an alternative could be having an _object_ property with Product in the range.
     * 
     * Notice that OWL has no construct for a list of entities. Instead, we use a non-functional property for it. The "list" is an outcome of the graph structure, i.e. it isn't explicitly represented by a data structure in OWL nor in the resulting graph.
@@ -59,6 +39,26 @@ public class Service implements IService{
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductId"), null).objects().iterator().next()).stringValue();	
 	}
 	
+	public void setName(String param)
+	{
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), GLOBAL.factory.createLiteral(param));
+	}
+	
+	public String getName(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), null).objects().iterator().next()).stringValue();	
+	}
+	/** 
+    * This is just an email address.
+	*/	
+	public void setProductManager(String param)
+	{
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager"), GLOBAL.factory.createLiteral(param));
+	}
+	
+	public String getProductManager(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager"), null).objects().iterator().next()).stringValue();	
+	}
+	
 	public void setId(String param)
 	{
 	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId"), GLOBAL.factory.createLiteral(param));
@@ -68,19 +68,19 @@ public class Service implements IService{
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId"), null).objects().iterator().next()).stringValue();	
 	}
 
-    public void addPrices (IMoney parameter)
+    public void addPrice (IMoney parameter)
 	{
 		GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice"), parameter);
 	}
 	
-	public Set<IMoney> getPrices (){
-		Set<IMoney> Prices = new HashSet<IMoney>();
+	public Set<IMoney> getPrice (){
+		Set<IMoney> Price = new HashSet<IMoney>();
 		GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice"), null).objects().forEach(action->{
 			if(action instanceof Money) {
-				Prices.add((Money)action);			
+				Price.add((Money)action);			
 			}
 		});
-		return Prices;	
+		return Price;	
 	}
 	
 	@Override

@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.math.BigDecimal;
 import java.math.BigDecimal;
 /**
-* Class Producte 
+* Class Produkt 
 */
 public interface IProduct extends IRI{
 
@@ -32,6 +32,10 @@ public interface IProduct extends IRI{
 	
 	public String getProductManager ();
 
+	public void setDepth (BigDecimal parameter);
+	
+	public String getDepth ();
+
 	public void setName (BigDecimal parameter);
 	
 	public String getName ();
@@ -39,8 +43,4 @@ public interface IProduct extends IRI{
 	public void setHeigth (BigDecimal parameter);
 	
 	public String getHeigth ();
-
-	public void setDepth (BigDecimal parameter);
-	
-	public String getDepth ();
 }

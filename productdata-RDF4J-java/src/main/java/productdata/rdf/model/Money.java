@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
-* Class Money 
+* Class Diners 
 */
 @SuppressWarnings("serial")
 public class Money implements IMoney{
@@ -26,15 +26,6 @@ public class Money implements IMoney{
 	}
 
 	
-	public void setCurrency(String param)
-	{
-	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency"), GLOBAL.factory.createLiteral(param));
-	}
-	
-	public String getCurrency(){
-		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency"), null).objects().iterator().next()).stringValue();	
-	}
-	
 	public void setMonetaryValue(float param)
 	{
 	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue"), GLOBAL.factory.createLiteral(param));
@@ -42,6 +33,15 @@ public class Money implements IMoney{
 	
 	public String getMonetaryValue(){
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue"), null).objects().iterator().next()).stringValue();	
+	}
+	
+	public void setCurrency(String param)
+	{
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency"), GLOBAL.factory.createLiteral(param));
+	}
+	
+	public String getCurrency(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency"), null).objects().iterator().next()).stringValue();	
 	}
 	@Override
 	public String stringValue() {
