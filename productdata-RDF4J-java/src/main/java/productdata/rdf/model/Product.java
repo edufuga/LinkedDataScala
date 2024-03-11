@@ -30,6 +30,15 @@ public class Product implements IProduct{
 	}
 
 	
+	public void setName(BigDecimal param)
+	{
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), GLOBAL.factory.createLiteral(param));
+	}
+	
+	public String getName(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), null).objects().iterator().next()).stringValue();	
+	}
+	
 	public void setId(String param)
 	{
 	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId"), GLOBAL.factory.createLiteral(param));
@@ -37,6 +46,15 @@ public class Product implements IProduct{
 	
 	public String getId(){
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId"), null).objects().iterator().next()).stringValue();	
+	}
+	
+	public void setWidth(BigDecimal param)
+	{
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth"), GLOBAL.factory.createLiteral(param));
+	}
+	
+	public String getWidth(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth"), null).objects().iterator().next()).stringValue();	
 	}
 	/** 
     * This is just an email address.
@@ -50,15 +68,6 @@ public class Product implements IProduct{
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager"), null).objects().iterator().next()).stringValue();	
 	}
 	
-	public void setDepth(BigDecimal param)
-	{
-	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth"), GLOBAL.factory.createLiteral(param));
-	}
-	
-	public String getDepth(){
-		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth"), null).objects().iterator().next()).stringValue();	
-	}
-	
 	public void setHeigth(BigDecimal param)
 	{
 	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeigth"), GLOBAL.factory.createLiteral(param));
@@ -68,22 +77,13 @@ public class Product implements IProduct{
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeigth"), null).objects().iterator().next()).stringValue();	
 	}
 	
-	public void setName(BigDecimal param)
+	public void setDepth(BigDecimal param)
 	{
-	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), GLOBAL.factory.createLiteral(param));
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth"), GLOBAL.factory.createLiteral(param));
 	}
 	
-	public String getName(){
-		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), null).objects().iterator().next()).stringValue();	
-	}
-	
-	public void setWidth(BigDecimal param)
-	{
-	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth"), GLOBAL.factory.createLiteral(param));
-	}
-	
-	public String getWidth(){
-		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth"), null).objects().iterator().next()).stringValue();	
+	public String getDepth(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth"), null).objects().iterator().next()).stringValue();	
 	}
 
     public void addPrices (IMoney parameter)
