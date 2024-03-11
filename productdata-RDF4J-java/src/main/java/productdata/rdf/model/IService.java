@@ -3,7 +3,7 @@ package productdata.rdf.model;
 import org.eclipse.rdf4j.model.IRI;
 import java.util.Set;
 /**
-* Class Servei 
+* Class Service 
 */
 public interface IService extends IRI{
 
@@ -13,6 +13,10 @@ public interface IService extends IRI{
 	
 	public Set<IMoney> getPrice();
     
+
+	public void setName (String parameter);
+	
+	public String getName ();
     /** 
     * This property is meant for relating a given entity to a list of several products. Instead of having the full Product in the range of the function (property), we have only their identifiers. This weak linking is enough, but an alternative could be having an _object_ property with Product in the range.
     * 
@@ -21,10 +25,6 @@ public interface IService extends IRI{
 	public void setProductId (String parameter);
 	
 	public String getProductId ();
-
-	public void setName (String parameter);
-	
-	public String getName ();
     /** 
     * This is just an email address.
 	*/

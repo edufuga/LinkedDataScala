@@ -9,7 +9,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 /**
-* Class Diners 
+* Class Money 
 */
 @SuppressWarnings("serial")
 public class Money implements IMoney{

@@ -69,22 +69,6 @@ public class Department implements IDepartment{
 	public String getServiceId(){
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasServiceId"), null).objects().iterator().next()).stringValue();	
 	}
-
-    public void addManager (IManager parameter)
-	{
-		GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager"), parameter);
-	}
-	
-	public Set<IManager> getManager (){
-		Set<IManager> Manager = new HashSet<IManager>();
-		GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager"), null).objects().forEach(action->{
-			if(action instanceof Manager) {
-				Manager.add((Manager)action);			
-			}
-		});
-		return Manager;	
-	}
-	
     /**
     * This property is meant for relating a given entity to a list of several employees.
 
@@ -103,6 +87,22 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
 			}
 		});
 		return Employees;	
+	}
+	
+
+    public void addManager (IManager parameter)
+	{
+		GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager"), parameter);
+	}
+	
+	public Set<IManager> getManager (){
+		Set<IManager> Manager = new HashSet<IManager>();
+		GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager"), null).objects().forEach(action->{
+			if(action instanceof Manager) {
+				Manager.add((Manager)action);			
+			}
+		});
+		return Manager;	
 	}
 	
 	@Override

@@ -9,6 +9,14 @@ public interface IManager extends IRI{
 	public IRI iri();		
     
 
+	public void setPhone (String parameter);
+	
+	public String getPhone ();
+
+	public void setEmail (String parameter);
+	
+	public String getEmail ();
+
 	public void setAddress (String parameter);
 	
 	public String getAddress ();
@@ -16,12 +24,4 @@ public interface IManager extends IRI{
 	public void setName (String parameter);
 	
 	public String getName ();
-
-	public void setEmail (String parameter);
-	
-	public String getEmail ();
-
-	public void setPhone (String parameter);
-	
-	public String getPhone ();
 }

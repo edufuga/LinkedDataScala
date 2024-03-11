@@ -266,7 +266,7 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmployee"/>
-                <owl:allValuesFrom rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -300,8 +300,6 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="de">Abteilung</rdfs:label>
-        <rdfs:label xml:lang="ca">Departament</rdfs:label>
         <rdfs:label xml:lang="en">Department</rdfs:label>
     </owl:Class>
     
@@ -342,10 +340,7 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="ca">Empleat</rdfs:label>
         <rdfs:label xml:lang="en">Employee</rdfs:label>
-        <rdfs:label xml:lang="de">Mitarbeiter</rdfs:label>
-        <rdfs:label xml:lang="ca">Treballador</rdfs:label>
     </owl:Class>
     
 
@@ -377,8 +372,6 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="ca">Gerent</rdfs:label>
-        <rdfs:label xml:lang="de">Manager</rdfs:label>
         <rdfs:label xml:lang="en">Manager</rdfs:label>
     </owl:Class>
     
@@ -399,8 +392,6 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="ca">Diners</rdfs:label>
-        <rdfs:label xml:lang="de">Geld</rdfs:label>
         <rdfs:label xml:lang="en">Money</rdfs:label>
     </owl:Class>
     
@@ -415,9 +406,7 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
                 <owl:allValuesFrom rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Department"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="de">Organisation</rdfs:label>
         <rdfs:label xml:lang="en">Organisation</rdfs:label>
-        <rdfs:label xml:lang="ca">Organització</rdfs:label>
     </owl:Class>
     
 
@@ -468,8 +457,6 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Product</rdfs:label>
-        <rdfs:label xml:lang="ca">Producte</rdfs:label>
-        <rdfs:label xml:lang="de">Produkt</rdfs:label>
     </owl:Class>
     
 
@@ -508,8 +495,6 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
                 <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="ca">Servei</rdfs:label>
-        <rdfs:label xml:lang="de">Service</rdfs:label>
         <rdfs:label xml:lang="en">Service</rdfs:label>
     </owl:Class>
     
