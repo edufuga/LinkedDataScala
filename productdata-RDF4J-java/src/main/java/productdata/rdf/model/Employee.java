@@ -26,24 +26,6 @@ public class Employee implements IEmployee{
 	}
 
 	
-	public void setProductExpertFor(String param)
-	{
-	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor"), GLOBAL.factory.createLiteral(param));
-	}
-	
-	public String getProductExpertFor(){
-		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor"), null).objects().iterator().next()).stringValue();	
-	}
-	
-	public void setName(String param)
-	{
-	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), GLOBAL.factory.createLiteral(param));
-	}
-	
-	public String getName(){
-		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), null).objects().iterator().next()).stringValue();	
-	}
-	
 	public void setAddress(String param)
 	{
 	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress"), GLOBAL.factory.createLiteral(param));
@@ -60,6 +42,24 @@ public class Employee implements IEmployee{
 	
 	public String getPhone(){
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone"), null).objects().iterator().next()).stringValue();	
+	}
+	
+	public void setProductExpertFor(String param)
+	{
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor"), GLOBAL.factory.createLiteral(param));
+	}
+	
+	public String getProductExpertFor(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor"), null).objects().iterator().next()).stringValue();	
+	}
+	
+	public void setName(String param)
+	{
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), GLOBAL.factory.createLiteral(param));
+	}
+	
+	public String getName(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), null).objects().iterator().next()).stringValue();	
 	}
 	
 	public void setEmail(String param)
