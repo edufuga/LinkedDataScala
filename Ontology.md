@@ -43,10 +43,10 @@ _explicit_ types. This is also known as "tiny types": Instead of using primitive
 Strings, Integers, etc., we declare the types of the fields (attributes, members, properties) very explicitly with an
 own type.
 
-This is fine in the _code_, but the question of whether the _ontology_ should be so explicit can and should be posed as
-well. My current approach is to make the ontology conceptually closer to the data, by using primitive types such as
-strings and numbers (integer, double, float, etc.). This may or may not change, once the ontology is used as a part of
-the semantic technology driving the code implementation. It's also open for discussion.
+This is fine in the _code_, but whether the _ontology_ should be so explicit can and should be posed as well.
+My current approach is to make the ontology conceptually closer to the data, by using primitive types such as strings
+and numbers (integer, double, float, etc.). This may or may not change, once the ontology is used as a part of the
+semantic technology driving the code implementation. It's also open for discussion.
 
 ## Tooling: Protégé as a graphical Ontology Editor
 
