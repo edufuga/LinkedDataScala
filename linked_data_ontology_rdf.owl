@@ -214,18 +214,6 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
     
 
 
-    <!-- https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductId -->
-
-    <owl:DatatypeProperty rdf:about="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductId">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:comment>This property is meant for relating a given entity to a list of several products. Instead of having the full Product in the range of the function (property), we have only their identifiers. This weak linking is enough, but an alternative could be having an _object_ property with Product in the range.
-
-Notice that OWL has no construct for a list of entities. Instead, we use a non-functional property for it. The &quot;list&quot; is an outcome of the graph structure, i.e. it isn&apos;t explicitly represented by a data structure in OWL nor in the resulting graph.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager -->
 
     <owl:DatatypeProperty rdf:about="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager">
@@ -234,19 +222,6 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment>This is just an email address.</rdfs:comment>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasServiceId -->
-
-    <owl:DatatypeProperty rdf:about="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasServiceId">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
-        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment>This property is meant for relating a given entity to a list of several services. Instead of having the full Service in the range of the function (property), we have only their identifiers. This weak linking is enough, but an alternative could be having an _object_ property with Service  in the range.
-
-Notice that OWL has no construct for a list of entities. Instead, we use a non-functional property for it. The &quot;list&quot; is an outcome of the graph structure, i.e. it isn&apos;t explicitly represented by a data structure in OWL nor in the resulting graph.</rdfs:comment>
     </owl:DatatypeProperty>
     
 
@@ -321,18 +296,6 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"/>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductId"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasServiceId"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Department</rdfs:label>
@@ -501,6 +464,12 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
     <owl:Class rdf:about="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Service">
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct"/>
+                <owl:someValuesFrom rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money"/>
@@ -522,12 +491,6 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
             <owl:Restriction>
                 <owl:onProperty rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager"/>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductId"/>
-                <owl:allValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">Service</rdfs:label>

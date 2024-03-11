@@ -13,13 +13,13 @@ public interface IManager extends IRI{
 	
 	public String getPhone ();
 
-	public void setName (String parameter);
-	
-	public String getName ();
-
 	public void setAddress (String parameter);
 	
 	public String getAddress ();
+
+	public void setName (String parameter);
+	
+	public String getName ();
 
 	public void setEmail (String parameter);
 	

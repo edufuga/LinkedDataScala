@@ -17,14 +17,6 @@ public interface IProduct extends IRI{
 	
 	public Set<IMoney> getPrices();
     
-
-	public void setId (String parameter);
-	
-	public String getId ();
-
-	public void setWidth (BigDecimal parameter);
-	
-	public String getWidth ();
     /** 
     * This is just an email address.
 	*/
@@ -36,11 +28,19 @@ public interface IProduct extends IRI{
 	
 	public String getName ();
 
+	public void setDepth (BigDecimal parameter);
+	
+	public String getDepth ();
+
 	public void setHeigth (BigDecimal parameter);
 	
 	public String getHeigth ();
 
-	public void setDepth (BigDecimal parameter);
+	public void setId (String parameter);
 	
-	public String getDepth ();
+	public String getId ();
+
+	public void setWidth (BigDecimal parameter);
+	
+	public String getWidth ();
 }
