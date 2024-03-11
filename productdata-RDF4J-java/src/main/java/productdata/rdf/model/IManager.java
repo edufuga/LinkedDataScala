@@ -17,11 +17,11 @@ public interface IManager extends IRI{
 	
 	public String getName ();
 
-	public void setEmail (String parameter);
-	
-	public String getEmail ();
-
 	public void setAddress (String parameter);
 	
 	public String getAddress ();
+
+	public void setEmail (String parameter);
+	
+	public String getEmail ();
 }

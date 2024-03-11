@@ -18,10 +18,6 @@ public interface IProduct extends IRI{
 	public Set<IMoney> getPrices();
     
 
-	public void setName (BigDecimal parameter);
-	
-	public String getName ();
-
 	public void setId (String parameter);
 	
 	public String getId ();
@@ -35,6 +31,10 @@ public interface IProduct extends IRI{
 	public void setProductManager (String parameter);
 	
 	public String getProductManager ();
+
+	public void setName (BigDecimal parameter);
+	
+	public String getName ();
 
 	public void setHeigth (BigDecimal parameter);
 	
