@@ -53,6 +53,13 @@ object GraphExample extends App {
       service.setId("I241-8776317")
       service.setName("Component Confabulation")
       service.addProducts(product)
+      service.setProductManager("Corinna.Ludwig@company.org")
+      {
+        val expensive: Money = Money(ns, "m1")
+        expensive.setCurrency("EUR")
+        expensive.setMonetaryValue(0.5f)
+        service.addPrice(expensive)
+      }
       department.addServices(service)
     }
 

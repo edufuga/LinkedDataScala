@@ -31,4 +31,10 @@
 <http://www.example.com#s1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Service>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "I241-8776317";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Component Confabulation";
-  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct> <http://www.example.com#p1> .
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <http://www.example.com#m1>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct> <http://www.example.com#p1>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Corinna.Ludwig@company.org" .
+
+<http://www.example.com#m1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "0.5"^^<http://www.w3.org/2001/XMLSchema#float> .
