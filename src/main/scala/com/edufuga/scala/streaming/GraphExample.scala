@@ -56,7 +56,7 @@ object GraphExample extends App {
       service.addProducts(product)
       service.setProductManager("Corinna.Ludwig@company.org")
       {
-        val expensive: Money = Money(ns, "m1")
+        val expensive: Money = Money(ns, "mo2")
         expensive.setCurrency("EUR")
         expensive.setMonetaryValue(0.5f)
         service.addPrice(expensive)
