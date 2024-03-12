@@ -1,0 +1,33 @@
+<https://github.com/edufuga/LinkedDataScala/2024/3/productdata#o1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Organisation>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepartment> <https://github.com/edufuga/LinkedDataScala/2024/3/productdata#d1> .
+
+<https://github.com/edufuga/LinkedDataScala/2024/3/productdata#d1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Department>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "73191";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager> <https://github.com/edufuga/LinkedDataScala/2024/3/productdata#m1>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Engineering";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct> <https://github.com/edufuga/LinkedDataScala/2024/3/productdata#p1>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasService> <https://github.com/edufuga/LinkedDataScala/2024/3/productdata#s1> .
+
+<https://github.com/edufuga/LinkedDataScala/2024/3/productdata#m1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Manager>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Karl-Liebknecht-Straße 885, 82003 Tettnang";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Thomas.Mueller@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Thomas Mueller";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-8200-38218301" .
+
+<https://github.com/edufuga/LinkedDataScala/2024/3/productdata#p1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 15.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeigth> 12.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Strain Compensator";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/2024/3/productdata#m1>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Baldwin.Dirksen@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 8.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 68.0 .
+
+<https://github.com/edufuga/LinkedDataScala/2024/3/productdata#m1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "0.5"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/2024/3/productdata#s1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Service>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "I241-8776317";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Component Confabulation";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct> <https://github.com/edufuga/LinkedDataScala/2024/3/productdata#p1> .
