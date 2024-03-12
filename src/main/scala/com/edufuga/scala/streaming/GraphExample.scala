@@ -7,6 +7,7 @@ import org.eclipse.rdf4j.rio.RDFFormat
 import org.eclipse.rdf4j.rio.Rio
 
 object GraphExample extends App {
+  // Welcome to Imperative Programming with Mutations.
   createTopology()
   serialize()
 
@@ -31,13 +32,18 @@ object GraphExample extends App {
 
     // Create Product for Department _and_ Services
     val product: IProduct = Product(ns, "p1")
-    //product.setName("Strain Compensator") // I always find this name funny. // TODO: Bigdecimal?? Error in ontology...
+    product.setName("Strain Compensator") // I always find this name funny.
     product.setHeigth(java.math.BigDecimal(12))
     product.setWidth(java.math.BigDecimal(68))
     product.setDepth(java.math.BigDecimal(15))
-    // product.setWeight(java.math.BigDecimal(8)) // TODO: Missing in the ontology?
+    product.setWeight(java.math.BigDecimal(8))
     product.setProductManager("Baldwin.Dirksen@company.org") // Good old Baldwin Dirksen.
-    //product.setPrice(Money(0.50, EUR)) // TODO: Missing in the ontology?
+    {
+      val fortune: Money = Money(ns, "m1")
+      fortune.setCurrency("EUR")
+      fortune.setMonetaryValue(0.5f)
+      product.addPrice(fortune)
+    }
     department.addProducts(product)
 
     {

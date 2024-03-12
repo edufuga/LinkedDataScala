@@ -9,9 +9,13 @@ public interface IEmployee extends IRI{
 	public IRI iri();		
     
 
-	public void setAddress (String parameter);
+	public void setPhone (String parameter);
 	
-	public String getAddress ();
+	public String getPhone ();
+
+	public void setEmail (String parameter);
+	
+	public String getEmail ();
 
 	public void setProductExpertFor (String parameter);
 	
@@ -21,11 +25,7 @@ public interface IEmployee extends IRI{
 	
 	public String getName ();
 
-	public void setEmail (String parameter);
+	public void setAddress (String parameter);
 	
-	public String getEmail ();
-
-	public void setPhone (String parameter);
-	
-	public String getPhone ();
+	public String getAddress ();
 }

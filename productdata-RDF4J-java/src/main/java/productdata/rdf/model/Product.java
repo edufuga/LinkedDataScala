@@ -29,6 +29,33 @@ public class Product implements IProduct{
 		return newInstance;
 	}
 
+	
+	public void setDepth(BigDecimal param)
+	{
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth"), GLOBAL.factory.createLiteral(param));
+	}
+	
+	public String getDepth(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth"), null).objects().iterator().next()).stringValue();	
+	}
+	
+	public void setName(String param)
+	{
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), GLOBAL.factory.createLiteral(param));
+	}
+	
+	public String getName(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), null).objects().iterator().next()).stringValue();	
+	}
+	
+	public void setId(String param)
+	{
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId"), GLOBAL.factory.createLiteral(param));
+	}
+	
+	public String getId(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId"), null).objects().iterator().next()).stringValue();	
+	}
 	/** 
     * This is just an email address.
 	*/	
@@ -41,24 +68,6 @@ public class Product implements IProduct{
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager"), null).objects().iterator().next()).stringValue();	
 	}
 	
-	public void setName(BigDecimal param)
-	{
-	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), GLOBAL.factory.createLiteral(param));
-	}
-	
-	public String getName(){
-		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), null).objects().iterator().next()).stringValue();	
-	}
-	
-	public void setDepth(BigDecimal param)
-	{
-	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth"), GLOBAL.factory.createLiteral(param));
-	}
-	
-	public String getDepth(){
-		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth"), null).objects().iterator().next()).stringValue();	
-	}
-	
 	public void setHeigth(BigDecimal param)
 	{
 	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeigth"), GLOBAL.factory.createLiteral(param));
@@ -68,13 +77,13 @@ public class Product implements IProduct{
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeigth"), null).objects().iterator().next()).stringValue();	
 	}
 	
-	public void setId(String param)
+	public void setWeight(BigDecimal param)
 	{
-	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId"), GLOBAL.factory.createLiteral(param));
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight"), GLOBAL.factory.createLiteral(param));
 	}
 	
-	public String getId(){
-		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId"), null).objects().iterator().next()).stringValue();	
+	public String getWeight(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight"), null).objects().iterator().next()).stringValue();	
 	}
 	
 	public void setWidth(BigDecimal param)
@@ -86,19 +95,19 @@ public class Product implements IProduct{
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth"), null).objects().iterator().next()).stringValue();	
 	}
 
-    public void addPrices (IMoney parameter)
+    public void addPrice (IMoney parameter)
 	{
 		GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice"), parameter);
 	}
 	
-	public Set<IMoney> getPrices (){
-		Set<IMoney> Prices = new HashSet<IMoney>();
+	public Set<IMoney> getPrice (){
+		Set<IMoney> Price = new HashSet<IMoney>();
 		GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice"), null).objects().forEach(action->{
 			if(action instanceof Money) {
-				Prices.add((Money)action);			
+				Price.add((Money)action);			
 			}
 		});
-		return Prices;	
+		return Price;	
 	}
 	
 	@Override

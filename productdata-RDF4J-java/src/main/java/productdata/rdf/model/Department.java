@@ -43,6 +43,26 @@ public class Department implements IDepartment{
 	public String getId(){
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId"), null).objects().iterator().next()).stringValue();	
 	}
+    /**
+    * This property is meant for relating a given entity to a list of several services.
+
+Notice that OWL has no construct for a list of entities. Instead, we use a non-functional property for it. The "list" is an outcome of the graph structure, i.e. it isn't explicitly represented by a data structure in OWL nor in the resulting graph.
+	*/
+    public void addServices (IService parameter)
+	{
+		GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasService"), parameter);
+	}
+	
+	public Set<IService> getServices (){
+		Set<IService> Services = new HashSet<IService>();
+		GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasService"), null).objects().forEach(action->{
+			if(action instanceof Service) {
+				Services.add((Service)action);			
+			}
+		});
+		return Services;	
+	}
+	
 
     public void addManager (IManager parameter)
 	{
@@ -77,26 +97,6 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
 			}
 		});
 		return Employees;	
-	}
-	
-    /**
-    * This property is meant for relating a given entity to a list of several services.
-
-Notice that OWL has no construct for a list of entities. Instead, we use a non-functional property for it. The "list" is an outcome of the graph structure, i.e. it isn't explicitly represented by a data structure in OWL nor in the resulting graph.
-	*/
-    public void addServices (IService parameter)
-	{
-		GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasService"), parameter);
-	}
-	
-	public Set<IService> getServices (){
-		Set<IService> Services = new HashSet<IService>();
-		GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasService"), null).objects().forEach(action->{
-			if(action instanceof Service) {
-				Services.add((Service)action);			
-			}
-		});
-		return Services;	
 	}
 	
     /**
