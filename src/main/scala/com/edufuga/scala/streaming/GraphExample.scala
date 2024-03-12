@@ -8,6 +8,7 @@ import org.eclipse.rdf4j.rio.Rio
 
 object GraphExample extends App {
   // Welcome to Imperative Programming with Mutations.
+  // Welcome to the Open World of Knowledge Graphs.
   createTopology()
   serialize()
 
