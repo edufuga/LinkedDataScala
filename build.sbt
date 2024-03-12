@@ -62,3 +62,10 @@ lazy val entity_parsers = (project in file("entity_parsers"))
   )
   .aggregate(entities)
   .dependsOn(entities)
+
+lazy val product_data = (project in file("productdata-RDF4J-java"))
+  .settings(commonSettings)
+  .settings(
+    name := "productdata-RDF4J",
+    libraryDependencies += "org.eclipse.rdf4j" % "rdf4j-runtime" % "2.3.2"
+  )
