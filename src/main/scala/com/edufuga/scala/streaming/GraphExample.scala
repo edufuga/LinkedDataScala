@@ -30,6 +30,7 @@ object GraphExample extends App {
 
       department.addManager(manager)
     }
+    // TODO: Add Employees to Department.
 
     // Create Product for Department _and_ Services
     val product: IProduct = Product(ns, "p1")
