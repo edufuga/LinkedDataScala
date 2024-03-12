@@ -12,7 +12,7 @@ object GraphExample extends App {
   serialize()
 
   private def createTopology(): Unit = {
-    val ns = "https://github.com/edufuga/LinkedDataScala/2024/3/productdata#"
+    val ns = "http://www.example.com#"
 
     val organisation: IOrganisation = Organisation(ns, "o1")
 
