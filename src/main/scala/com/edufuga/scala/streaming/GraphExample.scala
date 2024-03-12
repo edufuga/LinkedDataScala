@@ -29,6 +29,27 @@ object GraphExample extends App {
       department.addManager(manager)
     }
 
+    // Create Product for Department _and_ Services
+    val product: IProduct = Product(ns, "p1")
+    //product.setName("Strain Compensator") // I always find this name funny. // TODO: Bigdecimal?? Error in ontology...
+    product.setHeigth(java.math.BigDecimal(12))
+    product.setWidth(java.math.BigDecimal(68))
+    product.setDepth(java.math.BigDecimal(15))
+    // product.setWeight(java.math.BigDecimal(8)) // TODO: Missing in the ontology?
+    product.setProductManager("Baldwin.Dirksen@company.org") // Good old Baldwin Dirksen.
+    //product.setPrice(Money(0.50, EUR)) // TODO: Missing in the ontology?
+    department.addProducts(product)
+
+    {
+      // Create Service for Department.
+      val service: IService = Service(ns, "s1")
+      service.setId("I241-8776317")
+      service.setName("Component Confabulation")
+      service.addProducts(product)
+      department.addServices(service)
+    }
+
+
     organisation.addDepartments(department)
   }
 
