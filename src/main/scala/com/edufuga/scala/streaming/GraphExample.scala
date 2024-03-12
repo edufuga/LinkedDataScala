@@ -32,6 +32,7 @@ object GraphExample extends App {
 
     // Create Product for Department _and_ Services
     val product: IProduct = Product(ns, "p1")
+    product.setId("I241-8776317")
     product.setName("Strain Compensator") // I always find this name funny.
     product.setHeigth(java.math.BigDecimal(12))
     product.setWidth(java.math.BigDecimal(68))
