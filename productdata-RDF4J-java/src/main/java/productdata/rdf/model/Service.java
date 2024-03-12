@@ -37,15 +37,6 @@ public class Service implements IService{
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager"), null).objects().iterator().next()).stringValue();	
 	}
 	
-	public void setName(String param)
-	{
-	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), GLOBAL.factory.createLiteral(param));
-	}
-	
-	public String getName(){
-		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), null).objects().iterator().next()).stringValue();	
-	}
-	
 	public void setId(String param)
 	{
 	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId"), GLOBAL.factory.createLiteral(param));
@@ -54,6 +45,31 @@ public class Service implements IService{
 	public String getId(){
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId"), null).objects().iterator().next()).stringValue();	
 	}
+	
+	public void setName(String param)
+	{
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), GLOBAL.factory.createLiteral(param));
+	}
+	
+	public String getName(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), null).objects().iterator().next()).stringValue();	
+	}
+
+    public void addPrice (IMoney parameter)
+	{
+		GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice"), parameter);
+	}
+	
+	public Set<IMoney> getPrice (){
+		Set<IMoney> Price = new HashSet<IMoney>();
+		GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice"), null).objects().forEach(action->{
+			if(action instanceof Money) {
+				Price.add((Money)action);			
+			}
+		});
+		return Price;	
+	}
+	
     /**
     * This property is meant for relating a given entity to a list of several products.
 
@@ -72,22 +88,6 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
 			}
 		});
 		return Products;	
-	}
-	
-
-    public void addPrice (IMoney parameter)
-	{
-		GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice"), parameter);
-	}
-	
-	public Set<IMoney> getPrice (){
-		Set<IMoney> Price = new HashSet<IMoney>();
-		GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice"), null).objects().forEach(action->{
-			if(action instanceof Money) {
-				Price.add((Money)action);			
-			}
-		});
-		return Price;	
 	}
 	
 	@Override

@@ -44,6 +44,42 @@ public class Department implements IDepartment{
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId"), null).objects().iterator().next()).stringValue();	
 	}
     /**
+    * This property is meant for relating a given entity to a list of several products.
+
+Notice that OWL has no construct for a list of entities. Instead, we use a non-functional property for it. The "list" is an outcome of the graph structure, i.e. it isn't explicitly represented by a data structure in OWL nor in the resulting graph.
+	*/
+    public void addProducts (IProduct parameter)
+	{
+		GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct"), parameter);
+	}
+	
+	public Set<IProduct> getProducts (){
+		Set<IProduct> Products = new HashSet<IProduct>();
+		GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct"), null).objects().forEach(action->{
+			if(action instanceof Product) {
+				Products.add((Product)action);			
+			}
+		});
+		return Products;	
+	}
+	
+
+    public void addManager (IManager parameter)
+	{
+		GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager"), parameter);
+	}
+	
+	public Set<IManager> getManager (){
+		Set<IManager> Manager = new HashSet<IManager>();
+		GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager"), null).objects().forEach(action->{
+			if(action instanceof Manager) {
+				Manager.add((Manager)action);			
+			}
+		});
+		return Manager;	
+	}
+	
+    /**
     * This property is meant for relating a given entity to a list of several services.
 
 Notice that OWL has no construct for a list of entities. Instead, we use a non-functional property for it. The "list" is an outcome of the graph structure, i.e. it isn't explicitly represented by a data structure in OWL nor in the resulting graph.
@@ -61,22 +97,6 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
 			}
 		});
 		return Services;	
-	}
-	
-
-    public void addManager (IManager parameter)
-	{
-		GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager"), parameter);
-	}
-	
-	public Set<IManager> getManager (){
-		Set<IManager> Manager = new HashSet<IManager>();
-		GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager"), null).objects().forEach(action->{
-			if(action instanceof Manager) {
-				Manager.add((Manager)action);			
-			}
-		});
-		return Manager;	
 	}
 	
     /**
@@ -97,26 +117,6 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
 			}
 		});
 		return Employees;	
-	}
-	
-    /**
-    * This property is meant for relating a given entity to a list of several products.
-
-Notice that OWL has no construct for a list of entities. Instead, we use a non-functional property for it. The "list" is an outcome of the graph structure, i.e. it isn't explicitly represented by a data structure in OWL nor in the resulting graph.
-	*/
-    public void addProducts (IProduct parameter)
-	{
-		GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct"), parameter);
-	}
-	
-	public Set<IProduct> getProducts (){
-		Set<IProduct> Products = new HashSet<IProduct>();
-		GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct"), null).objects().forEach(action->{
-			if(action instanceof Product) {
-				Products.add((Product)action);			
-			}
-		});
-		return Products;	
 	}
 	
 	@Override

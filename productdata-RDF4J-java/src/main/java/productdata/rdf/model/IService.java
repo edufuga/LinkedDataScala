@@ -8,6 +8,10 @@ import java.util.Set;
 public interface IService extends IRI{
 
 	public IRI iri();		
+     	
+    public void addPrice (IMoney parameter);
+	
+	public Set<IMoney> getPrice();
    
     /**
 	* function addProducts
@@ -16,10 +20,6 @@ public interface IService extends IRI{
     public void addProducts (IProduct parameter);
 	
 	public Set<IProduct> getProducts();
-     	
-    public void addPrice (IMoney parameter);
-	
-	public Set<IMoney> getPrice();
     
     /** 
     * This is just an email address.
@@ -28,11 +28,11 @@ public interface IService extends IRI{
 	
 	public String getProductManager ();
 
-	public void setName (String parameter);
-	
-	public String getName ();
-
 	public void setId (String parameter);
 	
 	public String getId ();
+
+	public void setName (String parameter);
+	
+	public String getName ();
 }

@@ -26,24 +26,6 @@ public class Manager implements IManager{
 	}
 
 	
-	public void setPhone(String param)
-	{
-	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone"), GLOBAL.factory.createLiteral(param));
-	}
-	
-	public String getPhone(){
-		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone"), null).objects().iterator().next()).stringValue();	
-	}
-	
-	public void setName(String param)
-	{
-	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), GLOBAL.factory.createLiteral(param));
-	}
-	
-	public String getName(){
-		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), null).objects().iterator().next()).stringValue();	
-	}
-	
 	public void setEmail(String param)
 	{
 	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail"), GLOBAL.factory.createLiteral(param));
@@ -53,6 +35,15 @@ public class Manager implements IManager{
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail"), null).objects().iterator().next()).stringValue();	
 	}
 	
+	public void setPhone(String param)
+	{
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone"), GLOBAL.factory.createLiteral(param));
+	}
+	
+	public String getPhone(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone"), null).objects().iterator().next()).stringValue();	
+	}
+	
 	public void setAddress(String param)
 	{
 	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress"), GLOBAL.factory.createLiteral(param));
@@ -60,6 +51,15 @@ public class Manager implements IManager{
 	
 	public String getAddress(){
 		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress"), null).objects().iterator().next()).stringValue();	
+	}
+	
+	public void setName(String param)
+	{
+	 GLOBAL.model.add(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), GLOBAL.factory.createLiteral(param));
+	}
+	
+	public String getName(){
+		return (GLOBAL.model.filter(this, GLOBAL.factory.createIRI("https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName"), null).objects().iterator().next()).stringValue();	
 	}
 	@Override
 	public String stringValue() {

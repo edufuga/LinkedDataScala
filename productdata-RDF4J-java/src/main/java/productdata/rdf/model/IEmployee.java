@@ -13,19 +13,19 @@ public interface IEmployee extends IRI{
 	
 	public String getPhone ();
 
-	public void setEmail (String parameter);
+	public void setAddress (String parameter);
 	
-	public String getEmail ();
-
-	public void setProductExpertFor (String parameter);
-	
-	public String getProductExpertFor ();
+	public String getAddress ();
 
 	public void setName (String parameter);
 	
 	public String getName ();
 
-	public void setAddress (String parameter);
+	public void setProductExpertFor (String parameter);
 	
-	public String getAddress ();
+	public String getProductExpertFor ();
+
+	public void setEmail (String parameter);
+	
+	public String getEmail ();
 }

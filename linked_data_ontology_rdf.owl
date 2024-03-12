@@ -159,9 +159,9 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
     
 
 
-    <!-- https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeigth -->
+    <!-- https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight -->
 
-    <owl:DatatypeProperty rdf:about="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeigth">
+    <owl:DatatypeProperty rdf:about="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
@@ -437,7 +437,7 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeigth"/>
+                <owl:onProperty rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight"/>
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
             </owl:Restriction>
         </rdfs:subClassOf>
