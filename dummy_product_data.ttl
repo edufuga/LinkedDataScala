@@ -16,7 +16,7 @@
 
 <http://www.example.com#p1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 15.0;
-  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeigth> 12.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 12.0;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "I241-8776317";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Strain Compensator";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <http://www.example.com#m1>;
