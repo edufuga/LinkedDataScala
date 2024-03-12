@@ -3,12 +3,12 @@
 
 <http://www.example.com#d1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Department>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "73191";
-  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager> <http://www.example.com#m1>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager> <http://www.example.com#ma1>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Engineering";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct> <http://www.example.com#p1>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasService> <http://www.example.com#s1> .
 
-<http://www.example.com#m1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Manager>;
+<http://www.example.com#ma1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Manager>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Karl-Liebknecht-Straße 885, 82003 Tettnang";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Thomas.Mueller@company.org";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Thomas Mueller";
@@ -19,12 +19,12 @@
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 12.0;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "I241-8776317";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Strain Compensator";
-  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <http://www.example.com#m1>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <http://www.example.com#mo1>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Baldwin.Dirksen@company.org";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 8.0;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 68.0 .
 
-<http://www.example.com#m1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+<http://www.example.com#mo1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "0.5"^^<http://www.w3.org/2001/XMLSchema#float> .
 

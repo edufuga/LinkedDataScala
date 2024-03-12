@@ -22,7 +22,7 @@ object GraphExample extends App {
     department.setId("73191")
     department.setName("Engineering")
     { // Create Manager for Department.
-      val manager: IManager = Manager(ns, "m1")
+      val manager: IManager = Manager(ns, "ma1")
       manager.setName("Thomas Mueller")
       manager.setEmail("Thomas.Mueller@company.org")
       manager.setAddress("Karl-Liebknecht-Straße 885, 82003 Tettnang")
@@ -41,7 +41,7 @@ object GraphExample extends App {
     product.setWeight(java.math.BigDecimal(8))
     product.setProductManager("Baldwin.Dirksen@company.org") // Good old Baldwin Dirksen.
     {
-      val fortune: Money = Money(ns, "m1")
+      val fortune: Money = Money(ns, "mo1")
       fortune.setCurrency("EUR")
       fortune.setMonetaryValue(0.5f)
       product.addPrice(fortune)
