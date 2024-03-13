@@ -9,6 +9,6 @@ case class Product(
   width: Width,
   depth: Depth,
   weight: Weight,
-  productManager: ProductManager, // Same as Email
+  productManager: ProductManager, // Same as Email // TODO: Use Employee type. // Replace ProductManager with Employee.
   price: Money
 ) extends Identifiable[ProductId]

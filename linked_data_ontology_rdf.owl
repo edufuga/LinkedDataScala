@@ -164,7 +164,7 @@ Notice that OWL has no construct for a list of entities. Instead, we use a non-f
     <owl:DatatypeProperty rdf:about="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight">
         <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:domain rdf:resource="https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#nonNegativeInteger"/>
     </owl:DatatypeProperty>
     

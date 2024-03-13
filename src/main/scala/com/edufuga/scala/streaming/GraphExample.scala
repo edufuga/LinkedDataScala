@@ -30,7 +30,17 @@ object GraphExample extends App {
 
       department.addManager(manager)
     }
-    // TODO: Add Employees to Department.
+    {
+      // Create Employee for Department.
+      val employee: IEmployee = Employee(ns, "e1")
+      employee.setEmail("Corinna.Ludwig@company.org")
+      employee.setName("Corinna Ludwig")
+      employee.setAddress("Ringstraße 276")
+      employee.setPhone("+49-1743-24836762")
+      employee.setProductExpertFor("Memristor, Gauge, Encoder") // TODO: This should be a List/Set (non-functional pr.)
+
+      department.addEmployees(employee)
+    }
 
     // Create Product for Department _and_ Services
     val product: IProduct = Product(ns, "p1")
@@ -50,6 +60,7 @@ object GraphExample extends App {
     department.addProducts(product)
 
     {
+      // TODO: /service_id_I241-8776317 in the code-mapping.
       // Create Service for Department.
       val service: IService = Service(ns, "s1")
       service.setId("I241-8776317")

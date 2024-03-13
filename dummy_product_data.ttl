@@ -2,6 +2,7 @@
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepartment> <http://www.example.com#d1> .
 
 <http://www.example.com#d1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Department>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmployee> <http://www.example.com#e1>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "73191";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager> <http://www.example.com#ma1>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Engineering";
@@ -13,6 +14,14 @@
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Thomas.Mueller@company.org";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Thomas Mueller";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-8200-38218301" .
+
+<http://www.example.com#e1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Ringstraße 276";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Corinna.Ludwig@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Corinna Ludwig";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-1743-24836762";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Memristor, Gauge, Encoder" .
 
 <http://www.example.com#p1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 15.0;
