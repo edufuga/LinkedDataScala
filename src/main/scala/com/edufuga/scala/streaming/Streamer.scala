@@ -4,6 +4,7 @@ import cats.effect.{ExitCode, IO}
 import com.edufuga.scala.entities.ProductTypes.ProductId
 import com.edufuga.scala.entities.ServiceTypes.ServiceId
 import com.edufuga.scala.operations.entity.implementation.EntityOperationImplementationTypes.{FullOrganisationTypeLevelEffectfulDAO, OrganisationMaterializedDAO, ProductTypeLevelEffectfulStreamingDAO, ServiceTypeLevelEffectfulStreamingDAO}
+import com.edufuga.scala.ogm._
 
 // Notice that this Streamer is still quite implementation (TypeLevel) specific.
 // Both the interface (parameters) and the implementation are full of IO and Streams and stuff.
@@ -48,6 +49,7 @@ class Streamer(
       _ <- IO.println("Processing the full organisation. This includes resolving the linked products and services.")
       organisation <- fullOrganisationDAO.readAll
       _ <- IO.println(organisation)
+      _ <- IO.println(ObjectOntologyMappings.OrganisationMappings.objectToOntology(organisation.get))
     } yield ExitCode.Success
   }
 }

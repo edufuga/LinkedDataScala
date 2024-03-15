@@ -8,7 +8,7 @@ import com.edufuga.scala.operations.entity.implementation.EntityOperationImpleme
 import com.edufuga.scala.operations.entity.implementation.effectful.FullOrganisationTypeLevelEffectfulCombinationDAO
 import com.edufuga.scala.operations.entity.implementation.materialized.file.FileMaterializingOrganisationDAO
 import com.edufuga.scala.operations.entity.implementation.streamed.file.*
-import com.edufuga.scala.ogm.example.ObjectOntologyMappingExample
+import com.edufuga.scala.ogm.example._
 
 import scala.util.{Failure, Success, Try}
 
@@ -18,6 +18,9 @@ object MainApp extends IOApp {
       val products: String = args(0)
       val services: String = args(1)
       val organisation: String = args(2)
+
+      println(ObjectOntologyMappingExample.organisationOntology)
+
       (products, services, organisation)
     } match
       case Failure(_) => IO {
