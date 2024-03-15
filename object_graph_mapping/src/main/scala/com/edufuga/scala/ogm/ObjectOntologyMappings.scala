@@ -14,7 +14,11 @@ object ObjectOntologyMappings {
   //  A better solution would be to create the instance ID from a certain property of the objects themselves, but well.
   private class Identity(val countableThing: String) {
     private var counter: Integer = 1 // I hate my life.
-    def id(): String = s"${countableThing}_${counter += 1}" // I hate my life.
+    def id(): String = {
+      val id = s"${countableThing}_${counter}"
+      counter = counter + 1 // I hate my life.
+      id
+    }
   }
 
   object OrganisationMappings extends ObjectOntologyMapping[ent.FullOrganisation, ont.IOrganisation] {

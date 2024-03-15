@@ -1,5 +1,4 @@
-<https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#organisation_()> a
-    <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Organisation>;
+<https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#organisation_1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Organisation>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepartment> <https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#73191> .
 
 <https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#73191> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Department>;
