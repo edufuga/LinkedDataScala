@@ -76,7 +76,15 @@ object ObjectOntologyMappings {
   }
 
   object EmployeeMappings extends ObjectOntologyMapping[ent.Employee, ont.Employee] {
-    override def objectToOntology(entity: ent.Employee): ont.IEmployee = ???
+    override def objectToOntology(entity: ent.Employee): ont.IEmployee = {
+      val ontology = ont.Employee(NAMESPACE, stringify(s"${entity.name}"))
+      ontology.setEmail(s"${entity.email}")
+      ontology.setName(s"${entity.name}")
+      entity.address.foreach(address => ontology.setAddress(s"$address"))
+      entity.phone.foreach(phone => ontology.setPhone(s"$phone"))
+      ontology.setProductExpertFor(entity.productExpert.mkString(", ")) // Dom dom dom
+      ontology
+    }
 
     override def ontologyToObject(ontology: ont.IEmployee): ent.Employee = ???
   }
