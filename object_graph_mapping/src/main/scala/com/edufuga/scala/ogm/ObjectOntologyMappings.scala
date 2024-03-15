@@ -30,4 +30,10 @@ object ObjectOntologyMappings {
     override def objectToOntology(entity: ent.Product): ont.IProduct = ???
     override def ontologyToObject(ontology: ont.IProduct): ent.Product = ???
   }
+
+  object ServiceMappings extends ObjectOntologyMapping[ent.Service, ont.IService] {
+    override def objectToOntology(entity: ent.Service): ont.IService = ???
+
+    override def ontologyToObject(ontology: ont.IService): ent.Service = ???
+  }
 }
