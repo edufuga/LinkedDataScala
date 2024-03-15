@@ -1,7 +1,9 @@
 package com.edufuga.scala.ogm
 
 import com.edufuga.scala.entities as ent
+import com.edufuga.scala.entities.Employee
 import productdata.rdf.model as ont
+import productdata.rdf.model.Employee
 
 object ObjectOntologyMappings {
   private val NAMESPACE: String = "https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#"
@@ -74,8 +76,8 @@ object ObjectOntologyMappings {
 
     // override def ontologyToObject(ontology: ont.IManager): ent.Manager = ???
   }
-
-  object EmployeeMappings extends ObjectOntologyMapping[ent.Employee, ont.Employee] {
+  
+  object EmployeeMappings extends ObjectOntologyMapping[ent.Employee, ont.IEmployee] {
     override def objectToOntology(entity: ent.Employee): ont.IEmployee = {
       val ontology = ont.Employee(NAMESPACE, stringify(s"${entity.name}"))
       ontology.setEmail(s"${entity.email}")
