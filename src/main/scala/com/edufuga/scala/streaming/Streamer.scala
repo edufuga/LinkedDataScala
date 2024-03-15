@@ -2,6 +2,7 @@ package com.edufuga.scala.streaming
 
 import org.eclipse.rdf4j.rio.{RDFFormat, Rio}
 import org.eclipse.rdf4j.rio.RDFFormat
+import java.io.FileOutputStream
 import cats.effect.{ExitCode, IO}
 
 import com.edufuga.scala.entities.ProductTypes.ProductId
@@ -54,7 +55,15 @@ class Streamer(
       organisation <- fullOrganisationDAO.readAll
       //_ <- IO.println(organisation)
       _ <- IO.println(ObjectOntologyMappings.OrganisationMappings.objectToOntology(organisation.get))
-      _ = Rio.write(GLOBAL.model, System.out, RDFFormat.TURTLE)
+      _ = {
+        val out = new FileOutputStream("organisation.rdf")
+        try {
+          Rio.write(GLOBAL.model, out, RDFFormat.TURTLE)
+        }
+        finally {
+          out.close()
+        }
+      }
     } yield ExitCode.Success
   }
 }

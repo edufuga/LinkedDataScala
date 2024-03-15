@@ -1,0 +1,1303 @@
+
+<https://github.com/edufuga/LinkedDataScala/organisation_1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Organisation> .
+
+<https://github.com/edufuga/LinkedDataScala/department_73191> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Department>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmployee> <https://github.com/edufuga/LinkedDataScala/employee_Corinna_Ludwig>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Herr_Haan_Bader>, <https://github.com/edufuga/LinkedDataScala/employee_Ida_Halle>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Karch_Moeller>, <https://github.com/edufuga/LinkedDataScala/employee_Karen_Brant>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Lukas_Gerver>, <https://github.com/edufuga/LinkedDataScala/employee_Manfred_Foth>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "73191";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager> <https://github.com/edufuga/LinkedDataScala/manager_Thomas_Mueller>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Engineering";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct> <https://github.com/edufuga/LinkedDataScala/product_N463-8050264>,
+    <https://github.com/edufuga/LinkedDataScala/product_N733-1946687>, <https://github.com/edufuga/LinkedDataScala/product_V404-9975399>,
+    <https://github.com/edufuga/LinkedDataScala/product_Z249-1364492> .
+
+<https://github.com/edufuga/LinkedDataScala/manager_Thomas_Mueller> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Manager>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Karl-Liebknecht-Straße 885, 82003 Tettnang";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Thomas.Mueller@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Thomas Mueller";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-8200-38218301" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Corinna_Ludwig> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Ringstraße 276";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Corinna.Ludwig@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Corinna Ludwig";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-1743-24836762";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Memristor, Gauge, Encoder" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Karen_Brant> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Friedrichstraße 664, 30805 Willich";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Karen.Brant@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Karen Brant";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "(00530) 5040048";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Inductor" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Manfred_Foth> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Manfred.Foth@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Manfred Foth";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Coil, Transistor, Warp" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Lukas_Gerver> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Lukas.Gerver@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Lukas Gerver";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Memristor, Strain" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Herr_Haan_Bader> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Cologne Ring 674, 99978 Aach";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Herr.Haan.Bader@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Herr Haan Bader";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "(05126) 3204437";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Oscillator" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Karch_Moeller> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Karch.Moeller@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Karch Moeller";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Breaker, Crystal, Encoder, Capacitor" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Ida_Halle> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Lintgasse 557, 40300 Gummersbach";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Ida.Halle@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Ida Halle";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-0300-21370617";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Transistor, Breaker, Oscillator, Switch, Potentiometer" .
+
+<https://github.com/edufuga/LinkedDataScala/product_N733-1946687> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 14.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 20.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "N733-1946687";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "LCD Encoder";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_1_8_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Ida.Halle@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 5.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 60.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_1_8_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "1.8"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_N463-8050264> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 11.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 75.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "N463-8050264";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Multiplexer Network";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_1_56_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Herr.Haan.Bader@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 1.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 15.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_1_56_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "1.56"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_Z249-1364492> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 14.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 25.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "Z249-1364492";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Meter Transducer";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_4_12_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Corinna.Ludwig@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 12.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 45.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_4_12_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "4.12"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_V404-9975399> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 11.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 78.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "V404-9975399";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Resonator Transformer";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_3_2_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Manfred.Foth@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 16.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 70.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_3_2_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "3.2"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_O184-6903943> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 17.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 44.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "O184-6903943";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Oscillator Crystal";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_1_15_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Karen.Brant@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 19.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 38.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_1_15_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "1.15"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/department_73191> <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct>
+    <https://github.com/edufuga/LinkedDataScala/product_F344-7012314>, <https://github.com/edufuga/LinkedDataScala/product_M605-5951566>,
+    <https://github.com/edufuga/LinkedDataScala/product_O184-6903943>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasService> <https://github.com/edufuga/LinkedDataScala/service_D215-3449390>,
+    <https://github.com/edufuga/LinkedDataScala/service_I241-8776317> .
+
+<https://github.com/edufuga/LinkedDataScala/product_F344-7012314> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 20.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 59.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "F344-7012314";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Switch Encoder Transducer";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_3_25_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Lukas.Gerver@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 7.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 37.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_3_25_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "3.25"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_M605-5951566> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 16.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 54.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "M605-5951566";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Rheostat Transformer";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_3_94_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Karch.Moeller@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 15.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 65.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_3_94_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "3.94"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/service_I241-8776317> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Service>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "I241-8776317";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Component Confabulation";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_1082_0_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Corinna.Ludwig@company.org" .
+
+<https://github.com/edufuga/LinkedDataScala/money_1082_0_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "1082.0"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/service_D215-3449390> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Service>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "D215-3449390";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Manual Inspection";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_1709_54_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Ida.Halle@company.org" .
+
+<https://github.com/edufuga/LinkedDataScala/money_1709_54_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "1709.54"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/organisation_1> <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepartment>
+    <https://github.com/edufuga/LinkedDataScala/department_73191> .
+
+<https://github.com/edufuga/LinkedDataScala/department_22183> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Department>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmployee> <https://github.com/edufuga/LinkedDataScala/employee_Adolfina_Hoch>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Arendt_Beitel>, <https://github.com/edufuga/LinkedDataScala/employee_Berlin_Schulz>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Dieterich_Blau>, <https://github.com/edufuga/LinkedDataScala/employee_Emil_Gotti>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Franziska_Acker>, <https://github.com/edufuga/LinkedDataScala/employee_Frauke_Faerber>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Jarvis_Jans>, <https://github.com/edufuga/LinkedDataScala/employee_Ratt_Beyer>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Sigmund_Gros>, <https://github.com/edufuga/LinkedDataScala/employee_Wanja_Hoffmann>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Xochitl_Aue>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "22183";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager> <https://github.com/edufuga/LinkedDataScala/manager_Franz_Kornhaeusel>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Product Management";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct> <https://github.com/edufuga/LinkedDataScala/product_H274-5987347>,
+    <https://github.com/edufuga/LinkedDataScala/product_W501-5990901> .
+
+<https://github.com/edufuga/LinkedDataScala/manager_Franz_Kornhaeusel> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Manager>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Franz.Kornhaeusel@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Franz Kornhaeusel";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "(02065) 4946239" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Arendt_Beitel> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Dessauer Ufer 116, 08763 Olpe";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Arendt.Beitel@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Arendt Beitel";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-8763-66514379";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Coil, Sensor, Encoder, Compensator" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Emil_Gotti> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Kurfürstendamm 465, 91702 Meldorf";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Emil.Gotti@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Emil Gotti";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "(0101) 854043584";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Inductor" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Berlin_Schulz> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Schleißheimer Straße 219";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Berlin.Schulz@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Berlin Schulz";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Encoder" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Franziska_Acker> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Berliner Straße 428, 50920 Tann";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Franziska.Acker@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Franziska Acker";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "(01908) 6892372";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Memristor" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Dieterich_Blau> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Esplanade 372, 63144 Löwenstein";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Dieterich.Blau@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Dieterich Blau";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-2961-28181571";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Resistor, Breaker" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Xochitl_Aue> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Bundesautobahn 1387";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Xochitl.Aue@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Xochitl Aue";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "LCD, Resistor, Crystal, Compensator, Sensor" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Sigmund_Gros> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Schadowstraße 785";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Sigmund.Gros@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Sigmund Gros";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "(0916) 071777489";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Multiplexer, Potentiometer, Breaker, Meter" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Wanja_Hoffmann> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Wanja.Hoffmann@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Wanja Hoffmann";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-1083-38194095";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Inductor, Oscillator, Compensator, Switch, Meter" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Adolfina_Hoch> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Motzstraße 26, 13611 Gartz";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Adolfina.Hoch@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Adolfina Hoch";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-109-5719002";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Coil, Breaker, Transducer, Strain, Meter" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Frauke_Faerber> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Holstenwall 430, 31356 Gießen";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Frauke.Faerber@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Frauke Faerber";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "(01356) 2318280";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "LCD, Inductor, Network, Resistor, Crystal" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Ratt_Beyer> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Elbchaussee 1310, 02276 Werdau";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Ratt.Beyer@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Ratt Beyer";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-2117-55002657";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Potentiometer, Breaker, Transducer" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Jarvis_Jans> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Palmaille 837";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Jarvis.Jans@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Jarvis Jans";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "(0322) 517636576";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Coil, Potentiometer, Network, Crystal" .
+
+<https://github.com/edufuga/LinkedDataScala/product_H274-5987347> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 20.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 73.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "H274-5987347";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Driver Resonator";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_2_59_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Arendt.Beitel@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 4.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 49.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_2_59_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "2.59"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_W501-5990901> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 19.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 18.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "W501-5990901";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Film Memristor Resonator Compensator";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_0_3_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Xochitl.Aue@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 13.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 20.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_0_3_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "0.3"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_A688-6056899> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 11.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 63.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "A688-6056899";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Multiplexer Inductor";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_0_98_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Jarvis.Jans@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 14.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 33.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_0_98_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "0.98"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/department_22183> <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct>
+    <https://github.com/edufuga/LinkedDataScala/product_A688-6056899>, <https://github.com/edufuga/LinkedDataScala/product_I980-1040313>,
+    <https://github.com/edufuga/LinkedDataScala/product_L128-5499058>, <https://github.com/edufuga/LinkedDataScala/product_L316-4863597>,
+    <https://github.com/edufuga/LinkedDataScala/product_G144-5498082>, <https://github.com/edufuga/LinkedDataScala/product_O857-5463957>,
+    <https://github.com/edufuga/LinkedDataScala/product_Q774-7287508>, <https://github.com/edufuga/LinkedDataScala/product_T291-4144066>,
+    <https://github.com/edufuga/LinkedDataScala/product_U836-7709298> .
+
+<https://github.com/edufuga/LinkedDataScala/product_L128-5499058> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 14.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 56.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "L128-5499058";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Field-effect Multiplexer Potentiometer";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_0_51_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Adolfina.Hoch@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 19.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 46.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_0_51_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "0.51"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_Q774-7287508> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 15.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 44.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "Q774-7287508";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Flow Potentiometer Crystal Rheostat";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_3_94_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Frauke.Faerber@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 17.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 45.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_3_94_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "3.94"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_U836-7709298> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 19.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 38.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "U836-7709298";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Driver Switch Transducer";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_0_47_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Berlin.Schulz@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 15.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 33.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_0_47_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "0.47"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_O857-5463957> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 18.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 37.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "O857-5463957";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Transistor Compensator";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_3_62_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Franziska.Acker@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 2.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 35.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_3_62_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "3.62"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_L316-4863597> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 15.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 36.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "L316-4863597";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Potentiometer Inductor";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_1_23_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Dieterich.Blau@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 4.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 54.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_1_23_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "1.23"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_I980-1040313> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 20.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 28.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "I980-1040313";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Film Resonator Capacitor Strain";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_3_38_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Sigmund.Gros@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 3.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 16.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_3_38_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "3.38"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_T291-4144066> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 20.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 49.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "T291-4144066";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "LCD Gauge Warp";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_4_32_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Emil.Gotti@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 20.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 60.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_4_32_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "4.32"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_G144-5498082> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 19.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 69.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "G144-5498082";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Multiplexer Transistor Transformer";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_0_86_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Wanja.Hoffmann@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 15.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 17.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_0_86_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "0.86"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_L536-5185541> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 14.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 39.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "L536-5185541";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Coil Gauge";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_4_22_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Ratt.Beyer@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 6.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 25.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_4_22_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "4.22"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/department_22183> <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct>
+    <https://github.com/edufuga/LinkedDataScala/product_L536-5185541> .
+
+<https://github.com/edufuga/LinkedDataScala/organisation_1> <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepartment>
+    <https://github.com/edufuga/LinkedDataScala/department_22183> .
+
+<https://github.com/edufuga/LinkedDataScala/department_41622> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Department>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmployee> <https://github.com/edufuga/LinkedDataScala/employee_Anamchara_Foerstner>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Arnelle_Gerber>, <https://github.com/edufuga/LinkedDataScala/employee_Frau_Irmalinda‘_Becker>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Gretel_Roth>, <https://github.com/edufuga/LinkedDataScala/employee_Nadia_Schubert>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Ratt_Hartmann>, <https://github.com/edufuga/LinkedDataScala/employee_Rebecca_Hall>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Siglind_Brinkerhoff>, <https://github.com/edufuga/LinkedDataScala/employee_Sylvester_Brant>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Wolfgang_Martin>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "41622";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager> <https://github.com/edufuga/LinkedDataScala/manager_Elena_Herzog>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Data Services";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct> <https://github.com/edufuga/LinkedDataScala/product_A145-1240844>,
+    <https://github.com/edufuga/LinkedDataScala/product_D762-3837218>, <https://github.com/edufuga/LinkedDataScala/product_X375-4984404> .
+
+<https://github.com/edufuga/LinkedDataScala/manager_Elena_Herzog> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Manager>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Kirchgasse 806, 76088 Kamen";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Elena.Herzog@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Elena Herzog";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-7608-83268331" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Gretel_Roth> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Schaumainkai 488";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Gretel.Roth@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Gretel Roth";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-9456-94517553";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Sensor, Gauge, Breaker, Warp" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Wolfgang_Martin> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Wolfgang.Martin@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Wolfgang Martin";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-701-5973041";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Network, Crystal, Meter" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Nadia_Schubert> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Nadia.Schubert@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Nadia Schubert";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-1805-80560374";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Network, Crystal, Warp" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Rebecca_Hall> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Rebecca.Hall@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Rebecca Hall";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-2776-10372538";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Inductor" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Sylvester_Brant> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Holstenwall 310, 68139 Aue";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Sylvester.Brant@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Sylvester Brant";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "(08514) 9139423";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Network, Sensor, Strain, Oscillator" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Frau_Irmalinda‘_Becker> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Deichstraße 594, 03337 Greifswald";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Frau.Irmalinda‘.Becker@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Frau Irmalinda‘ Becker";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Network, Strain" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Siglind_Brinkerhoff> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Siglind.Brinkerhoff@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Siglind Brinkerhoff";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-4855-99936426";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Strain, Compensator, Switch, Resonator, Meter" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Ratt_Hartmann> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Lintgasse 1310, 47063 Oranienburg";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Ratt.Hartmann@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Ratt Hartmann";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "(00636) 1323749";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "LCD, Resonator, Compensator" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Anamchara_Foerstner> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Jüdenstraße 79, 61467 Leonberg";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Anamchara.Foerstner@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Anamchara Foerstner";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-360-5655698";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Inductor, Transistor, Sensor, Gauge, Resonator" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Arnelle_Gerber> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Konstablerwache 137, 41750 Beelitz";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Arnelle.Gerber@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Arnelle Gerber";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "(03586) 7240528";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Driver, Transformer, Compensator, Potentiometer, Meter" .
+
+<https://github.com/edufuga/LinkedDataScala/product_A145-1240844> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 20.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 28.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "A145-1240844";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Bipolar-junction Coil Compensator Transducer";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_3_72_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Ratt.Hartmann@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 14.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 17.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_3_72_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "3.72"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_X375-4984404> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 20.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 37.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "X375-4984404";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Multiplexer Transistor";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_4_56_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Rebecca.Hall@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 6.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 45.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_4_56_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "4.56"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_D762-3837218> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 11.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 18.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "D762-3837218";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Inductor Capacitor Switch";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_2_43_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Sylvester.Brant@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 4.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 49.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_2_43_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "2.43"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_M558-2275045> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 16.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 40.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "M558-2275045";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Sensor Switch";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_3_41_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Anamchara.Foerstner@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 5.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 12.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_3_41_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "3.41"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/department_41622> <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct>
+    <https://github.com/edufuga/LinkedDataScala/product_C697-6765940>, <https://github.com/edufuga/LinkedDataScala/product_D228-6993564>,
+    <https://github.com/edufuga/LinkedDataScala/product_M558-2275045>, <https://github.com/edufuga/LinkedDataScala/product_O125-6715778>,
+    <https://github.com/edufuga/LinkedDataScala/product_Q986-9996088>, <https://github.com/edufuga/LinkedDataScala/product_Z272-2955088>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasService> <https://github.com/edufuga/LinkedDataScala/service_Y274-1029755> .
+
+<https://github.com/edufuga/LinkedDataScala/product_C697-6765940> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 16.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 13.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "C697-6765940";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Network Driver";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_5_22_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Arnelle.Gerber@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 19.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 28.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_5_22_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "5.22"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_O125-6715778> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 16.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 31.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "O125-6715778";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Ceramic Network Driver";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_2_51_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Siglind.Brinkerhoff@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 10.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 30.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_2_51_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "2.51"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_Q986-9996088> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 14.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 24.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "Q986-9996088";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Planck Transistor Transformer";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_1_12_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Gretel.Roth@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 7.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 61.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_1_12_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "1.12"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_Z272-2955088> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 15.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 43.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "Z272-2955088";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Coil Sensor Resonator";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_0_82_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Wolfgang.Martin@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 10.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 29.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_0_82_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "0.82"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_D228-6993564> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 11.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 50.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "D228-6993564";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Log-periodic LCD Gauge Warp";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_4_36_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Nadia.Schubert@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 2.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 15.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_4_36_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "4.36"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/service_Y274-1029755> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Service>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "Y274-1029755";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Industry-Grade Hacking";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_1008_28_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Wolfgang.Martin@company.org" .
+
+<https://github.com/edufuga/LinkedDataScala/money_1008_28_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "1008.28"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/organisation_1> <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepartment>
+    <https://github.com/edufuga/LinkedDataScala/department_41622> .
+
+<https://github.com/edufuga/LinkedDataScala/department_84279> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Department>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmployee> <https://github.com/edufuga/LinkedDataScala/employee_Elisabeth_Harman>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Erhard_Fried>, <https://github.com/edufuga/LinkedDataScala/employee_Heinrich_Hoch>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Herr_Burgh_Eichel>, <https://github.com/edufuga/LinkedDataScala/employee_Kristen_Bauers>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Lili_Geier>, <https://github.com/edufuga/LinkedDataScala/employee_Miles_Amsel>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Minnie_Kuehn>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "84279";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager> <https://github.com/edufuga/LinkedDataScala/manager_Waldtraud_Kuttner>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Procurement";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct> <https://github.com/edufuga/LinkedDataScala/product_O311-4466005>,
+    <https://github.com/edufuga/LinkedDataScala/product_R860-6284767>, <https://github.com/edufuga/LinkedDataScala/product_T782-3734983>,
+    <https://github.com/edufuga/LinkedDataScala/product_V654-5789502> .
+
+<https://github.com/edufuga/LinkedDataScala/manager_Waldtraud_Kuttner> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Manager>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Waldtraud.Kuttner@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Waldtraud Kuttner";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "(08798) 5416209" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Erhard_Fried> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Kaiserhofstraße 484, 13104 Wittenburg";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Erhard.Fried@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Erhard Fried";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-400-5290537";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Transistor" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Miles_Amsel> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Miles.Amsel@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Miles Amsel";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-528-8615329";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Multiplexer, Memristor, Gauge" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Minnie_Kuehn> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Minnie.Kuehn@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Minnie Kuehn";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-551-5670308";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Transformer, Network, Compensator" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Heinrich_Hoch> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Motzstraße 741, 44446 Glückstadt";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Heinrich.Hoch@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Heinrich Hoch";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-4446-26033173";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Coil, Gauge, Crystal, Transformer" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Elisabeth_Harman> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Lintgasse 338, 66427 Tegernsee";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Elisabeth.Harman@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Elisabeth Harman";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-4278-55203507";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Coil, Warp" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Herr_Burgh_Eichel> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Hohe Straße 288, 09116 Hofheim";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Herr.Burgh.Eichel@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Herr Burgh Eichel";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Coil, Encoder, Breaker, Compensator" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Lili_Geier> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Kirchgasse 781, 21956 Neuenhaus";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Lili.Geier@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Lili Geier";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "(0938) 228702909";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Inductor, Transistor, Compensator, Sensor, Meter" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Kristen_Bauers> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Colonnaden 721, 44353 Baumholder";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Kristen.Bauers@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Kristen Bauers";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Warp" .
+
+<https://github.com/edufuga/LinkedDataScala/product_O311-4466005> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 14.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 64.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "O311-4466005";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Coil Inductor";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_3_1_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Miles.Amsel@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 18.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 64.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_3_1_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "3.1"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_T782-3734983> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 20.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 35.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "T782-3734983";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Dipole Transformer";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_3_04_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Erhard.Fried@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 14.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 34.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_3_04_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "3.04"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_R860-6284767> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 20.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 75.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "R860-6284767";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Oscillator Compensator Warp";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_1_02_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Lili.Geier@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 7.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 27.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_1_02_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "1.02"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_V654-5789502> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 15.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 33.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "V654-5789502";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Polymer Resistor Memristor Strain";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_5_81_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Kristen.Bauers@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 2.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 67.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_5_81_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "5.81"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_H173-1200706> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 18.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 14.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "H173-1200706";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Memristor Rheostat Transformer";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_2_77_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Elisabeth.Harman@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 2.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 27.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_2_77_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "2.77"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/department_84279> <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct>
+    <https://github.com/edufuga/LinkedDataScala/product_H173-1200706>, <https://github.com/edufuga/LinkedDataScala/product_U286-4664935>,
+    <https://github.com/edufuga/LinkedDataScala/product_V450-8692412>, <https://github.com/edufuga/LinkedDataScala/product_Y968-9133870> .
+
+<https://github.com/edufuga/LinkedDataScala/product_Y968-9133870> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 13.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 26.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "Y968-9133870";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Oscillator Rheostat";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_3_14_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Herr.Burgh.Eichel@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 19.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 76.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_3_14_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "3.14"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_U286-4664935> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 14.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 14.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "U286-4664935";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Multiplexer Memristor";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_0_38_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Heinrich.Hoch@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 17.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 59.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_0_38_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "0.38"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_V450-8692412> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 18.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 28.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "V450-8692412";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Film Network Gauge Meter";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_2_61_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Minnie.Kuehn@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 17.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 22.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_2_61_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "2.61"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/organisation_1> <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepartment>
+    <https://github.com/edufuga/LinkedDataScala/department_84279> .
+
+<https://github.com/edufuga/LinkedDataScala/department_66469> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Department>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmployee> <https://github.com/edufuga/LinkedDataScala/employee_Baldwin_Guenther>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Marius_Fux>, <https://github.com/edufuga/LinkedDataScala/employee_Sabrina_Bayer>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Ulrik_Denzel>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "66469";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager> <https://github.com/edufuga/LinkedDataScala/manager_Reiner_Widmann>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Production";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct> <https://github.com/edufuga/LinkedDataScala/product_D331-6211280>,
+    <https://github.com/edufuga/LinkedDataScala/product_R726-8194447>, <https://github.com/edufuga/LinkedDataScala/product_X716-6172862>,
+    <https://github.com/edufuga/LinkedDataScala/product_Z439-5790785>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasService> <https://github.com/edufuga/LinkedDataScala/service_N558-1730215>,
+    <https://github.com/edufuga/LinkedDataScala/service_P925-8919074> .
+
+<https://github.com/edufuga/LinkedDataScala/manager_Reiner_Widmann> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Manager>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Mönckebergstraße 489, 40885 Dillenburg";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Reiner.Widmann@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Reiner Widmann";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-408-8516878" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Ulrik_Denzel> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Steintorwall 416, 26077 Baunatal";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Ulrik.Denzel@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Ulrik Denzel";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Strain" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Sabrina_Bayer> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Sabrina.Bayer@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Sabrina Bayer";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-82-534-91423";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Crystal" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Baldwin_Guenther> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Leopoldstrasse 157, 05861 Münster";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Baldwin.Guenther@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Baldwin Guenther";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Multiplexer, Oscillator" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Marius_Fux> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Marius.Fux@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Marius Fux";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-73-917-19816";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Resistor, Rheostat, Capacitor, Warp" .
+
+<https://github.com/edufuga/LinkedDataScala/product_Z439-5790785> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 19.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 55.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "Z439-5790785";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Log-periodic Network Meter Switch";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_2_9_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Sabrina.Bayer@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 13.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 32.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_2_9_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "2.9"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_R726-8194447> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 14.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 44.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "R726-8194447";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Oscillator Crystal Switch";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_5_03_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Marius.Fux@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 17.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 26.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_5_03_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "5.03"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_D331-6211280> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 12.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 75.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "D331-6211280";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "LCD Coil Transistor";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_2_19_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Ulrik.Denzel@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 5.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 20.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_2_19_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "2.19"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_X716-6172862> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 16.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 74.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "X716-6172862";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Coil Resonator";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_3_2_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Baldwin.Guenther@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 8.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 36.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_3_2_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "3.2"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/service_P925-8919074> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Service>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "P925-8919074";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Predictive Maintenance";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_778_15_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Baldwin.Guenther@company.org" .
+
+<https://github.com/edufuga/LinkedDataScala/money_778_15_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "778.15"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/service_N558-1730215> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Service>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "N558-1730215";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Sensor Adjustment";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_1125_21_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Ulrik.Denzel@company.org" .
+
+<https://github.com/edufuga/LinkedDataScala/money_1125_21_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "1125.21"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/organisation_1> <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepartment>
+    <https://github.com/edufuga/LinkedDataScala/department_66469> .
+
+<https://github.com/edufuga/LinkedDataScala/department_85880> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Department>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmployee> <https://github.com/edufuga/LinkedDataScala/employee_Baldwin_Dirksen>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Bert_Blumstein>, <https://github.com/edufuga/LinkedDataScala/employee_Henny_Foth>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Kevin_Feigenbaum>, <https://github.com/edufuga/LinkedDataScala/employee_Lambert_Faust>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Liese_Adam>, <https://github.com/edufuga/LinkedDataScala/employee_Sabrina_Geiger>,
+    <https://github.com/edufuga/LinkedDataScala/employee_Valda_Everhart>, <https://github.com/edufuga/LinkedDataScala/employee_Yanka_Schreiber>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "85880";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager> <https://github.com/edufuga/LinkedDataScala/manager_Dietlinde_Boehme>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Marketing";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct> <https://github.com/edufuga/LinkedDataScala/product_H402-6061531>,
+    <https://github.com/edufuga/LinkedDataScala/product_L586-5133830>, <https://github.com/edufuga/LinkedDataScala/product_D334-6681399>,
+    <https://github.com/edufuga/LinkedDataScala/product_R771-3893828> .
+
+<https://github.com/edufuga/LinkedDataScala/manager_Dietlinde_Boehme> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Manager>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Biebricher Allee 880, 65826 Neukalen";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Dietlinde.Boehme@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Dietlinde Boehme";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "(06582) 6550636" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Valda_Everhart> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Valda.Everhart@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Valda Everhart";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-04-969-14255";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Inductor, Memristor, Transformer, Potentiometer, Resonator" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Kevin_Feigenbaum> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Kevin.Feigenbaum@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Kevin Feigenbaum";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Network, Oscillator, Resonator, Encoder" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Henny_Foth> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Kaiserdamm 531, 66812 Dornburg-Camburg";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Henny.Foth@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Henny Foth";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "(0686) 108701699";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Capacitor" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Liese_Adam> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Berliner Straße 773, 28609 Ginsheim-Gustavsburg";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Liese.Adam@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Liese Adam";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-6092-34516857";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Potentiometer, Crystal, Warp, Sensor, Transducer" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Bert_Blumstein> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Wilhelmstraße 232, 15114 Königsberg";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Bert.Blumstein@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Bert Blumstein";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Compensator" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Baldwin_Dirksen> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Hauptwache 159, 16200 Heppenheim";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Baldwin.Dirksen@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Baldwin Dirksen";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-6200-33069465";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Capacitor" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Sabrina_Geiger> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Sabrina.Geiger@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Sabrina Geiger";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-8295-77923757";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Potentiometer, Compensator" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Yanka_Schreiber> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Yanka.Schreiber@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Yanka Schreiber";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Rheostat, Breaker" .
+
+<https://github.com/edufuga/LinkedDataScala/employee_Lambert_Faust> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Lambert.Faust@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Lambert Faust";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "(0673) 525930320";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
+    "Coil, Breaker, Network, Warp, Transducer" .
+
+<https://github.com/edufuga/LinkedDataScala/product_L586-5133830> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 14.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 52.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "L586-5133830";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Multiplexer Dipole";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_3_08_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Henny.Foth@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 7.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 34.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_3_08_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "3.08"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_H402-6061531> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 15.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 57.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "H402-6061531";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Switch";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_0_44_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Sabrina.Geiger@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 11.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 69.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_0_44_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "0.44"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_R771-3893828> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 19.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 71.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "R771-3893828";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Multiplexer LCD Transducer";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_4_46_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Valda.Everhart@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 6.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 45.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_4_46_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "4.46"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_D334-6681399> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 16.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 55.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "D334-6681399";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Resistor Inductor Gauge";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_3_98_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Lambert.Faust@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 11.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 71.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_3_98_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "3.98"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_Q442-2123335> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 19.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 67.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "Q442-2123335";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Aluminum Potentiometer Capacitor";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_1_65_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Liese.Adam@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 19.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 25.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_1_65_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "1.65"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/department_85880> <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct>
+    <https://github.com/edufuga/LinkedDataScala/product_C831-2580759>, <https://github.com/edufuga/LinkedDataScala/product_D844-3535311>,
+    <https://github.com/edufuga/LinkedDataScala/product_G251-8414984>, <https://github.com/edufuga/LinkedDataScala/product_Q442-2123335>,
+    <https://github.com/edufuga/LinkedDataScala/product_Y299-9772513>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasService> <https://github.com/edufuga/LinkedDataScala/service_O662-4012383>,
+    <https://github.com/edufuga/LinkedDataScala/service_P516-8211068>, <https://github.com/edufuga/LinkedDataScala/service_U360-2815908> .
+
+<https://github.com/edufuga/LinkedDataScala/product_G251-8414984> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 12.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 13.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "G251-8414984";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Coil Rheostat";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_3_66_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Yanka.Schreiber@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 7.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 53.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_3_66_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "3.66"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_C831-2580759> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 19.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 32.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "C831-2580759";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Warp";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_4_28_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Baldwin.Dirksen@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 12.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 57.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_4_28_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "4.28"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_D844-3535311> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 17.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 12.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "D844-3535311";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Resistor Gauge Encoder";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_0_9_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Bert.Blumstein@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 11.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 36.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_0_9_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "0.9"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/product_Y299-9772513> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 17.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 62.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "Y299-9772513";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Log-periodic Oscillator Transformer";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_0_38_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Kevin.Feigenbaum@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 3.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 40.0 .
+
+<https://github.com/edufuga/LinkedDataScala/money_0_38_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "0.38"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/service_P516-8211068> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Service>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "P516-8211068";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "IoT Data Marketing";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_1162_32_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Henny.Foth@company.org" .
+
+<https://github.com/edufuga/LinkedDataScala/money_1162_32_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "1162.32"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/service_U360-2815908> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Service>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "U360-2815908";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Enterprise Navigation";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_1366_11_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Baldwin.Dirksen@company.org" .
+
+<https://github.com/edufuga/LinkedDataScala/money_1366_11_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "1366.11"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/service_O662-4012383> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Service>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "O662-4012383";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Involuntary Service";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_1619_22_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Lambert.Faust@company.org" .
+
+<https://github.com/edufuga/LinkedDataScala/money_1619_22_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "1619.22"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/organisation_1> <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepartment>
+    <https://github.com/edufuga/LinkedDataScala/department_85880> .
