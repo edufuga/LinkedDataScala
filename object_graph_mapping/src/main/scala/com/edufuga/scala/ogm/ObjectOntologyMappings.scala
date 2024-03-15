@@ -99,7 +99,7 @@ object ObjectOntologyMappings {
       s"${entity.depth}".toIntOption.foreach(depth => ontology.setDepth(java.math.BigDecimal(depth)))     // Ouch
       s"${entity.weight}".toIntOption.foreach(weight => ontology.setWeight(java.math.BigDecimal(weight))) // Ouch
       ontology.setProductManager(s"${entity.productManager}")
-      ontology.addPrice(???) // TODO: Money conversion.
+      ontology.addPrice(MoneyMappings.objectToOntology(entity.price))
       ontology
     }
     override def ontologyToObject(ontology: ont.IProduct): ent.Product = ???
@@ -109,5 +109,17 @@ object ObjectOntologyMappings {
     override def objectToOntology(entity: ent.Service): ont.IService = ???
 
     override def ontologyToObject(ontology: ont.IService): ent.Service = ???
+  }
+
+  object MoneyMappings extends ObjectOntologyMapping[ent.Money, ont.IMoney] {
+    override def objectToOntology(entity: ent.Money): ont.IMoney = {
+      // This is (conceptually) a "value type", so we don't need a counter.
+      val ontology = ont.Money(NAMESPACE, s"${entity.value}_${entity.currency}") // The ID is the VALUE, ex. "100_EUR".
+      ontology.setMonetaryValue(entity.value)
+      ontology.setCurrency(s"${entity.currency}")
+      ontology
+    }
+
+    override def ontologyToObject(ontology: ont.IMoney): ent.Money = ???
   }
 }
