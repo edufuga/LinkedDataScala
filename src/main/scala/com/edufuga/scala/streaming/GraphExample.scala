@@ -37,7 +37,11 @@ object GraphExample extends App {
       employee.setName("Corinna Ludwig")
       employee.setAddress("Ringstraße 276")
       employee.setPhone("+49-1743-24836762")
-      employee.setProductExpertFor("Memristor, Gauge, Encoder") // TODO: This should be a List/Set (non-functional pr.)
+      employee.setProductExpertFor("Memristor, Gauge, Encoder")
+      // TODO: The "product expert for" should be a List/Set (non-functional pr.).
+      //  This is a limitation (or design decision) of OLGA.
+      //  Apparently ONLY object properties are transformed into code according to the description in
+      //  https://github.com/EcoStruxure/OLGA/wiki/User-Guide#9-code-generation.
 
       department.addEmployees(employee)
     }
