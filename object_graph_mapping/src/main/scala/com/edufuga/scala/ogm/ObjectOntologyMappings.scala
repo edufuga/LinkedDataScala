@@ -137,7 +137,8 @@ object ObjectOntologyMappings {
   object MoneyMappings extends ObjectOntologyMapping[ent.Money, ont.IMoney] {
     override def objectToOntology(entity: ent.Money): ont.IMoney = {
       // This is (conceptually) a "value type", so we don't need a counter.
-      val ontology = ont.Money(NAMESPACE, s"money_${entity.value}_${entity.currency}") // The ID is the VALUE, ex. "100_EUR".
+      // The ID is the VALUE, ex. "100_EUR".
+      val ontology = ont.Money(NAMESPACE, s"money_${entity.value}_${entity.currency}".replaceAll("\\.", "_"))
       ontology.setMonetaryValue(entity.value)
       ontology.setCurrency(s"${entity.currency}")
       ontology

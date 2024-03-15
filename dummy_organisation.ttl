@@ -28,21 +28,21 @@
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 12.0;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "I241-8776317";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Strain Compensator";
-  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_0.5_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_0_5_EUR>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Baldwin.Dirksen@company.org";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 8.0;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 68.0 .
 
-<https://github.com/edufuga/LinkedDataScala/money_0.5_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+<https://github.com/edufuga/LinkedDataScala/money_0_5_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "0.5"^^<http://www.w3.org/2001/XMLSchema#float> .
 
 <https://github.com/edufuga/LinkedDataScala/service_I241-8776317> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Service>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "I241-8776317";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Component Confabulation";
-  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_12345.0_EUR>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/money_12345_0_EUR>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Baldwin.Dirksen@company.org" .
 
-<https://github.com/edufuga/LinkedDataScala/money_12345.0_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+<https://github.com/edufuga/LinkedDataScala/money_12345_0_EUR> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "12345.0"^^<http://www.w3.org/2001/XMLSchema#float> .
