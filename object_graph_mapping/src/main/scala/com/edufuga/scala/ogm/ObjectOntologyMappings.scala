@@ -20,15 +20,14 @@ object ObjectOntologyMappings {
     override def ontologyToObject(ontology: ont.IManager): ent.Manager = ???
   }
 
-  object ManagerMappings extends ObjectOntologyMapping[ent.Manager, ont.IManager] {
-    override def objectToOntology(entity: ent.Manager): ont.IManager = ???
-
-    override def ontologyToObject(ontology: ont.IManager): ent.Manager = ???
-  }
-
   object EmployeeMappings extends ObjectOntologyMapping[ent.Employee, ont.Employee] {
     override def objectToOntology(entity: ent.Employee): ont.IEmployee = ???
 
     override def ontologyToObject(ontology: ont.IEmployee): ent.Employee = ???
+  }
+
+  object ProductMappings extends ObjectOntologyMapping[ent.Product, ont.IProduct] {
+    override def objectToOntology(entity: ent.Product): ont.IProduct = ???
+    override def ontologyToObject(ontology: ont.IProduct): ent.Product = ???
   }
 }
