@@ -4,8 +4,18 @@ import com.edufuga.scala.entities as ent
 import productdata.rdf.model as ont
 
 object ObjectOntologyMappings {
+  private val NAMESPACE: String = "https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#"
+
   object OrganisationMappings extends ObjectOntologyMapping[ent.FullOrganisation, ont.IOrganisation] {
-    override def objectToOntology(entity: ent.FullOrganisation): ont.IOrganisation = ???
+    override def objectToOntology(entity: ent.FullOrganisation): ont.IOrganisation = {
+      val ontology = ont.Organisation(NAMESPACE, s"$entity")
+      entity.departments.foreach { department =>
+        ontology.addDepartments(
+          DepartmentMappings.objectToOntology(department)
+        )
+      }
+      ontology
+    }
 
     override def ontologyToObject(ontology: ont.IOrganisation): ent.FullOrganisation = ???
   }
