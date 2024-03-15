@@ -19,7 +19,7 @@ object MainApp extends IOApp {
       val services: String = args(1)
       val organisation: String = args(2)
 
-      println(ObjectOntologyMappingExample.organisationOntology)
+      //println(ObjectOntologyMappingExample.organisationOntology)
 
       (products, services, organisation)
     } match
@@ -44,7 +44,7 @@ object MainApp extends IOApp {
         val streamer: Streamer = new Streamer(productsDAO, servicesDAO, organisationDAO, fullOrganisationDAO)
         streamer.stream
 
-        val businessQuestions: BusinessQuestions = new BusinessQuestions(productsDAO, servicesDAO, fullOrganisationDAO)
-        businessQuestions.stream
+        //val businessQuestions: BusinessQuestions = new BusinessQuestions(productsDAO, servicesDAO, fullOrganisationDAO)
+        //businessQuestions.stream
   }
 }
