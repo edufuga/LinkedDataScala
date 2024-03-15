@@ -6,7 +6,7 @@ import productdata.rdf.model as ont
 import productdata.rdf.model.Employee
 
 object ObjectOntologyMappings {
-  private val NAMESPACE: String = "https://github.com/edufuga/LinkedData/"
+  private val NAMESPACE: String = "https://github.com/edufuga/LinkedDataScala/"
 
   private def stringify(text: String) = text.replaceAll(" ", "_")
 
