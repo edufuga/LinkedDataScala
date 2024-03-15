@@ -6,6 +6,8 @@ import productdata.rdf.model as ont
 object ObjectOntologyMappings {
   private val NAMESPACE: String = "https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#"
 
+  private def stringify(text: String) = text.replaceAll(" ", "_")
+
   // SMELL: Using an obviously stateful counter for setting the "instance IDs" of the ontology objects.
   //  A better solution would be to create the instance ID from a certain property of the objects themselves, but well.
   private class Counting(val countableThing: String) {
@@ -62,8 +64,12 @@ object ObjectOntologyMappings {
 
   object ManagerMappings extends ObjectOntologyMapping[ent.Manager, ont.IManager] {
     override def objectToOntology(entity: ent.Manager): ont.IManager = {
-
-      ??? // TODO
+      val ontology = ont.Manager(NAMESPACE, stringify(s"${entity.name}"))
+      ontology.setEmail(s"${entity.email}")
+      ontology.setName(s"${entity.name}")
+      ontology.setAddress(s"${entity.address}")
+      ontology.setPhone(s"${entity.phone}")
+      ontology
     }
 
     override def ontologyToObject(ontology: ont.IManager): ent.Manager = ???
