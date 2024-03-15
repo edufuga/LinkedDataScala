@@ -9,10 +9,11 @@ import org.eclipse.rdf4j.rio.Rio
 object GraphExample extends App {
   // Welcome to Imperative Programming with Mutations.
   // Welcome to the Open World of Knowledge Graphs.
-  createTopology()
+  val organisation = createTopology()
+  
   serialize()
 
-  private def createTopology(): Unit = {
+  private def createTopology(): IOrganisation = {
     val ns = "https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#"
 
     val organisation: IOrganisation = Organisation(ns, "o1")
@@ -81,6 +82,8 @@ object GraphExample extends App {
     }
 
     organisation.addDepartments(department)
+
+    organisation
   }
 
   private def serialize(): Unit = {
