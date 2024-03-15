@@ -94,8 +94,10 @@ object ObjectOntologyMappings {
       val ontology = ont.Product(NAMESPACE, stringify(s"${entity.id}"))
       ontology.setId(s"${entity.id}")
       ontology.setName(s"${entity.productName}")
-      s"${entity.height}".toIntOption.foreach(height => ontology.setHeight(java.math.BigDecimal(height))) // I'm dying
-      
+      s"${entity.height}".toIntOption.foreach(height => ontology.setHeight(java.math.BigDecimal(height))) // Ouch
+      s"${entity.width}".toIntOption.foreach(width => ontology.setWidth(java.math.BigDecimal(width)))     // Ouch
+      s"${entity.depth}".toIntOption.foreach(depth => ontology.setDepth(java.math.BigDecimal(depth)))     // Ouch
+      s"${entity.weight}".toIntOption.foreach(weight => ontology.setWeight(java.math.BigDecimal(weight))) // Ouch
 
       ontology
     }
