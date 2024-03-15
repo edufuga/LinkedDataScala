@@ -16,8 +16,8 @@ lazy val root = (project in file("."))
     mainClass := Some("com.edufuga.scala.streaming.MainApp"),
     maintainer := " efugarolas@brox.de"
   )
-  .aggregate(entities, entity_operations_implementation, product_data, object_graph_mapping)
-  .dependsOn(entities, entity_operations_implementation, product_data, object_graph_mapping)
+  .aggregate(entities, entity_operations_implementation, object_graph_mapping)
+  .dependsOn(entities, entity_operations_implementation, object_graph_mapping)
 
 lazy val entity_operations_implementation = (project in file("entity_operations_implementation"))
   .settings(commonSettings)
