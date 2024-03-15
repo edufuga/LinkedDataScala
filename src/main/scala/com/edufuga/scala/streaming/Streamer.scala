@@ -7,8 +7,8 @@ import cats.effect.{ExitCode, IO}
 
 import com.edufuga.scala.entities.ProductTypes.ProductId
 import com.edufuga.scala.entities.ServiceTypes.ServiceId
-import com.edufuga.scala.operations.entity.implementation.EntityOperationImplementationTypes.{FullOrganisationTypeLevelEffectfulDAO, OrganisationMaterializedDAO, ProductTypeLevelEffectfulStreamingDAO, ServiceTypeLevelEffectfulStreamingDAO}
-import com.edufuga.scala.ogm.*
+import com.edufuga.scala.operations.entity.implementation.EntityOperationImplementationTypes._
+import com.edufuga.scala.ogm.ObjectOntologyMappings
 import productdata.global.util.GLOBAL
 
 // Notice that this Streamer is still quite implementation (TypeLevel) specific.
@@ -54,8 +54,10 @@ class Streamer(
       _ <- IO.println("Processing the full organisation. This includes resolving the linked products and services.")
       organisation <- fullOrganisationDAO.readAll
       //_ <- IO.println(organisation)
-      _ <- IO.println(ObjectOntologyMappings.OrganisationMappings.objectToOntology(organisation.get))
       _ = {
+        // Convert the organisation object into an ontology (i.e. an ontology-based data graph)
+        ObjectOntologyMappings.OrganisationMappings.objectToOntology(organisation.get)
+
         val out = new FileOutputStream("organisation.rdf")
         try {
           Rio.write(GLOBAL.model, out, RDFFormat.TURTLE)
