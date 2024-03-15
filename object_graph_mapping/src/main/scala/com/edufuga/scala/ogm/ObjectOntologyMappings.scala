@@ -90,7 +90,15 @@ object ObjectOntologyMappings {
   }
 
   object ProductMappings extends ObjectOntologyMapping[ent.Product, ont.IProduct] {
-    override def objectToOntology(entity: ent.Product): ont.IProduct = ???
+    override def objectToOntology(entity: ent.Product): ont.IProduct = {
+      val ontology = ont.Product(NAMESPACE, stringify(s"${entity.id}"))
+      ontology.setId(s"${entity.id}")
+      ontology.setName(s"${entity.productName}")
+      s"${entity.height}".toIntOption.foreach(height => ontology.setHeight(java.math.BigDecimal(height))) // I'm dying
+      
+
+      ontology
+    }
     override def ontologyToObject(ontology: ont.IProduct): ent.Product = ???
   }
 
