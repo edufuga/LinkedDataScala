@@ -1,10 +1,8 @@
-package com.edufuga.scala.ogm
+package com.edufuga.scala.ogm.example
 
-import productdata.rdf.model.*
+import org.eclipse.rdf4j.rio.{RDFFormat, Rio}
 import productdata.global.util.GLOBAL
-
-import org.eclipse.rdf4j.rio.RDFFormat
-import org.eclipse.rdf4j.rio.Rio
+import productdata.rdf.model.*
 
 object GraphConstructionExample extends App {
   // Welcome to Imperative Programming with Mutations.
