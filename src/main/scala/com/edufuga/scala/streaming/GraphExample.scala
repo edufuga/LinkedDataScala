@@ -80,7 +80,6 @@ object GraphExample extends App {
       department.addServices(service)
     }
 
-
     organisation.addDepartments(department)
   }
 
