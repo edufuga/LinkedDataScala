@@ -14,4 +14,21 @@ object ObjectOntologyMappings {
     override def objectToOntology(entity: ent.FullDepartment): ont.IDepartment = ???
     override def ontologyToObject(ontology: ont.IDepartment): ent.FullDepartment = ???
   }
+
+  object ManagerMappings extends ObjectOntologyMapping[ent.Manager, ont.IManager] {
+    override def objectToOntology(entity: ent.Manager): ont.IManager = ???
+    override def ontologyToObject(ontology: ont.IManager): ent.Manager = ???
+  }
+
+  object ManagerMappings extends ObjectOntologyMapping[ent.Manager, ont.IManager] {
+    override def objectToOntology(entity: ent.Manager): ont.IManager = ???
+
+    override def ontologyToObject(ontology: ont.IManager): ent.Manager = ???
+  }
+
+  object EmployeeMappings extends ObjectOntologyMapping[ent.Employee, ont.Employee] {
+    override def objectToOntology(entity: ent.Employee): ont.IEmployee = ???
+
+    override def ontologyToObject(ontology: ont.IEmployee): ent.Employee = ???
+  }
 }
