@@ -6,7 +6,7 @@ import productdata.rdf.model as ont
 import productdata.rdf.model.Employee
 
 object ObjectOntologyMappings {
-  private val NAMESPACE: String = "https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#"
+  private val NAMESPACE: String = "https://github.com/edufuga/LinkedData/"
 
   private def stringify(text: String) = text.replaceAll(" ", "_")
 
@@ -39,7 +39,7 @@ object ObjectOntologyMappings {
 
   object DepartmentMappings extends ObjectOntologyMapping[ent.FullDepartment, ont.IDepartment] {
     override def objectToOntology(entity: ent.FullDepartment): ont.IDepartment = {
-      val ontology = ont.Department(NAMESPACE, s"${entity.id}")
+      val ontology = ont.Department(NAMESPACE, s"department_${entity.id}")
 
       ontology.setId(s"${entity.id}")
       ontology.setName(s"${entity.name}")
@@ -70,7 +70,7 @@ object ObjectOntologyMappings {
 
   object ManagerMappings extends ObjectOntologyMapping[ent.Manager, ont.IManager] {
     override def objectToOntology(entity: ent.Manager): ont.IManager = {
-      val ontology = ont.Manager(NAMESPACE, stringify(s"${entity.name}"))
+      val ontology = ont.Manager(NAMESPACE, stringify(s"manager_${entity.name}"))
       ontology.setEmail(s"${entity.email}")
       ontology.setName(s"${entity.name}")
       ontology.setAddress(s"${entity.address}")
@@ -83,7 +83,7 @@ object ObjectOntologyMappings {
   
   object EmployeeMappings extends ObjectOntologyMapping[ent.Employee, ont.IEmployee] {
     override def objectToOntology(entity: ent.Employee): ont.IEmployee = {
-      val ontology = ont.Employee(NAMESPACE, stringify(s"${entity.name}"))
+      val ontology = ont.Employee(NAMESPACE, stringify(s"employee_${entity.name}"))
       ontology.setEmail(s"${entity.email}")
       ontology.setName(s"${entity.name}")
       entity.address.foreach(address => ontology.setAddress(s"$address"))
@@ -97,7 +97,7 @@ object ObjectOntologyMappings {
 
   object ProductMappings extends ObjectOntologyMapping[ent.Product, ont.IProduct] {
     override def objectToOntology(entity: ent.Product): ont.IProduct = {
-      val ontology = ont.Product(NAMESPACE, stringify(s"${entity.id}"))
+      val ontology = ont.Product(NAMESPACE, stringify(s"product_${entity.id}"))
       ontology.setId(s"${entity.id}")
       ontology.setName(s"${entity.productName}")
       s"${entity.height}".toIntOption.foreach(height => ontology.setHeight(java.math.BigDecimal(height))) // Ouch
@@ -114,7 +114,7 @@ object ObjectOntologyMappings {
   // TODO: Instead of Service, it needs to be a "FullService". It needs the list of full products, not just the IDs.
   object ServiceMappings extends ObjectOntologyMapping[ent.Service, ont.IService] {
     override def objectToOntology(entity: ent.Service): ont.IService = {
-      val ontology = ont.Service(NAMESPACE, stringify(s"${entity.id}"))
+      val ontology = ont.Service(NAMESPACE, stringify(s"service_${entity.id}"))
       ontology.setId(s"${entity.id}")
       ontology.setName(s"${entity.serviceName}")
 
@@ -137,7 +137,7 @@ object ObjectOntologyMappings {
   object MoneyMappings extends ObjectOntologyMapping[ent.Money, ont.IMoney] {
     override def objectToOntology(entity: ent.Money): ont.IMoney = {
       // This is (conceptually) a "value type", so we don't need a counter.
-      val ontology = ont.Money(NAMESPACE, s"${entity.value}_${entity.currency}") // The ID is the VALUE, ex. "100_EUR".
+      val ontology = ont.Money(NAMESPACE, s"money_${entity.value}_${entity.currency}") // The ID is the VALUE, ex. "100_EUR".
       ontology.setMonetaryValue(entity.value)
       ontology.setCurrency(s"${entity.currency}")
       ontology
