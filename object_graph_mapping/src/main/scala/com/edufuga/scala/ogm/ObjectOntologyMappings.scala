@@ -98,7 +98,8 @@ object ObjectOntologyMappings {
       s"${entity.width}".toIntOption.foreach(width => ontology.setWidth(java.math.BigDecimal(width)))     // Ouch
       s"${entity.depth}".toIntOption.foreach(depth => ontology.setDepth(java.math.BigDecimal(depth)))     // Ouch
       s"${entity.weight}".toIntOption.foreach(weight => ontology.setWeight(java.math.BigDecimal(weight))) // Ouch
-
+      ontology.setProductManager(s"${entity.productManager}")
+      ontology.addPrice(???) // TODO: Money conversion.
       ontology
     }
     override def ontologyToObject(ontology: ont.IProduct): ent.Product = ???
