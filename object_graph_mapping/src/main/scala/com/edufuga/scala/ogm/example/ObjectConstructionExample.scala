@@ -10,7 +10,7 @@ import com.edufuga.scala.entities.ServiceTypes.*
 import java.util.Currency
 
 object ObjectConstructionExample extends App {
-  val organisation: FullOrganisation = FullOrganisation(
+  def organisation: FullOrganisation = FullOrganisation(
     departments = List(
       FullDepartment(
         id = DepartmentId("73191"),
@@ -65,5 +65,5 @@ object ObjectConstructionExample extends App {
     )
   )
 
-  println(s"Organisation: $organisation")
+  println(s"Organisation object: $organisation")
 }
