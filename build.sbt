@@ -63,9 +63,18 @@ lazy val entity_parsers = (project in file("entity_parsers"))
   .aggregate(entities)
   .dependsOn(entities)
 
+// Graph-based semantic technology (Java code generated with OLGA, the Ontology Library GenerAtor)
 lazy val product_data = (project in file("productdata-RDF4J-java"))
   .settings(commonSettings)
   .settings(
     name := "productdata-RDF4J",
     libraryDependencies += "org.eclipse.rdf4j" % "rdf4j-runtime" % "2.3.2"
   )
+
+lazy val object_graph_mapping = (project in file("object_graph_mapping"))
+  .settings(commonSettings)
+  .settings(
+    name := "OGM" // OMG!
+  )
+  .aggregate(entities, product_data)
+  .dependsOn(entities, product_data)
