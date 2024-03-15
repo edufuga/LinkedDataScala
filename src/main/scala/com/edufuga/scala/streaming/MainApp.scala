@@ -8,6 +8,7 @@ import com.edufuga.scala.operations.entity.implementation.EntityOperationImpleme
 import com.edufuga.scala.operations.entity.implementation.effectful.FullOrganisationTypeLevelEffectfulCombinationDAO
 import com.edufuga.scala.operations.entity.implementation.materialized.file.FileMaterializingOrganisationDAO
 import com.edufuga.scala.operations.entity.implementation.streamed.file.*
+import com.edufuga.scala.ogm.example.ObjectOntologyMappingExample
 
 import scala.util.{Failure, Success, Try}
 
