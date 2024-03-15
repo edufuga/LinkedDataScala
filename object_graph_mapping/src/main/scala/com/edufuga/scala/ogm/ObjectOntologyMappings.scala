@@ -24,13 +24,42 @@ object ObjectOntologyMappings {
         )
       }
       ontology
-    }
+    }                              
 
     override def ontologyToObject(ontology: ont.IOrganisation): ent.FullOrganisation = ???
   }
 
   object DepartmentMappings extends ObjectOntologyMapping[ent.FullDepartment, ont.IDepartment] {
-    override def objectToOntology(entity: ent.FullDepartment): ont.IDepartment = ???
+    private val COUNTER = Counting("department")
+
+    override def objectToOntology(entity: ent.FullDepartment): ont.IDepartment = {
+      val id = COUNTER.count()
+      val ontology = ont.Department(NAMESPACE, id)
+      
+      ontology.setId(id)
+      ontology.setName(s"${entity.name}")
+      ontology.addManager(ManagerMappings.objectToOntology(entity.manager))
+      
+      entity.employees.foreach { employee =>
+        ontology.addEmployees(
+          EmployeeMappings.objectToOntology(employee)
+        )
+      }
+      
+      entity.products.foreach { product =>
+        ontology.addProducts(
+          ProductMappings.objectToOntology(product)
+        )
+      }
+
+      entity.services.foreach { service =>
+        ontology.addServices(
+          ServiceMappings.objectToOntology(service)
+        )
+      }
+      
+      ontology
+    }
     override def ontologyToObject(ontology: ont.IDepartment): ent.FullDepartment = ???
   }
 
