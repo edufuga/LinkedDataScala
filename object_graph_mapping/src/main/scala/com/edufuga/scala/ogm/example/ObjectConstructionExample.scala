@@ -9,7 +9,7 @@ import com.edufuga.scala.entities.ServiceTypes.*
 
 import java.util.Currency
 
-object   extends App {
+object ObjectConstructionExample extends App {
   val organisation: FullOrganisation = FullOrganisation(
     departments = List(
       FullDepartment(
