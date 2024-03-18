@@ -168,10 +168,7 @@ object ObjectOntologyMappings {
       ontology
     }
 
-    override def ontologyToObject(ontology: ont.IService): ent.FullService = {
-      println("Products in Ontology")
-      println(ontology.getProducts.asScala.toList)
-
+    override def ontologyToObject(ontology: ont.IService): ent.FullService =
       ent.FullService(
         id = ServiceId(ontology.getId),
         serviceName = ServiceName(ontology.getName),
@@ -179,7 +176,6 @@ object ObjectOntologyMappings {
         productManager = ProductManager(ontology.getProductManager),
         price = MoneyMappings.ontologyToObject(ontology.getPrice.asScala.head)
       )
-    }
   }
 
   object MoneyMappings extends ObjectOntologyMapping[ent.Money, ont.IMoney] {
