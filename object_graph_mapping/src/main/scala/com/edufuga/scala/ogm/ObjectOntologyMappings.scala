@@ -34,7 +34,7 @@ object ObjectOntologyMappings {
       ontology
     }
 
-    // override def ontologyToObject(ontology: ont.IOrganisation): ent.FullOrganisation = ???
+    override def ontologyToObject(ontology: ont.IOrganisation): ent.FullOrganisation = ???
   }
 
   object DepartmentMappings extends ObjectOntologyMapping[ent.FullDepartment, ont.IDepartment] {
@@ -65,7 +65,7 @@ object ObjectOntologyMappings {
 
       ontology
     }
-    // override def ontologyToObject(ontology: ont.IDepartment): ent.FullDepartment = ???
+    override def ontologyToObject(ontology: ont.IDepartment): ent.FullDepartment = ???
   }
 
   object ManagerMappings extends ObjectOntologyMapping[ent.Manager, ont.IManager] {
@@ -78,7 +78,7 @@ object ObjectOntologyMappings {
       ontology
     }
 
-    // override def ontologyToObject(ontology: ont.IManager): ent.Manager = ???
+    override def ontologyToObject(ontology: ont.IManager): ent.Manager = ???
   }
   
   object EmployeeMappings extends ObjectOntologyMapping[ent.Employee, ont.IEmployee] {
@@ -92,7 +92,7 @@ object ObjectOntologyMappings {
       ontology
     }
 
-    // override def ontologyToObject(ontology: ont.IEmployee): ent.Employee = ???
+    override def ontologyToObject(ontology: ont.IEmployee): ent.Employee = ???
   }
 
   object ProductMappings extends ObjectOntologyMapping[ent.Product, ont.IProduct] {
@@ -108,7 +108,7 @@ object ObjectOntologyMappings {
       ontology.addPrice(MoneyMappings.objectToOntology(entity.price))
       ontology
     }
-    // override def ontologyToObject(ontology: ont.IProduct): ent.Product = ???
+    override def ontologyToObject(ontology: ont.IProduct): ent.Product = ???
   }
 
   // TODO: Instead of Service, it needs to be a "FullService". It needs the list of full products, not just the IDs.
@@ -131,7 +131,7 @@ object ObjectOntologyMappings {
       ontology
     }
 
-    // override def ontologyToObject(ontology: ont.IService): ent.Service = ???
+    override def ontologyToObject(ontology: ont.IService): ent.Service = ???
   }
 
   object MoneyMappings extends ObjectOntologyMapping[ent.Money, ont.IMoney] {
@@ -144,6 +144,6 @@ object ObjectOntologyMappings {
       ontology
     }
 
-    // override def ontologyToObject(ontology: ont.IMoney): ent.Money = ???
+    override def ontologyToObject(ontology: ont.IMoney): ent.Money = ???
   }
 }
