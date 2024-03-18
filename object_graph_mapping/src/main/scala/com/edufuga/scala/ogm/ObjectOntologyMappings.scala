@@ -145,7 +145,7 @@ object ObjectOntologyMappings {
         width = Width(ontology.getWidth.toInt),
         depth = Depth(ontology.getDepth.toInt),
         weight = Weight(ontology.getWeight.toInt),
-        productManager = ProductManager(ontology.toString),
+        productManager = ProductManager(ontology.getProductManager),
         price = MoneyMappings.ontologyToObject(ontology.getPrice.asScala.head)
       )
     }

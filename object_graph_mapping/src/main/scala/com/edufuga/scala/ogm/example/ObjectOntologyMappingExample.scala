@@ -18,6 +18,9 @@ object ObjectOntologyMappingExample extends App {
   val organisationObjectConvertedFromGraph =
     ObjectOntologyMappings.OrganisationMappings.ontologyToObject(organisationOntology)
 
+  println("Organisation object")
+  println(organisationObject)
+
   println("Organisation object, converted from graph")
   println(organisationObjectConvertedFromGraph)
 
