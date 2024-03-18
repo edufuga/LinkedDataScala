@@ -24,6 +24,9 @@ object ObjectOntologyMappingExample extends App {
   println("Organisation object, converted from graph")
   println(organisationObjectConvertedFromGraph)
 
+  println("Are the two organisation objects equal?")
+  println(organisationObjectConvertedFromGraph == organisationObject)
+
   private def serialize(): Unit = {
     Rio.write(GLOBAL.model, System.out, RDFFormat.TURTLE)
   }
