@@ -1,7 +1,12 @@
 package com.edufuga.scala.ogm
 
+import scala.jdk.CollectionConverters.*
 import com.edufuga.scala.entities as ent
-import com.edufuga.scala.entities.Employee
+import com.edufuga.scala.entities.DepartmentTypes.*
+import com.edufuga.scala.entities.EmployeeTypes.*
+import com.edufuga.scala.entities.PersonTypes.*
+import com.edufuga.scala.entities.ProductTypes.*
+import com.edufuga.scala.entities.ServiceTypes.*
 import productdata.rdf.model as ont
 import productdata.rdf.model.Employee
 
@@ -34,7 +39,10 @@ object ObjectOntologyMappings {
       ontology
     }
 
-    override def ontologyToObject(ontology: ont.IOrganisation): ent.FullOrganisation = ???
+    override def ontologyToObject(ontology: ont.IOrganisation): ent.FullOrganisation =
+      ent.FullOrganisation(
+        departments = ontology.getDepartments.asScala.map(DepartmentMappings.ontologyToObject).toList
+      )
   }
 
   object DepartmentMappings extends ObjectOntologyMapping[ent.FullDepartment, ont.IDepartment] {
@@ -65,7 +73,15 @@ object ObjectOntologyMappings {
 
       ontology
     }
-    override def ontologyToObject(ontology: ont.IDepartment): ent.FullDepartment = ???
+    override def ontologyToObject(ontology: ont.IDepartment): ent.FullDepartment =
+      ent.FullDepartment(
+        id = DepartmentId(ontology.getId),
+        name = DepartmentName(ontology.getName), 
+        manager = ManagerMappings.ontologyToObject(ontology.getManager.asScala.head),
+        employees = ontology.getEmployees.asScala.map(EmployeeMappings.ontologyToObject).toList,
+        products = ontology.getProducts.asScala.map(ProductMappings.ontologyToObject).toList, 
+        services = ontology.getServices.asScala.map(ServiceMappings.ontologyToObject).toList
+      )
   }
 
   object ManagerMappings extends ObjectOntologyMapping[ent.Manager, ont.IManager] {
@@ -78,7 +94,13 @@ object ObjectOntologyMappings {
       ontology
     }
 
-    override def ontologyToObject(ontology: ont.IManager): ent.Manager = ???
+    override def ontologyToObject(ontology: ont.IManager): ent.Manager = 
+      ent.Manager(
+        email = Email(ontology.getEmail),
+        name = Name(ontology.getName),
+        address = Address(ontology.getAddress),
+        phone = Phone(ontology.getPhone)
+      )
   }
   
   object EmployeeMappings extends ObjectOntologyMapping[ent.Employee, ont.IEmployee] {
@@ -92,7 +114,14 @@ object ObjectOntologyMappings {
       ontology
     }
 
-    override def ontologyToObject(ontology: ont.IEmployee): ent.Employee = ???
+    override def ontologyToObject(ontology: ont.IEmployee): ent.Employee =
+      ent.Employee(
+        email = Email(ontology.getEmail),
+        name = Name(ontology.getName),
+        address = Some(Address(ontology.getAddress)),
+        phone = Some(Phone(ontology.getPhone)),
+        productExpert = ontology.getProductExpertFor.split(", ").map(ProductExpert.apply).toList
+      )
   }
 
   object ProductMappings extends ObjectOntologyMapping[ent.Product, ont.IProduct] {
@@ -108,7 +137,18 @@ object ObjectOntologyMappings {
       ontology.addPrice(MoneyMappings.objectToOntology(entity.price))
       ontology
     }
-    override def ontologyToObject(ontology: ont.IProduct): ent.Product = ???
+    override def ontologyToObject(ontology: ont.IProduct): ent.Product = {
+      ent.Product(
+        id = ProductId(ontology.getId),
+        productName = ProductName(ontology.getName),
+        height = Height(ontology.getHeight.toInt),
+        width = Width(ontology.getWidth.toInt),
+        depth = Depth(ontology.getDepth.toInt),
+        weight = Weight(ontology.getWeight.toInt),
+        productManager = ProductManager(ontology.toString),
+        price = MoneyMappings.ontologyToObject(ontology.getPrice.asScala.head)
+      )
+    }
   }
 
   // TODO: Instead of Service, it needs to be a "FullService". It needs the list of full products, not just the IDs.
@@ -131,7 +171,15 @@ object ObjectOntologyMappings {
       ontology
     }
 
-    override def ontologyToObject(ontology: ont.IService): ent.Service = ???
+    override def ontologyToObject(ontology: ont.IService): ent.Service = {
+      ent.Service(
+        id = ServiceId(ontology.getId),
+        serviceName = ServiceName(ontology.getName),
+        products = ontology.getProducts.asScala.map(_.getId).map(ProductId.apply).toList,
+        productManager = ProductManager(ontology.getProductManager),
+        price = MoneyMappings.ontologyToObject(ontology.getPrice.asScala.head)
+      )
+    }
   }
 
   object MoneyMappings extends ObjectOntologyMapping[ent.Money, ont.IMoney] {
@@ -144,6 +192,7 @@ object ObjectOntologyMappings {
       ontology
     }
 
-    override def ontologyToObject(ontology: ont.IMoney): ent.Money = ???
+    override def ontologyToObject(ontology: ont.IMoney): ent.Money =
+      ent.Money.mkMoney(ontology.getMonetaryValue, ontology.getCurrency).orNull
   }
 }
