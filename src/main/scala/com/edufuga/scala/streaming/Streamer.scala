@@ -1,15 +1,14 @@
 package com.edufuga.scala.streaming
 
-import org.eclipse.rdf4j.rio.{RDFFormat, Rio}
-import org.eclipse.rdf4j.rio.RDFFormat
-import java.io.FileOutputStream
 import cats.effect.{ExitCode, IO}
-
 import com.edufuga.scala.entities.ProductTypes.ProductId
 import com.edufuga.scala.entities.ServiceTypes.ServiceId
-import com.edufuga.scala.operations.entity.implementation.EntityOperationImplementationTypes._
 import com.edufuga.scala.ogm.ObjectOntologyMappings
+import com.edufuga.scala.operations.entity.implementation.EntityOperationImplementationTypes.*
+import org.eclipse.rdf4j.rio.{RDFFormat, Rio}
 import productdata.global.util.GLOBAL
+
+import java.io.FileOutputStream
 
 // Notice that this Streamer is still quite implementation (TypeLevel) specific.
 // Both the interface (parameters) and the implementation are full of IO and Streams and stuff.
