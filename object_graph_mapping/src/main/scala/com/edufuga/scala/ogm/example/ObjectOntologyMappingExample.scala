@@ -2,14 +2,17 @@ package com.edufuga.scala.ogm.example
 
 import org.eclipse.rdf4j.rio.{RDFFormat, Rio}
 import productdata.global.util.GLOBAL
-
 import com.edufuga.scala.entities.FullOrganisation
 import com.edufuga.scala.ogm.ObjectOntologyMappings
+import productdata.rdf.model.IOrganisation
 
 object ObjectOntologyMappingExample extends App {
   val organisationObject: FullOrganisation = ObjectConstructionExample.organisation
 
-  val organisationOntology = ObjectOntologyMappings.OrganisationMappings.objectToOntology(organisationObject)
+  val organisationOntology: IOrganisation =
+    ObjectOntologyMappings.OrganisationMappings.objectToOntology(organisationObject)
+
+  // TODO: 'Transform' the IOrganisation back into a FullOrganisation. Compare the results.
   
   serialize()
 
