@@ -12,9 +12,14 @@ object ObjectOntologyMappingExample extends App {
   val organisationOntology: IOrganisation =
     ObjectOntologyMappings.OrganisationMappings.objectToOntology(organisationObject)
 
-  // TODO: 'Transform' the IOrganisation back into a FullOrganisation. Compare the results.
-  
   serialize()
+
+  // TODO: 'Transform' the IOrganisation back into a FullOrganisation. Compare the results.
+  val organisationObjectConvertedFromGraph =
+    ObjectOntologyMappings.OrganisationMappings.ontologyToObject(organisationOntology)
+
+  println("Organisation object, converted from graph")
+  println(organisationObjectConvertedFromGraph)
 
   private def serialize(): Unit = {
     Rio.write(GLOBAL.model, System.out, RDFFormat.TURTLE)
