@@ -10,7 +10,7 @@ import scala.collection.mutable
 
 class BusinessQuestions(
   productDAO: ProductTypeLevelEffectfulStreamingDAO,
-  serviceDAO: ServiceTypeLevelEffectfulStreamingDAO,
+  serviceDAO: ServiceTypeLevelEffectfulStreamingDAO, // TODO: Add a FullServiceDAO
   fullOrganisationDAO: FullOrganisationTypeLevelEffectfulDAO
 ) {
   def stream: IO[ExitCode] = {
