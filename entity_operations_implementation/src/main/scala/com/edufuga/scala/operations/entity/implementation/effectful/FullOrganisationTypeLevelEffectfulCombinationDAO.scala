@@ -26,21 +26,44 @@ sealed class FullOrganisationTypeLevelEffectfulCombinationDAO(
   organisationDAO: OrganisationMaterializedDAO
 ) extends FullOrganisationTypeLevelEffectfulDAO {
   override def readAll: IO[Option[FullOrganisation]] = {
+    def toEvalFullService(service: Service): IO[FullService] = {
+      val evalProductsOfServiceInDepartment: IO[List[Product]] = productsFromIds(service.products)
+
+      val evalFullService = evalProductsOfServiceInDepartment.map { productsInService =>
+        FullService(
+          id = service.id,
+          serviceName = service.serviceName,
+          products = productsInService,
+          productManager = service.productManager,
+          price = service.price
+        )
+      }
+
+      evalFullService
+    }
+
     def toEvalFullDepartment(department: Department): IO[FullDepartment] = {
       val productsEval: IO[List[Product]] = productsFromIds(department.productIds)
       val servicesEval: IO[List[Service]] = servicesFromIds(department.serviceIds)
 
       val evalProductsAndServices: IO[(List[Product], List[Service])] = IO.both(productsEval, servicesEval)
 
-      val evalFullDepartment: IO[FullDepartment] = evalProductsAndServices.map { (products, services) =>
-        FullDepartment(
-          department.id,
-          department.name,
-          department.manager,
-          department.employees,
-          products,
-          services
-        )
+      val evalFullDepartment: IO[FullDepartment] = evalProductsAndServices.flatMap { (products, services) =>
+        // Convert the List[IO[...]] to IO[List[...]]
+        val evalFullServices: IO[List[FullService]] = services.map(toEvalFullService).sequence
+        
+        evalFullServices.map { fullServices =>
+          val fullDepartment: FullDepartment = FullDepartment(
+            department.id,
+            department.name,
+            department.manager,
+            department.employees,
+            products,
+            fullServices
+          )
+
+          fullDepartment
+        }
       }
 
       evalFullDepartment

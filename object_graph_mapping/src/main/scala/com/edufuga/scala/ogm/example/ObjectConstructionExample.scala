@@ -49,11 +49,22 @@ object ObjectConstructionExample extends App {
             )
           ),
         services = List(
-          Service(
+          FullService(
             id = ServiceId("I241-8776317"),
             serviceName = ServiceName("Component Confabulation"),
             products = List(
-              ProductId("I241-8776317")
+              Product(
+                id = ProductId("I241-8776317"),
+                productName = ProductName("Strain Compensator"), // I always find this name funny.
+                height = Height(12),
+                width = Width(68),
+                depth = Depth(15),
+                weight = Weight(8),
+                productManager = ProductManager("Baldwin.Dirksen@company.org"), // Good old Baldwin Dirksen.
+                price = Money(
+                  value = 0.5,
+                  currency = Currency.getInstance("EUR")) // European Bucks
+              )
             ),
             productManager = ProductManager("Baldwin.Dirksen@company.org"), // Good old Baldwin Dirksen.,
             price = Money(

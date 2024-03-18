@@ -8,5 +8,5 @@ case class FullDepartment(
   manager: Manager,
   employees: List[Employee],
   products: List[Product],
-  services: List[Service] // TODO: Replace with FullService.
+  services: List[FullService]
 ) extends Identifiable[DepartmentId]

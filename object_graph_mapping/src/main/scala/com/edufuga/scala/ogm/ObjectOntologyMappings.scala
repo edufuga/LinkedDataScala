@@ -151,34 +151,31 @@ object ObjectOntologyMappings {
     }
   }
 
-  // TODO: Instead of Service, it needs to be a "FullService". It needs the list of full products, not just the IDs.
-  object ServiceMappings extends ObjectOntologyMapping[ent.Service, ont.IService] {
-    override def objectToOntology(entity: ent.Service): ont.IService = {
+  object ServiceMappings extends ObjectOntologyMapping[ent.FullService, ont.IService] {
+    override def objectToOntology(entity: ent.FullService): ont.IService = {
       val ontology = ont.Service(NAMESPACE, stringify(s"service_${entity.id}"))
       ontology.setId(s"${entity.id}")
       ontology.setName(s"${entity.serviceName}")
 
-      /* // TODO: List of full products, not just the IDs.
       entity.products.foreach { product =>
         ontology.addProducts(
           ProductMappings.objectToOntology(product)
         )
       }
-       */
 
       ontology.setProductManager(s"${entity.productManager}")
       ontology.addPrice(MoneyMappings.objectToOntology(entity.price))
       ontology
     }
 
-    override def ontologyToObject(ontology: ont.IService): ent.Service = {
+    override def ontologyToObject(ontology: ont.IService): ent.FullService = {
       println("Products in Ontology")
       println(ontology.getProducts.asScala.toList)
 
-      ent.Service(
+      ent.FullService(
         id = ServiceId(ontology.getId),
         serviceName = ServiceName(ontology.getName),
-        products = ontology.getProducts.asScala.toList.map(_.getId).map(ProductId.apply),
+        products = ontology.getProducts.asScala.toList.map(ProductMappings.ontologyToObject),
         productManager = ProductManager(ontology.getProductManager),
         price = MoneyMappings.ontologyToObject(ontology.getPrice.asScala.head)
       )
