@@ -76,10 +76,10 @@ object ObjectOntologyMappings {
     override def ontologyToObject(ontology: ont.IDepartment): ent.FullDepartment =
       ent.FullDepartment(
         id = DepartmentId(ontology.getId),
-        name = DepartmentName(ontology.getName), 
+        name = DepartmentName(ontology.getName),
         manager = ManagerMappings.ontologyToObject(ontology.getManager.asScala.head),
         employees = ontology.getEmployees.asScala.map(EmployeeMappings.ontologyToObject).toList,
-        products = ontology.getProducts.asScala.map(ProductMappings.ontologyToObject).toList, 
+        products = ontology.getProducts.asScala.map(ProductMappings.ontologyToObject).toList,
         services = ontology.getServices.asScala.map(ServiceMappings.ontologyToObject).toList
       )
   }
@@ -94,7 +94,7 @@ object ObjectOntologyMappings {
       ontology
     }
 
-    override def ontologyToObject(ontology: ont.IManager): ent.Manager = 
+    override def ontologyToObject(ontology: ont.IManager): ent.Manager =
       ent.Manager(
         email = Email(ontology.getEmail),
         name = Name(ontology.getName),
@@ -172,10 +172,13 @@ object ObjectOntologyMappings {
     }
 
     override def ontologyToObject(ontology: ont.IService): ent.Service = {
+      println("Products in Ontology")
+      println(ontology.getProducts.asScala.toList)
+
       ent.Service(
         id = ServiceId(ontology.getId),
         serviceName = ServiceName(ontology.getName),
-        products = ontology.getProducts.asScala.map(_.getId).map(ProductId.apply).toList,
+        products = ontology.getProducts.asScala.toList.map(_.getId).map(ProductId.apply),
         productManager = ProductManager(ontology.getProductManager),
         price = MoneyMappings.ontologyToObject(ontology.getPrice.asScala.head)
       )
