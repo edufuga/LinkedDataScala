@@ -3,7 +3,7 @@ package com.edufuga.scala.streaming
 import cats.implicits.*
 import cats.effect.{ExitCode, IO}
 import com.edufuga.scala.entities.EmployeeTypes.ProductExpert
-import com.edufuga.scala.entities.{Employee, Service}
+import com.edufuga.scala.entities.{Employee, FullService, Service}
 import com.edufuga.scala.operations.entity.implementation.EntityOperationImplementationTypes.*
 
 import scala.collection.mutable
@@ -47,14 +47,14 @@ class BusinessQuestions(
       // filter nonEmpty + (safe) get: List[Option[Service]] -> List[Service]
       organisationServices = organisation
         .map(_.departments.flatMap(_.services))
-        .sequence[List, Service]
+        .sequence[List, FullService]
         .filter(_.nonEmpty)
         .map(_.get)
       _ <- IO.println(organisationServices)
       _ <- IO.println(organisationServices.size)
 
       _ <- IO.println("Return the difference (i.e. the services NOT provided by the organisation in any department).")
-      serviceNotOfferedByTheOrganisation = services.diff(organisationServices)
+      serviceNotOfferedByTheOrganisation = services.diff(organisationServices) // FIXME: Currently, APPLES and ORANGES!
       _ <- IO.println(serviceNotOfferedByTheOrganisation.map(s => (s.serviceName, s.id)))
       _ <- IO.println(serviceNotOfferedByTheOrganisation.size)
       // Answer: Only the product "(Product Analysis,Y704-9764759)" is not offered.
