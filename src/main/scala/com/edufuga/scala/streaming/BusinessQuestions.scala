@@ -10,7 +10,7 @@ import scala.collection.mutable
 
 class BusinessQuestions(
   productDAO: ProductTypeLevelEffectfulStreamingDAO,
-  serviceDAO: ServiceTypeLevelEffectfulStreamingDAO, // TODO: Add a FullServiceDAO
+  fullServiceDAO: FullServiceTypeLevelEffectfulStreamingDAO,
   fullOrganisationDAO: FullOrganisationTypeLevelEffectfulDAO
 ) {
   def stream: IO[ExitCode] = {
@@ -37,7 +37,7 @@ class BusinessQuestions(
       // 2. Obtain the services within the organisation mapping.
       // 3. Return the difference (i.e. the services NOT found in the list of all entities).
       _ <- IO.println("Obtain all services, irrespective of the organisation mapping")
-      services <- serviceDAO.readAll.compile.toList
+      services <- fullServiceDAO.readAll
       _ <- IO.println(services)
       _ <- IO.println(services.size)
 

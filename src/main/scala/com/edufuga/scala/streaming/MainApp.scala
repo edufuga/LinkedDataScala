@@ -5,7 +5,7 @@ import com.edufuga.scala.entities.*
 import com.edufuga.scala.entities.ProductTypes.ProductId
 import com.edufuga.scala.entities.ServiceTypes.ServiceId
 import com.edufuga.scala.operations.entity.implementation.EntityOperationImplementationTypes.*
-import com.edufuga.scala.operations.entity.implementation.effectful.FullOrganisationTypeLevelEffectfulCombinationDAO
+import com.edufuga.scala.operations.entity.implementation.effectful.{FullOrganisationTypeLevelEffectfulCombinationDAO, FullServiceTypeLevelEffectfulCombinationDAO}
 import com.edufuga.scala.operations.entity.implementation.materialized.file.FileMaterializingOrganisationDAO
 import com.edufuga.scala.operations.entity.implementation.streamed.file.*
 
@@ -32,6 +32,12 @@ object MainApp extends IOApp {
         val servicesFromIds: List[ServiceId] => IO[List[Service]] =
           serviceIds => servicesDAO.readByIds(serviceIds).compile.toList
 
+        val fullServicesDAO: FullServiceTypeLevelEffectfulStreamingDAO = 
+          FullServiceTypeLevelEffectfulCombinationDAO(
+            productsFromIds,
+            () => servicesDAO.readAll.compile.toList
+          )
+
         val organisationDAO: OrganisationMaterializedDAO = FileMaterializingOrganisationDAO(o)
         val fullOrganisationDAO: FullOrganisationTypeLevelEffectfulDAO =
           new FullOrganisationTypeLevelEffectfulCombinationDAO(productsFromIds, servicesFromIds, organisationDAO)
@@ -41,7 +47,7 @@ object MainApp extends IOApp {
         val streamer: Streamer = new Streamer(productsDAO, servicesDAO, organisationDAO, fullOrganisationDAO)
         streamer.stream
 
-        val businessQuestions: BusinessQuestions = new BusinessQuestions(productsDAO, servicesDAO, fullOrganisationDAO)
+        val businessQuestions: BusinessQuestions = new BusinessQuestions(productsDAO, fullServicesDAO, fullOrganisationDAO)
         businessQuestions.stream
   }
 }
