@@ -29,8 +29,8 @@ lazy val entity_operations_implementation = (project in file("entity_operations_
       "co.fs2" %% "fs2-io" % fs2Version
     )
   )
-  .aggregate(entities, operations, entity_parsers, entity_operations)
-  .dependsOn(entities, operations, entity_parsers, entity_operations)
+  .aggregate(entities, operations, entity_parsers, entity_operations, product_data)
+  .dependsOn(entities, operations, entity_parsers, entity_operations, product_data)
 
 lazy val entities = (project in file("entities"))
   .settings(commonSettings)
