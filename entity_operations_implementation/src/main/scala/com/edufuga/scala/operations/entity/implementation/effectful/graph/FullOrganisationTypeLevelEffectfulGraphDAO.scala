@@ -6,6 +6,16 @@ import com.edufuga.scala.ogm.ObjectGraphMappings
 import com.edufuga.scala.operations.entity.implementation.EntityOperationImplementationTypes.FullOrganisationTypeLevelEffectfulDAO
 import productdata.rdf.model.IOrganisation
 
+/**
+ * This DAO presents the "full organisation", using the organisation graph. It's just a wrapper of the API.
+ *
+ * ATTENTION: When injecting the organisation graph (evaluation), we need to pay special attention with the mutations
+ * that may or may not happen during that evaluation. It's the task of the caller to ensure that there is no global
+ * state being mutated, or _if this happens_, then it should happen in a controlled way. Otherwise we may end up
+ * polluting the global model with unwanted or unforeseen duplicates.
+ *
+ * @param graph Organisation graph (with lazy evaluation)
+ */
 sealed class FullOrganisationTypeLevelEffectfulGraphDAO(
   graph: () => IOrganisation, // XXX: When injecting this function, we need to pay special attention with the mutations!
 ) extends FullOrganisationTypeLevelEffectfulDAO {

@@ -1,6 +1,6 @@
 package com.edufuga.scala.streaming
 
-import cats.effect.{ExitCode, IO}
+import cats.effect.IO
 import com.edufuga.scala.entities.FullOrganisation
 import com.edufuga.scala.entities.ProductTypes.ProductId
 import com.edufuga.scala.entities.ServiceTypes.ServiceId
@@ -26,7 +26,7 @@ class Streamer(
   fullOrganisationDAO: FullOrganisationTypeLevelEffectfulDAO,
   organisationFile: String
 ) {
-  def stream: IO[ExitCode] = {
+  def stream: IO[IOrganisation] = {
     for {
       _ <- IO.println("Processing 'products.csv', 'services.csv' and 'orgmap.xml'.")
 
@@ -87,6 +87,6 @@ class Streamer(
       }
       _ <- IO.println("Full Organisation, obtained from via the graph-based DAO: " + organisationFromGraphBasedDAO)
       _ <- IO.println("End of Streamer.")
-    } yield ExitCode.Success
+    } yield organisationGraph
   }
 }
