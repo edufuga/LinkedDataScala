@@ -46,8 +46,7 @@ Alternatively, run the `run` scripts in the root directory.
 ## Knowledge Graph: Importing and Persisting
 The main goal of the Linked Data project is to **import** three different files (two CSV files and one XML file) and to
 **transform** this data into a **knowledge graph**. The basis for such a knowledge graph is an **ontology** for
-representing the content of the source files. The technologies and semantic languages to be used are RDF(S) and
-OWL.
+representing the content of the source files. The technologies and semantic languages used are RDF(S) and OWL.
 
 ## Scala as a functional programming language with a strong ecosystem
 
