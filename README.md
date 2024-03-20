@@ -6,12 +6,12 @@ Linked Data project.
 ## Running the project
 To run the main program, execute the following command directly from the root directory of the project:
 ```sh
-sbt "run src\main\resources\products.csv src\main\resources\services.csv src\main\resources\orgmap.xml"
+sbt "run src\main\resources\products.csv src\main\resources\services.csv src\main\resources\orgmap.xml src\main\resources\organisation.rdf"
 ```
 
 Under Unix, run:
 ```shell
-sbt "run src/main/resources/products.csv src/main/resources/services.csv src/main/resources/orgmap.xml"
+sbt "run src/main/resources/products.csv src/main/resources/services.csv src/main/resources/orgmap.xml src/main/resources/organisation.rdf"
 ```
 Alternatively, run the `run` scripts in the root directory.
 

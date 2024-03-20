@@ -68,6 +68,7 @@ class Streamer(
           out.close()
         }
       }
+      _ <- IO.println("End of Streamer.")
     } yield ExitCode.Success
   }
 }
