@@ -52,35 +52,59 @@ file is ignored (see `.gitignore`), to avoid polluting the repository.
 
 For illustration purposes, the (head of the) resulting RDF file should look like the following:
 ```text
-<https://github.com/edufuga/LinkedDataScala/organisation_1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Organisation> .
+<https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#o1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Organisation>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepartment> <https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#d1> .
 
-<https://github.com/edufuga/LinkedDataScala/department_73191> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Department>;
-  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmployee> <https://github.com/edufuga/LinkedDataScala/employee_Corinna_Ludwig>,
-    <https://github.com/edufuga/LinkedDataScala/employee_Herr_Haan_Bader>, <https://github.com/edufuga/LinkedDataScala/employee_Ida_Halle>,
-    <https://github.com/edufuga/LinkedDataScala/employee_Karch_Moeller>, <https://github.com/edufuga/LinkedDataScala/employee_Karen_Brant>,
-    <https://github.com/edufuga/LinkedDataScala/employee_Lukas_Gerver>, <https://github.com/edufuga/LinkedDataScala/employee_Manfred_Foth>;
+<https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#d1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Department>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmployee> <https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#e1>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "73191";
-  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager> <https://github.com/edufuga/LinkedDataScala/manager_Thomas_Mueller>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasManager> <https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#ma1>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Engineering";
-  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct> <https://github.com/edufuga/LinkedDataScala/product_N463-8050264>,
-    <https://github.com/edufuga/LinkedDataScala/product_N733-1946687>, <https://github.com/edufuga/LinkedDataScala/product_V404-9975399>,
-    <https://github.com/edufuga/LinkedDataScala/product_Z249-1364492> .
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct> <https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#p1>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasService> <https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#s1> .
 
-<https://github.com/edufuga/LinkedDataScala/manager_Thomas_Mueller> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Manager>;
+<https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#ma1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Manager>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Karl-Liebknecht-Straße 885, 82003 Tettnang";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Thomas.Mueller@company.org";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Thomas Mueller";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-8200-38218301" .
 
-<https://github.com/edufuga/LinkedDataScala/employee_Corinna_Ludwig> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
+<https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#e1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Employee>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasAddress> "Ringstraße 276";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasEmail> "Corinna.Ludwig@company.org";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Corinna Ludwig";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPhone> "+49-1743-24836762";
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#isProductExpertFor>
     "Memristor, Gauge, Encoder" .
+
+<https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#p1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Product>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepth> 15.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasHeight> 12.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "I241-8776317";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Strain Compensator";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#mo1>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Baldwin.Dirksen@company.org";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWeight> 8.0;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasWidth> 68.0 .
+
+<https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#mo1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "0.5"^^<http://www.w3.org/2001/XMLSchema#float> .
+
+<https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#s1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Service>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasId> "I241-8776317";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasName> "Component Confabulation";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasPrice> <https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#mo2>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProduct> <https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#p1>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasProductManager> "Corinna.Ludwig@company.org" .
+
+<https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#mo2> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Money>;
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasCurrency> "EUR";
+  <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasMonetaryValue> "0.5"^^<http://www.w3.org/2001/XMLSchema#float> .
 ```
-This is only a small extract of the resulting data.
+This is fake data, taken from the 
+[GraphConstructionExample.scala](object_graph_mapping%2Fsrc%2Fmain%2Fscala%2Fcom%2Fedufuga%2Fscala%2Fogm%2Fexample%2FGraphConstructionExample.scala).
+
 
 ## Knowledge Graph: Importing and Persisting
 The main goal of the Linked Data project is to **import** three different files (two CSV files and one XML file) and to
