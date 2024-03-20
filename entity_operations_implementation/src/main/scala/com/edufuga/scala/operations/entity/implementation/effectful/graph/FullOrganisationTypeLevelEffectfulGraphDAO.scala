@@ -15,15 +15,9 @@ sealed class FullOrganisationTypeLevelEffectfulGraphDAO(
     ObjectGraphMappings.OrganisationMappings.graphToObject(graph)
 
   override def readAll: IO[Option[FullOrganisation]] = {
-    Try {
       val organisationGraph: IOrganisation = graph()
       val fullOrganisation: FullOrganisation = graphToObject(organisationGraph)
       // FIXME: We should optimize this into a lazy loading strategy, by wrapping the previous code inside an IO.
-      fullOrganisation
-    } match
-      case Failure(exception) =>
-        println("Error! " + exception.getMessage)
-        IO.pure(None)
-      case Success(organisation) => IO.pure(Some(organisation))
+      IO.pure(Some(fullOrganisation))
   }
 }

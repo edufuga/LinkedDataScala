@@ -10,6 +10,8 @@ import com.edufuga.scala.entities.ServiceTypes.*
 import productdata.rdf.model as ont
 import productdata.rdf.model.Employee
 
+import scala.util.{Failure, Success, Try}
+
 object ObjectGraphMappings {
   private val NAMESPACE: String = "https://github.com/edufuga/LinkedDataScala/"
 
@@ -118,8 +120,20 @@ object ObjectGraphMappings {
       ent.Employee(
         email = Email(graph.getEmail),
         name = Name(graph.getName),
-        address = Some(Address(graph.getAddress)), // FIXME: This is broken!
-        phone = Some(Phone(graph.getPhone)), // FIXME: This is broken!
+        address = {
+          Try {
+            graph.getAddress // XXX: This may crash with a NoSuchElementException!
+          } match
+            case Failure(_) => None
+            case Success(value) => Some(Address(value))
+        },
+        phone = {
+          Try {
+            graph.getPhone // XXX: This may crash with a NoSuchElementException!
+          } match
+            case Failure(_) => None
+            case Success(value) => Some(Phone(value))
+        },
         productExpert = graph.getProductExpertFor.split(", ").map(ProductExpert.apply).toList
       )
   }
