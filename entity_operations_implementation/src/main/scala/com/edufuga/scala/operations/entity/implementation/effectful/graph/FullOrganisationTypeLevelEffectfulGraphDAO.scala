@@ -1,10 +1,9 @@
 package com.edufuga.scala.operations.entity.implementation.effectful.graph
 
-import cats.effect.IO
+import cats.effect.{IO, IOApp}
 import com.edufuga.scala.entities.FullOrganisation
 import com.edufuga.scala.ogm.ObjectGraphMappings
 import com.edufuga.scala.operations.entity.implementation.EntityOperationImplementationTypes.FullOrganisationTypeLevelEffectfulDAO
-import com.edufuga.scala.operations.entity.implementation.TechnologicalDetailTypes.TypeLevelEffectfulOptional
 import productdata.rdf.model.IOrganisation
 
 sealed class FullOrganisationTypeLevelEffectfulGraphDAO(
@@ -16,5 +15,25 @@ sealed class FullOrganisationTypeLevelEffectfulGraphDAO(
     val fullOrganisation: FullOrganisation = graphToObject(organisationGraph)
     // FIXME: We should optimize this into a lazy loading strategy, by wrapping the previous code inside an IO.
     IO.pure(Some(fullOrganisation))
+  }
+}
+
+object FullOrganisationTypeLevelEffectfulGraphDAOExample extends IOApp {
+  import cats.effect.ExitCode
+
+  override def run(args: List[String]): IO[ExitCode] = {
+    import com.edufuga.scala.ogm.example.ObjectConstructionExample
+
+    val organisationObject: FullOrganisation = ObjectConstructionExample.organisation
+    val organisationGraph: IOrganisation = ObjectGraphMappings.OrganisationMappings.objectToGraph(organisationObject)
+
+    val organisationDAO: FullOrganisationTypeLevelEffectfulDAO = FullOrganisationTypeLevelEffectfulGraphDAO(
+      graph = () => organisationGraph
+    )
+
+    for {
+      organisation <- organisationDAO.readAll
+      _ <- IO.println(s"[Example] $organisation")
+    } yield ExitCode.Success
   }
 }

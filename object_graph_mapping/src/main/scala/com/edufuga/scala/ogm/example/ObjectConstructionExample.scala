@@ -76,5 +76,5 @@ object ObjectConstructionExample extends App {
     )
   )
 
-  println(s"Organisation object: $organisation")
+  println(s"[ObjectConstructionExample] Organisation object: $organisation")
 }
