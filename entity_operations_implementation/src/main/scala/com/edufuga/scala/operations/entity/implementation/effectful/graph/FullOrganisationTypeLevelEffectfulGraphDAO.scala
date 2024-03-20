@@ -7,7 +7,7 @@ import com.edufuga.scala.operations.entity.implementation.EntityOperationImpleme
 import productdata.rdf.model.IOrganisation
 
 sealed class FullOrganisationTypeLevelEffectfulGraphDAO(
-  graph: () => IOrganisation,
+  graph: () => IOrganisation, // XXX: When injecting this function, we need to pay special attention with the mutations!
   private val graphToObject: IOrganisation => FullOrganisation = ObjectGraphMappings.OrganisationMappings.graphToObject
 ) extends FullOrganisationTypeLevelEffectfulDAO {
   override def readAll: IO[Option[FullOrganisation]] = {

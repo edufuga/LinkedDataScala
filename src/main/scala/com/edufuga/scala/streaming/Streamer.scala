@@ -1,12 +1,15 @@
 package com.edufuga.scala.streaming
 
 import cats.effect.{ExitCode, IO}
+import com.edufuga.scala.entities.FullOrganisation
 import com.edufuga.scala.entities.ProductTypes.ProductId
 import com.edufuga.scala.entities.ServiceTypes.ServiceId
 import com.edufuga.scala.ogm.ObjectGraphMappings
 import com.edufuga.scala.operations.entity.implementation.EntityOperationImplementationTypes.*
+import com.edufuga.scala.operations.entity.implementation.effectful.graph.FullOrganisationTypeLevelEffectfulGraphDAO
 import org.eclipse.rdf4j.rio.{RDFFormat, Rio}
 import productdata.global.util.GLOBAL
+import productdata.rdf.model.IOrganisation
 
 import java.io.FileOutputStream
 
@@ -60,7 +63,7 @@ class Streamer(
         // XXX Notice the side-effects, here!
         // Here, the organisation graph is not only returned explicitly, but also saved implicitly (mutation) into
         // GLOBAL.model from OLGA.
-        val organisationGraph = ObjectGraphMappings.OrganisationMappings.objectToGraph(organisation.get)
+        val organisationGraph: IOrganisation = ObjectGraphMappings.OrganisationMappings.objectToGraph(organisation.get)
 
         val out = new FileOutputStream(organisationFile)
         try {
@@ -74,6 +77,15 @@ class Streamer(
         organisationGraph
       }
       _ <- IO.println("Full Organisation graph: " + organisationGraph)
+      organisationFromGraphBasedDAO <- {
+        val organisationGraphBasedDAO: FullOrganisationTypeLevelEffectfulDAO =
+          FullOrganisationTypeLevelEffectfulGraphDAO(graph = () => organisationGraph)
+
+        val organisationsFromGraphBasedDAO: IO[Option[FullOrganisation]] = organisationGraphBasedDAO.readAll
+
+        organisationsFromGraphBasedDAO
+      }
+      _ <- IO.println("Full Organisation, obtained from via the graph-based DAO: " + organisationFromGraphBasedDAO)
       _ <- IO.println("End of Streamer.")
     } yield ExitCode.Success
   }
