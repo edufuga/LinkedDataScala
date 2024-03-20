@@ -6,8 +6,6 @@ import com.edufuga.scala.ogm.ObjectGraphMappings
 import com.edufuga.scala.operations.entity.implementation.EntityOperationImplementationTypes.FullOrganisationTypeLevelEffectfulDAO
 import productdata.rdf.model.IOrganisation
 
-import scala.util.{Failure, Success, Try}
-
 sealed class FullOrganisationTypeLevelEffectfulGraphDAO(
   graph: () => IOrganisation, // XXX: When injecting this function, we need to pay special attention with the mutations!
 ) extends FullOrganisationTypeLevelEffectfulDAO {
