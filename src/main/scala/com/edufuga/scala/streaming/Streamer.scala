@@ -1,12 +1,10 @@
 package com.edufuga.scala.streaming
 
 import cats.effect.IO
-import com.edufuga.scala.entities.FullOrganisation
 import com.edufuga.scala.entities.ProductTypes.ProductId
 import com.edufuga.scala.entities.ServiceTypes.ServiceId
 import com.edufuga.scala.ogm.ObjectGraphMappings
 import com.edufuga.scala.operations.entity.implementation.EntityOperationImplementationTypes.*
-import com.edufuga.scala.operations.entity.implementation.effectful.graph.FullOrganisationTypeLevelEffectfulGraphDAO
 import org.eclipse.rdf4j.rio.{RDFFormat, Rio}
 import productdata.global.util.GLOBAL
 import productdata.rdf.model.IOrganisation
@@ -76,16 +74,6 @@ class Streamer(
 
         organisationGraph
       }
-      _ <- IO.println("Full Organisation graph: " + organisationGraph.iri())
-      organisationFromGraphBasedDAO <- {
-        val organisationGraphBasedDAO: FullOrganisationTypeLevelEffectfulDAO =
-          FullOrganisationTypeLevelEffectfulGraphDAO(graph = () => organisationGraph)
-
-        val organisationsFromGraphBasedDAO: IO[Option[FullOrganisation]] = organisationGraphBasedDAO.readAll
-
-        organisationsFromGraphBasedDAO
-      }
-      _ <- IO.println("Full Organisation, obtained from via the graph-based DAO: " + organisationFromGraphBasedDAO)
       _ <- IO.println("End of Streamer.")
     } yield organisationGraph
   }
