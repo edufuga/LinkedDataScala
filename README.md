@@ -3,10 +3,24 @@
 This is an **example project** showcasing the use of Scala as a statically typed programming language for implementing a
 Linked Data project.
 
-## Knowledge Graph: Importing and Persisting
-The main goal of the Linked Data project is to **import** three different files (two CSV files and one XML file) and to
-**transform** this data into a **knowledge graph**. The basis for such a knowledge graph is an **ontology** for
-representing the content of the source files. The technologies and semantic languages used are RDF(S) and OWL.
+## Knowledge Graph and Semantic Technology
+
+### Core functionality around importing, transforming and persisting data
+The core functionality of the Linked Data project consists of **importing** three different files (two CSV files and one
+XML file) and **transforming** this data into a **knowledge graph**.
+The basis for such a knowledge graph is an **ontology** for representing the content of the source files.
+The technologies and semantic languages used are RDF(S) and OWL.
+
+### Model-driven approach
+The **ontology** and the **model-driven approach** are documented [here](Ontology.md) and [here](ProductData.md).
+The core idea is:
+> This project represents a **code-centric** and **domain-specific** approach.
+
+### Semantic Technology
+Things like "importing", "transforming" and "persisting" are _details_, related to **mechanism** rather than
+**intent**. In the approach taken in this project, the **knowledge graph** itself is also a technological detail.
+The wording "semantic technology" carefully represents this point of view. For more details, see the description of the
+ontology.
 
 
 ## Setup for the project
