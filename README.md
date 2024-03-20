@@ -3,7 +3,18 @@
 This is an **example project** showcasing the use of Scala as a statically typed programming language for implementing a
 Linked Data project.
 
+## Building the project
+This project uses the [sbt native packager](https://sbt-native-packager.readthedocs.io/en/latest/) plugin for creating a
+_native package_. Building the program and executing it are two unrelated tasks.
+
+1. For building the source code: `sbt stage`.
+2. For executing the native package (e.g. under Unix):
+   `./target/universal/stage/bin/main src/main/resources/products.csv src/main/resources/services.csv src/main/resources/orgmap.xml organisation.rdf` 
+
 ## Running the project
+For development purposes, there is yet another option to compile and execute the program, i.e. to 'run' it. Both happen
+using only one command.
+
 To run the main program, execute the following command directly from the root directory of the project:
 ```sh
 sbt "run src\main\resources\products.csv src\main\resources\services.csv src\main\resources\orgmap.xml src\main\resources\organisation.rdf"
