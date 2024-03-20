@@ -15,7 +15,7 @@ class BusinessQuestions(
 ) {
   def stream: IO[ExitCode] = {
     for {
-      _ <- IO.println("[BusinessQuestions] Processing the full organisation. This includes resolving the linked products and services.")
+      _ <- IO.println("[BusinessQuestions] Processing the full organisation.")
       organisation <- fullOrganisationDAO.readAll
       _ <- IO.println(organisation)
 
