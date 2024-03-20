@@ -17,13 +17,14 @@ object MainApp extends IOApp {
       val products: String = args(0)
       val services: String = args(1)
       val organisation: String = args(2)
+      val organisationFile: String = args(3)
 
-      (products, services, organisation)
+      (products, services, organisation, organisationFile)
     } match
       case Failure(_) => IO {
         ExitCode.Error
       }
-      case Success(p, s, o) =>
+      case Success(p, s, o, of) =>
         val productsDAO: ProductTypeLevelEffectfulStreamingDAO = ProductFileStreamingWithIODAO(p)
         val servicesDAO: ServiceTypeLevelEffectfulStreamingDAO = ServiceFileStreamingWithIODAO(s)
 
@@ -44,7 +45,7 @@ object MainApp extends IOApp {
 
         // Notice that this Streamer is still quite implementation (TypeLevel) specific.
         // Both the interface (parameters) and the implementation are full of IO and Streams and stuff.
-        val streamer: Streamer = new Streamer(productsDAO, servicesDAO, organisationDAO, fullOrganisationDAO)
+        val streamer: Streamer = new Streamer(productsDAO, servicesDAO, organisationDAO, fullOrganisationDAO, of)
         streamer.stream
 
         val businessQuestions: BusinessQuestions = new BusinessQuestions(productsDAO, fullServicesDAO, fullOrganisationDAO)

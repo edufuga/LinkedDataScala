@@ -20,7 +20,8 @@ class Streamer(
   productDAO: ProductTypeLevelEffectfulStreamingDAO,
   serviceDAO: ServiceTypeLevelEffectfulStreamingDAO,
   organisationDAO: OrganisationMaterializedDAO,
-  fullOrganisationDAO: FullOrganisationTypeLevelEffectfulDAO
+  fullOrganisationDAO: FullOrganisationTypeLevelEffectfulDAO,
+  organisationFile: String
 ) {
   def stream: IO[ExitCode] = {
     for {
@@ -57,7 +58,7 @@ class Streamer(
         // Convert the organisation object into an ontology (i.e. an ontology-based data graph)
         ObjectOntologyMappings.OrganisationMappings.objectToOntology(organisation.get)
 
-        val out = new FileOutputStream("organisation.rdf")
+        val out = new FileOutputStream(organisationFile)
         try {
           Rio.write(GLOBAL.model, out, RDFFormat.TURTLE)
         }
