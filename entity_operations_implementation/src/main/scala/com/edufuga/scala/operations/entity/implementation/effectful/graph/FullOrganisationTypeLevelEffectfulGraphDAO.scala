@@ -1,6 +1,6 @@
 package com.edufuga.scala.operations.entity.implementation.effectful.graph
 
-import cats.effect.{IO, IOApp}
+import cats.effect.IO
 import com.edufuga.scala.entities.FullOrganisation
 import com.edufuga.scala.ogm.ObjectGraphMappings
 import com.edufuga.scala.operations.entity.implementation.EntityOperationImplementationTypes.FullOrganisationTypeLevelEffectfulDAO
