@@ -4,7 +4,7 @@ import org.eclipse.rdf4j.rio.{RDFFormat, Rio}
 import productdata.global.util.GLOBAL
 import productdata.rdf.model.*
 
-object  extends App {
+object GraphConstructionExample extends App {
   // Welcome to Imperative Programming with Mutations.
   // Welcome to the Open World of Knowledge Graphs.
   val organisation = createTopology()

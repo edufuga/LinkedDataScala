@@ -50,7 +50,7 @@ This data is represented internally as a **knowledge graph**, after the **conver
 The RDF file is the final command line argument of the program. In our examples, this is `organisation.rdf`. This
 file is ignored (see `.gitignore`), to avoid polluting the repository.
 
-For illustration purposes, the (head of the) resulting RDF file should look like the following:
+The resulting RDF file should look like the following excerpt:
 ```text
 <https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#o1> a <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#Organisation>;
   <https://github.com/edufuga/LinkedDataScala/2024/3/linkeddata#hasDepartment> <https://github.com/edufuga/LinkedDataScala/2024/3/ProductData#d1> .
