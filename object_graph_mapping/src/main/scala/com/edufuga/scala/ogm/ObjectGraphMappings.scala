@@ -118,8 +118,8 @@ object ObjectGraphMappings {
       ent.Employee(
         email = Email(graph.getEmail),
         name = Name(graph.getName),
-        address = Some(Address(graph.getAddress)),
-        phone = Some(Phone(graph.getPhone)),
+        address = Some(Address(graph.getAddress)), // FIXME: This is broken!
+        phone = Some(Phone(graph.getPhone)), // FIXME: This is broken!
         productExpert = graph.getProductExpertFor.split(", ").map(ProductExpert.apply).toList
       )
   }
