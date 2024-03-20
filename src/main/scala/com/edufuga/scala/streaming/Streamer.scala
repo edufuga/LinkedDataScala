@@ -54,10 +54,13 @@ class Streamer(
       _ <- IO.println("[Streamer] Processing the full organisation. This includes resolving the linked products and services.")
       organisation <- fullOrganisationDAO.readAll
       _ <- IO.println("Full Organisation: " + organisation)
-      _ = {
-        // Convert the organisation object into a data graph
+      organisationGraph = {
         println("Convert the organisation object into a data graph")
-        ObjectGraphMappings.OrganisationMappings.objectToGraph(organisation.get) // XXX Notice the side-effects, here!
+
+        // XXX Notice the side-effects, here!
+        // Here, the organisation graph is not only returned explicitly, but also saved implicitly (mutation) into
+        // GLOBAL.model from OLGA.
+        val organisationGraph = ObjectGraphMappings.OrganisationMappings.objectToGraph(organisation.get)
 
         val out = new FileOutputStream(organisationFile)
         try {
@@ -67,7 +70,10 @@ class Streamer(
         finally {
           out.close()
         }
+
+        organisationGraph
       }
+      _ <- IO.println("Full Organisation graph: " + organisationGraph)
       _ <- IO.println("End of Streamer.")
     } yield ExitCode.Success
   }
