@@ -56,10 +56,12 @@ class Streamer(
       //_ <- IO.println(organisation)
       _ = {
         // Convert the organisation object into an ontology (i.e. an ontology-based data graph)
+        println("Convert the organisation object into a data graph")
         ObjectOntologyMappings.OrganisationMappings.objectToOntology(organisation.get)
 
         val out = new FileOutputStream(organisationFile)
         try {
+          println(s"Writing organisation data graph to file path '$organisationFile' in RDF/Turtle.")
           Rio.write(GLOBAL.model, out, RDFFormat.TURTLE)
         }
         finally {
