@@ -33,14 +33,14 @@ object MainApp extends IOApp {
           productIds => productsDAO.readByIds(productIds).compile.toList
         val servicesFromIds: List[ServiceId] => IO[List[Service]] =
           serviceIds => servicesDAO.readByIds(serviceIds).compile.toList
-        
+
         val organisationDAO: OrganisationMaterializedDAO = FileMaterializingOrganisationDAO(o)
 
         for {
           organisationGraph <- {
             val fullOrganisationDAO: FullOrganisationTypeLevelEffectfulDAO =
               new FullOrganisationTypeLevelEffectfulCombinationDAO(productsFromIds, servicesFromIds, organisationDAO)
-            
+
             // Notice that this Streamer is still quite implementation (TypeLevel) specific.
             // Both the interface (parameters) and the implementation are full of IO and Streams and stuff.
             val streamer: Streamer = new Streamer(productsDAO, servicesDAO, organisationDAO, fullOrganisationDAO, of)
@@ -58,7 +58,9 @@ object MainApp extends IOApp {
             val organisationGraphBasedDAO: FullOrganisationTypeLevelEffectfulDAO =
               FullOrganisationTypeLevelEffectfulGraphDAO(graph = () => organisationGraph)
 
-            // Formulate and answer the business questions
+            // Formulate and answer the business questions:
+            // Notice that the passed 'organisationGraphBasedDAO' is graph-based. The business questions are thus
+            // answered in terms of the _organisation graph_. Notice as well that this is just an implementation detail.
             val businessQuestions: BusinessQuestions =
               new BusinessQuestions(productsDAO, fullServicesDAO, organisationGraphBasedDAO)
 
