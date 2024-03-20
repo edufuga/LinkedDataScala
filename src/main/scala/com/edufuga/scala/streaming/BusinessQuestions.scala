@@ -3,7 +3,7 @@ package com.edufuga.scala.streaming
 import cats.implicits.*
 import cats.effect.{ExitCode, IO}
 import com.edufuga.scala.entities.EmployeeTypes.ProductExpert
-import com.edufuga.scala.entities.{Employee, FullService, Service}
+import com.edufuga.scala.entities.{Employee, FullService}
 import com.edufuga.scala.operations.entity.implementation.EntityOperationImplementationTypes.*
 
 import scala.collection.mutable
