@@ -3,7 +3,7 @@ package com.edufuga.scala.streaming
 import cats.effect.{ExitCode, IO}
 import com.edufuga.scala.entities.ProductTypes.ProductId
 import com.edufuga.scala.entities.ServiceTypes.ServiceId
-import com.edufuga.scala.ogm.ObjectOntologyMappings
+import com.edufuga.scala.ogm.ObjectGraphMappings
 import com.edufuga.scala.operations.entity.implementation.EntityOperationImplementationTypes.*
 import org.eclipse.rdf4j.rio.{RDFFormat, Rio}
 import productdata.global.util.GLOBAL
@@ -53,11 +53,11 @@ class Streamer(
 
       _ <- IO.println("[Streamer] Processing the full organisation. This includes resolving the linked products and services.")
       organisation <- fullOrganisationDAO.readAll
-      //_ <- IO.println(organisation)
+      _ <- IO.println("Full Organisation: " + organisation)
       _ = {
-        // Convert the organisation object into an ontology (i.e. an ontology-based data graph)
+        // Convert the organisation object into a data graph
         println("Convert the organisation object into a data graph")
-        ObjectOntologyMappings.OrganisationMappings.objectToOntology(organisation.get)
+        ObjectGraphMappings.OrganisationMappings.objectToGraph(organisation.get) // XXX Notice the side-effects, here!
 
         val out = new FileOutputStream(organisationFile)
         try {
