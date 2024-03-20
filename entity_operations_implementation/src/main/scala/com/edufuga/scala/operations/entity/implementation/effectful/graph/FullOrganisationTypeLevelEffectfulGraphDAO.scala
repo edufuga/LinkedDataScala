@@ -8,8 +8,10 @@ import productdata.rdf.model.IOrganisation
 
 sealed class FullOrganisationTypeLevelEffectfulGraphDAO(
   graph: () => IOrganisation, // XXX: When injecting this function, we need to pay special attention with the mutations!
-  private val graphToObject: IOrganisation => FullOrganisation = ObjectGraphMappings.OrganisationMappings.graphToObject
 ) extends FullOrganisationTypeLevelEffectfulDAO {
+  private def graphToObject(graph: IOrganisation): FullOrganisation =
+    ObjectGraphMappings.OrganisationMappings.graphToObject(graph)
+
   override def readAll: IO[Option[FullOrganisation]] = {
     val organisationGraph: IOrganisation = graph()
     val fullOrganisation: FullOrganisation = graphToObject(organisationGraph)

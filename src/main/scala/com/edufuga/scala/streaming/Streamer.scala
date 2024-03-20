@@ -76,7 +76,7 @@ class Streamer(
 
         organisationGraph
       }
-      _ <- IO.println("Full Organisation graph: " + organisationGraph)
+      _ <- IO.println("Full Organisation graph: " + organisationGraph.iri())
       organisationFromGraphBasedDAO <- {
         val organisationGraphBasedDAO: FullOrganisationTypeLevelEffectfulDAO =
           FullOrganisationTypeLevelEffectfulGraphDAO(graph = () => organisationGraph)
