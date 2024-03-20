@@ -3,6 +3,12 @@
 This is an **example project** showcasing the use of Scala as a statically typed programming language for implementing a
 Linked Data project.
 
+## Knowledge Graph: Importing and Persisting
+The main goal of the Linked Data project is to **import** three different files (two CSV files and one XML file) and to
+**transform** this data into a **knowledge graph**. The basis for such a knowledge graph is an **ontology** for
+representing the content of the source files. The technologies and semantic languages used are RDF(S) and OWL.
+
+
 ## Setup for the project
 In order to build the source code, you'll need the right setup for the JVM, Scala and the Scala Build Tool (sbt).
 
@@ -105,11 +111,6 @@ The resulting RDF file should look like the following excerpt:
 This is fake data, taken from the 
 [GraphConstructionExample.scala](object_graph_mapping%2Fsrc%2Fmain%2Fscala%2Fcom%2Fedufuga%2Fscala%2Fogm%2Fexample%2FGraphConstructionExample.scala).
 
-
-## Knowledge Graph: Importing and Persisting
-The main goal of the Linked Data project is to **import** three different files (two CSV files and one XML file) and to
-**transform** this data into a **knowledge graph**. The basis for such a knowledge graph is an **ontology** for
-representing the content of the source files. The technologies and semantic languages used are RDF(S) and OWL.
 
 ## Scala as a functional programming language with a strong ecosystem
 
