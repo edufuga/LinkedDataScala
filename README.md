@@ -22,6 +22,7 @@ Things like "importing", "transforming" and "persisting" are _details_, related 
 The wording "semantic technology" carefully represents this point of view. For more details, see the description of the
 ontology.
 
+This README centers on the technical aspects of the project itself. We start with the setup.
 
 ## Setup for the project
 In order to build the source code, you'll need the right setup for the JVM, Scala and the Scala Build Tool (sbt).
