@@ -1,0 +1,182 @@
+.
+├── LinkedDataUML.svg
+├── Next_steps_LD.jpeg
+├── Ontology.md
+├── ProductData.md
+├── README.md
+├── build.sbt
+├── core
+├── daos.jpg
+├── data
+├── data_properties.png
+├── dummy_organisation.ttl
+├── dummy_product_data.ttl
+├── entities
+│   └── src
+│       └── main
+│           └── scala
+│               └── com
+│                   └── edufuga
+│                       └── scala
+│                           └── entities
+│                               ├── Department.scala
+│                               ├── DepartmentTypes.scala
+│                               ├── Employee.scala
+│                               ├── EmployeeTypes.scala
+│                               ├── FullDepartment.scala
+│                               ├── FullOrganisation.scala
+│                               ├── FullService.scala
+│                               ├── Identifiable.scala
+│                               ├── Manager.scala
+│                               ├── Money.scala
+│                               ├── Organisation.scala
+│                               ├── PersonTypes.scala
+│                               ├── Product.scala
+│                               ├── ProductTypes.scala
+│                               ├── Service.scala
+│                               └── ServiceTypes.scala
+├── entity_operations
+│   └── src
+│       └── main
+│           └── scala
+│               └── com
+│                   └── edufuga
+│                       └── scala
+│                           └── operations
+│                               └── entity
+│                                   └── EntityOperationTypes.scala
+├── entity_operations_implementation
+│   └── src
+│       └── main
+│           └── scala
+│               └── com
+│                   └── edufuga
+│                       └── scala
+│                           └── operations
+│                               └── entity
+│                                   └── implementation
+│                                       ├── EntityOperationImplementationTypes.scala
+│                                       ├── effectful
+│                                       │   ├── FullOrganisationTypeLevelEffectfulCombinationDAO.scala
+│                                       │   ├── FullServiceTypeLevelEffectfulCombinationDAO.scala
+│                                       │   └── graph
+│                                       │       ├── FullOrganisationTypeLevelEffectfulGraphDAO.scala
+│                                       │       └── example
+│                                       │           └── FullOrganisationTypeLevelEffectfulGraphDAOExample.scala
+│                                       ├── materialized
+│                                       │   └── file
+│                                       │       └── FileMaterializingOrganisationDAO.scala
+│                                       ├── ops
+│                                       │   ├── FileOps.scala
+│                                       │   └── StreamOps.scala
+│                                       └── streamed
+│                                           ├── StreamingWithIODAO.scala
+│                                           └── file
+│                                               ├── FileStreamingWithIODAO.scala
+│                                               ├── ProductFileStreamingWithIODAO.scala
+│                                               └── ServiceFileStreamingWithIODAO.scala
+├── entity_parsers
+│   └── src
+│       └── main
+│           └── scala
+│               └── com
+│                   └── edufuga
+│                       └── scala
+│                           └── entity
+│                               ├── parsers
+│                               │   ├── csv
+│                               │   │   └── CSVParsers.scala
+│                               │   └── xml
+│                               │       └── XMLParsers.scala
+│                               └── patterns
+│                                   └── regex
+│                                       └── RegexPatterns.scala
+├── linked_data_ontology_rdf.owl
+├── linked_data_ontology_rdf.owl.txt
+├── linked_data_ontology_rdf.owl.txt.png
+├── linked_data_ontology_rdf.owl.txt.svg
+├── linked_data_ontology_rdf.ttl
+├── localization.png
+├── main.sh
+├── object_graph_mapping
+│   └── src
+│       └── main
+│           └── scala
+│               └── com
+│                   └── edufuga
+│                       └── scala
+│                           └── ogm
+│                               ├── ObjectGraphMapping.scala
+│                               ├── ObjectGraphMappings.scala
+│                               └── example
+│                                   ├── GraphConstructionExample.scala
+│                                   ├── ObjectConstructionExample.scala
+│                                   └── ObjectGraphMappingExample.scala
+├── object_properties_for_lists.png
+├── operations
+│   └── src
+│       └── main
+│           └── scala
+│               └── com
+│                   └── edufuga
+│                       └── scala
+│                           └── operations
+│                               ├── DAO.scala
+│                               ├── ReadAll.scala
+│                               ├── ReadById.scala
+│                               └── ReadByIds.scala
+├── organisation.rdf
+├── productdata-RDF4J-java
+│   ├── pom.xml
+│   └── src
+│       └── main
+│           └── java
+│               └── productdata
+│                   ├── global
+│                   │   └── util
+│                   │       └── GLOBAL.java
+│                   └── rdf
+│                       └── model
+│                           ├── Department.java
+│                           ├── Employee.java
+│                           ├── IDepartment.java
+│                           ├── IEmployee.java
+│                           ├── IManager.java
+│                           ├── IMoney.java
+│                           ├── IOrganisation.java
+│                           ├── IProduct.java
+│                           ├── IService.java
+│                           ├── Manager.java
+│                           ├── Money.java
+│                           ├── Organisation.java
+│                           ├── Product.java
+│                           └── Service.java
+├── project
+│   ├── build.properties
+│   └── plugins.sbt
+├── property_restriction_in_usage.png
+├── protege.png
+├── run.bat
+├── run.sh
+├── src
+│   └── main
+│       ├── resources
+│       │   ├── build.txt
+│       │   ├── organisation.rdf
+│       │   ├── orgmap.xml
+│       │   ├── output.txt
+│       │   ├── output_mac.txt
+│       │   ├── products.csv
+│       │   └── services.csv
+│       └── scala
+│           └── com
+│               └── edufuga
+│                   └── scala
+│                       └── streaming
+│                           ├── BusinessQuestions.scala
+│                           ├── MainApp.scala
+│                           └── Streamer.scala
+├── tree.txt
+└── typelevel.png
+
+85 directories, 94 files
