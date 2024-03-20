@@ -46,6 +46,13 @@ object MainApp extends IOApp {
         // Notice that this Streamer is still quite implementation (TypeLevel) specific.
         // Both the interface (parameters) and the implementation are full of IO and Streams and stuff.
         val streamer: Streamer = new Streamer(productsDAO, servicesDAO, organisationDAO, fullOrganisationDAO, of)
-        streamer.stream
+
+        // Formulate and answer the business questions
+        val businessQuestions: BusinessQuestions = new BusinessQuestions(productsDAO, fullServicesDAO, fullOrganisationDAO)
+
+        for {
+          _ <- streamer.stream
+          _ <- businessQuestions.stream
+        } yield ExitCode.Success
   }
 }
