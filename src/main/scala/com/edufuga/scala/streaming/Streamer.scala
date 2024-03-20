@@ -51,7 +51,7 @@ class Streamer(
       severalProducts <- productDAO.readByIds(List(ProductId("O184-6903943"), ProductId("N180-3300253"))).compile.last
       _ <- IO.println("Several products: " + severalProducts)
 
-      _ <- IO.println("Processing the full organisation. This includes resolving the linked products and services.")
+      _ <- IO.println("[Streamer] Processing the full organisation. This includes resolving the linked products and services.")
       organisation <- fullOrganisationDAO.readAll
       //_ <- IO.println(organisation)
       _ = {
