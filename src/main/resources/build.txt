@@ -1,0 +1,79 @@
+eduard@DESKTOP-3GRD7D8:~/LinkedDataScala$ sdk use java 21.0.2-tem
+
+Using java version 21.0.2-tem in this shell.
+eduard@DESKTOP-3GRD7D8:~/LinkedDataScala$ sdk use scala 3.3.1
+
+Using scala version 3.3.1 in this shell.
+eduard@DESKTOP-3GRD7D8:~/LinkedDataScala$ sbt stage
+[info] welcome to sbt 1.9.8 (Eclipse Adoptium Java 21.0.2)
+[info] loading settings for project global-plugins from credentials.sbt ...
+[info] loading global plugins from /home/eduard/.sbt/1.0/plugins
+[info] loading settings for project linkeddatascala-build from plugins.sbt ...
+[info] loading project definition from /home/eduard/LinkedDataScala/project
+[info] loading settings for project root from build.sbt ...
+[info] set current project to Main (in build file:/home/eduard/LinkedDataScala/)
+[warn] there's a key that's not used by any other settings/tasks:
+[warn]
+[warn] * root / mainClass
+[warn]   +- /home/eduard/LinkedDataScala/build.sbt:16
+[warn]
+[warn] note: a setting might still be used by a command; to exclude a key from this `lintUnused` check
+[warn] either append it to `Global / excludeLintKeys` or call .withRank(KeyRanks.Invisible) on the key
+[info] Wrote /home/eduard/LinkedDataScala/target/scala-3.3.1/main_3-0.1.0-SNAPSHOT.pom
+[info] compiling 15 Java sources to /home/eduard/LinkedDataScala/productdata-RDF4J-java/target/scala-3.3.1/classes ...
+[info] compiling 4 Scala sources to /home/eduard/LinkedDataScala/operations/target/scala-3.3.1/classes ...
+[info] compiling 16 Scala sources to /home/eduard/LinkedDataScala/entities/target/scala-3.3.1/classes ...
+[info] compiling 1 Scala source to /home/eduard/LinkedDataScala/entity_operations/target/scala-3.3.1/classes ...
+[info] compiling 3 Scala sources to /home/eduard/LinkedDataScala/entity_parsers/target/scala-3.3.1/classes ...
+[info] compiling 5 Scala sources to /home/eduard/LinkedDataScala/object_graph_mapping/target/scala-3.3.1/classes ...
+[warn] -- Warning: /home/eduard/LinkedDataScala/entity_parsers/src/main/scala/com/edufuga/scala/entity/parsers/csv/CSVParsers.scala:17:32
+[warn] 17 |      val quotedPriceAndCurrency(value, currency) = price
+[warn]    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[warn]    |pattern binding uses refutable extractor `com.edufuga.scala.entity.parsers.csv.CSVParsers.quotedPriceAndCurrency`
+[warn]    |
+[warn]    |If this usage is intentional, this can be communicated by adding `: @unchecked` after the expression,
+[warn]    |which may result in a MatchError at runtime.
+[warn]    |This patch can be rewritten automatically under -rewrite -source 3.2-migration.
+[warn] -- Warning: /home/eduard/LinkedDataScala/entity_parsers/src/main/scala/com/edufuga/scala/entity/parsers/csv/CSVParsers.scala:31:37
+[warn] 31 |      val RegexPatterns.Products.line(id, name, height, width, depth, weight, manager, price) = line
+[warn]    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[warn]    |pattern binding uses refutable extractor `com.edufuga.scala.entity.patterns.regex.RegexPatterns.Products.line`
+[warn]    |
+[warn]    |If this usage is intentional, this can be communicated by adding `: @unchecked` after the expression,
+[warn]    |which may result in a MatchError at runtime.
+[warn]    |This patch can be rewritten automatically under -rewrite -source 3.2-migration.
+[warn] -- Warning: /home/eduard/LinkedDataScala/entity_parsers/src/main/scala/com/edufuga/scala/entity/parsers/csv/CSVParsers.scala:54:37
+[warn] 54 |      val RegexPatterns.Services.line(id, name, products, productManager, price) = line
+[warn]    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[warn]    |pattern binding uses refutable extractor `com.edufuga.scala.entity.patterns.regex.RegexPatterns.Services.line`
+[warn]    |
+[warn]    |If this usage is intentional, this can be communicated by adding `: @unchecked` after the expression,
+[warn]    |which may result in a MatchError at runtime.
+[warn]    |This patch can be rewritten automatically under -rewrite -source 3.2-migration.
+[warn] three warnings found
+[info] compiling 10 Scala sources to /home/eduard/LinkedDataScala/entity_operations_implementation/target/scala-3.3.1/classes ...
+[info] compiling 3 Scala sources to /home/eduard/LinkedDataScala/target/scala-3.3.1/classes ...
+[info] Main Scala API documentation to /home/eduard/LinkedDataScala/target/scala-3.3.1/api...
+[warn] -- Warning: src/main/scala/com/edufuga/scala/streaming/MainApp.scala:15:15 -----
+[warn] 15 |  override def run(args: List[String]): IO[ExitCode] = {
+[warn]    |               ^
+[warn]    |               No DRI found for query: ExitCode
+[warn] one warning found
+[info] Main Scala API documentation successful.
+[info] Wrote /home/eduard/LinkedDataScala/entities/target/scala-3.3.1/entities_3-0.1.0-SNAPSHOT.pom
+[info] Wrote /home/eduard/LinkedDataScala/operations/target/scala-3.3.1/operations_3-0.1.0-SNAPSHOT.pom
+[info] Wrote /home/eduard/LinkedDataScala/entity_parsers/target/scala-3.3.1/entity-parsers_3-0.1.0-SNAPSHOT.pom
+[info] Main Scala API documentation to /home/eduard/LinkedDataScala/entity_parsers/target/scala-3.3.1/api...
+[info] Main Scala API documentation successful.
+[info] Wrote /home/eduard/LinkedDataScala/entity_operations/target/scala-3.3.1/entity-operations_3-0.1.0-SNAPSHOT.pom
+[info] Main Scala API documentation to /home/eduard/LinkedDataScala/entity_operations/target/scala-3.3.1/api...
+[info] Main Scala API documentation successful.
+[info] Wrote /home/eduard/LinkedDataScala/entity_operations_implementation/target/scala-3.3.1/entity-operations-implementation_3-0.1.0-SNAPSHOT.pom
+[info] Main Scala API documentation to /home/eduard/LinkedDataScala/entity_operations_implementation/target/scala-3.3.1/api...
+[info] Main Scala API documentation successful.
+[info] Wrote /home/eduard/LinkedDataScala/productdata-RDF4J-java/target/scala-3.3.1/productdata-rdf4j_3-0.1.0-SNAPSHOT.pom
+[warn] multiple main classes detected: run 'show discoveredMainClasses' to see the list
+[info] Wrote /home/eduard/LinkedDataScala/object_graph_mapping/target/scala-3.3.1/ogm_3-0.1.0-SNAPSHOT.pom
+[info] Main Scala API documentation to /home/eduard/LinkedDataScala/object_graph_mapping/target/scala-3.3.1/api...
+[info] Main Scala API documentation successful.
+[success] Total time: 28 s, completed Mar 20, 2024, 9:37:28 AM
