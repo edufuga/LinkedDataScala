@@ -3,6 +3,23 @@
 This is an **example project** showcasing the use of Scala as a statically typed programming language for implementing a
 Linked Data project.
 
+## Setup for the project
+In order to build the source code, you'll need the right setup for the JVM, Scala and the Scala Build Tool (sbt).
+
+Under Linux and macOS, we recommend using [SDKMAN!](https://sdkman.io/).
+Under Windows, you may use [Coursier](https://get-coursier.io/docs/cli-setup).
+
+The project was built with **Java 21**, **Scala 3.3.1** and **Sbt 1.9.8**. The Scala version is also indicated in the
+`build.sbt` file.
+
+Using SDKMAN!, you can instantiate the right environment **in the running shell**, using the following commands:
+```bash
+sdk use java 21.0.2-tem
+sdk use scala 3.3.1
+sdk use sbt 1.9.8
+```
+These commands assume that you have _installed_ those packages previously. If not, just change `use` for `install`.
+
 ## Building the project
 This project uses the [sbt native packager](https://sbt-native-packager.readthedocs.io/en/latest/) plugin for creating a
 _native package_. Building the program and executing it are two unrelated tasks.
