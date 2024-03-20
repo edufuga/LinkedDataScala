@@ -156,6 +156,3 @@ a recurring theme behind this project and my approach to it.
 ## Model-driven approach to ontology-based application development
 
 * https://ceur-ws.org/Vol-2063/sisiot-paper4.pdf
-
-The last two categories will be expanded upon in a follow-up document, when engineering the software of the project
-around the semantic technology.
